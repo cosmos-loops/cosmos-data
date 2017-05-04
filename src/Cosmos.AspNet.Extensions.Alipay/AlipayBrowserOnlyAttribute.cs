@@ -11,25 +11,15 @@ namespace Cosmos.AspNet.Extensions.Alipay
         /// <summary>
         /// 提示消息
         /// </summary>
-        public string Message { get; }
+        public string Message { get; set; } = "Alipay Browser Only";
 
         /// <summary>
         /// 302 跳转目标
         /// </summary>
-        public string RedirectUrl { get; }
+        public string RedirectUrl { get; set; }
+
         private string UserAgent { get; set; }
         private static readonly Regex RegexRule = new Regex(@"Alipay", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-
-        /// <summary>
-        /// 唯支付宝浏览器可访问
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="redirectUrl"></param>
-        public AlipayBrowserOnlyAttribute(string message = "Alipay Browser Only", string redirectUrl = "")
-        {
-            Message = message;
-            RedirectUrl = redirectUrl;
-        }
 
         /// <summary>
         /// when action is executing...

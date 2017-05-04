@@ -11,28 +11,15 @@ namespace Cosmos.AspNet.Extensions.WeChat
         /// <summary>
         /// 提示消息
         /// </summary>
-        public string Message { get; }
+        public string Message { get; set; } = "WeChat Browser Only";
 
         /// <summary>
         /// 302 跳转目标
         /// </summary>
-        public string RedirectUrl { get; }
+        public string RedirectUrl { get; set; }
 
         private string UserAgent { get; set; }
-
-        private static readonly Regex RegexRule = new Regex(@"MicroMessenger",
-            RegexOptions.IgnoreCase | RegexOptions.Compiled);
-
-        /// <summary>
-        /// 唯微信浏览器可访问
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="redirectUrl"></param>
-        public WeChatBrowserOnlyAttribute(string message = "WeChat Browser Only", string redirectUrl = "")
-        {
-            Message = message;
-            RedirectUrl = redirectUrl;
-        }
+        private static readonly Regex RegexRule = new Regex(@"MicroMessenger", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
         /// <summary>
         /// when action is executing...
