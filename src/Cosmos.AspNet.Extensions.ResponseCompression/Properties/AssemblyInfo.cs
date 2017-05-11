@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("Cosmos.AspNet.Extensions.Compression")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A compression extensions for ASP.NET")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("StarrySky Foundation")]
+[assembly: AssemblyCompany("AlexLEWIS")]
 [assembly: AssemblyProduct("Cosmos.AspNet.Extensions.Compression")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("Cosmos Programme")]
@@ -33,4 +33,5 @@ using System.Runtime.InteropServices;
 //通过使用 "*"，如下所示:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("0.0.1.0")]
-[assembly: AssemblyFileVersion("0.0.1.0")]
+[assembly: AssemblyFileVersion("0.0.1.10000")]
+[assembly: AssemblyInformationalVersion("0.0.1-alpha1-10220")]

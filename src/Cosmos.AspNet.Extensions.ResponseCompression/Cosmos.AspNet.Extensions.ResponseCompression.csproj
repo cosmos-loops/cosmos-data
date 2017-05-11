@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Cosmos.AspNet.Extensions</RootNamespace>
-    <AssemblyName>Cosmos.AspNet.Extensions.Compression</AssemblyName>
+    <AssemblyName>Cosmos.AspNet.Extensions.ResponseCompression</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -20,7 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Cosmos.AspNet.Extensions.Compression.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\Cosmos.AspNet.Extensions.ResponseCompression.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -44,12 +44,17 @@
   <ItemGroup>
     <Compile Include="CompressionAttribute.cs" />
     <Compile Include="CompressionScheme.cs" />
+    <Compile Include="Internal\RequestHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResponseCompressionExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.Mvc">
       <Version>5.2.3</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Cosmos.AspNet.Extensions.ResponseCompression.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

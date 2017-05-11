@@ -1,5 +1,4 @@
 ﻿using System.IO.Compression;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Cosmos.AspNet.Extensions
@@ -15,7 +14,7 @@ namespace Cosmos.AspNet.Extensions
         /// <param name="filterContext"></param>
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            var preferredEncoding = GetPreferredEncoding(filterContext.HttpContext.Request);
+            var preferredEncoding = Internal.RequestHelper.GetPreferredEncoding(filterContext.HttpContext.Request);
 
             var response = filterContext.HttpContext.Response;
             response.AppendHeader("Content-Encoding", preferredEncoding.ToString());
@@ -28,27 +27,6 @@ namespace Cosmos.AspNet.Extensions
             {
                 response.Filter = new DeflateStream(response.Filter, CompressionMode.Compress);
             }
-        }
-
-        private CompressionScheme GetPreferredEncoding(HttpRequestBase request)
-        {
-            var acceptableEncoding = request.Headers["Accept-Encoding"].ToLower();
-            if (string.IsNullOrEmpty(acceptableEncoding))
-            {
-                return CompressionScheme.Identity;
-            }
-
-            if (acceptableEncoding.Contains("gzip"))
-            {
-                return CompressionScheme.Gzip;
-            }
-
-            if (acceptableEncoding.Contains("deflate"))
-            {
-                return CompressionScheme.Deflate;
-            }
-
-            return CompressionScheme.Identity;
         }
     }
 }
