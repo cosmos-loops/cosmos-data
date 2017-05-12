@@ -1,7 +1,8 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 using System.Web.Mvc;
 
-namespace Cosmos.AspNet.Extensions.Alipay
+namespace Cosmos.AspNet.Extensions
 {
     /// <summary>
     /// 唯支付宝浏览器可访问
@@ -16,7 +17,7 @@ namespace Cosmos.AspNet.Extensions.Alipay
         /// <summary>
         /// 302 跳转目标
         /// </summary>
-        public string RedirectUrl { get; set; }
+        public string RedirectUrl { get; set; } = string.Empty;
 
         private string UserAgent { get; set; }
         private static readonly Regex RegexRule = new Regex(@"Alipay", RegexOptions.IgnoreCase | RegexOptions.Compiled);
@@ -27,6 +28,11 @@ namespace Cosmos.AspNet.Extensions.Alipay
         /// <param name="filterContext"></param>
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
+            if(filterContext == null)
+            {
+                throw new ArgumentNullException(nameof(filterContext));
+            }
+
             UserAgent = filterContext.HttpContext.Request.UserAgent;
 
             if (!string.IsNullOrWhiteSpace(UserAgent) && RegexRule.IsMatch(UserAgent))
