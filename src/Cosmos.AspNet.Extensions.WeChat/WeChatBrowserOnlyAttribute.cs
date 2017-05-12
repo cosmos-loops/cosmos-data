@@ -1,7 +1,8 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 using System.Web.Mvc;
 
-namespace Cosmos.AspNet.Extensions.WeChat
+namespace Cosmos.AspNet.Extensions
 {
     /// <summary>
     /// 唯微信浏览器可访问
@@ -27,6 +28,11 @@ namespace Cosmos.AspNet.Extensions.WeChat
         /// <param name="filterContext"></param>
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
+            if(filterContext == null)
+            {
+                throw new ArgumentNullException(nameof(filterContext));
+            }
+            
             UserAgent = filterContext.HttpContext.Request.UserAgent;
 
             if (!string.IsNullOrWhiteSpace(UserAgent) && RegexRule.IsMatch(UserAgent))

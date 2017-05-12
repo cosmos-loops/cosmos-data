@@ -7,7 +7,7 @@
     <ProjectGuid>{39C89ED4-AB1F-49B0-A2D1-4CDC74E0EEBB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Cosmos.AspNet.Extensions.WeChat</RootNamespace>
+    <RootNamespace>Cosmos.AspNet.Extensions</RootNamespace>
     <AssemblyName>Cosmos.AspNet.Extensions.WeChat</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WeChatBrowserOnlyExtensions.cs" />
+    <Compile Include="WeChatBrowserOnlyOptions.cs" />
+    <Compile Include="Internal\WeChatBrowserOnlyAttributeFactory.cs" />
     <Compile Include="WeChatBrowserOnlyAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -49,6 +52,9 @@
     <PackageReference Include="Microsoft.AspNet.Mvc">
       <Version>5.2.3</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Cosmos.AspNet.Extensions.WeChat.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
