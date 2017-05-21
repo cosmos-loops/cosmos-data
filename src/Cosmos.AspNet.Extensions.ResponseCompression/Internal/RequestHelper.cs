@@ -6,12 +6,12 @@ namespace Cosmos.AspNet.Extensions.Internal
     {
         public static CompressionScheme GetPreferredEncoding(HttpRequestBase request)
         {
-            return GetCompressionScheme(request.Headers["Accept-Encoding"].ToLower());
+            return GetCompressionScheme(request.Headers[CompressionConstants.AcceptEncoding].ToLower());
         }
 
         public static CompressionScheme GetPreferredEncoding(HttpRequest request)
         {
-            return GetCompressionScheme(request.Headers["Accept-Encoding"].ToLower());
+            return GetCompressionScheme(request.Headers[CompressionConstants.AcceptEncoding].ToLower());
         }
 
         private static CompressionScheme GetCompressionScheme(string acceptableEncoding)
@@ -21,12 +21,12 @@ namespace Cosmos.AspNet.Extensions.Internal
                 return CompressionScheme.Identity;
             }
 
-            if (acceptableEncoding.Contains("gzip"))
+            if (acceptableEncoding.Contains(CompressionConstants.Gzip))
             {
                 return CompressionScheme.Gzip;
             }
 
-            if (acceptableEncoding.Contains("deflate"))
+            if (acceptableEncoding.Contains(CompressionConstants.Deflate))
             {
                 return CompressionScheme.Deflate;
             }

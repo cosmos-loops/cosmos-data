@@ -10,25 +10,25 @@ namespace Cosmos.AspNet.Extensions.Internal
             {
                 case ResponseFramesOptionsType.DENY:
                     {
-                        response.AppendHeader("X-Frames-Options", "DENY");
+                        response.AppendHeader(FrameOptionsConstants.XFramesOptions, FrameOptionsConstants.DenyFrames);
                         break;
                     }
 
                 case ResponseFramesOptionsType.SAMEORIGIN:
                     {
-                        response.AppendHeader("X-Frames-Options", "SAMEORIGIN");
+                        response.AppendHeader(FrameOptionsConstants.XFramesOptions, FrameOptionsConstants.SameOriginFrames);
                         break;
                     }
 
                 case ResponseFramesOptionsType.ALLOWFROM when !string.IsNullOrWhiteSpace(domain):
                     {
-                        response.AppendHeader("X-Frames-Options", $"ALLOW-FROM {domain}");
+                        response.AppendHeader(FrameOptionsConstants.XFramesOptions, $"{FrameOptionsConstants.AllowFrom} {domain}");
                         break;
                     }
 
                 default:
                     {
-                        response.AppendHeader("X-Frames-Options", "DENY");
+                        response.AppendHeader(FrameOptionsConstants.XFramesOptions, FrameOptionsConstants.DenyFrames);
                         break;
                     }
             }
@@ -41,25 +41,25 @@ namespace Cosmos.AspNet.Extensions.Internal
             {
                 case ResponseFramesOptionsType.DENY:
                     {
-                        response.AppendHeader("X-Frames-Options", "DENY");
+                        response.AppendHeader(FrameOptionsConstants.XFramesOptions, FrameOptionsConstants.DenyFrames);
                         break;
                     }
 
                 case ResponseFramesOptionsType.SAMEORIGIN:
                     {
-                        response.AppendHeader("X-Frames-Options", "SAMEORIGIN");
+                        response.AppendHeader(FrameOptionsConstants.XFramesOptions, FrameOptionsConstants.SameOriginFrames);
                         break;
                     }
 
                 case ResponseFramesOptionsType.ALLOWFROM when !string.IsNullOrWhiteSpace(domain):
                     {
-                        response.AppendHeader("X-Frames-Options", $"ALLOW-FROM {domain}");
+                        response.AppendHeader(FrameOptionsConstants.XFramesOptions, $"{FrameOptionsConstants.AllowFrom} {domain}");
                         break;
                     }
 
                 default:
                     {
-                        response.AppendHeader("X-Frames-Options", "DENY");
+                        response.AppendHeader(FrameOptionsConstants.XFramesOptions, FrameOptionsConstants.DenyFrames);
                         break;
                     }
             }

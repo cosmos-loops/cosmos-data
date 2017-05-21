@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
+using Cosmos.AspNet.Extensions.Internal;
 
 namespace Cosmos.AspNet.Extensions
 {
@@ -12,7 +13,7 @@ namespace Cosmos.AspNet.Extensions
         /// <summary>
         /// 提示消息
         /// </summary>
-        public string Message { get; set; } = "Alipay Browser Only";
+        public string Message { get; set; } = AlipayConstants.AlipayBrowserOnly;
 
         /// <summary>
         /// 302 跳转目标
@@ -20,7 +21,7 @@ namespace Cosmos.AspNet.Extensions
         public string RedirectUrl { get; set; } = string.Empty;
 
         private string UserAgent { get; set; }
-        private static readonly Regex RegexRule = new Regex(@"Alipay", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        private static readonly Regex RegexRule = new Regex(AlipayConstants.AlipayBrowserIdentity, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
         /// <summary>
         /// when action is executing...

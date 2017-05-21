@@ -2,6 +2,7 @@
 using System.IO.Compression;
 using System.Web;
 using System.Web.Mvc;
+using Cosmos.AspNet.Extensions.Internal;
 
 namespace Cosmos.AspNet.Extensions
 {
@@ -26,12 +27,12 @@ namespace Cosmos.AspNet.Extensions
             if (preferredEncoding == CompressionScheme.Gzip)
             {
                 app.Response.Filter = new GZipStream(app.Response.Filter, CompressionMode.Compress);
-                app.Response.AppendHeader("Content-Encoding", "gzip");
+                app.Response.AppendHeader(CompressionConstants.ContentEncoding, CompressionConstants.Gzip);
             }
             else if (preferredEncoding == CompressionScheme.Deflate)
             {
                 app.Response.Filter = new DeflateStream(app.Response.Filter, CompressionMode.Compress);
-                app.Response.AppendHeader("Content-Encoding", "deflate");
+                app.Response.AppendHeader(CompressionConstants.ContentEncoding, CompressionConstants.Deflate);
             }
 
             return app;

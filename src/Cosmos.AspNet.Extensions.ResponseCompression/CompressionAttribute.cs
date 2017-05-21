@@ -1,5 +1,6 @@
 ﻿using System.IO.Compression;
 using System.Web.Mvc;
+using Cosmos.AspNet.Extensions.Internal;
 
 namespace Cosmos.AspNet.Extensions
 {
@@ -17,7 +18,8 @@ namespace Cosmos.AspNet.Extensions
             var preferredEncoding = Internal.RequestHelper.GetPreferredEncoding(filterContext.HttpContext.Request);
 
             var response = filterContext.HttpContext.Response;
-            response.AppendHeader("Content-Encoding", preferredEncoding.ToString());
+            response.AppendHeader(CompressionConstants.ContentEncoding, preferredEncoding.ToString());
+            response.Cache.VaryByParams[CompressionConstants.AcceptEncoding] = true;
 
             if (preferredEncoding == CompressionScheme.Gzip)
             {

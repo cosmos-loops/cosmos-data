@@ -1,4 +1,6 @@
-﻿namespace Cosmos.AspNet.Extensions
+﻿using Cosmos.AspNet.Extensions.Internal;
+
+namespace Cosmos.AspNet.Extensions
 {
     /// <summary>
     /// Options for alipay browser only middleware
@@ -8,7 +10,7 @@
         /// <summary>
         /// 提示消息
         /// </summary>
-        public string Message { get; set; } = "WeChat Browser Only";
+        public string Message { get; set; } = WeChatConstants.WeChatBrowserOnly;
 
         /// <summary>
         /// 302 跳转目标
