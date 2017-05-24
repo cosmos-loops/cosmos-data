@@ -49,6 +49,7 @@
     <Compile Include="Internal\AlipayBrowserOnlyAttributeFactory.cs" />
     <Compile Include="AlipayBrowserOnlyExtensions.cs" />
     <Compile Include="AlipayBrowserOnlyOptions.cs" />
+    <Compile Include="Internal\AlipayConstants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

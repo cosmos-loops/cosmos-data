@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Internal\FrameOptionsConstants.cs" />
     <Compile Include="Internal\ResponseHelper.cs" />
     <Compile Include="FrameOptionsAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

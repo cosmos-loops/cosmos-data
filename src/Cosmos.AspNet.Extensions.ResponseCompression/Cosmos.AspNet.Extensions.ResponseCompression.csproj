@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="CompressionAttribute.cs" />
     <Compile Include="CompressionScheme.cs" />
+    <Compile Include="Internal\CompressionConstants.cs" />
     <Compile Include="Internal\RequestHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResponseCompressionExtensions.cs" />
