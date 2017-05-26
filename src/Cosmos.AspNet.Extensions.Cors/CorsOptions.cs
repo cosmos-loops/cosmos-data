@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 
 /*
@@ -14,7 +15,7 @@ namespace Cosmos.AspNet.Extensions
     public partial class CorsOptions
     {
         private string _defaultPolicyName = "__DefaultCorsPolicy";
-        private IDictionary<string, CorsPolicy> PolicyMap { get; } = new Dictionary<string, CorsPolicy>();
+        private IDictionary<string, CorsPolicy> PolicyMap { get; } = new ConcurrentDictionary<string, CorsPolicy>();
 
         /// <summary>
         /// Gets or sets default policy name

@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Cosmos.AspNet.Extensions
+namespace Cosmos.AspNet.Extensions.Internal
 {
-    internal static class GlobalCorsPolicyManager
+    internal static class InternalCorsPolicyManager
     {
         private static readonly Dictionary<string, CorsPolicy> _policyMap;
         private static string _defaultPolicyName;
 
-        static GlobalCorsPolicyManager()
+        static InternalCorsPolicyManager()
         {
             _policyMap = new Dictionary<string, CorsPolicy>();
         }

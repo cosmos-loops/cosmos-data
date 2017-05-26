@@ -18,7 +18,7 @@ namespace Cosmos.AspNet.Extensions.Internal
         public static void Init(CorsOptions options)
         {
             _options = options;
-            GlobalCorsPolicyManager.SetPolicyMap(options);
+            InternalCorsPolicyManager.SetPolicyMap(options);
         }
 
         public static bool HasMatchingRule(HttpContextBase context, CorsPolicy policy)

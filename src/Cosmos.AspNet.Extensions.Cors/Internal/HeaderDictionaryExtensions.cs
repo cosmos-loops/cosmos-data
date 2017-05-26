@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Cosmos.AspNet.Extensions.Internal
 {
-    internal static class HeaderFictionaryExtensions
+    internal static class HeaderDictionaryExtensions
     {
         public static string[] GetCommaSeparatedValues(this NameValueCollection coll, string key)
         {

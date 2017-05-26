@@ -45,10 +45,10 @@
     <Compile Include="CorsOptionsInternal.cs" />
     <Compile Include="CorsPolicy.cs" />
     <Compile Include="CorsPolicyBuilder.cs" />
-    <Compile Include="Internal\CollectionExtensions.cs" />
+    <Compile Include="Internal\HeaderFictionaryExtensions.cs" />
     <Compile Include="Internal\CorsPolicyExtensions.cs" />
     <Compile Include="CorsResult.cs" />
-    <Compile Include="GlobalCorsPolicyManager.cs" />
+    <Compile Include="Internal\InternalCorsPolicyManager.cs" />
     <Compile Include="Internal\CorsConstants.cs" />
     <Compile Include="CorsExtensions.cs" />
     <Compile Include="CorsAttribute.cs" />
@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Cosmos.AspNet.Extensions.Cors.nuspec" />
+    <None Include="README.MD" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,7 +10,7 @@ using Cosmos.AspNet.Extensions.Internal;
 namespace Cosmos.AspNet.Extensions
 {
     /// <summary>
-    /// Exposes methods to build a policy.
+    /// Cors Policy Builder
     /// </summary>
     public class CorsPolicyBuilder
     {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
+using Cosmos.AspNet.Extensions.Internal;
 
 namespace Cosmos.AspNet.Extensions
 {
@@ -34,6 +35,7 @@ namespace Cosmos.AspNet.Extensions
             var options = new CorsOptions();
             optionsAction?.Invoke(options);
 
+            CorsCoreHelper.Init(options);
 
             return filters;
         }

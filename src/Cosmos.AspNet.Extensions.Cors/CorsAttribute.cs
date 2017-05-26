@@ -24,7 +24,7 @@ namespace Cosmos.AspNet.Extensions
         /// </summary>
         public CorsAttribute()
         {
-            _policyName = GlobalCorsPolicyManager.DefaultPolicyName;
+            _policyName = InternalCorsPolicyManager.DefaultPolicyName;
         }
 
         /// <summary>
@@ -47,12 +47,7 @@ namespace Cosmos.AspNet.Extensions
         /// <param name="policy"></param>
         public CorsAttribute(CorsPolicy policy)
         {
-            if (policy == null)
-            {
-                throw new ArgumentNullException(nameof(policy));
-            }
-
-            _policy = policy;
+            _policy = policy ?? throw new ArgumentNullException(nameof(policy));
         }
 
         /// <summary>
@@ -63,7 +58,7 @@ namespace Cosmos.AspNet.Extensions
         {
             if (HasOrigin(filterContext))
             {
-                var corsPolicy = _policy ?? GlobalCorsPolicyManager.GetPolicy(_policyName) ?? GlobalCorsPolicyManager.GetDefaultPolicy();
+                var corsPolicy = _policy ?? InternalCorsPolicyManager.GetPolicy(_policyName) ?? InternalCorsPolicyManager.GetDefaultPolicy();
                 var context = filterContext.RequestContext.HttpContext;
                 if (corsPolicy != null &&
                     (!CorsCoreHelper.HasMatchingRule(context, corsPolicy) ||
@@ -86,7 +81,7 @@ namespace Cosmos.AspNet.Extensions
         }
 
 
-        private bool HasOrigin(ControllerContext filterContext)
+        private static bool HasOrigin(ControllerContext filterContext)
             => filterContext.RequestContext.HttpContext.Request.Headers.AllKeys.Contains(CorsConstants.Origin);
 
     }
