@@ -24,6 +24,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.AspNet.Extensions.Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.AspNet.Extensions.Cors", "src\Cosmos.AspNet.Extensions.Cors\Cosmos.AspNet.Extensions.Cors.csproj", "{40CD95C4-C71E-4798-9B9B-44918C611C0B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F1DAC636-224C-4CAD-8ACE-38A3C3654605}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.AspNet.Extensions.AntiXss", "src\Cosmos.AspNet.Extensions.AntiXss\Cosmos.AspNet.Extensions.AntiXss.csproj", "{A528C8C6-FEE5-4587-99E2-14F367F288C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +54,10 @@ Global
 		{40CD95C4-C71E-4798-9B9B-44918C611C0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40CD95C4-C71E-4798-9B9B-44918C611C0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40CD95C4-C71E-4798-9B9B-44918C611C0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A528C8C6-FEE5-4587-99E2-14F367F288C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A528C8C6-FEE5-4587-99E2-14F367F288C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A528C8C6-FEE5-4587-99E2-14F367F288C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A528C8C6-FEE5-4587-99E2-14F367F288C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,5 +68,6 @@ Global
 		{6A08AAD2-D6E1-433C-9E43-EBFA76796088} = {1B801E1D-2E8D-42B1-9C9B-202EFA12FB73}
 		{D6F16F4D-5C76-42BC-86EB-A43716E4031E} = {1B801E1D-2E8D-42B1-9C9B-202EFA12FB73}
 		{40CD95C4-C71E-4798-9B9B-44918C611C0B} = {1B801E1D-2E8D-42B1-9C9B-202EFA12FB73}
+		{A528C8C6-FEE5-4587-99E2-14F367F288C6} = {1B801E1D-2E8D-42B1-9C9B-202EFA12FB73}
 	EndGlobalSection
 EndGlobal
