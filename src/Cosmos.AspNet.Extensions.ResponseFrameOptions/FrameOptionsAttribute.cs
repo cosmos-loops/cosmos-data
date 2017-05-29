@@ -10,7 +10,7 @@ namespace Cosmos.AspNet.Extensions
         /// <summary>
         /// XFrame-Options Type
         /// </summary>
-        public ResponseFramesOptionsType FramesOptions { get; set; } = ResponseFramesOptionsType.DENY;
+        public ResponseFrameOptionsType FrameOptions { get; set; } = ResponseFrameOptionsType.DENY;
 
         /// <summary>
         /// Domain
@@ -23,9 +23,7 @@ namespace Cosmos.AspNet.Extensions
         /// <param name="filterContext"></param>
         public override void OnResultExecuting(ResultExecutingContext filterContext)
         {
-            base.OnResultExecuting(filterContext);
-
-            Internal.ResponseHelper.UpdateHeader(filterContext.HttpContext.Response, FramesOptions, Domain);
+            Internal.ResponseHelper.UpdateHeader(filterContext.HttpContext.Response, FrameOptions, Domain);
         }
     }
 }

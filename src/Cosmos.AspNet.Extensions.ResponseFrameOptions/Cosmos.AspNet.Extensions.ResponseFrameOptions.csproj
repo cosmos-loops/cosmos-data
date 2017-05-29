@@ -45,11 +45,12 @@
     <Compile Include="Internal\ResponseHelper.cs" />
     <Compile Include="FrameOptionsAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResponseFrameOptionsExtensions.cs" />
-    <Compile Include="ResponseFramesOptionsType.cs" />
+    <Compile Include="ResponseFrameOptionsFilterExtensions.cs" />
+    <Compile Include="ResponseFrameOptionsType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Cosmos.AspNet.Extensions.ResponseFrameOptions.nuspec" />
+    <None Include="README.MD" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.Mvc">

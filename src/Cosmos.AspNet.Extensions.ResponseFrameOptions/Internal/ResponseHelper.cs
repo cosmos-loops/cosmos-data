@@ -4,62 +4,62 @@ namespace Cosmos.AspNet.Extensions.Internal
 {
     internal static class ResponseHelper
     {
-        public static void UpdateHeader(HttpResponse response, ResponseFramesOptionsType type, string domain)
+        public static void UpdateHeader(HttpResponse response, ResponseFrameOptionsType type, string domain)
         {
             switch (type)
             {
-                case ResponseFramesOptionsType.DENY:
+                case ResponseFrameOptionsType.DENY:
                     {
-                        response.AppendHeader(FrameOptionsConstants.XFramesOptions, FrameOptionsConstants.DenyFrames);
+                        response.AppendHeader(FrameOptionsConstants.XFrameOptions, FrameOptionsConstants.DenyFrames);
                         break;
                     }
 
-                case ResponseFramesOptionsType.SAMEORIGIN:
+                case ResponseFrameOptionsType.SAMEORIGIN:
                     {
-                        response.AppendHeader(FrameOptionsConstants.XFramesOptions, FrameOptionsConstants.SameOriginFrames);
+                        response.AppendHeader(FrameOptionsConstants.XFrameOptions, FrameOptionsConstants.SameOriginFrames);
                         break;
                     }
 
-                case ResponseFramesOptionsType.ALLOWFROM when !string.IsNullOrWhiteSpace(domain):
+                case ResponseFrameOptionsType.ALLOWFROM when !string.IsNullOrWhiteSpace(domain):
                     {
-                        response.AppendHeader(FrameOptionsConstants.XFramesOptions, $"{FrameOptionsConstants.AllowFrom} {domain}");
+                        response.AppendHeader(FrameOptionsConstants.XFrameOptions, $"{FrameOptionsConstants.AllowFrom} {domain}");
                         break;
                     }
 
                 default:
                     {
-                        response.AppendHeader(FrameOptionsConstants.XFramesOptions, FrameOptionsConstants.DenyFrames);
+                        response.AppendHeader(FrameOptionsConstants.XFrameOptions, FrameOptionsConstants.DenyFrames);
                         break;
                     }
             }
         }
 
 
-        public static void UpdateHeader(HttpResponseBase response, ResponseFramesOptionsType type, string domain)
+        public static void UpdateHeader(HttpResponseBase response, ResponseFrameOptionsType type, string domain)
         {
             switch (type)
             {
-                case ResponseFramesOptionsType.DENY:
+                case ResponseFrameOptionsType.DENY:
                     {
-                        response.AppendHeader(FrameOptionsConstants.XFramesOptions, FrameOptionsConstants.DenyFrames);
+                        response.AppendHeader(FrameOptionsConstants.XFrameOptions, FrameOptionsConstants.DenyFrames);
                         break;
                     }
 
-                case ResponseFramesOptionsType.SAMEORIGIN:
+                case ResponseFrameOptionsType.SAMEORIGIN:
                     {
-                        response.AppendHeader(FrameOptionsConstants.XFramesOptions, FrameOptionsConstants.SameOriginFrames);
+                        response.AppendHeader(FrameOptionsConstants.XFrameOptions, FrameOptionsConstants.SameOriginFrames);
                         break;
                     }
 
-                case ResponseFramesOptionsType.ALLOWFROM when !string.IsNullOrWhiteSpace(domain):
+                case ResponseFrameOptionsType.ALLOWFROM when !string.IsNullOrWhiteSpace(domain):
                     {
-                        response.AppendHeader(FrameOptionsConstants.XFramesOptions, $"{FrameOptionsConstants.AllowFrom} {domain}");
+                        response.AppendHeader(FrameOptionsConstants.XFrameOptions, $"{FrameOptionsConstants.AllowFrom} {domain}");
                         break;
                     }
 
                 default:
                     {
-                        response.AppendHeader(FrameOptionsConstants.XFramesOptions, FrameOptionsConstants.DenyFrames);
+                        response.AppendHeader(FrameOptionsConstants.XFrameOptions, FrameOptionsConstants.DenyFrames);
                         break;
                     }
             }
