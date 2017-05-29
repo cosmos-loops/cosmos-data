@@ -6,16 +6,16 @@ namespace Cosmos.AspNet.Extensions
     /// <summary>
     /// AntiXss Extensions
     /// </summary>
-    public static class AntiXssExtensions
+    public static class AntiXssFilterExtensions
     {
         /// <summary>
         /// 全局使用 AntiXss
         /// </summary>
         /// <param name="filters"></param>
         /// <returns></returns>
-        public static GlobalFilterCollection UseCors(this GlobalFilterCollection filters)
+        public static GlobalFilterCollection AddAntiXssFilter(this GlobalFilterCollection filters)
         {
-            return UseCors(filters, null);
+            return AddAntiXssFilter(filters, null);
         }
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace Cosmos.AspNet.Extensions
         /// <param name="filters"></param>
         /// <param name="optionsAction"></param>
         /// <returns></returns>
-        public static GlobalFilterCollection UseCors(this GlobalFilterCollection filters, Action<AntiXssOptions> optionsAction)
+        public static GlobalFilterCollection AddAntiXssFilter(this GlobalFilterCollection filters, Action<AntiXssOptions> optionsAction)
         {
             if (filters == null)
             {
@@ -34,7 +34,7 @@ namespace Cosmos.AspNet.Extensions
             var options = new AntiXssOptions();
             optionsAction?.Invoke(options);
 
-            //CorsCoreHelper.Init(options);
+            Internal.AntiXssCoreHelper.Init(options);
 
             return filters;
         }

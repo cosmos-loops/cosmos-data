@@ -39,7 +39,7 @@ namespace Cosmos.AspNet.Extensions.Internal
 
         public static string DefaultPolicyName => _defaultPolicyName;
 
-        public static bool IsContainsPolicy(string name) => _policyMap.ContainsKey(name);
+        public static bool IsContainsPolicy(string name) => string.IsNullOrWhiteSpace(name) ? false : _policyMap.ContainsKey(name);
 
         public static AntiXssPolicy GetPolicy(string name) => IsContainsPolicy(name) ? _policyMap[name] : null;
 

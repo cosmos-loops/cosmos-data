@@ -43,14 +43,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AntiXssAttribute.cs" />
-    <Compile Include="AntiXssExtensions.cs" />
+    <Compile Include="AntiXssFilterExtensions.cs" />
+    <Compile Include="AntiXssOptions.cs" />
     <Compile Include="AntiXssOptionsInternal.cs" />
+    <Compile Include="AntiXssSanitizeExtensions.cs" />
+    <Compile Include="AntiXssSanitizer.cs" />
     <Compile Include="AntiXssPolicy.cs" />
     <Compile Include="AntiXssPolicyBuilder.cs" />
     <Compile Include="Internal\AntiXssCoreHelper.cs" />
     <Compile Include="Internal\InternalAntiXssManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AntiXssOptions.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Cosmos.Extensions.Html.HtmlAgilityPack">

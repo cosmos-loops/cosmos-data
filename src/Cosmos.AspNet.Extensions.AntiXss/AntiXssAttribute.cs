@@ -6,8 +6,13 @@ namespace Cosmos.AspNet.Extensions
     /// <summary>
     /// AntiXss attribute
     /// </summary>
-    public class AntiXssAttribute : ActionFilterAttribute
+    public class AntiXssAttribute : ValidateInputAttribute// ActionFilterAttribute
     {
+        /// <summary>
+        /// AntiXSS attribute
+        /// </summary>
+        public AntiXssAttribute() : base(false) { }
+
         /// <summary>
         /// Policy name
         /// </summary>
@@ -17,16 +22,28 @@ namespace Cosmos.AspNet.Extensions
         /// on action executing...
         /// </summary>
         /// <param name="filterContext"></param>
-        public override void OnActionExecuting(ActionExecutingContext filterContext)
+        //public override void OnActionExecuting(ActionExecutingContext filterContext)
+        //{
+        //    var request = filterContext.RequestContext.HttpContext.Request;
+        //    var policy = InternalAntiXssManager.GetPolicy(PolicyName) ?? InternalAntiXssManager.GetDefaultPolicy();
+        //    if (policy != null)
+        //    {
+        //        AntiXssCoreHelper.ApplyPolicy(policy, request);
+        //    }
+
+        //    base.OnActionExecuting(filterContext);
+        //}
+
+        public override void OnAuthorization(AuthorizationContext filterContext)
         {
+            base.OnAuthorization(filterContext);
+
             var request = filterContext.RequestContext.HttpContext.Request;
             var policy = InternalAntiXssManager.GetPolicy(PolicyName) ?? InternalAntiXssManager.GetDefaultPolicy();
             if (policy != null)
             {
                 AntiXssCoreHelper.ApplyPolicy(policy, request);
             }
-
-            base.OnActionExecuting(filterContext);
         }
     }
 }
