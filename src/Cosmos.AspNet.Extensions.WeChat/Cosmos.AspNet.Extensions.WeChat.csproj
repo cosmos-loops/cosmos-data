@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Internal\WeChatConstants.cs" />
-    <Compile Include="WeChatBrowserOnlyExtensions.cs" />
+    <Compile Include="WeChatBrowserFilterExtensions.cs" />
     <Compile Include="WeChatBrowserOnlyOptions.cs" />
     <Compile Include="Internal\WeChatBrowserOnlyAttributeFactory.cs" />
     <Compile Include="WeChatBrowserOnlyAttribute.cs" />
@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Cosmos.AspNet.Extensions.WeChat.nuspec" />
+    <None Include="README.MD" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

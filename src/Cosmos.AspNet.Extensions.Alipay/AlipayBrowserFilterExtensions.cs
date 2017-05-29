@@ -6,16 +6,16 @@ namespace Cosmos.AspNet.Extensions
     /// <summary>
     /// aliapy browser only extensions
     /// </summary>
-    public static class AlipayBrowserOnlyExtensions
+    public static class AlipayBrowserFilterExtensions
     {
         /// <summary>
         /// 全局使用 Alipay Browser Only 过滤器
         /// </summary>
         /// <param name="filters"></param>
         /// <returns></returns>
-        public static GlobalFilterCollection UseAlipayBrowserOnly(this GlobalFilterCollection filters)
+        public static GlobalFilterCollection AddAlipayBrowserFilter(this GlobalFilterCollection filters)
         {
-            return UseAlipayBrowserOnly(filters, null);
+            return AddAlipayBrowserFilter(filters, null);
         }
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace Cosmos.AspNet.Extensions
         /// <param name="filters"></param>
         /// <param name="optionsAction"></param>
         /// <returns></returns>
-        public static GlobalFilterCollection UseAlipayBrowserOnly(this GlobalFilterCollection filters, Action<AlipayBrowserOnlyOptions> optionsAction)
+        public static GlobalFilterCollection AddAlipayBrowserFilter(this GlobalFilterCollection filters, Action<AlipayBrowserOnlyOptions> optionsAction)
         {
             var options = new AlipayBrowserOnlyOptions();
             optionsAction?.Invoke(options);

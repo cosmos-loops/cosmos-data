@@ -6,16 +6,16 @@ namespace Cosmos.AspNet.Extensions
     /// <summary>
     /// WeChat browser only extensions
     /// </summary>
-    public static class WeChatBrowserOnlyExtensions
+    public static class WeChatBrowserFilterExtensions
     {
         /// <summary>
         /// 全局使用 WeChat Browser Only 过滤器
         /// </summary>
         /// <param name="filters"></param>
         /// <returns></returns>
-        public static GlobalFilterCollection UseWeChatBrowserOnly(this GlobalFilterCollection filters)
+        public static GlobalFilterCollection AddWeChatBrowserFilter(this GlobalFilterCollection filters)
         {
-            return UseWeChatBrowserOnly(filters, null);
+            return AddWeChatBrowserFilter(filters, null);
         }
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace Cosmos.AspNet.Extensions
         /// <param name="filters"></param>
         /// <param name="optionsAction"></param>
         /// <returns></returns>
-        public static GlobalFilterCollection UseWeChatBrowserOnly(this GlobalFilterCollection filters, Action<WeChatBrowserOnlyOptions> optionsAction)
+        public static GlobalFilterCollection AddWeChatBrowserFilter(this GlobalFilterCollection filters, Action<WeChatBrowserOnlyOptions> optionsAction)
         {
             var options = new WeChatBrowserOnlyOptions();
             optionsAction?.Invoke(options);
