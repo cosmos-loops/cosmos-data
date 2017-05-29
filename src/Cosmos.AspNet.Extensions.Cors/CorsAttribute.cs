@@ -61,8 +61,8 @@ namespace Cosmos.AspNet.Extensions
                 var corsPolicy = _policy ?? InternalCorsPolicyManager.GetPolicy(_policyName) ?? InternalCorsPolicyManager.GetDefaultPolicy();
                 var context = filterContext.RequestContext.HttpContext;
                 if (corsPolicy != null &&
-                    (!CorsCoreHelper.HasMatchingRule(context, corsPolicy) ||
-                    (CorsCoreHelper.HasMatchingRule(context, corsPolicy) && CorsCoreHelper.IsMatchedIgnoreRule(context, corsPolicy))))
+                    (!CorsCoreHelper.DoesPolicyContainsMatchingRule(corsPolicy) ||
+                    (CorsCoreHelper.DoesPolicyContainsMatchingRule(corsPolicy) && CorsCoreHelper.IsMatchedIgnoreRule(context, corsPolicy))))
                 {
                     var corsResult = CorsCoreHelper.EvaluatePolicy(context, corsPolicy);
                     CorsCoreHelper.ApplyResult(corsResult, context.Response);
@@ -79,8 +79,7 @@ namespace Cosmos.AspNet.Extensions
 
             base.OnActionExecuting(filterContext);
         }
-
-
+        
         private static bool HasOrigin(ControllerContext filterContext)
             => filterContext.RequestContext.HttpContext.Request.Headers.AllKeys.Contains(CorsConstants.Origin);
 

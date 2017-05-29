@@ -21,13 +21,8 @@ namespace Cosmos.AspNet.Extensions.Internal
             InternalCorsPolicyManager.SetPolicyMap(options);
         }
 
-        public static bool HasMatchingRule(HttpContextBase context, CorsPolicy policy)
+        public static bool DoesPolicyContainsMatchingRule(CorsPolicy policy)
         {
-            if (context == null)
-            {
-                throw new ArgumentNullException(nameof(context));
-            }
-
             if (policy == null)
             {
                 throw new ArgumentNullException(nameof(policy));
@@ -155,8 +150,7 @@ namespace Cosmos.AspNet.Extensions.Internal
                 }
             }
 
-            if (!policy.AllowAnyHeader &&
-                requestHeaders != null)
+            if (!policy.AllowAnyHeader && requestHeaders != null)
             {
                 foreach (var requestHeader in requestHeaders)
                 {

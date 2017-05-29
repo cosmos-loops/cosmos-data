@@ -37,11 +37,20 @@ namespace Cosmos.AspNet.Extensions.Internal
             {
                 _policyMap.Add(_defaultPolicyName, CorsPolicy.DefaultCorsPolicy);
             }
+
+            EnableGlobalCors = options.EnableGlobalCors;
+            GlobalCorsPolicyName = string.IsNullOrWhiteSpace(options.GlobalCorsPolicyName)
+                ? options.DefaultPolicyName
+                : options.GlobalCorsPolicyName;
         }
+
+        public static bool EnableGlobalCors { get; set; } = false;
+
+        public static string GlobalCorsPolicyName { get; set; } = _defaultPolicyName;
 
         public static string DefaultPolicyName => _defaultPolicyName;
 
-        public static bool IsContainsPolicy(string name) => _policyMap.ContainsKey(name);
+        public static bool IsContainsPolicy(string name) => string.IsNullOrWhiteSpace(name) ? false : _policyMap.ContainsKey(name);
 
         public static CorsPolicy GetPolicy(string name) => IsContainsPolicy(name) ? _policyMap[name] : null;
 

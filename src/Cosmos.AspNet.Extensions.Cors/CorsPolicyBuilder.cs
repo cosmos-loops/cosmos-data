@@ -118,7 +118,7 @@ namespace Cosmos.AspNet.Extensions
         /// Ensures that the policy allows any origin.
         /// </summary>
         /// <returns>The current policy builder.</returns>
-        public CorsPolicyBuilder AllowAntOrigin()
+        public CorsPolicyBuilder AllowAnyOrigin()
         {
             _policy.Origins.Clear();
             _policy.Origins.Add(CorsConstants.AnyOrigin);

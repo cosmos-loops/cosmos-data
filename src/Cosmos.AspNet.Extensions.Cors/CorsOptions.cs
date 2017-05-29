@@ -77,5 +77,16 @@ namespace Cosmos.AspNet.Extensions
 
             return PolicyMap.ContainsKey(name) ? PolicyMap[name] : null;
         }
+
+
+        /// <summary>
+        /// 设置是否开启全局 CORS
+        /// </summary>
+        public bool EnableGlobalCors { get; set; } = false;
+
+        /// <summary>
+        /// 指定全局 CORS 过滤器使用的策略名
+        /// </summary>
+        public string GlobalCorsPolicyName { get; set; } = string.Empty;
     }
 }

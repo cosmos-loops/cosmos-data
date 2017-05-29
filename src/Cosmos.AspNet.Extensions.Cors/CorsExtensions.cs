@@ -14,9 +14,9 @@ namespace Cosmos.AspNet.Extensions
         /// </summary>
         /// <param name="filters"></param>
         /// <returns></returns>
-        public static GlobalFilterCollection UseCors(this GlobalFilterCollection filters)
+        public static GlobalFilterCollection AddCorsFilter(this GlobalFilterCollection filters)
         {
-            return UseCors(filters, null);
+            return AddCorsFilter(filters, null);
         }
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace Cosmos.AspNet.Extensions
         /// <param name="filters"></param>
         /// <param name="optionsAction"></param>
         /// <returns></returns>
-        public static GlobalFilterCollection UseCors(this GlobalFilterCollection filters, Action<CorsOptions> optionsAction)
+        public static GlobalFilterCollection AddCorsFilter(this GlobalFilterCollection filters, Action<CorsOptions> optionsAction)
         {
             if (filters == null)
             {
@@ -36,6 +36,11 @@ namespace Cosmos.AspNet.Extensions
             optionsAction?.Invoke(options);
 
             CorsCoreHelper.Init(options);
+
+            if (Internal.InternalCorsPolicyManager.EnableGlobalCors)
+            {
+                filters.Add(new CorsAttribute(Internal.InternalCorsPolicyManager.GlobalCorsPolicyName));
+            }
 
             return filters;
         }

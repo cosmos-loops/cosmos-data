@@ -45,7 +45,7 @@
     <Compile Include="CorsOptionsInternal.cs" />
     <Compile Include="CorsPolicy.cs" />
     <Compile Include="CorsPolicyBuilder.cs" />
-    <Compile Include="Internal\HeaderFictionaryExtensions.cs" />
+    <Compile Include="Internal\HeaderDictionaryExtensions.cs" />
     <Compile Include="Internal\CorsPolicyExtensions.cs" />
     <Compile Include="CorsResult.cs" />
     <Compile Include="Internal\InternalCorsPolicyManager.cs" />
