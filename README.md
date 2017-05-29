@@ -8,3 +8,7 @@ Include
 + [Cosmos.AspNet.Extensions.Cors](src/Cosmos.AspNet.Extensions.Cors/README.MD)
 + [Cosmos.AspNet.Extensions.ResponseCompression](src/Cosmos.AspNet.Extensions.ResponseCompression/README.MD)
 + [Cosmos.AspNet.Extensions.ResponseFrameOptions](src/Cosmos.AspNet.Extensions.ResponseFrameOptions/README.MD)
+
+* * *
+
+[MIT](https://mit-license.org/)
