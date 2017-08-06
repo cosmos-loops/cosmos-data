@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Cosmos.AspNet.Extensions</RootNamespace>
-    <AssemblyName>Cosmos.AspNet.Extensions.HttpActionResult</AssemblyName>
+    <AssemblyName>Cosmos.AspNet.Extensions.HttpActionResults</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -83,7 +83,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Cosmos.AspNet.Extensions.HttpActionResult.nuspec" />
+    <None Include="Cosmos.AspNet.Extensions.HttpActionResults.nuspec">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cosmos.AspNet.Extensions.Common\Cosmos.AspNet.Extensions.Common.csproj">
