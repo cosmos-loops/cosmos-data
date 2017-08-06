@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Cosmos.AspNet.Extensions;
 
 namespace Cosmos.AspNet.Test.Controllers
@@ -46,7 +42,7 @@ namespace Cosmos.AspNet.Test.Controllers
         public ActionResult CorsDemo() => Content("CORS: OK");
 
         //[ValidateInput(false)]
-      
+
         public ActionResult AntiXssDemo(string parameters) //=> Content($"AntiXSS: {parameters.ToSafeHtmlString()}");
         {
             var p1 = parameters;

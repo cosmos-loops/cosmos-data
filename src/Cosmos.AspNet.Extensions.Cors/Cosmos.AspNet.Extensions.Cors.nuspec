@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>0.0.1-alpha1-10300</version>
+    <version>0.0.1-alpha1-10500</version>
     <title>$title$</title>
     <authors>AlexLEWIS</authors>
     <owners>AlexLEWIS</owners>
@@ -12,7 +12,6 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>CORS extensions for ASP.NET</description>
     <!--<releaseNotes>Summary of changes made in this release of the package.</releaseNotes>-->
-    <copyright>Copyright 2017</copyright>
     <tags>Cosmos AspNet Extensions</tags>
 
     <dependencies>
