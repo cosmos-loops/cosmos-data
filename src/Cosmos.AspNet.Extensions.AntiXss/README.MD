@@ -1,1 +1,0 @@
-﻿# Cosmos.AspNet.Extensions.AntiXss
