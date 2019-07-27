@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\build\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>7.2</LangVersion>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AssemblyName>Cosmos.Dapper.PostgreSql</AssemblyName>
+    <PackageId>Cosmos.Dapper.PostgreSql</PackageId>
+    <Description>PostgreSql package for Cosmos.Dapper</Description>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\extensions\dialects\src\Cosmos.Data.Extensions.Sqlite\Cosmos.Data.Extensions.Sqlite.csproj" />
+    <ProjectReference Include="..\Cosmos.Dapper\Cosmos.Dapper.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.2.4" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\..\build\common.props" />
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>7.2</LangVersion>
+        <RootNamespace />
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\extensions\dialects\src\Cosmos.Data.Extensions.MySql\Cosmos.Data.Extensions.MySql.csproj" />
+      <ProjectReference Include="..\Cosmos.FreeSql\Cosmos.FreeSql.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Cosmos\Data" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FreeSql.Provider.MySql" Version="0.7.16" />
+    </ItemGroup>
+
+</Project>

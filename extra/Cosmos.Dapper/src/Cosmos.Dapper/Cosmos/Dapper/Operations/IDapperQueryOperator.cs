@@ -1,0 +1,91 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Threading.Tasks;
+using Dapper;
+
+namespace Cosmos.Dapper.Operations
+{
+    public interface IDapperQueryOperator
+    {
+       Task<IEnumerable<object>> QueryAsync(string sql, object param = null, CommandType? commandType = null);
+        Task<IEnumerable<object>> QueryAsync(CommandDefinition command);
+        Task<object> QueryFirstAsync(CommandDefinition command);
+        Task<object> QueryFirstOrDefaultAsync(CommandDefinition command);
+        Task<object> QuerySingleAsync(CommandDefinition command);
+        Task<object> QuerySingleOrDefaultAsync(CommandDefinition command);
+        Task<IEnumerable<T>> QueryAsync<T>(string sql, object param = null, CommandType? commandType = null);
+        Task<T> QueryFirstAsync<T>(string sql, object param = null, CommandType? commandType = null);
+        Task<T> QueryFirstOrDefaultAsync<T>(string sql, object param = null, CommandType? commandType = null);
+        Task<T> QuerySingleAsync<T>(string sql, object param = null, CommandType? commandType = null);
+        Task<T> QuerySingleOrDefaultAsync<T>(string sql, object param = null, CommandType? commandType = null);
+        Task<IEnumerable<object>> QueryAsync(Type type, string sql, object param = null, CommandType? commandType = null);
+        Task<object> QueryFirstAsync(Type type, string sql, object param = null, CommandType? commandType = null);
+        Task<object> QueryFirstOrDefaultAsync(Type type, string sql, object param = null, CommandType? commandType = null);
+        Task<object> QuerySingleAsync(Type type, string sql, object param = null, CommandType? commandType = null);
+        Task<object> QuerySingleOrDefaultAsync(Type type, string sql, object param = null, CommandType? commandType = null);
+        Task<IEnumerable<T>> QueryAsync<T>(CommandDefinition command);
+        Task<IEnumerable<object>> QueryAsync(Type type, CommandDefinition command);
+        Task<object> QueryFirstAsync(Type type, CommandDefinition command);
+        Task<object> QueryFirstOrDefaultAsync(Type type, CommandDefinition command);
+        Task<object> QuerySingleAsync(Type type, CommandDefinition command);
+        Task<object> QuerySingleOrDefaultAsync(Type type, CommandDefinition command);
+        Task<IEnumerable<TReturn>> QueryAsync<T1, T2, TReturn>(string sql, Func<T1, T2, TReturn> map, object param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        Task<IEnumerable<TReturn>> QueryAsync<T1, T2, TReturn>(CommandDefinition command, Func<T1, T2, TReturn> map, string splitOn = "Id");
+        Task<IEnumerable<TReturn>> QueryAsync<T1, T2, T3, TReturn>(string sql, Func<T1, T2, T3, TReturn> map, object param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        Task<IEnumerable<TReturn>> QueryAsync<T1, T2, T3, TReturn>(CommandDefinition command, Func<T1, T2, T3, TReturn> map, string splitOn = "Id");
+        Task<IEnumerable<TReturn>> QueryAsync<T1, T2, T3, T4, TReturn>(string sql, Func<T1, T2, T3, T4, TReturn> map, object param = null, bool buffered = true,
+            string splitOn = "Id", CommandType? commandType = null);
+        Task<IEnumerable<TReturn>> QueryAsync<T1, T2, T3, T4, TReturn>(CommandDefinition command, Func<T1, T2, T3, T4, TReturn> map, string splitOn = "Id");
+        Task<IEnumerable<TReturn>> QueryAsync<T1, T2, T3, T4, T5, TReturn>(string sql, Func<T1, T2, T3, T4, T5, TReturn> map, object param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        Task<IEnumerable<TReturn>> QueryAsync<T1, T2, T3, T4, T5, TReturn>(CommandDefinition command, Func<T1, T2, T3, T4, T5, TReturn> map, string splitOn = "Id");
+        Task<IEnumerable<TReturn>> QueryAsync<T1, T2, T3, T4, T5, T6, TReturn>(string sql, Func<T1, T2, T3, T4, T5, T6, TReturn> map, object param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        Task<IEnumerable<TReturn>> QueryAsync<T1, T2, T3, T4, T5, T6, TReturn>(CommandDefinition command, Func<T1, T2, T3, T4, T5, T6, TReturn> map, string splitOn = "Id");
+        Task<IEnumerable<TReturn>> QueryAsync<T1, T2, T3, T4, T5, T6, T7, TReturn>(string sql, Func<T1, T2, T3, T4, T5, T6, T7, TReturn> map, object param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        Task<IEnumerable<TReturn>> QueryAsync<T1, T2, T3, T4, T5, T6, T7, TReturn>(CommandDefinition command, Func<T1, T2, T3, T4, T5, T6, T7, TReturn> map, string splitOn = "Id");
+        Task<IEnumerable<TReturn>> QueryAsync<TReturn>(string sql, Type[] types, Func<object[], TReturn> map, object param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        Task<SqlMapper.GridReader> QueryMultipleAsync(string sql, object param = null, CommandType? commandType = null);
+        Task<SqlMapper.GridReader> QueryMultipleAsync(CommandDefinition command);
+        IEnumerable<object> Query(string sql, object param = null, bool buffered = true, CommandType? commandType = null);
+        object QueryFirst(string sql, object param = null, CommandType? commandType = null);
+        object QueryFirstOrDefault(string sql, object param = null, CommandType? commandType = null);
+        object QuerySingle(string sql, object param = null, CommandType? commandType = null);
+        object QuerySingleOrDefault(string sql, object param = null, CommandType? commandType = null);
+        IEnumerable<T> Query<T>(string sql, object param = null, bool buffered = true, CommandType? commandType = null);
+        T QueryFirst<T>(string sql, object param = null, CommandType? commandType = null);
+        T QueryFirstOrDefault<T>(string sql, object param = null, CommandType? commandType = null);
+        T QuerySingle<T>(string sql, object param = null, CommandType? commandType = null);
+        T QuerySingleOrDefault<T>(string sql, object param = null, CommandType? commandType = null);
+        IEnumerable<object> Query(Type type, string sql, object param = null, bool buffered = true, CommandType? commandType = null);
+        object QueryFirst(Type type, string sql, object param = null, CommandType? commandType = null);
+        object QueryFirstOrDefault(Type type, string sql, object param = null, CommandType? commandType = null);
+        object QuerySingle(Type type, string sql, object param = null, CommandType? commandType = null);
+        object QuerySingleOrDefault(Type type, string sql, object param = null, CommandType? commandType = null);
+        IEnumerable<T> Query<T>(CommandDefinition command);
+        T QueryFirst<T>(CommandDefinition command);
+        T QueryFirstOrDefault<T>(CommandDefinition command);
+        T QuerySingle<T>(CommandDefinition command);
+        T QuerySingleOrDefault<T>(CommandDefinition command);
+        SqlMapper.GridReader QueryMultiple(string sql, object param = null, CommandType? commandType = null);
+        SqlMapper.GridReader QueryMultiple(CommandDefinition command);
+        IEnumerable<TReturn> Query<T1, T2, TReturn>(string sql, Func<T1, T2, TReturn> map, object param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        IEnumerable<TReturn> Query<T1, T2, T3, TReturn>(string sql, Func<T1, T2, T3, TReturn> map, object param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        IEnumerable<TReturn> Query<T1, T2, T3, T4, TReturn>(string sql, Func<T1, T2, T3, T4, TReturn> map, object param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        IEnumerable<TReturn> Query<T1, T2, T3, T4, T5, TReturn>(string sql, Func<T1, T2, T3, T4, T5, TReturn> map, object param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        IEnumerable<TReturn> Query<T1, T2, T3, T4, T5, T6, TReturn>(string sql, Func<T1, T2, T3, T4, T5, T6, TReturn> map, object param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        IEnumerable<TReturn> Query<T1, T2, T3, T4, T5, T6, T7, TReturn>(string sql, Func<T1, T2, T3, T4, T5, T6, T7, TReturn> map, object param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        Task<IEnumerable<T1>> QueryAsync<T1, T2>(string sql, dynamic param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        Task<IEnumerable<T1>> QueryAsync<T1, T2, T3>(string sql, dynamic param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        Task<IEnumerable<T1>> QueryAsync<T1, T2, T3, T4>(string sql, dynamic param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        Task<IEnumerable<T1>> QueryAsync<T1, T2, T3, T4, T5>(string sql, dynamic param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        Task<IEnumerable<T1>> QueryAsync<T1, T2, T3, T4, T5, T6>(string sql, dynamic param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        Task<IEnumerable<T1>> QueryAsync<T1, T2, T3, T4, T5, T6, T7>(string sql, dynamic param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        IEnumerable<T1> Query<T1, T2>(string sql, dynamic param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        IEnumerable<T1> Query<T1, T2, T3>(string sql, dynamic param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        IEnumerable<T1> Query<T1, T2, T3, T4>(string sql, dynamic param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        IEnumerable<T1> Query<T1, T2, T3, T4, T5>(string sql, dynamic param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        IEnumerable<T1> Query<T1, T2, T3, T4, T5, T6>(string sql, dynamic param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        IEnumerable<T1> Query<T1, T2, T3, T4, T5, T6, T7>(string sql, dynamic param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+        IEnumerable<TReturn> Query<TReturn>(string sql, Type[] types, Func<object[], TReturn> map, object param = null, bool buffered = true, string splitOn = "Id", CommandType? commandType = null);
+    }
+}

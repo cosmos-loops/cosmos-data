@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\..\build\common.props" />
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>7.2</LangVersion>
+        <RootNamespace />
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MySqlConnector" Version="0.57.0-beta4" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\..\src\Cosmos.Data\Cosmos.Data.csproj" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Data.Extensions.MySqlConnector</AssemblyName>
+        <PackageId>Cosmos.Data.Extensions.MySqlConnector</PackageId>
+        <Description>MySqlConnector package for Cosmos.Data.</Description>
+        <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+        <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+        <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    </PropertyGroup>
+
+</Project>

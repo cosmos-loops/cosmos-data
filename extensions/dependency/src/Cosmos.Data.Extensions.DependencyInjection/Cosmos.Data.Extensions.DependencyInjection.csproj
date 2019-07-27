@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\build\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>7.2</LangVersion>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AssemblyName>Cosmos.Data.Extensions.DependencyInjection</AssemblyName>
+    <PackageId>Cosmos.Data.Extensions.DependencyInjection</PackageId>
+    <Description>Extensions of IOC component Microsoft.Extensions.DependencyInjection for Cosmos data library</Description>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Cosmos.Extensions.DependencyInjection" Version="0.1.1-alpha3-123037" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.0.0-preview4.19216.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\src\Cosmos.Data\Cosmos.Data.csproj" />
+  </ItemGroup>
+
+</Project>
