@@ -7,6 +7,9 @@
 
 namespace System.Data.SQLite
 {
+    /// <summary>
+    /// Extensions for Sqlite
+    /// </summary>
     // ReSharper disable once InconsistentNaming
     public static partial class SQLiteExtensions
     {

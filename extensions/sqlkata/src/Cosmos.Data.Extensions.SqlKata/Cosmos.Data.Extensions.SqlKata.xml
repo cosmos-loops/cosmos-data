@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Data.Extensions.SqlKata</name>
+    </assembly>
+    <members>
+        <member name="T:Cosmos.Data.SqlKata.BaseQueryBuilder">
+            <summary>
+            Base sqlkata query builder
+            </summary>
+        </member>
+        <member name="F:Cosmos.Data.SqlKata.BaseQueryBuilder._connection">
+            <summary>
+            Connection
+            </summary>
+        </member>
+        <member name="F:Cosmos.Data.SqlKata.BaseQueryBuilder._compiler">
+            <summary>
+            Compiler
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.SqlKata.BaseQueryBuilder.#ctor(System.Data.IDbConnection,SqlKata.Compilers.Compiler)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.SqlKata.BaseQueryBuilder"/>
+            </summary>
+            <param name="connector"></param>
+            <param name="compiler"></param>
+        </member>
+        <member name="M:Cosmos.Data.SqlKata.BaseQueryBuilder.#ctor(System.Data.IDbConnection,SqlKata.Compilers.Compiler,System.String)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.SqlKata.BaseQueryBuilder"/>
+            </summary>
+            <param name="connector"></param>
+            <param name="compiler"></param>
+            <param name="table"></param>
+        </member>
+        <member name="M:Cosmos.Data.SqlKata.BaseQueryBuilder.Compiler">
+            <summary>
+            Compiler
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.SqlKata.BaseQueryBuilder.Compiler(System.Collections.Generic.IEnumerable{SqlKata.Query})">
+            <summary>
+            Compiler
+            </summary>
+            <param name="queries"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.SqlKata.BaseQueryBuilder.Compiler(SqlKata.Query[])">
+            <summary>
+            Compiler
+            </summary>
+            <param name="queryParams"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

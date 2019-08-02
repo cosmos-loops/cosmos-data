@@ -11,6 +11,11 @@ namespace System.Data.SqlClient
 {
     public static partial class SqlClientExtensions
     {
+        /// <summary>
+        /// Add range with value
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="values"></param>
         public static void AddRangeWithValue(this SqlParameterCollection @this, Dictionary<string, object> values)
         {
             foreach (var keyValuePair in values)

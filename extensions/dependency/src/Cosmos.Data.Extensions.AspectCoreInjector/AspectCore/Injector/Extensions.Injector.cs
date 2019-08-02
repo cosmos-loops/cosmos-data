@@ -1,6 +1,5 @@
 ﻿using System;
 using Cosmos.Data;
-using Cosmos.Data.Context;
 using Cosmos.Data.Core;
 using Cosmos.Data.Internals;
 using Cosmos.Data.Store;
@@ -14,6 +13,13 @@ namespace AspectCore.Injector
     /// </summary>
     public static class AspectCoreInjectorExtensions
     {
+        /// <summary>
+        /// Add Cosmos Data Support
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static IServiceContainer AddCosmosDataSupport(this IServiceContainer services, Action<DbContextConfig> context = null)
         {
             if (services == null)

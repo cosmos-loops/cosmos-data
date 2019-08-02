@@ -9,8 +9,16 @@ using System.Data;
 
 namespace Npgsql
 {
-    public static partial class MySqlClientExtensions
+    /// <summary>
+    /// Extensions for Npgsql
+    /// </summary>
+    public static partial class NpgsqlClientExtensions
     {
+        /// <summary>
+        /// Execute DataSet
+        /// </summary>
+        /// <param name="this"></param>
+        /// <returns></returns>
         public static DataSet ExecuteDataSet(this NpgsqlCommand @this)
         {
             var ds = new DataSet();
@@ -22,6 +30,11 @@ namespace Npgsql
             return ds;
         }
 
+        /// <summary>
+        /// Execute DataTable
+        /// </summary>
+        /// <param name="this"></param>
+        /// <returns></returns>
         public static DataTable ExecuteDataTable(this NpgsqlCommand @this)
         {
             var dt = new DataTable();

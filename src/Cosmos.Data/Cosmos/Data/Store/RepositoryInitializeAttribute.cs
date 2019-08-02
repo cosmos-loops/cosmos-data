@@ -6,9 +6,18 @@ using Cosmos.IdUtils;
 
 namespace Cosmos.Data.Store
 {
+    /// <summary>
+    /// Repository initialize attribute
+    /// </summary>
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
     public class RepositoryInitializeAttribute : AbstractInterceptorAttribute
     {
+        /// <summary>
+        /// Invoke
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="next"></param>
+        /// <returns></returns>
         public override Task Invoke(AspectContext context, AspectDelegate next)
         {
             var instance = context.Implementation;

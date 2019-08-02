@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Data.Extensions.DependencyInjection</name>
+    </assembly>
+    <members>
+        <member name="T:Cosmos.Data.DbContextConfig">
+            <summary>
+            DbContext config
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.DbContextConfig.Services">
+            <summary>
+            Gets services
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.DbContextConfig.RegisterDbContext(System.Action{Microsoft.Extensions.DependencyInjection.IServiceCollection})">
+            <summary>
+            Register DbContext
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.DependencyInjectionExtensions">
+            <summary>
+            To register Cosmos.Data
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.DependencyInjectionExtensions.AddCosmosDataSupport(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Cosmos.Data.DbContextConfig})">
+            <summary>
+            Add Cosmos Data Support
+            </summary>
+            <param name="services"></param>
+            <param name="context"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.RepositoryManagerExtensions">
+            <summary>
+            To register repository of Cosmos.Data
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.RepositoryManagerExtensions.AddRepository``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String)">
+            <summary>
+            Add repository
+            </summary>
+            <param name="services"></param>
+            <param name="repositoryName"></param>
+            <typeparam name="TService"></typeparam>
+            <typeparam name="TImplementation"></typeparam>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

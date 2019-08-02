@@ -9,8 +9,16 @@ using System.Collections.Generic;
 
 namespace MySql.Data.MySqlClient
 {
+    /// <summary>
+    /// Extensions for <see cref="MySqlClient"/>
+    /// </summary>
     public static partial class MySqlClientExtensions
     {
+        /// <summary>
+        /// Add range with value
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="values"></param>
         public static void AddRangeWithValue(this MySqlParameterCollection @this, Dictionary<string, object> values)
         {
             foreach (var keyValuePair in values)

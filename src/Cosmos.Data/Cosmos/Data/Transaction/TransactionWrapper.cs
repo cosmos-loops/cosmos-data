@@ -11,7 +11,7 @@ namespace Cosmos.Data.Transaction
     public class TransactionWrapper : DisposableObjects, ITransactionWrapper
     {
         /// <summary>
-        /// 
+        /// Create a new instance of <see cref="TransactionWrapper"/>
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="operator"></param>
@@ -22,6 +22,12 @@ namespace Cosmos.Data.Transaction
             AddDisposableAction("_transactionWrapper", () => CurrentTransaction?.Dispose());
         }
 
+        /// <summary>
+        /// Create a new instance of <see cref="TransactionWrapper"/>
+        /// </summary>
+        /// <param name="connection"></param>
+        /// <param name="level"></param>
+        /// <param name="operator"></param>
         public TransactionWrapper(IDbConnection connection, IsolationLevel level, TransactionAppendOperator @operator = null)
         {
             Connection = connection ?? throw new ArgumentNullException(nameof(connection));
@@ -39,6 +45,10 @@ namespace Cosmos.Data.Transaction
             AddDisposableAction("_transactionWrapper", () => CurrentTransaction?.Dispose());
         }
 
+        /// <summary>
+        /// Create a new instance of <see cref="TransactionWrapper"/>
+        /// </summary>
+        /// <param name="wrapper"></param>
         public TransactionWrapper(TransactionWrapper wrapper)
         {
             wrapper.CheckNull(nameof(wrapper));
@@ -87,7 +97,7 @@ namespace Cosmos.Data.Transaction
         /// <summary>
         /// To begin a new transaction with specific <see cref="IsolationLevel"/>.
         /// </summary>
-        /// <param name="li">Special <see cref="IsolationLevel"/></param>
+        /// <param name="il">Special <see cref="IsolationLevel"/></param>
         /// <returns></returns>
         public IDbTransaction Begin(IsolationLevel il)
         {
@@ -155,7 +165,5 @@ namespace Cosmos.Data.Transaction
         {
             return new NullTransactionWrapper();
         }
-
-
     }
 }

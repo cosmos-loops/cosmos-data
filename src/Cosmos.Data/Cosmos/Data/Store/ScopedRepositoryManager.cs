@@ -5,11 +5,17 @@ using Cosmos.IdUtils;
 
 namespace Cosmos.Data.Store
 {
+    /// <summary>
+    /// Scoped repository manager
+    /// </summary>
     public sealed class ScopedRepositoryManager : DisposableObjects
     {
         private readonly ConcurrentDictionary<Type, object> _scopedRepositoryInstances;
         private readonly ConcurrentDictionary<Type, ScopedRepositoryMetadata> _repositoryMetadatas;
 
+        /// <summary>
+        /// Create a new instance of <see cref="ScopedRepositoryManager"/>
+        /// </summary>
         public ScopedRepositoryManager()
         {
             _scopedRepositoryInstances = new ConcurrentDictionary<Type, object>();

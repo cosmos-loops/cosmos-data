@@ -10,6 +10,14 @@ namespace Microsoft.Extensions.DependencyInjection
     /// </summary>
     public static class RepositoryManagerExtensions
     {
+        /// <summary>
+        /// Add repository
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="repositoryName"></param>
+        /// <typeparam name="TService"></typeparam>
+        /// <typeparam name="TImplementation"></typeparam>
+        /// <returns></returns>
         public static IServiceCollection AddRepository<TService, TImplementation>(this IServiceCollection services, string repositoryName = "")
             where TService : class, IRepository
             where TImplementation : class, TService

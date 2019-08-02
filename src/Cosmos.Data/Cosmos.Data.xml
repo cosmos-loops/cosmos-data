@@ -1,0 +1,2403 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Cosmos.Data.ConcurrencyException">
+            <summary>
+            Concurrency exception
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.ConcurrencyException.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.ConcurrencyException"/>
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.ConcurrencyException.#ctor(System.Exception)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.ConcurrencyException"/>
+            </summary>
+            <param name="exception"></param>
+        </member>
+        <member name="M:Cosmos.Data.ConcurrencyException.#ctor(System.String,System.Exception)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.ConcurrencyException"/>
+            </summary>
+            <param name="message"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="M:Cosmos.Data.ConcurrencyException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.ConcurrencyException"/>
+            </summary>
+            <param name="message"></param>
+            <param name="flag"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="M:Cosmos.Data.ConcurrencyException.#ctor(System.Int64,System.String,System.Exception)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.ConcurrencyException"/>
+            </summary>
+            <param name="errorCode"></param>
+            <param name="message"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="M:Cosmos.Data.ConcurrencyException.#ctor(System.Int64,System.String,System.String,System.Exception)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.ConcurrencyException"/>
+            </summary>
+            <param name="errorCode"></param>
+            <param name="message"></param>
+            <param name="flag"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="T:Cosmos.Data.Context.DbContextConfigBase`1">
+            <summary>
+            DbContext config base
+            </summary>
+            <typeparam name="TConfiguration"></typeparam>
+        </member>
+        <member name="P:Cosmos.Data.Context.DbContextConfigBase`1.AdditionalDependencyRegisterBag">
+            <summary>
+            Additional dependency register bag
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Context.DbContextConfigBase`1.#ctor">
+            <summary>
+            Create a new instance of DbContextConfigBase
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Context.DbContextConfigBase`1.Configure(System.Action{`0})">
+            <summary>
+            Configure
+            </summary>
+            <param name="configureAction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Context.DbContextConfigBase`1.Configure(System.Action{Cosmos.Dependency.RegisterProxyBag})">
+            <summary>
+            Configure
+            </summary>
+            <param name="configureAction"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.Context.DbContextNameAttribute">
+            <summary>
+            DbContext name attribute
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Context.DbContextNameAttribute.#ctor(System.String)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.Context.DbContextNameAttribute"/>
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="P:Cosmos.Data.Context.DbContextNameAttribute.Name">
+            <summary>
+            Gets the name of DbContext
+            </summary>
+        </member>
+        <member name="T:Cosmos.Data.Context.IDbContextConfig">
+            <summary>
+            Interface of DbContext config
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Context.IDbContextConfig.Configure(System.Action{Cosmos.Dependency.RegisterProxyBag})">
+            <summary>
+            Configure
+            </summary>
+            <param name="configureAction"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.Context.IDbContextConfigureRegister`1">
+            <summary>
+            Interface of DbContext configure register
+            </summary>
+            <typeparam name="TContainerRegister"></typeparam>
+        </member>
+        <member name="P:Cosmos.Data.Context.IDbContextConfigureRegister`1.Services">
+            <summary>
+            Gets services
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Context.IDbContextConfigureRegister`1.RegisterDbContext(System.Action{`0})">
+            <summary>
+            Register DbContext
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="T:Cosmos.Data.Core.SystemSupportRegistrar">
+            <summary>
+            System level support register
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Core.SystemSupportRegistrar.AddDescriptorOnce(System.String,System.Action{Cosmos.Data.Context.IDbContextConfig})">
+            <summary>
+            Add description once
+            </summary>
+            <param name="key"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:Cosmos.Data.Core.SystemSupportRegistrar.GetActionsOnce">
+            <summary>
+            Gets actions once
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.UnitOfWorkExtensions">
+            <summary>
+            Extensions for UnitOfWork
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWorkExtensions.CreateUnitOfWork(Cosmos.Data.Store.IStoreContextManager)">
+            <summary>
+            Create a new instance of the implementation of <see cref="T:Cosmos.Data.UnitOfWork.IUnitOfWorkOperator"/>.
+            </summary>
+            <param name="manager"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWorkExtensions.CreateUnitOfWork(Cosmos.Data.Store.IStoreContextManager,System.Boolean)">
+            <summary>
+            Create a new instance of the implementation of <see cref="T:Cosmos.Data.UnitOfWork.IUnitOfWorkOperator"/>.
+            </summary>
+            <param name="manager"></param>
+            <param name="manualCommit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWorkExtensions.CreateUnitOfWork(Cosmos.Data.Store.IStoreContextManager,System.Action)">
+            <summary>
+            Create a new instance of the implementation of <see cref="T:Cosmos.Data.UnitOfWork.IUnitOfWorkOperator"/>.
+            </summary>
+            <param name="manager"></param>
+            <param name="disposedAction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWorkExtensions.CreateUnitOfWork(Cosmos.Data.Store.IStoreContextManager,System.Action,System.Boolean)">
+            <summary>
+            Create a new instance of the implementation of <see cref="T:Cosmos.Data.UnitOfWork.IUnitOfWorkOperator"/>.
+            </summary>
+            <param name="manager"></param>
+            <param name="disposedAction"></param>
+            <param name="manualCommit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWorkExtensions.CreateUnitOfWorkAsync(Cosmos.Data.Store.IStoreContextManager)">
+            <summary>
+            Create a new instance of the implementation of <see cref="T:Cosmos.Data.UnitOfWork.IUnitOfWorkOperator"/> async.
+            </summary>
+            <param name="manager"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWorkExtensions.CreateUnitOfWorkAsync(Cosmos.Data.Store.IStoreContextManager,System.Boolean)">
+            <summary>
+            Create a new instance of the implementation of <see cref="T:Cosmos.Data.UnitOfWork.IUnitOfWorkOperator"/> async.
+            </summary>
+            <param name="manager"></param>
+            <param name="manualCommit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWorkExtensions.CreateUnitOfWorkAsync(Cosmos.Data.Store.IStoreContextManager,System.Action)">
+            <summary>
+            Create a new instance of the implementation of <see cref="T:Cosmos.Data.UnitOfWork.IUnitOfWorkOperator"/> async.
+            </summary>
+            <param name="manager"></param>
+            <param name="disposedAction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWorkExtensions.CreateUnitOfWorkAsync(Cosmos.Data.Store.IStoreContextManager,System.Action,System.Boolean)">
+            <summary>
+            Create a new instance of the implementation of <see cref="T:Cosmos.Data.UnitOfWork.IUnitOfWorkOperator"/> async.
+            </summary>
+            <param name="manager"></param>
+            <param name="disposedAction"></param>
+            <param name="manualCommit"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.Internals.DataSupportFlag">
+            <summary>
+            Data support flags
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Internals.DataSupportFlag.Value">
+            <summary>
+            Gets or sets value for Cosmos.Data
+            </summary>
+        </member>
+        <member name="T:Cosmos.Data.Store.IRepository">
+            <summary>
+            Interface of repository
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Store.IRepository.ScopedInitialize(Cosmos.Data.Store.IStoreContextManager)">
+            <summary>
+            Scoped initialize
+            </summary>
+            <param name="manager"></param>
+        </member>
+        <member name="T:Cosmos.Data.Store.IQueryableStore`2">
+            <summary>
+            Interface of Queryable store
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TKey"></typeparam>
+        </member>
+        <member name="M:Cosmos.Data.Store.IQueryableStore`2.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Counts by given condition
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IQueryableStore`2.CountAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Counts by given condition async
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IQueryableStore`2.Exist(`1)">
+            <summary>
+            Exists or not by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IQueryableStore`2.Exist(`1[])">
+            <summary>
+            Exists or not by a set of id
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IQueryableStore`2.Exist(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Exists or not by given condition
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IQueryableStore`2.ExistAsync(`1)">
+            <summary>
+            Exists or not by id async
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IQueryableStore`2.ExistAsync(`1[])">
+            <summary>
+            Exists or not by a set of id async
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IQueryableStore`2.ExistAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Exists or not by given condition async
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IQueryableStore`2.FindById(`1)">
+            <summary>
+            Find result by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IQueryableStore`2.FindByIds(`1[])">
+            <summary>
+            Find a collection of result by a set of id
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IQueryableStore`2.FindByIds(System.Collections.Generic.IEnumerable{`1})">
+            <summary>
+            Find a collection of result by a set of id
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IQueryableStore`2.Find(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Find a collection of result by by given condition
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IQueryableStore`2.Find(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Int32,System.Int32)">
+            <summary>
+            Find a collection of paged result by given condition
+            </summary>
+            <param name="predicate"></param>
+            <param name="pageNumber"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IQueryableStore`2.FindFirstOrDefault(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Find first or default result by given condition
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IQueryableStore`2.QueryPage(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Int32,System.Int32)">
+            <summary>
+            Query pageable results by given condition
+            </summary>
+            <param name="predicate"></param>
+            <param name="pageNumber"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IQueryableStore`2.FindByIdAsync(`1,System.Threading.CancellationToken)">
+            <summary>
+            Find result by id async
+            </summary>
+            <param name="id"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IQueryableStore`2.FindByIdsAsync(`1[])">
+            <summary>
+            Find a collection of result by a set of id async
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IQueryableStore`2.FindByIdsAsync(System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)">
+            <summary>
+            Find a collection of result by a set of id async
+            </summary>
+            <param name="ids"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IQueryableStore`2.FindAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Find a collection of paged results by given condition async
+            </summary>
+            <param name="predicate"></param>
+            <param name="pageNumber"></param>
+            <param name="pageSize"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IQueryableStore`2.FindFirstOrDefaultAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Find first or default result by given condition async
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IQueryableStore`2.QueryPageAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Int32,System.Int32)">
+            <summary>
+            Query pageable results by given condition async
+            </summary>
+            <param name="predicate"></param>
+            <param name="pageNumber"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.Store.IWriteableStore`2">
+            <summary>
+            Interface of writeable store
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TKey"></typeparam>
+        </member>
+        <member name="M:Cosmos.Data.Store.IWriteableStore`2.Add(`0)">
+            <summary>
+            Add
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Cosmos.Data.Store.IWriteableStore`2.Add(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Add
+            </summary>
+            <param name="entities"></param>
+        </member>
+        <member name="M:Cosmos.Data.Store.IWriteableStore`2.AddAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Add async
+            </summary>
+            <param name="entity"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IWriteableStore`2.AddAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)">
+            <summary>
+            Add async
+            </summary>
+            <param name="entities"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IWriteableStore`2.Update(`0)">
+            <summary>
+            Update
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Cosmos.Data.Store.IWriteableStore`2.Update(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Update
+            </summary>
+            <param name="entities"></param>
+        </member>
+        <member name="M:Cosmos.Data.Store.IWriteableStore`2.UpdateAsync(`0)">
+            <summary>
+            Update async
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IWriteableStore`2.UpdateAsync(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Update async
+            </summary>
+            <param name="entities"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IWriteableStore`2.Remove(`1)">
+            <summary>
+            Remove by id
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Cosmos.Data.Store.IWriteableStore`2.Remove(`0)">
+            <summary>
+            Remove by entity
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Cosmos.Data.Store.IWriteableStore`2.Remove(System.Collections.Generic.IEnumerable{`1})">
+            <summary>
+            Remove by a set of id
+            </summary>
+            <param name="ids"></param>
+        </member>
+        <member name="M:Cosmos.Data.Store.IWriteableStore`2.Remove(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Remove by a set of entity
+            </summary>
+            <param name="entities"></param>
+        </member>
+        <member name="M:Cosmos.Data.Store.IWriteableStore`2.Remove(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Remove by given condition
+            </summary>
+            <param name="predicate"></param>
+        </member>
+        <member name="M:Cosmos.Data.Store.IWriteableStore`2.RemoveAsync(`1,System.Threading.CancellationToken)">
+            <summary>
+            Remove by id async
+            </summary>
+            <param name="id"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IWriteableStore`2.RemoveAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Remove by entity async
+            </summary>
+            <param name="entity"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IWriteableStore`2.RemoveAsync(System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)">
+            <summary>
+            Remove by a set of id async
+            </summary>
+            <param name="ids"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IWriteableStore`2.RemoveAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)">
+            <summary>
+            Remove by a set of entity async
+            </summary>
+            <param name="entities"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IWriteableStore`2.RemoveAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Threading.CancellationToken)">
+            <summary>
+            Remove by given condition async
+            </summary>
+            <param name="predicate"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.Store.IUnsafeWriteableStore`2">
+            <summary>
+            Interface of unsafe writeable store
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TKey"></typeparam>
+        </member>
+        <member name="M:Cosmos.Data.Store.IUnsafeWriteableStore`2.UnsafeRemove(`1)">
+            <summary>
+            Unsafe remove by id
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Cosmos.Data.Store.IUnsafeWriteableStore`2.UnsafeRemove(`0)">
+            <summary>
+            Unsafe remove by entity
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Cosmos.Data.Store.IUnsafeWriteableStore`2.UnsafeRemove(System.Collections.Generic.IEnumerable{`1})">
+            <summary>
+            Unsafe remove by a set of id
+            </summary>
+            <param name="ids"></param>
+        </member>
+        <member name="M:Cosmos.Data.Store.IUnsafeWriteableStore`2.UnsafeRemove(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Unsafe remove by a set of entity
+            </summary>
+            <param name="entities"></param>
+        </member>
+        <member name="M:Cosmos.Data.Store.IUnsafeWriteableStore`2.UnsafeRemoveAsync(`1,System.Threading.CancellationToken)">
+            <summary>
+            Unsafe remove by id async
+            </summary>
+            <param name="id"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IUnsafeWriteableStore`2.UnsafeRemoveAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Unsafe remove by entity async
+            </summary>
+            <param name="entity"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IUnsafeWriteableStore`2.UnsafeRemoveAsync(System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)">
+            <summary>
+            Unsafe remove by a set of id async
+            </summary>
+            <param name="ids"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IUnsafeWriteableStore`2.UnsafeRemoveAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)">
+            <summary>
+            Unsafe remove by a set of entity async
+            </summary>
+            <param name="entities"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.Store.IStoreContext">
+            <summary>
+            Interface of Store Context
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Store.IStoreContext.Commit">
+            <summary>
+            Commit
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Store.IStoreContext.Commit(System.Action)">
+            <summary>
+            Commit
+            </summary>
+            <param name="callback"></param>
+        </member>
+        <member name="M:Cosmos.Data.Store.IStoreContext.CommitAsync(System.Threading.CancellationToken)">
+            <summary>
+            Commit async
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IStoreContext.CommitAsync(System.Action,System.Threading.CancellationToken)">
+            <summary>
+            Commit async
+            </summary>
+            <param name="callback"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.Store.IStoreContextManager">
+            <summary>
+            Interface of Context Manager
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Store.IStoreContextManager.Commit">
+            <summary>
+            Commit
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Store.IStoreContextManager.CommitAsync(System.Threading.CancellationToken)">
+            <summary>
+            Commit async
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.IStoreContextManager.Register(System.Type,Cosmos.Data.Store.IStoreContext)">
+            <summary>
+            Register
+            </summary>
+            <param name="type"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:Cosmos.Data.Store.RepositoryInitializeAttribute">
+            <summary>
+            Repository initialize attribute
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Store.RepositoryInitializeAttribute.Invoke(AspectCore.DynamicProxy.AspectContext,AspectCore.DynamicProxy.AspectDelegate)">
+            <summary>
+            Invoke
+            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.Store.RepositoryManager">
+            <summary>
+            Repository manager
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Store.RepositoryManager.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.Store.RepositoryManager"/>
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Store.RepositoryManager.Register(System.Type,Cosmos.Data.Store.RepositoryMetadata)">
+            <summary>
+            Register
+            </summary>
+            <param name="implementationType"></param>
+            <param name="metadata"></param>
+        </member>
+        <member name="M:Cosmos.Data.Store.RepositoryManager.Require(System.Type)">
+            <summary>
+            Require by given type
+            </summary>
+            <param name="implementationType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.RepositoryManager.Require``1">
+            <summary>
+            Require by typed argument
+            </summary>
+            <typeparam name="TImplementation"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.Store.RepositoryManagerFactory">
+            <summary>
+            Repository Manager Factory
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Store.RepositoryManagerFactory.CreateInstance">
+            <summary>
+            Gets or creates a new instance of <see cref="T:Cosmos.Data.Store.RepositoryManager"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.Store.RepositoryMapToClassAttribute">
+            <summary>
+            Repository Map to class attribute
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Store.RepositoryMapToClassAttribute.#ctor(System.Type)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.Store.RepositoryMapToClassAttribute"/>
+            </summary>
+            <param name="targetType"></param>
+        </member>
+        <member name="P:Cosmos.Data.Store.RepositoryMapToClassAttribute.ImplementationType">
+            <summary>
+            Gets implementation type
+            </summary>
+        </member>
+        <member name="T:Cosmos.Data.Store.RepositoryMetadata">
+            <summary>
+            Repository metadata
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Store.RepositoryMetadata.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Store.RepositoryMetadata.ServiceType">
+            <summary>
+            Service type
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Store.RepositoryMetadata.ImplementationType">
+            <summary>
+            Implementation type
+            </summary>
+        </member>
+        <member name="T:Cosmos.Data.Store.RepositoryMetadataFactory">
+            <summary>
+            Repository metadata factory
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Store.RepositoryMetadataFactory.Create``2(System.String)">
+            <summary>
+            Create a new <see cref="T:Cosmos.Data.Store.RepositoryMetadata"/>
+            </summary>
+            <param name="name"></param>
+            <typeparam name="TService"></typeparam>
+            <typeparam name="TImplementation"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.RepositoryMetadataFactory.Create(System.Type,System.Type,System.String)">
+            <summary>
+            Create a new <see cref="T:Cosmos.Data.Store.RepositoryMetadata"/>
+            </summary>
+            <param name="typeofService"></param>
+            <param name="typeofImplementaion"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.Store.RepositoryNameAttribute">
+            <summary>
+            Repository name attribute
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Store.RepositoryNameAttribute.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.Store.RepositoryNameAttribute"/>
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Store.RepositoryNameAttribute.#ctor(System.String)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.Store.RepositoryNameAttribute"/>
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="P:Cosmos.Data.Store.RepositoryNameAttribute.Name">
+            <summary>
+            Gets name
+            </summary>
+        </member>
+        <member name="T:Cosmos.Data.Store.ScopedRepositoryManager">
+            <summary>
+            Scoped repository manager
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Store.ScopedRepositoryManager.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.Store.ScopedRepositoryManager"/>
+            </summary>
+        </member>
+        <member name="T:Cosmos.Data.Store.ScopedRepositoryMetadata">
+            <summary>
+            Scpoed repository metadata
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Store.ScopedRepositoryMetadata.#ctor(Cosmos.Data.Store.RepositoryMetadata,Cosmos.IdUtils.TraceIdAccessor)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.Store.ScopedRepositoryMetadata"/>
+            </summary>
+            <param name="metadata"></param>
+            <param name="accessor"></param>
+        </member>
+        <member name="P:Cosmos.Data.Store.ScopedRepositoryMetadata.TranceId">
+            <summary>
+            Trance id
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Store.ScopedRepositoryMetadata.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Store.ScopedRepositoryMetadata.ServiceType">
+            <summary>
+            Service type
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Store.ScopedRepositoryMetadata.ImplementationType">
+            <summary>
+            Implementation type
+            </summary>
+        </member>
+        <member name="T:Cosmos.Data.Store.ScopedStoreContextManager">
+            <summary>
+            Scoped store context manager
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Store.ScopedStoreContextManager.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.Store.ScopedStoreContextManager"/>
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Store.ScopedStoreContextManager.Commit">
+            <summary>
+            Commit
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Store.ScopedStoreContextManager.CommitAsync(System.Threading.CancellationToken)">
+            <summary>
+            Commit async
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Store.ScopedStoreContextManager.Register(System.Type,Cosmos.Data.Store.IStoreContext)">
+            <summary>
+            Register
+            </summary>
+            <param name="type"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:Cosmos.Data.Transaction.NullTransactionCallingWrapper">
+            <summary>
+            An instance of null transaction calling wrapper.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Transaction.NullTransactionCallingWrapper.Instance">
+            <summary>
+            Returns a single instance of <see cref="T:Cosmos.Data.Transaction.NullTransactionCallingWrapper"/>.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.NullTransactionCallingWrapper.#ctor">
+            <summary>
+            Constructor of <see cref="T:Cosmos.Data.Transaction.NullTransactionCallingWrapper"/>.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Transaction.NullTransactionCallingWrapper.Count">
+            <summary>
+            To flag the sum of func in this wrapper. This instance always returns 0.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.NullTransactionCallingWrapper.CommitAsync(System.Data.IDbTransaction)">
+            <summary>
+            Commit async. The method in this instance will do nothing.
+            </summary>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.NullTransactionCallingWrapper.Register(System.Func{System.Data.IDbTransaction,System.Threading.Tasks.Task})">
+            <summary>
+            Register a transaction calling into such wrapper. The method in this instance will do nothing. 
+            </summary>
+            <param name="func"></param>
+        </member>
+        <member name="T:Cosmos.Data.Transaction.ScopedTransactionCallingWrapper">
+            <summary>
+            A scoped type transaction calling wrapper.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.ScopedTransactionCallingWrapper.#ctor">
+            <summary>
+            Constructor of <see cref="T:Cosmos.Data.Transaction.ScopedTransactionCallingWrapper"/>.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Transaction.ScopedTransactionCallingWrapper.Count">
+            <summary>
+            To flag the sum of func in this wrapper.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.ScopedTransactionCallingWrapper.Register(System.Func{System.Data.IDbTransaction,System.Threading.Tasks.Task})">
+            <summary>
+            Register a transaction calling into such wrapper.
+            </summary>
+            <param name="func"></param>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.ScopedTransactionCallingWrapper.CommitAsync(System.Data.IDbTransaction)">
+            <summary>
+            Commit async.
+            </summary>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.Transaction.TransactionAppendOperator">
+            <summary>
+            Transaction append operator
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Transaction.TransactionAppendOperator.BeforeCommit">
+            <summary>
+            Before commit
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Transaction.TransactionAppendOperator.AfterCommit">
+            <summary>
+            After commit
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Transaction.TransactionAppendOperator.BeforeRollback">
+            <summary>
+            Before rollback
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Transaction.TransactionAppendOperator.AfterRollback">
+            <summary>
+            After rollback
+            </summary>
+        </member>
+        <member name="T:Cosmos.Data.Transaction.TransactionWrapper">
+            <summary>
+            A wrapper for transaction.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.TransactionWrapper.#ctor(System.Data.IDbConnection,Cosmos.Data.Transaction.TransactionAppendOperator)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.Transaction.TransactionWrapper"/>
+            </summary>
+            <param name="connection"></param>
+            <param name="operator"></param>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.TransactionWrapper.#ctor(System.Data.IDbConnection,System.Data.IsolationLevel,Cosmos.Data.Transaction.TransactionAppendOperator)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.Transaction.TransactionWrapper"/>
+            </summary>
+            <param name="connection"></param>
+            <param name="level"></param>
+            <param name="operator"></param>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.TransactionWrapper.#ctor(Cosmos.Data.Transaction.TransactionWrapper)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.Transaction.TransactionWrapper"/>
+            </summary>
+            <param name="wrapper"></param>
+        </member>
+        <member name="P:Cosmos.Data.Transaction.TransactionWrapper.CurrentTransaction">
+            <summary>
+            Returns current transaction. If there's no transaction, it'll return null.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Transaction.TransactionWrapper.IsolationLevel">
+            <summary>
+            Gets the <see cref="P:Cosmos.Data.Transaction.TransactionWrapper.IsolationLevel"/> of current transaction.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.TransactionWrapper.Begin">
+            <summary>
+            To begin a new transaction.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.TransactionWrapper.Begin(System.Data.IsolationLevel)">
+            <summary>
+            To begin a new transaction with specific <see cref="P:Cosmos.Data.Transaction.TransactionWrapper.IsolationLevel"/>.
+            </summary>
+            <param name="il">Special <see cref="P:Cosmos.Data.Transaction.TransactionWrapper.IsolationLevel"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.TransactionWrapper.Commit(System.Boolean)">
+            <summary>
+            Commit.
+            </summary>
+            <param name="clearTransaction">Do need clear transaction after commit.</param>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.TransactionWrapper.Rollback(System.Boolean)">
+            <summary>
+            Rollback.
+            </summary>
+            <param name="clearTransaction">Do need clear transaction after rollback.</param>
+        </member>
+        <member name="P:Cosmos.Data.Transaction.TransactionWrapper.IsNull">
+            <summary>
+            To flag this instance is NullTransactionWrapper or not. This will always return false.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.TransactionWrapper.CreateFromTransaction(System.Data.IDbTransaction,Cosmos.Data.Transaction.TransactionAppendOperator)">
+            <summary>
+            To create a new instance of <see cref="T:Cosmos.Data.Transaction.TransactionWrapper"/>.
+            </summary>
+            <param name="transaction"></param>
+            <param name="operator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.TransactionWrapper.CreateNull">
+            <summary>
+            Returns a new instance of <see cref="T:Cosmos.Data.Transaction.NullTransactionWrapper"/>.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.Transaction.NullTransactionWrapper">
+            <summary>
+            A wrapper for null transaction.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Transaction.NullTransactionWrapper.CurrentTransaction">
+            <summary>
+            Returns current transaction. If there's no transaction, it'll return null.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.NullTransactionWrapper.Begin">
+            <summary>
+            To begin a new transaction.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.NullTransactionWrapper.Begin(System.Data.IsolationLevel)">
+            <summary>
+            To begin a new transaction with specific <see cref="T:System.Data.IsolationLevel"/>.
+            </summary>
+            <param name="li">Special <see cref="T:System.Data.IsolationLevel"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.NullTransactionWrapper.Commit(System.Boolean)">
+            <summary>
+            Commit.
+            </summary>
+            <param name="clearTransaction">Do need clear transaction after commit.</param>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.NullTransactionWrapper.Rollback(System.Boolean)">
+            <summary>
+            Rollback.
+            </summary>
+            <param name="clearTransaction">Do need clear transaction after rollback.</param>
+        </member>
+        <member name="P:Cosmos.Data.Transaction.NullTransactionWrapper.IsNull">
+            <summary>
+            To flag this instance is NullTransactionWrapper or not. This will always return true.
+            </summary>
+        </member>
+        <member name="T:Cosmos.Data.Transaction.NullDbTransaction">
+            <summary>
+            Null Transaction
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Transaction.NullDbTransaction.Instance">
+            <summary>
+            Gets instance of <see cref="T:Cosmos.Data.Transaction.NullDbTransaction"/>
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Transaction.NullDbTransaction.DbConnection">
+            <summary>
+            Gets null DbConnection
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.NullDbTransaction.Commit">
+            <summary>
+            Commit.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.NullDbTransaction.Rollback">
+            <summary>
+            Rollback.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Transaction.NullDbTransaction.IsolationLevel">
+            <summary>
+            Isolation level
+            </summary>
+        </member>
+        <member name="T:Cosmos.Data.UnitOfWork.IUnitOfWorkOperator">
+            <summary>
+            Interface of UnitOfWork operator
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWork.IUnitOfWorkOperator.Commit">
+            <summary>
+            Commit
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWork.IUnitOfWorkOperator.CommitAsync(System.Threading.CancellationToken)">
+            <summary>
+            Commit async
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.UnitOfWork.UnitOfWorkManager">
+            <summary>
+            UnitOfWork Manager
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWork.UnitOfWorkManager.#ctor(Cosmos.Data.Store.IStoreContextManager)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.UnitOfWork.UnitOfWorkManager"/>
+            </summary>
+            <param name="manager"></param>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWork.UnitOfWorkManager.GetScopedUnitOfWorkManager">
+            <summary>
+            Get scoped unit of work manager
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWork.UnitOfWorkManager.CreateUnitOfWork">
+            <summary>
+            Create unit of work
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWork.UnitOfWorkManager.CreateUnitOfWork(System.Boolean)">
+            <summary>
+            Create unit of work
+            </summary>
+            <param name="manualCommit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWork.UnitOfWorkManager.CreateUnitOfWork(System.Action)">
+            <summary>
+            Create unit of work
+            </summary>
+            <param name="disposedAction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWork.UnitOfWorkManager.CreateUnitOfWork(System.Action,System.Boolean)">
+            <summary>
+            Create unit of work
+            </summary>
+            <param name="disposedAction"></param>
+            <param name="manualCommit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWork.UnitOfWorkManager.CreateUnitOfWorkAsync">
+            <summary>
+            Create unit of work async
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWork.UnitOfWorkManager.CreateUnitOfWorkAsync(System.Boolean)">
+            <summary>
+            Create unit of work async
+            </summary>
+            <param name="manualCommit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWork.UnitOfWorkManager.CreateUnitOfWorkAsync(System.Action)">
+            <summary>
+            Create unit of work async
+            </summary>
+            <param name="disposedAction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWork.UnitOfWorkManager.CreateUnitOfWorkAsync(System.Action,System.Boolean)">
+            <summary>
+            Create unit of work async
+            </summary>
+            <param name="disposedAction"></param>
+            <param name="manualCommit"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.UnitOfWork.UnitOfWorkOperator">
+            <summary>
+            UnitOfWork operator
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWork.UnitOfWorkOperator.#ctor(Cosmos.Data.Store.IStoreContextManager,System.Boolean,System.Boolean)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.UnitOfWork.UnitOfWorkOperator"/>
+            </summary>
+            <param name="manager"></param>
+            <param name="manualCommit"></param>
+            <param name="isAsynchronous"></param>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWork.UnitOfWorkOperator.#ctor(Cosmos.Data.Store.IStoreContextManager,System.Action,System.Boolean,System.Boolean)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.UnitOfWork.UnitOfWorkOperator"/>
+            </summary>
+            <param name="manager"></param>
+            <param name="disposeAction"></param>
+            <param name="manualCommit"></param>
+            <param name="isAsynchronous"></param>
+        </member>
+        <member name="P:Cosmos.Data.UnitOfWork.UnitOfWorkOperator.UnitOfWorkManager">
+            <summary>
+            Gets UnitOfWork Manager
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWork.UnitOfWorkOperator.Commit">
+            <summary>
+            Commit
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWork.UnitOfWorkOperator.CommitAsync(System.Threading.CancellationToken)">
+            <summary>
+            Commit async
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.UnitOfWork.NullUnitOfWorkOperator">
+            <summary>
+            Null UnitOfWork Operator
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.UnitOfWork.NullUnitOfWorkOperator.Instance">
+            <summary>
+            Gets an instance of <see cref="T:Cosmos.Data.UnitOfWork.NullUnitOfWorkOperator"/>
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWork.NullUnitOfWorkOperator.Commit">
+            <summary>
+            Commit.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.UnitOfWork.NullUnitOfWorkOperator.CommitAsync(System.Threading.CancellationToken)">
+            <summary>
+            Commit async.
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Data.ConnectionStateExtensions">
+            <summary>
+            Extensions for <see cref="T:System.Data.ConnectionState"/>
+            </summary>
+        </member>
+        <member name="M:System.Data.ConnectionStateExtensions.In(System.Data.ConnectionState,System.Data.ConnectionState[])">
+            <summary>
+            In
+            </summary>
+            <param name="this"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.ConnectionStateExtensions.NotIn(System.Data.ConnectionState,System.Data.ConnectionState[])">
+            <summary>
+            Not in
+            </summary>
+            <param name="this"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Data.DataColumnCollectionExtensions">
+            <summary>
+            Extensions for <see cref="T:System.Data.DataColumnCollection"/>
+            </summary>
+        </member>
+        <member name="M:System.Data.DataColumnCollectionExtensions.AddRange(System.Data.DataColumnCollection,System.String[])">
+            <summary>
+            Add range
+            </summary>
+            <param name="this"></param>
+            <param name="columns"></param>
+        </member>
+        <member name="T:System.Data.DataReaderExtensions">
+            <summary>
+            Extensions for <see cref="T:System.Data.IDataReader"/>
+            </summary>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.IsDBNull(System.Data.IDataReader,System.String)">
+            <summary>
+            Is DbNull
+            </summary>
+            <param name="this"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.ToDataTable(System.Data.IDataReader)">
+            <summary>
+            To DataTable
+            </summary>
+            <param name="this"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.ToEntity``1(System.Data.IDataReader)">
+            <summary>
+            To Entity
+            </summary>
+            <param name="this"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.ToEntities``1(System.Data.IDataReader)">
+            <summary>
+            To a set of entity
+            </summary>
+            <param name="this"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.ToExpandoObject(System.Data.IDataReader)">
+            <summary>
+            To expando object
+            </summary>
+            <param name="this"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.ToExpandoObjects(System.Data.IDataReader)">
+            <summary>
+            To a set of expando object
+            </summary>
+            <param name="this"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.GetColumnNames(System.Data.IDataRecord)">
+            <summary>
+            Gets column name
+            </summary>
+            <param name="this"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.GetValueAs``1(System.Data.IDataReader,System.Int32)">
+            <summary>
+            Gets value as...
+            </summary>
+            <param name="this"></param>
+            <param name="index"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.GetValueAs``1(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets value as...
+            </summary>
+            <param name="this"></param>
+            <param name="columnName"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.GetValueAsOrDefault``1(System.Data.IDataReader,System.Int32)">
+            <summary>
+            Gets value as... or default...
+            </summary>
+            <param name="this"></param>
+            <param name="index"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.GetValueAsOrDefault``1(System.Data.IDataReader,System.Int32,``0)">
+            <summary>
+            Gets value as... or default...
+            </summary>
+            <param name="this"></param>
+            <param name="index"></param>
+            <param name="defaultValue"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.GetValueAsOrDefault``1(System.Data.IDataReader,System.Int32,System.Func{System.Data.IDataReader,System.Int32,``0})">
+            <summary>
+            Gets value as... or default...
+            </summary>
+            <param name="this"></param>
+            <param name="index"></param>
+            <param name="defaultValueFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.GetValueAsOrDefault``1(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets value as... or default...
+            </summary>
+            <param name="this"></param>
+            <param name="columnName"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.GetValueAsOrDefault``1(System.Data.IDataReader,System.String,``0)">
+            <summary>
+            Gets value as... or default value
+            </summary>
+            <param name="this"></param>
+            <param name="columnName"></param>
+            <param name="defaultValue"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.GetValueAsOrDefault``1(System.Data.IDataReader,System.String,System.Func{System.Data.IDataReader,System.String,``0})">
+            <summary>
+            Gets value as... or default value
+            </summary>
+            <param name="this"></param>
+            <param name="columnName"></param>
+            <param name="defaultValueFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.GetValueTo``1(System.Data.IDataReader,System.Int32)">
+            <summary>
+            Gets value to...
+            </summary>
+            <param name="this"></param>
+            <param name="index"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.GetValueTo``1(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets value to...
+            </summary>
+            <param name="this"></param>
+            <param name="columnName"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.GetValueToOrDefault``1(System.Data.IDataReader,System.Int32)">
+            <summary>
+            Gets value to...or default...
+            </summary>
+            <param name="this"></param>
+            <param name="index"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.GetValueToOrDefault``1(System.Data.IDataReader,System.Int32,``0)">
+            <summary>
+            Gets value to...or default vaule
+            </summary>
+            <param name="this"></param>
+            <param name="index"></param>
+            <param name="defaultValue"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.GetValueToOrDefault``1(System.Data.IDataReader,System.Int32,System.Func{System.Data.IDataReader,System.Int32,``0})">
+            <summary>
+            Gets value to...or default value
+            </summary>
+            <param name="this"></param>
+            <param name="index"></param>
+            <param name="defaultValueFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.GetValueToOrDefault``1(System.Data.IDataReader,System.String)">
+            <summary>
+            Gets value to...or default...
+            </summary>
+            <param name="this"></param>
+            <param name="columnName"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.GetValueToOrDefault``1(System.Data.IDataReader,System.String,``0)">
+            <summary>
+            Gets value to...or default value
+            </summary>
+            <param name="this"></param>
+            <param name="columnName"></param>
+            <param name="defaultValue"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.GetValueToOrDefault``1(System.Data.IDataReader,System.String,System.Func{System.Data.IDataReader,System.String,``0})">
+            <summary>
+            Gets value to...or default value
+            </summary>
+            <param name="this"></param>
+            <param name="columnName"></param>
+            <param name="defaultValueFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.ForEach(System.Data.IDataReader,System.Action{System.Data.IDataReader})">
+            <summary>
+            For each
+            </summary>
+            <param name="this"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.ContainsColumn(System.Data.IDataReader,System.Int32)">
+            <summary>
+            Contains column
+            </summary>
+            <param name="this"></param>
+            <param name="columnIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataReaderExtensions.ContainsColumn(System.Data.IDataReader,System.String)">
+            <summary>
+            Contains column
+            </summary>
+            <param name="this"></param>
+            <param name="columnName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Data.DataRowExtensions">
+            <summary>
+            Extensions for <see cref="T:System.Data.DataRow"/>
+            </summary>
+        </member>
+        <member name="M:System.Data.DataRowExtensions.ToEntity``1(System.Data.DataRow)">
+            <summary>
+            To entity
+            </summary>
+            <param name="this"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataRowExtensions.ToExpandoObject(System.Data.DataRow)">
+            <summary>
+            To expando object
+            </summary>
+            <param name="this"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Data.DataTableExtensions">
+            <summary>
+            Extensions for <see cref="T:System.Data.DataTable"/>
+            </summary>
+        </member>
+        <member name="M:System.Data.DataTableExtensions.FirstRow(System.Data.DataTable)">
+            <summary>
+            Gets first row
+            </summary>
+            <param name="this"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataTableExtensions.LastRow(System.Data.DataTable)">
+            <summary>
+            Gets last row
+            </summary>
+            <param name="this"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataTableExtensions.ToEntities``1(System.Data.DataTable)">
+            <summary>
+            To a set of entity
+            </summary>
+            <param name="this"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DataTableExtensions.ToExpandoObjects(System.Data.DataTable)">
+            <summary>
+            To a set of expando object
+            </summary>
+            <param name="this"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Data.DbCommandExtensions">
+            <summary>
+            Extensions for <see cref="T:System.Data.Common.DbCommand"/>
+            </summary>
+        </member>
+        <member name="M:System.Data.DbCommandExtensions.ExecuteEntity``1(System.Data.Common.DbCommand)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="this"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbCommandExtensions.ExecuteEntities``1(System.Data.Common.DbCommand)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="this"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbCommandExtensions.ExecuteExpandoObject(System.Data.Common.DbCommand)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="this"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbCommandExtensions.ExecuteExpandoObjects(System.Data.Common.DbCommand)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="this"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbCommandExtensions.ExecuteScalarAs``1(System.Data.Common.DbCommand)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="this"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbCommandExtensions.ExecuteScalarAsOrDefault``1(System.Data.Common.DbCommand)">
+            <summary>
+            Execute scalar as... or default...
+            </summary>
+            <param name="this"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbCommandExtensions.ExecuteScalarAsOrDefault``1(System.Data.Common.DbCommand,``0)">
+            <summary>
+            Execute scalar as... or default value
+            </summary>
+            <param name="this"></param>
+            <param name="defaultValue"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbCommandExtensions.ExecuteScalarAsOrDefault``1(System.Data.Common.DbCommand,System.Func{System.Data.Common.DbCommand,``0})">
+            <summary>
+            Execute scalar as... or default value
+            </summary>
+            <param name="this"></param>
+            <param name="defaultValueFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbCommandExtensions.ExecuteScalarTo``1(System.Data.Common.DbCommand)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="this"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbCommandExtensions.ExecuteScalarToOrDefault``1(System.Data.Common.DbCommand)">
+            <summary>
+            Execute scalar to... or default...
+            </summary>
+            <param name="this"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbCommandExtensions.ExecuteScalarToOrDefault``1(System.Data.Common.DbCommand,``0)">
+            <summary>
+            Execute scalar to... or default value
+            </summary>
+            <param name="this"></param>
+            <param name="defaultValue"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbCommandExtensions.ExecuteScalarToOrDefault``1(System.Data.Common.DbCommand,System.Func{System.Data.Common.DbCommand,``0})">
+            <summary>
+            Execute scalar to... or default value
+            </summary>
+            <param name="this"></param>
+            <param name="defaultValueFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:System.Data.DbConnectionExtensions">
+            <summary>
+            Extensions for <see cref="T:System.Data.Common.DbConnection"/>
+            </summary>
+            <summary>
+            Extensions for <see cref="T:System.Data.Common.DbConnection"/>
+            </summary>
+            <summary>
+            Extensions for <see cref="T:System.Data.Common.DbConnection"/>
+            </summary>
+            <summary>
+            Extensions for <see cref="T:System.Data.Common.DbConnection"/>
+            </summary>
+            <summary>
+            Extensions for <see cref="T:System.Data.Common.DbConnection"/>
+            </summary>
+            <summary>
+            Extensions for <see cref="T:System.Data.Common.DbConnection"/>
+            </summary>
+            <summary>
+            Extensions for <see cref="T:System.Data.Common.DbConnection"/>
+            </summary>
+            <summary>
+            Extensions for <see cref="T:System.Data.IDbConnection"/>
+            </summary>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteEntities``1(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[],System.Data.CommandType,System.Data.Common.DbTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteEntities``1(System.Data.Common.DbConnection,System.Action{System.Data.Common.DbCommand})">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="this"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteEntities``1(System.Data.Common.DbConnection,System.String)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteEntities``1(System.Data.Common.DbConnection,System.String,System.Data.Common.DbTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteEntities``1(System.Data.Common.DbConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteEntities``1(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Data.Common.DbTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteEntities``1(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[])">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteEntities``1(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[],System.Data.Common.DbTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteEntities``1(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[],System.Data.CommandType)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteEntity``1(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[],System.Data.CommandType,System.Data.Common.DbTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteEntity``1(System.Data.Common.DbConnection,System.Action{System.Data.Common.DbCommand})">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="this"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteEntity``1(System.Data.Common.DbConnection,System.String)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteEntity``1(System.Data.Common.DbConnection,System.String,System.Data.Common.DbTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteEntity``1(System.Data.Common.DbConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteEntity``1(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Data.Common.DbTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteEntity``1(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[])">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteEntity``1(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[],System.Data.Common.DbTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteEntity``1(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[],System.Data.CommandType)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteExpandoObject(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[],System.Data.CommandType,System.Data.Common.DbTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteExpandoObject(System.Data.Common.DbConnection,System.Action{System.Data.Common.DbCommand})">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="this"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteExpandoObject(System.Data.Common.DbConnection,System.String)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteExpandoObject(System.Data.Common.DbConnection,System.String,System.Data.Common.DbTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteExpandoObject(System.Data.Common.DbConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteExpandoObject(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Data.Common.DbTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteExpandoObject(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[])">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteExpandoObject(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[],System.Data.Common.DbTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteExpandoObject(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[],System.Data.CommandType)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteExpandoObjects(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[],System.Data.CommandType,System.Data.Common.DbTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteExpandoObjects(System.Data.Common.DbConnection,System.Action{System.Data.Common.DbCommand})">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="this"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteExpandoObjects(System.Data.Common.DbConnection,System.String)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteExpandoObjects(System.Data.Common.DbConnection,System.String,System.Data.Common.DbTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteExpandoObjects(System.Data.Common.DbConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteExpandoObjects(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Data.Common.DbTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteExpandoObjects(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[])">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteExpandoObjects(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[],System.Data.Common.DbTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteExpandoObjects(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[],System.Data.CommandType)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[],System.Data.CommandType,System.Data.Common.DbTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteNonQuery(System.Data.Common.DbConnection,System.Action{System.Data.Common.DbCommand})">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="this"></param>
+            <param name="commandFactory"></param>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteNonQuery(System.Data.Common.DbConnection,System.String)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Data.Common.DbTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Data.Common.DbTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[])">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[],System.Data.Common.DbTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteNonQuery(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[],System.Data.CommandType)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteReader(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[],System.Data.CommandType,System.Data.Common.DbTransaction)">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteReader(System.Data.Common.DbConnection,System.Action{System.Data.Common.DbCommand})">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="this"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteReader(System.Data.Common.DbConnection,System.String)">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteReader(System.Data.Common.DbConnection,System.String,System.Data.Common.DbTransaction)">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteReader(System.Data.Common.DbConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteReader(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Data.Common.DbTransaction)">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteReader(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[])">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteReader(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[],System.Data.Common.DbTransaction)">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteReader(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[],System.Data.CommandType)">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteScalar(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[],System.Data.CommandType,System.Data.Common.DbTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteScalar(System.Data.Common.DbConnection,System.Action{System.Data.Common.DbCommand})">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="this"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteScalar(System.Data.Common.DbConnection,System.String)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteScalar(System.Data.Common.DbConnection,System.String,System.Data.Common.DbTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteScalar(System.Data.Common.DbConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteScalar(System.Data.Common.DbConnection,System.String,System.Data.CommandType,System.Data.Common.DbTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteScalar(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[])">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteScalar(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[],System.Data.Common.DbTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.ExecuteScalar(System.Data.Common.DbConnection,System.String,System.Data.Common.DbParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="this"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.EnsureOpen(System.Data.IDbConnection)">
+            <summary>
+            Ensure open
+            </summary>
+            <param name="this"></param>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.IsConnectionOpen(System.Data.IDbConnection)">
+            <summary>
+            Is connection open
+            </summary>
+            <param name="this"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbConnectionExtensions.IsNotConnectionOpen(System.Data.IDbConnection)">
+            <summary>
+            Is connection not open
+            </summary>
+            <param name="this"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Data.DbParametersExtensions">
+            <summary>
+            Extensions for DbParameters
+            </summary>
+        </member>
+        <member name="M:System.Data.DbParametersExtensions.ToDbParameters(System.Collections.Generic.IDictionary{System.String,System.Object},System.Data.Common.DbCommand)">
+            <summary>
+            TO DbParameters
+            </summary>
+            <param name="this"></param>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.DbParametersExtensions.ToDbParameters(System.Collections.Generic.IDictionary{System.String,System.Object},System.Data.Common.DbConnection)">
+            <summary>
+            To DbParameters
+            </summary>
+            <param name="this"></param>
+            <param name="connection"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Data.SqlDateExtensions">
+            <summary>
+            Extensions for SqlDateTime
+            </summary>
+        </member>
+        <member name="M:System.Data.SqlDateExtensions.ToSqlDate(System.DateTime)">
+            <summary>
+            To SqlDate
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.SqlDateExtensions.ToSqlDateTime(System.DateTime)">
+            <summary>
+            To SqlDateTime
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.SqlDateExtensions.ToSqlDate(System.Nullable{System.DateTime})">
+            <summary>
+            To SqlDate
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.SqlDateExtensions.ToSqlDateTime(System.Nullable{System.DateTime})">
+            <summary>
+            To SqlDateTime
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.SqlDateExtensions.IsValidSqlSmallDateTime(System.DateTime)">
+            <summary>
+            Is valid sql small datetime
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.SqlDateExtensions.IsValidSqlDateTime(System.DateTime)">
+            <summary>
+            Is valid sql datetime
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Data.SqlDateExtensions.DoubleHelper">
+             <summary>
+             This helper is a copy from MathNet.
+            
+             GitHub info:
+                 mathnet/mathnet-numerics
+                 https://github.com/mathnet/mathnet-numerics
+                 MIT/X11
+             </summary>
+        </member>
+        <member name="T:System.Data.SqlSystemTypeExtensions">
+            <summary>
+            Extensions for Sql SystemType
+            </summary>
+        </member>
+        <member name="M:System.Data.SqlSystemTypeExtensions.SqlSystemTypeToSqlDbType(System.Byte)">
+            <summary>
+            Sql system type to Sql DbType
+            </summary>
+            <param name="this"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+    </members>
+</doc>

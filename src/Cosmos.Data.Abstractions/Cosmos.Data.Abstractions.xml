@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Data.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:Cosmos.Data.IDatabaseConfig">
+            <summary>
+            An interface of database config.
+            </summary>
+        </member>
+        <member name="T:Cosmos.Data.IDataSourceConfig">
+            <summary>
+            An interface of data source config.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.IDataSourceConfig.ConnectionString">
+            <summary>
+            Gets connection string.
+            </summary>
+        </member>
+        <member name="T:Cosmos.Data.Transaction.ITransactionCallingWrapper">
+            <summary>
+            An interface of the transaction calling wrapper.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Transaction.ITransactionCallingWrapper.Count">
+            <summary>
+            To flag the sum of func in this wrapper.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.ITransactionCallingWrapper.Register(System.Func{System.Data.IDbTransaction,System.Threading.Tasks.Task})">
+            <summary>
+            Register a transaction calling into such wrapper.
+            </summary>
+            <param name="func"></param>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.ITransactionCallingWrapper.CommitAsync(System.Data.IDbTransaction)">
+            <summary>
+            Commit async.
+            </summary>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.Transaction.ITransactionWrapper">
+            <summary>
+            An interface of transaction wrapper.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Transaction.ITransactionWrapper.CurrentTransaction">
+            <summary>
+            Returns current transaction. If there's no transaction, it'll return null.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.ITransactionWrapper.Begin">
+            <summary>
+            To begin a new transaction.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.ITransactionWrapper.Begin(System.Data.IsolationLevel)">
+            <summary>
+            To begin a new transaction with specific <see cref="T:System.Data.IsolationLevel"/>.
+            </summary>
+            <param name="li">Special <see cref="T:System.Data.IsolationLevel"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.ITransactionWrapper.Commit(System.Boolean)">
+            <summary>
+            Commit.
+            </summary>
+            <param name="clearTransaction">Do need clear transaction after commit.</param>
+        </member>
+        <member name="M:Cosmos.Data.Transaction.ITransactionWrapper.Rollback(System.Boolean)">
+            <summary>
+            Rollback.
+            </summary>
+            <param name="clearTransaction">Do need clear transaction after rollback.</param>
+        </member>
+        <member name="P:Cosmos.Data.Transaction.ITransactionWrapper.IsNull">
+            <summary>
+            To flag this instance is NullTransactionWrapper or not.
+            </summary>
+        </member>
+    </members>
+</doc>

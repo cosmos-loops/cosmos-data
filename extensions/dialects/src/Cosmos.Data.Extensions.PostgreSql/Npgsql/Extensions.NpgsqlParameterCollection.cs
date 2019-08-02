@@ -9,8 +9,16 @@ using System.Collections.Generic;
 
 namespace Npgsql
 {
+    /// <summary>
+    /// Extensions for Npgsql
+    /// </summary>
     public static partial class NpgsqlClientExtensions
     {
+        /// <summary>
+        /// Add range with value
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="values"></param>
         public static void AddRangeWithValue(this NpgsqlParameterCollection @this, Dictionary<string, object> values)
         {
             foreach (var keyValuePair in values)

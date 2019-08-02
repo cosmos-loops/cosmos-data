@@ -1,6 +1,5 @@
 using System;
 using Cosmos.Data;
-using Cosmos.Data.Context;
 using Cosmos.Data.Core;
 using Cosmos.Data.Internals;
 using Cosmos.Data.Store;
@@ -14,6 +13,13 @@ namespace Microsoft.Extensions.DependencyInjection
     /// </summary>
     public static class DependencyInjectionExtensions
     {
+        /// <summary>
+        /// Add Cosmos Data Support
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static IServiceCollection AddCosmosDataSupport(this IServiceCollection services, Action<DbContextConfig> context = null)
         {
             if (services == null)

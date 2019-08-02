@@ -17,6 +17,14 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>Cosmos.Data.Extensions.AspectCoreInjector.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>Cosmos.Data.Extensions.AspectCoreInjector.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="AspectCore.Core" Version="1.2.0" />
     <PackageReference Include="Cosmos.Extensions.AspectCoreInjector" Version="0.1.1-alpha3-123037" />

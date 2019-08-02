@@ -10,9 +10,22 @@ using System.Data;
 
 namespace Npgsql
 {
+    /// <summary>
+    /// Extensions for Npgsql
+    /// </summary>
     public static partial class NpgsqlClientExtensions
     {
-        public static NpgsqlDataReader ExecuteReader(this NpgsqlConnection @this, string cmdText, NpgsqlParameter[] parameters, CommandType commandType, NpgsqlTransaction transaction)
+        /// <summary>
+        /// Execute Reader
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
+        public static NpgsqlDataReader ExecuteReader(this NpgsqlConnection @this, string cmdText, NpgsqlParameter[] parameters, CommandType commandType,
+            NpgsqlTransaction transaction)
         {
             using (var command = @this.CreateCommand())
             {
@@ -29,6 +42,12 @@ namespace Npgsql
             }
         }
 
+        /// <summary>
+        /// Execute Reader
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="commandFactory"></param>
+        /// <returns></returns>
         public static NpgsqlDataReader ExecuteReader(this NpgsqlConnection @this, Action<NpgsqlCommand> commandFactory)
         {
             using (var command = @this.CreateCommand())
@@ -39,36 +58,87 @@ namespace Npgsql
             }
         }
 
+        /// <summary>
+        /// Execute Reader
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <returns></returns>
         public static NpgsqlDataReader ExecuteReader(this NpgsqlConnection @this, string cmdText)
         {
             return @this.ExecuteReader(cmdText, null, CommandType.Text, null);
         }
 
+        /// <summary>
+        /// Execute Reader
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
         public static NpgsqlDataReader ExecuteReader(this NpgsqlConnection @this, string cmdText, NpgsqlTransaction transaction)
         {
             return @this.ExecuteReader(cmdText, null, CommandType.Text, transaction);
         }
 
+        /// <summary>
+        /// Execute Reader
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="commandType"></param>
+        /// <returns></returns>
         public static NpgsqlDataReader ExecuteReader(this NpgsqlConnection @this, string cmdText, CommandType commandType)
         {
             return @this.ExecuteReader(cmdText, null, commandType, null);
         }
 
+        /// <summary>
+        /// Execute Reader
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
         public static NpgsqlDataReader ExecuteReader(this NpgsqlConnection @this, string cmdText, CommandType commandType, NpgsqlTransaction transaction)
         {
             return @this.ExecuteReader(cmdText, null, commandType, transaction);
         }
 
+        /// <summary>
+        /// Execute Reader
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public static NpgsqlDataReader ExecuteReader(this NpgsqlConnection @this, string cmdText, NpgsqlParameter[] parameters)
         {
             return @this.ExecuteReader(cmdText, parameters, CommandType.Text, null);
         }
 
+        /// <summary>
+        /// Execute Reader
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
         public static NpgsqlDataReader ExecuteReader(this NpgsqlConnection @this, string cmdText, NpgsqlParameter[] parameters, NpgsqlTransaction transaction)
         {
             return @this.ExecuteReader(cmdText, parameters, CommandType.Text, transaction);
         }
 
+        /// <summary>
+        /// Execute Reader
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <returns></returns>
         public static NpgsqlDataReader ExecuteReader(this NpgsqlConnection @this, string cmdText, NpgsqlParameter[] parameters, CommandType commandType)
         {
             return @this.ExecuteReader(cmdText, parameters, commandType, null);

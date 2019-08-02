@@ -10,8 +10,20 @@ using System.Data;
 
 namespace Npgsql
 {
+    /// <summary>
+    /// Extensions for Npgsql
+    /// </summary>
     public static partial class NpgsqlClientExtensions
     {
+        /// <summary>
+        /// Execute scalar
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
         public static object ExecuteScalar(this NpgsqlConnection @this, string cmdText, NpgsqlParameter[] parameters, CommandType commandType, NpgsqlTransaction transaction)
         {
             using (var command = @this.CreateCommand())
@@ -29,6 +41,12 @@ namespace Npgsql
             }
         }
 
+        /// <summary>
+        /// Execute scalar
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="commandFactory"></param>
+        /// <returns></returns>
         public static object ExecuteScalar(this NpgsqlConnection @this, Action<NpgsqlCommand> commandFactory)
         {
             using (var command = @this.CreateCommand())
@@ -39,36 +57,87 @@ namespace Npgsql
             }
         }
 
+        /// <summary>
+        /// Execute scalar
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <returns></returns>
         public static object ExecuteScalar(this NpgsqlConnection @this, string cmdText)
         {
             return @this.ExecuteScalar(cmdText, null, CommandType.Text, null);
         }
 
+        /// <summary>
+        /// Execute scalar
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
         public static object ExecuteScalar(this NpgsqlConnection @this, string cmdText, NpgsqlTransaction transaction)
         {
             return @this.ExecuteScalar(cmdText, null, CommandType.Text, transaction);
         }
 
+        /// <summary>
+        /// Execute scalar
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="commandType"></param>
+        /// <returns></returns>
         public static object ExecuteScalar(this NpgsqlConnection @this, string cmdText, CommandType commandType)
         {
             return @this.ExecuteScalar(cmdText, null, commandType, null);
         }
 
+        /// <summary>
+        /// Execute scalar
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
         public static object ExecuteScalar(this NpgsqlConnection @this, string cmdText, CommandType commandType, NpgsqlTransaction transaction)
         {
             return @this.ExecuteScalar(cmdText, null, commandType, transaction);
         }
 
+        /// <summary>
+        /// Execute scalar
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public static object ExecuteScalar(this NpgsqlConnection @this, string cmdText, NpgsqlParameter[] parameters)
         {
             return @this.ExecuteScalar(cmdText, parameters, CommandType.Text, null);
         }
 
+        /// <summary>
+        /// Execute scalar
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
         public static object ExecuteScalar(this NpgsqlConnection @this, string cmdText, NpgsqlParameter[] parameters, NpgsqlTransaction transaction)
         {
             return @this.ExecuteScalar(cmdText, parameters, CommandType.Text, transaction);
         }
 
+        /// <summary>
+        /// Execute scalar
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <returns></returns>
         public static object ExecuteScalar(this NpgsqlConnection @this, string cmdText, NpgsqlParameter[] parameters, CommandType commandType)
         {
             return @this.ExecuteScalar(cmdText, parameters, commandType, null);

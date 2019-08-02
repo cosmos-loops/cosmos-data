@@ -9,6 +9,11 @@ namespace System.Data.SqlClient
 {
     public static partial class SqlClientExtensions
     {
+        /// <summary>
+        /// Execute DataSet
+        /// </summary>
+        /// <param name="this"></param>
+        /// <returns></returns>
         public static DataSet ExecuteDataSet(this SqlCommand @this)
         {
             var ds = new DataSet();
@@ -20,6 +25,11 @@ namespace System.Data.SqlClient
             return ds;
         }
 
+        /// <summary>
+        /// Execute DataTable
+        /// </summary>
+        /// <param name="this"></param>
+        /// <returns></returns>
         public static DataTable ExecuteDataTable(this SqlCommand @this)
         {
             var dt = new DataTable();

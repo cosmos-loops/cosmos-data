@@ -1,5 +1,8 @@
 namespace System.Data.SQLite.SqlBulkCopy
 {
+    /// <summary>
+    /// Sqlite column type converter
+    /// </summary>
     // ReSharper disable once InconsistentNaming
     public static class SQLiteColumnTypeConverter
     {
@@ -21,7 +24,12 @@ namespace System.Data.SQLite.SqlBulkCopy
         private static Type Date => typeof(DateTime);
         private static Type DateM => typeof(DateTime?);
         private static Type Binary => typeof(byte[]);
-        
+
+        /// <summary>
+        /// To Sqlite column type
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public static SQLiteColumnType ToSqliteColumnType(Type type)
         {
             if (type == Int32 || type == Int32M || type == Int64 || type == Int64M)
@@ -48,6 +56,11 @@ namespace System.Data.SQLite.SqlBulkCopy
             return SQLiteColumnType.Text;
         }
 
+        /// <summary>
+        /// To Sqlite column type
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public static SQLiteColumnType ToSqliteColumnType(string type)
         {
             var columnType = type.ToUpper();

@@ -17,6 +17,14 @@
         <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     </PropertyGroup>
 
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DocumentationFile>Cosmos.Data.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <DocumentationFile>Cosmos.Data.xml</DocumentationFile>
+    </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Cosmos.Standard" Version="0.1.1-alpha3-123037" />
     <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />

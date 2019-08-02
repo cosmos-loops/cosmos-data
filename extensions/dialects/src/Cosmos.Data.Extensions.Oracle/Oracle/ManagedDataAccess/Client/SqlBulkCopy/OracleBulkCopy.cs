@@ -14,6 +14,9 @@ using System.Text;
 
 namespace Oracle.ManagedDataAccess.Client.SqlBulkCopy
 {
+    /// <summary>
+    /// Oracle BulkCopy
+    /// </summary>
     public class OracleBulkCopy : IDisposable
     {
         // https://github.com/Microsoft/referencesource/blob/master/System.Data/System/Data/SqlClient/SqlBulkCopy.cs
@@ -22,6 +25,8 @@ namespace Oracle.ManagedDataAccess.Client.SqlBulkCopy
         // https://msdn.microsoft.com/en-us/library/system.data.oracleclient.oracletype(v=vs.110).aspx
 
         private OracleConnection _connection;
+
+        // ReSharper disable once InconsistentNaming
         private OracleTransaction _externalTransaction { get; set; }
 
         /// <summary>
@@ -30,13 +35,26 @@ namespace Oracle.ManagedDataAccess.Client.SqlBulkCopy
         /// </summary>
         private bool _ownsTheConnection;
 
+        /// <summary>
+        /// Create a new instance of <see cref="OracleBulkCopy"/>
+        /// </summary>
+        /// <param name="connectionString"></param>
         public OracleBulkCopy(string connectionString) : this(new OracleConnection(connectionString))
         {
             _ownsTheConnection = true;
         }
 
+        /// <summary>
+        /// Create a new instance of <see cref="OracleBulkCopy"/>
+        /// </summary>
+        /// <param name="connection"></param>
         public OracleBulkCopy(OracleConnection connection) : this(connection, null) { }
 
+        /// <summary>
+        /// Create a new instance of <see cref="OracleBulkCopy"/>
+        /// </summary>
+        /// <param name="connection"></param>
+        /// <param name="transaction"></param>
         public OracleBulkCopy(OracleConnection connection, OracleTransaction transaction = null)
         {
             _connection = connection;
@@ -46,6 +64,10 @@ namespace Oracle.ManagedDataAccess.Client.SqlBulkCopy
 
         private string _destinationTableName;
 
+        /// <summary>
+        /// Destination TableName
+        /// </summary>
+        /// <exception cref="ArgumentException"></exception>
         public string DestinationTableName
         {
             get => _destinationTableName;
@@ -60,6 +82,10 @@ namespace Oracle.ManagedDataAccess.Client.SqlBulkCopy
 
         private int _batchSize;
 
+        /// <summary>
+        /// Batck size
+        /// </summary>
+        /// <exception cref="ArgumentException"></exception>
         public int BatchSize
         {
             get => _batchSize;
@@ -73,6 +99,10 @@ namespace Oracle.ManagedDataAccess.Client.SqlBulkCopy
 
         private int _timeout = 30;
 
+        /// <summary>
+        /// BulkCopy timeout
+        /// </summary>
+        /// <exception cref="ArgumentException"></exception>
         public int? BulkCopyTimeout
         {
             get => _timeout;
@@ -106,6 +136,11 @@ namespace Oracle.ManagedDataAccess.Client.SqlBulkCopy
         // TODO: Implement WriteToServer for a IDataReader input
 
 
+        /// <summary>
+        /// Write to server
+        /// </summary>
+        /// <param name="table"></param>
+        /// <exception cref="ArgumentNullException"></exception>
         public void WriteToServer(DataTable table)
         {
             // https://stackoverflow.com/questions/47942691/how-to-make-a-bulk-insert-using-oracle-managed-data-acess-c-sharp
@@ -241,7 +276,9 @@ namespace Oracle.ManagedDataAccess.Client.SqlBulkCopy
             return valueList;
         }
 
-
+        /// <summary>
+        /// Dispose
+        /// </summary>
         public void Dispose()
         {
             if (_connection != null)
@@ -255,6 +292,9 @@ namespace Oracle.ManagedDataAccess.Client.SqlBulkCopy
             }
         }
 
+        /// <summary>
+        /// Close
+        /// </summary>
         public void Close()
         {
             Dispose();

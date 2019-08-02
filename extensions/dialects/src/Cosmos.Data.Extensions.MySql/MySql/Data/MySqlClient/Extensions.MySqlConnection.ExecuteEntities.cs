@@ -11,8 +11,21 @@ using System.Data;
 
 namespace MySql.Data.MySqlClient
 {
+    /// <summary>
+    /// Extensions for <see cref="MySqlClient"/>
+    /// </summary>
     public static partial class MySqlClientExtensions
     {
+        /// <summary>
+        /// Execute a set of entity
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static IEnumerable<T> ExecuteEntities<T>(this MySqlConnection @this, string cmdText, MySqlParameter[] parameters, CommandType commandType,
             MySqlTransaction transaction) where T : new()
         {
@@ -34,6 +47,13 @@ namespace MySql.Data.MySqlClient
             }
         }
 
+        /// <summary>
+        /// Execute a set of entity
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="commandFactory"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static IEnumerable<T> ExecuteEntities<T>(this MySqlConnection @this, Action<MySqlCommand> commandFactory) where T : new()
         {
             using (var command = @this.CreateCommand())
@@ -47,36 +67,94 @@ namespace MySql.Data.MySqlClient
             }
         }
 
+        /// <summary>
+        /// Execute a set of entity
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static IEnumerable<T> ExecuteEntities<T>(this MySqlConnection @this, string cmdText) where T : new()
         {
             return @this.ExecuteEntities<T>(cmdText, null, CommandType.Text, null);
         }
 
+        /// <summary>
+        /// Execute a set of entity
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static IEnumerable<T> ExecuteEntities<T>(this MySqlConnection @this, string cmdText, MySqlTransaction transaction) where T : new()
         {
             return @this.ExecuteEntities<T>(cmdText, null, CommandType.Text, transaction);
         }
 
+        /// <summary>
+        /// Execute a set of entity
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="commandType"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static IEnumerable<T> ExecuteEntities<T>(this MySqlConnection @this, string cmdText, CommandType commandType) where T : new()
         {
             return @this.ExecuteEntities<T>(cmdText, null, commandType, null);
         }
 
+        /// <summary>
+        /// Execute a set of entity
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static IEnumerable<T> ExecuteEntities<T>(this MySqlConnection @this, string cmdText, CommandType commandType, MySqlTransaction transaction) where T : new()
         {
             return @this.ExecuteEntities<T>(cmdText, null, commandType, transaction);
         }
 
+        /// <summary>
+        /// Execute a set of entity
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static IEnumerable<T> ExecuteEntities<T>(this MySqlConnection @this, string cmdText, MySqlParameter[] parameters) where T : new()
         {
             return @this.ExecuteEntities<T>(cmdText, parameters, CommandType.Text, null);
         }
 
+        /// <summary>
+        /// Execute a set of entity
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static IEnumerable<T> ExecuteEntities<T>(this MySqlConnection @this, string cmdText, MySqlParameter[] parameters, MySqlTransaction transaction) where T : new()
         {
             return @this.ExecuteEntities<T>(cmdText, parameters, CommandType.Text, transaction);
         }
 
+        /// <summary>
+        /// Execute a set of entity
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static IEnumerable<T> ExecuteEntities<T>(this MySqlConnection @this, string cmdText, MySqlParameter[] parameters, CommandType commandType) where T : new()
         {
             return @this.ExecuteEntities<T>(cmdText, parameters, commandType, null);

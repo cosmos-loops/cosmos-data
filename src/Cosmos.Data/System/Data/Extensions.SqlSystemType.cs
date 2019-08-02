@@ -1,7 +1,16 @@
 namespace System.Data
 {
+    /// <summary>
+    /// Extensions for Sql SystemType
+    /// </summary>
     public static class SqlSystemTypeExtensions
     {
+        /// <summary>
+        /// Sql system type to Sql DbType
+        /// </summary>
+        /// <param name="this"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public static SqlDbType SqlSystemTypeToSqlDbType(this byte @this)
         {
             switch (@this)

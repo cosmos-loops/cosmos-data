@@ -34,6 +34,9 @@ namespace System.Data.SQLite.SqlBulkCopy
         private string _tableNm;
         private Dictionary<string, SQLiteColumnType> _columns;
 
+        /// <summary>
+        /// Gets column mappings
+        /// </summary>
         public Dictionary<string, SQLiteColumnType> ColumnMappings => _columns;
 
         #endregion
@@ -177,6 +180,7 @@ namespace System.Data.SQLite.SqlBulkCopy
 
             insertClause.Append(")");
 
+            // ReSharper disable once RedundantAssignment
             first = true;
             var valuesClause = new StringBuilder();
             var currentBatch = 0;
@@ -218,6 +222,7 @@ namespace System.Data.SQLite.SqlBulkCopy
                                 valuesClause.Append(columnValue);
                                 break;
                             case SQLiteColumnType.Boolean:
+                                // ReSharper disable once RedundantAssignment
                                 var out_value = -1;
                                 if (columnValue.ToUpper() == "TRUE")
                                     valuesClause.Append("1");
@@ -239,6 +244,7 @@ namespace System.Data.SQLite.SqlBulkCopy
                             case SQLiteColumnType.Blob:
                                 valuesClause.Append($"X'{columnValue}'");
                                 break;
+                            // ReSharper disable once RedundantCaseLabel
                             case SQLiteColumnType.Text:
                             default:
                                 valuesClause.Append($"'{columnValue.Replace("'", "''")}'");
@@ -276,6 +282,11 @@ namespace System.Data.SQLite.SqlBulkCopy
 
         }
 
+        /// <summary>
+        /// Write to server async
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns></returns>
         public async Task WriteToServerAsync(IDataReader reader)
         {
             await WriteToServerAsyncInternal(reader);

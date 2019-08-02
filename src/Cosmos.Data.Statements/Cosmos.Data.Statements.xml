@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Data.Statements</name>
+    </assembly>
+    <members>
+        <member name="T:Cosmos.Data.Statements.ISQLDialect">
+            <summary>
+            An interface of Sql Dialect.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Statements.ISQLDialect.DialectName">
+            <summary>
+            Gets dialect's name.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Statements.ISQLDialect.OpenQuote">
+            <summary>
+            Gets open quote.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Statements.ISQLDialect.CloseQuote">
+            <summary>
+            Gets close quote.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Statements.ISQLDialect.BatchSeperator">
+            <summary>
+            Gets batch seperator.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Statements.ISQLDialect.SupportsMultipleStatements">
+            <summary>
+            To flat support multiple statements or not.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Statements.ISQLDialect.ParameterPrefix">
+            <summary>
+            Gets parameter prefix.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Statements.ISQLDialect.EmptyExpression">
+            <summary>
+            Gets empty expression.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Statements.ISQLDialect.GetTableName(System.String,System.String,System.String)">
+            <summary>
+            Gets table name.
+            </summary>
+            <param name="schemaName">Schema name.</param>
+            <param name="tableName">Table name.</param>
+            <param name="alias">Table alias.</param>
+            <returns>Table name.</returns>
+        </member>
+        <member name="M:Cosmos.Data.Statements.ISQLDialect.GetColumnName(System.String,System.String,System.String)">
+            <summary>
+            Gets column name.
+            </summary>
+            <param name="prefix">Column prefix.</param>
+            <param name="columnName">Column name.</param>
+            <param name="alias">Column alias.</param>
+            <returns>Column name.</returns>
+        </member>
+        <member name="M:Cosmos.Data.Statements.ISQLDialect.GetIdentitySql(System.String)">
+            <summary>
+            Gets identity sql.
+            </summary>
+            <param name="tableName">Table name.</param>
+            <returns>Identity sql.</returns>
+        </member>
+        <member name="M:Cosmos.Data.Statements.ISQLDialect.GetPagingSql(System.String,System.Int32,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Gets paging sql.
+            </summary>
+            <param name="sql">Sql text.</param>
+            <param name="pageNumber">Page number.</param>
+            <param name="pageSize">Page size.</param>
+            <param name="parameters">Parameters.</param>
+            <returns>Paging sql.</returns>
+        </member>
+        <member name="M:Cosmos.Data.Statements.ISQLDialect.GetSetSql(System.String,System.Int32,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Gets set sql.
+            </summary>
+            <param name="sql">Sql text.</param>
+            <param name="firstResult">Row number of the first result.</param>
+            <param name="maxResults">Row number of the max result.</param>
+            <param name="parameters">Parameters.</param>
+            <returns>Set Sql.</returns>
+        </member>
+        <member name="M:Cosmos.Data.Statements.ISQLDialect.IsQuoted(System.String)">
+            <summary>
+            To flag is Quoted or not.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Statements.ISQLDialect.QuoteString(System.String)">
+            <summary>
+            Gets quoted string.
+            </summary>
+            <param name="value">Original value.</param>
+            <returns>Quoted value.</returns>
+        </member>
+        <member name="T:Cosmos.Data.Statements.ISQLSort">
+            <summary>
+            Sql sort.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Statements.ISQLSort.FieldName">
+            <summary>
+            Field name.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Statements.ISQLSort.SortType">
+            <summary>
+            Sort type.
+            </summary>
+        </member>
+        <member name="T:Cosmos.Data.Statements.SQLDialectBase">
+            <summary>
+            A base dialect class.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Statements.SQLDialectBase.DialectName">
+            <summary>
+            Gets dialect's name.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Statements.SQLDialectBase.OpenQuote">
+            <summary>
+            Gets open quote.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Statements.SQLDialectBase.CloseQuote">
+            <summary>
+            Gets close quote.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Statements.SQLDialectBase.BatchSeperator">
+            <summary>
+            Gets batch seperator.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Statements.SQLDialectBase.SupportsMultipleStatements">
+            <summary>
+            To flat support multiple statements or not.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Statements.SQLDialectBase.ParameterPrefix">
+            <summary>
+            Gets parameter prefix.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Statements.SQLDialectBase.EmptyExpression">
+            <summary>
+            Gets empty expression.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Statements.SQLDialectBase.GetTableName(System.String,System.String,System.String)">
+            <summary>
+            Gets table name.
+            </summary>
+            <param name="schemaName">Schema name.</param>
+            <param name="tableName">Table name.</param>
+            <param name="alias">Table alias.</param>
+            <returns>Table name.</returns>
+        </member>
+        <member name="M:Cosmos.Data.Statements.SQLDialectBase.GetColumnName(System.String,System.String,System.String)">
+            <summary>
+            Gets column name.
+            </summary>
+            <param name="prefix">Column prefix.</param>
+            <param name="columnName">Column name.</param>
+            <param name="alias">Column alias.</param>
+            <returns>Column name.</returns>
+        </member>
+        <member name="M:Cosmos.Data.Statements.SQLDialectBase.GetIdentitySql(System.String)">
+            <summary>
+            Gets identity sql.
+            </summary>
+            <param name="tableName">Table name.</param>
+            <returns>Identity sql.</returns>
+        </member>
+        <member name="M:Cosmos.Data.Statements.SQLDialectBase.GetPagingSql(System.String,System.Int32,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Gets paging sql.
+            </summary>
+            <param name="sql">Sql text.</param>
+            <param name="pageNumber">Page number.</param>
+            <param name="pageSize">Page size.</param>
+            <param name="parameters">Parameters.</param>
+            <returns>Paging sql.</returns>
+        </member>
+        <member name="M:Cosmos.Data.Statements.SQLDialectBase.GetSetSql(System.String,System.Int32,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Gets set sql.
+            </summary>
+            <param name="sql">Sql text.</param>
+            <param name="firstResult">Row number of the first result.</param>
+            <param name="maxResults">Row number of the max result.</param>
+            <param name="parameters">Parameters.</param>
+            <returns>Set Sql.</returns>
+        </member>
+        <member name="M:Cosmos.Data.Statements.SQLDialectBase.IsQuoted(System.String)">
+            <summary>
+            To flag is Quoted or not.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Statements.SQLDialectBase.QuoteString(System.String)">
+            <summary>
+            Gets quoted string.
+            </summary>
+            <param name="value">Original value.</param>
+            <returns>Quoted value.</returns>
+        </member>
+        <member name="M:Cosmos.Data.Statements.SQLDialectBase.UnQuoteString(System.String)">
+            <summary>
+            Gets unquoted string.
+            </summary>
+            <param name="value">Quoted value.</param>
+            <returns>Unquoted value.</returns>
+        </member>
+        <member name="T:Cosmos.Data.Statements.SQLSort">
+            <summary>
+            Sql sort.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Statements.SQLSort.#ctor(System.Int32,System.String,Cosmos.Data.Statements.SQLSortType)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.Statements.SQLSort"/>
+            </summary>
+            <param name="index"></param>
+            <param name="field"></param>
+            <param name="sortType"></param>
+        </member>
+        <member name="P:Cosmos.Data.Statements.SQLSort.Index">
+            <summary>
+            Index of sort.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Statements.SQLSort.FieldName">
+            <summary>
+            Field name.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Statements.SQLSort.SortType">
+            <summary>
+            Sort type.
+            </summary>
+        </member>
+        <member name="T:Cosmos.Data.Statements.SQLSortComparer">
+            <summary>
+            SQL Sort Comparer
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Statements.SQLSortComparer.Compare(Cosmos.Data.Statements.SQLSort,Cosmos.Data.Statements.SQLSort)">
+            <summary>
+            Compare
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.Statements.SQLSortType">
+            <summary>
+            SQL Sort Type
+            </summary>
+        </member>
+        <member name="F:Cosmos.Data.Statements.SQLSortType.ASC">
+            <summary>
+            Asc
+            </summary>
+        </member>
+        <member name="F:Cosmos.Data.Statements.SQLSortType.DESC">
+            <summary>
+            Desc
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -9,6 +9,15 @@ namespace System.Data.SqlClient
 {
     public static partial class SqlClientExtensions
     {
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
         public static dynamic ExecuteExpandoObject(this SqlConnection @this, string cmdText, SqlParameter[] parameters, CommandType commandType, SqlTransaction transaction)
         {
             using (var command = @this.CreateCommand())
@@ -30,6 +39,12 @@ namespace System.Data.SqlClient
             }
         }
 
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="commandFactory"></param>
+        /// <returns></returns>
         public static dynamic ExecuteExpandoObject(this SqlConnection @this, Action<SqlCommand> commandFactory)
         {
             using (var command = @this.CreateCommand())
@@ -44,36 +59,87 @@ namespace System.Data.SqlClient
             }
         }
 
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <returns></returns>
         public static dynamic ExecuteExpandoObject(this SqlConnection @this, string cmdText)
         {
             return @this.ExecuteExpandoObject(cmdText, null, CommandType.Text, null);
         }
 
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
         public static dynamic ExecuteExpandoObject(this SqlConnection @this, string cmdText, SqlTransaction transaction)
         {
             return @this.ExecuteExpandoObject(cmdText, null, CommandType.Text, transaction);
         }
 
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="commandType"></param>
+        /// <returns></returns>
         public static dynamic ExecuteExpandoObject(this SqlConnection @this, string cmdText, CommandType commandType)
         {
             return @this.ExecuteExpandoObject(cmdText, null, commandType, null);
         }
 
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
         public static dynamic ExecuteExpandoObject(this SqlConnection @this, string cmdText, CommandType commandType, SqlTransaction transaction)
         {
             return @this.ExecuteExpandoObject(cmdText, null, commandType, transaction);
         }
 
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
         public static dynamic ExecuteExpandoObject(this SqlConnection @this, string cmdText, SqlParameter[] parameters)
         {
             return @this.ExecuteExpandoObject(cmdText, parameters, CommandType.Text, null);
         }
 
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
         public static dynamic ExecuteExpandoObject(this SqlConnection @this, string cmdText, SqlParameter[] parameters, SqlTransaction transaction)
         {
             return @this.ExecuteExpandoObject(cmdText, parameters, CommandType.Text, transaction);
         }
 
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <returns></returns>
         public static dynamic ExecuteExpandoObject(this SqlConnection @this, string cmdText, SqlParameter[] parameters, CommandType commandType)
         {
             return @this.ExecuteExpandoObject(cmdText, parameters, commandType, null);

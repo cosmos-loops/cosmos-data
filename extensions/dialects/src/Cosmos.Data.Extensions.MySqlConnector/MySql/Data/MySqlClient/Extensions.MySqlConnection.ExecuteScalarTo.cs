@@ -11,8 +11,21 @@ using Cosmos;
 
 namespace MySql.Data.MySqlClient
 {
+    /// <summary>
+    /// Extensions for <see cref="MySqlClient"/>
+    /// </summary>
     public static partial class MySqlClientExtensions
     {
+        /// <summary>
+        /// Execute scalar to...
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static T ExecuteScalarTo<T>(this MySqlConnection @this, string cmdText, MySqlParameter[] parameters, CommandType commandType, MySqlTransaction transaction)
         {
             using (var command = @this.CreateCommand())
@@ -30,6 +43,13 @@ namespace MySql.Data.MySqlClient
             }
         }
 
+        /// <summary>
+        /// Execute scalar to...
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="commandFactory"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static T ExecuteScalarTo<T>(this MySqlConnection @this, Action<MySqlCommand> commandFactory)
         {
             using (MySqlCommand command = @this.CreateCommand())
@@ -40,36 +60,94 @@ namespace MySql.Data.MySqlClient
             }
         }
 
+        /// <summary>
+        /// Execute scalar to...
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static T ExecuteScalarTo<T>(this MySqlConnection @this, string cmdText)
         {
             return @this.ExecuteScalarTo<T>(cmdText, null, CommandType.Text, null);
         }
 
+        /// <summary>
+        /// Execute scalar to...
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static T ExecuteScalarTo<T>(this MySqlConnection @this, string cmdText, MySqlTransaction transaction)
         {
             return @this.ExecuteScalarTo<T>(cmdText, null, CommandType.Text, transaction);
         }
 
+        /// <summary>
+        /// Execute scalar to...
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="commandType"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static T ExecuteScalarTo<T>(this MySqlConnection @this, string cmdText, CommandType commandType)
         {
             return @this.ExecuteScalarTo<T>(cmdText, null, commandType, null);
         }
 
+        /// <summary>
+        /// Execute scalar to...
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static T ExecuteScalarTo<T>(this MySqlConnection @this, string cmdText, CommandType commandType, MySqlTransaction transaction)
         {
             return @this.ExecuteScalarTo<T>(cmdText, null, commandType, transaction);
         }
 
+        /// <summary>
+        /// Execute scalar to...
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static T ExecuteScalarTo<T>(this MySqlConnection @this, string cmdText, MySqlParameter[] parameters)
         {
             return @this.ExecuteScalarTo<T>(cmdText, parameters, CommandType.Text, null);
         }
 
+        /// <summary>
+        /// Execute scalar to...
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static T ExecuteScalarTo<T>(this MySqlConnection @this, string cmdText, MySqlParameter[] parameters, MySqlTransaction transaction)
         {
             return @this.ExecuteScalarTo<T>(cmdText, parameters, CommandType.Text, transaction);
         }
 
+        /// <summary>
+        /// Execute scalar to...
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static T ExecuteScalarTo<T>(this MySqlConnection @this, string cmdText, MySqlParameter[] parameters, CommandType commandType)
         {
             return @this.ExecuteScalarTo<T>(cmdText, parameters, commandType, null);

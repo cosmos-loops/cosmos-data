@@ -10,8 +10,19 @@ using System.Data;
 
 namespace MySql.Data.MySqlClient
 {
+    /// <summary>
+    /// Extensions for <see cref="MySqlClient"/>
+    /// </summary>
     public static partial class MySqlClientExtensions
     {
+        /// <summary>
+        /// Execute NonQuery
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
         public static void ExecuteNonQuery(this MySqlConnection @this, string cmdText, MySqlParameter[] parameters, CommandType commandType, MySqlTransaction transaction)
         {
             using (var command = @this.CreateCommand())
@@ -29,6 +40,11 @@ namespace MySql.Data.MySqlClient
             }
         }
 
+        /// <summary>
+        /// Execute NonQuery
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="commandFactory"></param>
         public static void ExecuteNonQuery(this MySqlConnection @this, Action<MySqlCommand> commandFactory)
         {
             using (var command = @this.CreateCommand())
@@ -39,36 +55,80 @@ namespace MySql.Data.MySqlClient
             }
         }
 
+        /// <summary>
+        /// Execute NonQuery
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
         public static void ExecuteNonQuery(this MySqlConnection @this, string cmdText)
         {
             @this.ExecuteNonQuery(cmdText, null, CommandType.Text, null);
         }
 
+        /// <summary>
+        /// Execute NonQuery
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="transaction"></param>
         public static void ExecuteNonQuery(this MySqlConnection @this, string cmdText, MySqlTransaction transaction)
         {
             @this.ExecuteNonQuery(cmdText, null, CommandType.Text, transaction);
         }
 
+        /// <summary>
+        /// Execute NonQuery
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="commandType"></param>
         public static void ExecuteNonQuery(this MySqlConnection @this, string cmdText, CommandType commandType)
         {
             @this.ExecuteNonQuery(cmdText, null, commandType, null);
         }
 
+        /// <summary>
+        /// Execute NonQuery
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
         public static void ExecuteNonQuery(this MySqlConnection @this, string cmdText, CommandType commandType, MySqlTransaction transaction)
         {
             @this.ExecuteNonQuery(cmdText, null, commandType, transaction);
         }
 
+        /// <summary>
+        /// Execute NonQuery
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
         public static void ExecuteNonQuery(this MySqlConnection @this, string cmdText, MySqlParameter[] parameters)
         {
             @this.ExecuteNonQuery(cmdText, parameters, CommandType.Text, null);
         }
 
+        /// <summary>
+        /// Execute NonQuery
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="transaction"></param>
         public static void ExecuteNonQuery(this MySqlConnection @this, string cmdText, MySqlParameter[] parameters, MySqlTransaction transaction)
         {
             @this.ExecuteNonQuery(cmdText, parameters, CommandType.Text, transaction);
         }
 
+        /// <summary>
+        /// Execute NonQuery
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
         public static void ExecuteNonQuery(this MySqlConnection @this, string cmdText, MySqlParameter[] parameters, CommandType commandType)
         {
             @this.ExecuteNonQuery(cmdText, parameters, commandType, null);

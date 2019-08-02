@@ -10,6 +10,9 @@ using Cosmos;
 namespace System.Data.SQLite
 {
     // ReSharper disable once InconsistentNaming
+    /// <summary>
+    /// Extensions for Sqlite
+    /// </summary>
     public static partial class SQLiteExtensions
     {
         /// <summary>

@@ -8,10 +8,6 @@
         <RootNamespace />
     </PropertyGroup>
 
-    <ItemGroup>
-      <PackageReference Include="SqlKata" Version="1.1.7" />
-    </ItemGroup>
-
     <PropertyGroup>
         <AssemblyName>Cosmos.Data.Extensions.SqlKata</AssemblyName>
         <PackageId>Cosmos.Data.Extensions.SqlKata</PackageId>
@@ -20,5 +16,17 @@
         <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
         <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DocumentationFile>Cosmos.Data.Extensions.SqlKata.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <DocumentationFile>Cosmos.Data.Extensions.SqlKata.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="SqlKata" Version="1.1.7" />
+    </ItemGroup>
 
 </Project>

@@ -5,6 +5,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Cosmos.Data
 {
+    /// <summary>
+    /// DbContext config
+    /// </summary>
     public class DbContextConfig : DbContextConfigBase<DbContextConfig>, IDbContextConfigureRegister<IServiceCollection>
     {
         private bool DbContextRegistered { get; set; }
@@ -22,8 +25,15 @@ namespace Cosmos.Data
             });
         }
 
+        /// <summary>
+        /// Gets services
+        /// </summary>
         public IServiceCollection Services { get; }
 
+        /// <summary>
+        /// Register DbContext
+        /// </summary>
+        /// <param name="action"></param>
         public void RegisterDbContext(Action<IServiceCollection> action)
         {
             if (action == null)

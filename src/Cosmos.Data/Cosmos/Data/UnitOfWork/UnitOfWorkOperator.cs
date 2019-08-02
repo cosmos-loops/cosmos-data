@@ -6,8 +6,17 @@ using Cosmos.Disposables;
 
 namespace Cosmos.Data.UnitOfWork
 {
+    /// <summary>
+    /// UnitOfWork operator
+    /// </summary>
     public class UnitOfWorkOperator : DisposableObjects, IUnitOfWorkOperator
     {
+        /// <summary>
+        /// Create a new instance of <see cref="UnitOfWorkOperator"/>
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <param name="manualCommit"></param>
+        /// <param name="isAsynchronous"></param>
         public UnitOfWorkOperator(IStoreContextManager manager, bool manualCommit = false, bool isAsynchronous = false)
         {
             manager.CheckNull(nameof(manager));
@@ -18,6 +27,13 @@ namespace Cosmos.Data.UnitOfWork
             IsAsynchronous = isAsynchronous;
         }
 
+        /// <summary>
+        /// Create a new instance of <see cref="UnitOfWorkOperator"/>
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <param name="disposeAction"></param>
+        /// <param name="manualCommit"></param>
+        /// <param name="isAsynchronous"></param>
         public UnitOfWorkOperator(IStoreContextManager manager, Action disposeAction, bool manualCommit = false, bool isAsynchronous = false)
         {
             manager.CheckNull(nameof(manager));
@@ -28,6 +44,9 @@ namespace Cosmos.Data.UnitOfWork
             IsAsynchronous = isAsynchronous;
         }
 
+        /// <summary>
+        /// Gets UnitOfWork Manager
+        /// </summary>
         protected IStoreContextManager UnitOfWorkManager { get; }
 
         private void DefaultDisposeAction()
@@ -47,6 +66,9 @@ namespace Cosmos.Data.UnitOfWork
             return !Commited && !ManualCommit;
         }
 
+        /// <summary>
+        /// Commit
+        /// </summary>
         public void Commit()
         {
             if (!Commited)
@@ -56,6 +78,11 @@ namespace Cosmos.Data.UnitOfWork
             }
         }
 
+        /// <summary>
+        /// Commit async
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public async Task CommitAsync(CancellationToken cancellationToken = default)
         {
             if (!Commited)

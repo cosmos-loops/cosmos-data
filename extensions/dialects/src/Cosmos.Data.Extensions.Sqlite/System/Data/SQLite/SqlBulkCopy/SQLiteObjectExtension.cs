@@ -8,6 +8,9 @@
 
 namespace System.Data.SQLite.SqlBulkCopy
 {
+    /// <summary>
+    /// Extensions fot Sqlite object
+    /// </summary>
     // ReSharper disable once InconsistentNaming
     static class SQLiteObjectExtension
     {
@@ -19,9 +22,9 @@ namespace System.Data.SQLite.SqlBulkCopy
         // ReSharper disable once InconsistentNaming
         public static string ToSQLiteString(this object a)
         {
-            if (a.GetType().Name == "Byte[]")
+            if (a.GetType().Name == "Byte[]" && a is byte[] b)
             {
-                return BitConverter.ToString(a as byte[]).Replace("-", "");
+                return BitConverter.ToString(b).Replace("-", "");
             }
 
             return a.ToString();

@@ -1,7 +1,15 @@
 namespace System.Data
 {
+    /// <summary>
+    /// Extensions for SqlDateTime
+    /// </summary>
     public static class SqlDateExtensions
     {
+        /// <summary>
+        /// To SqlDate
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <returns></returns>
         public static string ToSqlDate(this DateTime dt)
         {
             if (dt == DateTime.MinValue)
@@ -9,6 +17,11 @@ namespace System.Data
             return "'" + dt.ToString("yyyyMMdd") + "'";
         }
 
+        /// <summary>
+        /// To SqlDateTime
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <returns></returns>
         public static string ToSqlDateTime(this DateTime dt)
         {
             if (dt == DateTime.MinValue)
@@ -18,6 +31,11 @@ namespace System.Data
             return "'" + dt.ToString("yyyyMMdd HH:mm:ss.fff") + "'";
         }
 
+        /// <summary>
+        /// To SqlDate
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <returns></returns>
         public static string ToSqlDate(this DateTime? dt)
         {
             if (!dt.HasValue || dt == DateTime.MinValue)
@@ -25,6 +43,11 @@ namespace System.Data
             return "'" + dt.Value.ToString("yyyyMMdd") + "'";
         }
 
+        /// <summary>
+        /// To SqlDateTime
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <returns></returns>
         public static string ToSqlDateTime(this DateTime? dt)
         {
             if (!dt.HasValue || dt == DateTime.MinValue)
@@ -34,6 +57,11 @@ namespace System.Data
             return "'" + dt.Value.ToString("yyyyMMdd HH:mm:ss.fff") + "'";
         }
 
+        /// <summary>
+        /// Is valid sql small datetime
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <returns></returns>
         public static bool IsValidSqlSmallDateTime(this DateTime dt)
         {
             var minSmallDateTime = new DateTime(1900, 1, 1);
@@ -41,6 +69,11 @@ namespace System.Data
             return dt >= minSmallDateTime && dt <= maxSmallDateTime;
         }
 
+        /// <summary>
+        /// Is valid sql datetime
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <returns></returns>
         public static bool IsValidSqlDateTime(this DateTime dt)
         {
             var minDateTime = new DateTime(1753, 1, 1);

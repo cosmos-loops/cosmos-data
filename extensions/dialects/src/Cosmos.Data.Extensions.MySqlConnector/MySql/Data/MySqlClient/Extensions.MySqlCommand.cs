@@ -9,8 +9,16 @@ using System.Data;
 
 namespace MySql.Data.MySqlClient
 {
+    /// <summary>
+    /// Extensions for <see cref="MySqlClient"/>
+    /// </summary>
     public static partial class MySqlClientExtensions
     {
+        /// <summary>
+        /// Execute DataSet
+        /// </summary>
+        /// <param name="this"></param>
+        /// <returns></returns>
         public static DataSet ExecuteDataSet(this MySqlCommand @this)
         {
             var ds = new DataSet();
@@ -22,6 +30,11 @@ namespace MySql.Data.MySqlClient
             return ds;
         }
 
+        /// <summary>
+        /// Execute DataTable
+        /// </summary>
+        /// <param name="this"></param>
+        /// <returns></returns>
         public static DataTable ExecuteDataTable(this MySqlCommand @this)
         {
             var dt = new DataTable();

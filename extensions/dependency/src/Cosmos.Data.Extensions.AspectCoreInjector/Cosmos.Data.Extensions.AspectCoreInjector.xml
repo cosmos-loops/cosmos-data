@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Data.Extensions.AspectCoreInjector</name>
+    </assembly>
+    <members>
+        <member name="T:AspectCore.Injector.AspectCoreInjectorExtensions">
+            <summary>
+            To register Cosmos.Data
+            </summary>
+        </member>
+        <member name="M:AspectCore.Injector.AspectCoreInjectorExtensions.AddCosmosDataSupport(AspectCore.Injector.IServiceContainer,System.Action{Cosmos.Data.DbContextConfig})">
+            <summary>
+            Add Cosmos Data Support
+            </summary>
+            <param name="services"></param>
+            <param name="context"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:AspectCore.Injector.RepositoryManagerExtensions">
+            <summary>
+            To register repository of Cosmos.Data
+            </summary>
+        </member>
+        <member name="M:AspectCore.Injector.RepositoryManagerExtensions.AddRepository``2(AspectCore.Injector.IServiceContainer,System.String)">
+            <summary>
+            Add repository
+            </summary>
+            <param name="services"></param>
+            <param name="repositoryName"></param>
+            <typeparam name="TService"></typeparam>
+            <typeparam name="TImplementation"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.DbContextConfig">
+            <summary>
+            DbContext config
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.DbContextConfig.Services">
+            <summary>
+            Gets services
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.DbContextConfig.RegisterDbContext(System.Action{AspectCore.Injector.IServiceContainer})">
+            <summary>
+            Register DbContext
+            </summary>
+            <param name="action"></param>
+        </member>
+    </members>
+</doc>

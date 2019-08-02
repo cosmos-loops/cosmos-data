@@ -5,6 +5,9 @@ using Cosmos.Data.Context;
 
 namespace Cosmos.Data
 {
+    /// <summary>
+    /// DbContext config
+    /// </summary>
     public class DbContextConfig : DbContextConfigBase<DbContextConfig>, IDbContextConfigureRegister<IServiceContainer>
     {
         private bool DbContextRegistered { get; set; }
@@ -22,8 +25,15 @@ namespace Cosmos.Data
             });
         }
 
+        /// <summary>
+        /// Gets services
+        /// </summary>
         public IServiceContainer Services { get; }
 
+        /// <summary>
+        /// Register DbContext
+        /// </summary>
+        /// <param name="action"></param>
         public void RegisterDbContext(Action<IServiceContainer> action)
         {
             if (action == null)

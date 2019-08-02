@@ -7,147 +7,150 @@
 
 namespace System.Data.SQLite
 {
+    /// <summary>
+    /// Extensions for Sqlite
+    /// </summary>
     // ReSharper disable once InconsistentNaming
     public static partial class SQLiteExtensions
     {
-          /// <summary>
-    ///     A SQLiteConnection extension method that executes the data table operation.
-    /// </summary>
-    /// <param name="this">The @this to act on.</param>
-    /// <param name="cmdText">The command text.</param>
-    /// <param name="parameters">Options for controlling the operation.</param>
-    /// <param name="commandType">Type of the command.</param>
-    /// <param name="transaction">The transaction.</param>
-    /// <returns>A DataTable.</returns>
-    public static DataTable ExecuteDataTable(this SQLiteConnection @this, string cmdText, SQLiteParameter[] parameters, CommandType commandType, SQLiteTransaction transaction)
-    {
-        using (SQLiteCommand command = @this.CreateCommand())
+        /// <summary>
+        ///     A SQLiteConnection extension method that executes the data table operation.
+        /// </summary>
+        /// <param name="this">The @this to act on.</param>
+        /// <param name="cmdText">The command text.</param>
+        /// <param name="parameters">Options for controlling the operation.</param>
+        /// <param name="commandType">Type of the command.</param>
+        /// <param name="transaction">The transaction.</param>
+        /// <returns>A DataTable.</returns>
+        public static DataTable ExecuteDataTable(this SQLiteConnection @this, string cmdText, SQLiteParameter[] parameters, CommandType commandType, SQLiteTransaction transaction)
         {
-            command.CommandText = cmdText;
-            command.CommandType = commandType;
-            command.Transaction = transaction;
-
-            if (parameters != null)
+            using (SQLiteCommand command = @this.CreateCommand())
             {
-                command.Parameters.AddRange(parameters);
-            }
+                command.CommandText = cmdText;
+                command.CommandType = commandType;
+                command.Transaction = transaction;
 
-            var ds = new DataSet();
-            using (var dataAdapter = new SQLiteDataAdapter(command))
-            {
-                dataAdapter.Fill(ds);
-            }
+                if (parameters != null)
+                {
+                    command.Parameters.AddRange(parameters);
+                }
 
-            return ds.Tables[0];
+                var ds = new DataSet();
+                using (var dataAdapter = new SQLiteDataAdapter(command))
+                {
+                    dataAdapter.Fill(ds);
+                }
+
+                return ds.Tables[0];
+            }
         }
-    }
 
-    /// <summary>
-    ///     A SQLiteConnection extension method that executes the data table operation.
-    /// </summary>
-    /// <param name="this">The @this to act on.</param>
-    /// <param name="commandFactory">The command factory.</param>
-    /// <returns>A DataTable.</returns>
-    public static DataTable ExecuteDataTable(this SQLiteConnection @this, Action<SQLiteCommand> commandFactory)
-    {
-        using (SQLiteCommand command = @this.CreateCommand())
+        /// <summary>
+        ///     A SQLiteConnection extension method that executes the data table operation.
+        /// </summary>
+        /// <param name="this">The @this to act on.</param>
+        /// <param name="commandFactory">The command factory.</param>
+        /// <returns>A DataTable.</returns>
+        public static DataTable ExecuteDataTable(this SQLiteConnection @this, Action<SQLiteCommand> commandFactory)
         {
-            commandFactory(command);
-
-            var ds = new DataSet();
-            using (var dataAdapter = new SQLiteDataAdapter(command))
+            using (SQLiteCommand command = @this.CreateCommand())
             {
-                dataAdapter.Fill(ds);
+                commandFactory(command);
+
+                var ds = new DataSet();
+                using (var dataAdapter = new SQLiteDataAdapter(command))
+                {
+                    dataAdapter.Fill(ds);
+                }
+
+                return ds.Tables[0];
             }
-
-            return ds.Tables[0];
         }
-    }
 
-    /// <summary>
-    ///     A SQLiteConnection extension method that executes the data table operation.
-    /// </summary>
-    /// <param name="this">The @this to act on.</param>
-    /// <param name="cmdText">The command text.</param>
-    /// <returns>A DataTable.</returns>
-    public static DataTable ExecuteDataTable(this SQLiteConnection @this, string cmdText)
-    {
-        return @this.ExecuteDataTable(cmdText, null, CommandType.Text, null);
-    }
+        /// <summary>
+        ///     A SQLiteConnection extension method that executes the data table operation.
+        /// </summary>
+        /// <param name="this">The @this to act on.</param>
+        /// <param name="cmdText">The command text.</param>
+        /// <returns>A DataTable.</returns>
+        public static DataTable ExecuteDataTable(this SQLiteConnection @this, string cmdText)
+        {
+            return @this.ExecuteDataTable(cmdText, null, CommandType.Text, null);
+        }
 
-    /// <summary>
-    ///     A SQLiteConnection extension method that executes the data table operation.
-    /// </summary>
-    /// <param name="this">The @this to act on.</param>
-    /// <param name="cmdText">The command text.</param>
-    /// <param name="transaction">The transaction.</param>
-    /// <returns>A DataTable.</returns>
-    public static DataTable ExecuteDataTable(this SQLiteConnection @this, string cmdText, SQLiteTransaction transaction)
-    {
-        return @this.ExecuteDataTable(cmdText, null, CommandType.Text, transaction);
-    }
+        /// <summary>
+        ///     A SQLiteConnection extension method that executes the data table operation.
+        /// </summary>
+        /// <param name="this">The @this to act on.</param>
+        /// <param name="cmdText">The command text.</param>
+        /// <param name="transaction">The transaction.</param>
+        /// <returns>A DataTable.</returns>
+        public static DataTable ExecuteDataTable(this SQLiteConnection @this, string cmdText, SQLiteTransaction transaction)
+        {
+            return @this.ExecuteDataTable(cmdText, null, CommandType.Text, transaction);
+        }
 
-    /// <summary>
-    ///     A SQLiteConnection extension method that executes the data table operation.
-    /// </summary>
-    /// <param name="this">The @this to act on.</param>
-    /// <param name="cmdText">The command text.</param>
-    /// <param name="commandType">Type of the command.</param>
-    /// <returns>A DataTable.</returns>
-    public static DataTable ExecuteDataTable(this SQLiteConnection @this, string cmdText, CommandType commandType)
-    {
-        return @this.ExecuteDataTable(cmdText, null, commandType, null);
-    }
+        /// <summary>
+        ///     A SQLiteConnection extension method that executes the data table operation.
+        /// </summary>
+        /// <param name="this">The @this to act on.</param>
+        /// <param name="cmdText">The command text.</param>
+        /// <param name="commandType">Type of the command.</param>
+        /// <returns>A DataTable.</returns>
+        public static DataTable ExecuteDataTable(this SQLiteConnection @this, string cmdText, CommandType commandType)
+        {
+            return @this.ExecuteDataTable(cmdText, null, commandType, null);
+        }
 
-    /// <summary>
-    ///     A SQLiteConnection extension method that executes the data table operation.
-    /// </summary>
-    /// <param name="this">The @this to act on.</param>
-    /// <param name="cmdText">The command text.</param>
-    /// <param name="commandType">Type of the command.</param>
-    /// <param name="transaction">The transaction.</param>
-    /// <returns>A DataTable.</returns>
-    public static DataTable ExecuteDataTable(this SQLiteConnection @this, string cmdText, CommandType commandType, SQLiteTransaction transaction)
-    {
-        return @this.ExecuteDataTable(cmdText, null, commandType, transaction);
-    }
+        /// <summary>
+        ///     A SQLiteConnection extension method that executes the data table operation.
+        /// </summary>
+        /// <param name="this">The @this to act on.</param>
+        /// <param name="cmdText">The command text.</param>
+        /// <param name="commandType">Type of the command.</param>
+        /// <param name="transaction">The transaction.</param>
+        /// <returns>A DataTable.</returns>
+        public static DataTable ExecuteDataTable(this SQLiteConnection @this, string cmdText, CommandType commandType, SQLiteTransaction transaction)
+        {
+            return @this.ExecuteDataTable(cmdText, null, commandType, transaction);
+        }
 
-    /// <summary>
-    ///     A SQLiteConnection extension method that executes the data table operation.
-    /// </summary>
-    /// <param name="this">The @this to act on.</param>
-    /// <param name="cmdText">The command text.</param>
-    /// <param name="parameters">Options for controlling the operation.</param>
-    /// <returns>A DataTable.</returns>
-    public static DataTable ExecuteDataTable(this SQLiteConnection @this, string cmdText, SQLiteParameter[] parameters)
-    {
-        return @this.ExecuteDataTable(cmdText, parameters, CommandType.Text, null);
-    }
+        /// <summary>
+        ///     A SQLiteConnection extension method that executes the data table operation.
+        /// </summary>
+        /// <param name="this">The @this to act on.</param>
+        /// <param name="cmdText">The command text.</param>
+        /// <param name="parameters">Options for controlling the operation.</param>
+        /// <returns>A DataTable.</returns>
+        public static DataTable ExecuteDataTable(this SQLiteConnection @this, string cmdText, SQLiteParameter[] parameters)
+        {
+            return @this.ExecuteDataTable(cmdText, parameters, CommandType.Text, null);
+        }
 
-    /// <summary>
-    ///     A SQLiteConnection extension method that executes the data table operation.
-    /// </summary>
-    /// <param name="this">The @this to act on.</param>
-    /// <param name="cmdText">The command text.</param>
-    /// <param name="parameters">Options for controlling the operation.</param>
-    /// <param name="transaction">The transaction.</param>
-    /// <returns>A DataTable.</returns>
-    public static DataTable ExecuteDataTable(this SQLiteConnection @this, string cmdText, SQLiteParameter[] parameters, SQLiteTransaction transaction)
-    {
-        return @this.ExecuteDataTable(cmdText, parameters, CommandType.Text, transaction);
-    }
+        /// <summary>
+        ///     A SQLiteConnection extension method that executes the data table operation.
+        /// </summary>
+        /// <param name="this">The @this to act on.</param>
+        /// <param name="cmdText">The command text.</param>
+        /// <param name="parameters">Options for controlling the operation.</param>
+        /// <param name="transaction">The transaction.</param>
+        /// <returns>A DataTable.</returns>
+        public static DataTable ExecuteDataTable(this SQLiteConnection @this, string cmdText, SQLiteParameter[] parameters, SQLiteTransaction transaction)
+        {
+            return @this.ExecuteDataTable(cmdText, parameters, CommandType.Text, transaction);
+        }
 
-    /// <summary>
-    ///     A SQLiteConnection extension method that executes the data table operation.
-    /// </summary>
-    /// <param name="this">The @this to act on.</param>
-    /// <param name="cmdText">The command text.</param>
-    /// <param name="parameters">Options for controlling the operation.</param>
-    /// <param name="commandType">Type of the command.</param>
-    /// <returns>A DataTable.</returns>
-    public static DataTable ExecuteDataTable(this SQLiteConnection @this, string cmdText, SQLiteParameter[] parameters, CommandType commandType)
-    {
-        return @this.ExecuteDataTable(cmdText, parameters, commandType, null);
-}
+        /// <summary>
+        ///     A SQLiteConnection extension method that executes the data table operation.
+        /// </summary>
+        /// <param name="this">The @this to act on.</param>
+        /// <param name="cmdText">The command text.</param>
+        /// <param name="parameters">Options for controlling the operation.</param>
+        /// <param name="commandType">Type of the command.</param>
+        /// <returns>A DataTable.</returns>
+        public static DataTable ExecuteDataTable(this SQLiteConnection @this, string cmdText, SQLiteParameter[] parameters, CommandType commandType)
+        {
+            return @this.ExecuteDataTable(cmdText, parameters, commandType, null);
+        }
     }
 }

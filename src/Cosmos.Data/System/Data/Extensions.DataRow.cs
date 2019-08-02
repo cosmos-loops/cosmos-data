@@ -5,8 +5,17 @@ using Cosmos;
 
 namespace System.Data
 {
+    /// <summary>
+    /// Extensions for <see cref="DataRow"/>
+    /// </summary>
     public static class DataRowExtensions
     {
+        /// <summary>
+        /// To entity
+        /// </summary>
+        /// <param name="this"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static T ToEntity<T>(this DataRow @this) where T : new()
         {
             var type = typeof(T);
@@ -15,7 +24,7 @@ namespace System.Data
 
             var entity = new T();
 
-            foreach (PropertyInfo property in properties)
+            foreach (var property in properties)
             {
                 if (@this.Table.Columns.Contains(property.Name))
                 {
@@ -24,7 +33,7 @@ namespace System.Data
                 }
             }
 
-            foreach (FieldInfo field in fields)
+            foreach (var field in fields)
             {
                 if (@this.Table.Columns.Contains(field.Name))
                 {
@@ -36,6 +45,11 @@ namespace System.Data
             return entity;
         }
 
+        /// <summary>
+        /// To expando object
+        /// </summary>
+        /// <param name="this"></param>
+        /// <returns></returns>
         public static dynamic ToExpandoObject(this DataRow @this)
         {
             dynamic entity = new ExpandoObject();

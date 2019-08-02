@@ -5,18 +5,31 @@ using Cosmos;
 
 namespace System.Data
 {
+    /// <summary>
+    /// Extensions for <see cref="DataTable"/>
+    /// </summary>
     public static class DataTableExtensions
     {
-        public static DataRow FirstRow(this DataTable @this)
-        {
-            return @this.Rows[0];
-        }
+        /// <summary>
+        /// Gets first row
+        /// </summary>
+        /// <param name="this"></param>
+        /// <returns></returns>
+        public static DataRow FirstRow(this DataTable @this) => @this.Rows[0];
 
-        public static DataRow LastRow(this DataTable @this)
-        {
-            return @this.Rows[@this.Rows.Count - 1];
-        }
+        /// <summary>
+        /// Gets last row
+        /// </summary>
+        /// <param name="this"></param>
+        /// <returns></returns>
+        public static DataRow LastRow(this DataTable @this) => @this.Rows[@this.Rows.Count - 1];
 
+        /// <summary>
+        /// To a set of entity
+        /// </summary>
+        /// <param name="this"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static IEnumerable<T> ToEntities<T>(this DataTable @this) where T : new()
         {
             var type = typeof(T);
@@ -29,7 +42,7 @@ namespace System.Data
             {
                 var entity = new T();
 
-                foreach (PropertyInfo property in properties)
+                foreach (var property in properties)
                 {
                     if (@this.Columns.Contains(property.Name))
                     {
@@ -53,6 +66,11 @@ namespace System.Data
             return list;
         }
 
+        /// <summary>
+        /// To a set of expando object
+        /// </summary>
+        /// <param name="this"></param>
+        /// <returns></returns>
         public static IEnumerable<dynamic> ToExpandoObjects(this DataTable @this)
         {
             var list = new List<dynamic>();
@@ -60,7 +78,7 @@ namespace System.Data
             foreach (DataRow dr in @this.Rows)
             {
                 dynamic entity = new ExpandoObject();
-                var expandoDict = (IDictionary<string, object>)entity;
+                var expandoDict = (IDictionary<string, object>) entity;
 
                 foreach (DataColumn column in @this.Columns)
                 {

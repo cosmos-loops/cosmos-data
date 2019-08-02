@@ -26,6 +26,8 @@ namespace MySql.Data.MySqlClient.SqlBulkCopy
         public static readonly Type TimeSpan = typeof(TimeSpan);
         public static readonly Type Enum = typeof(Enum);
         public static readonly Type ObjectArray = typeof(object[]);
+
+        // ReSharper disable once InconsistentNaming
         public static readonly Type IEnumerable = typeof(IEnumerable);
         public static readonly Type GenericList = typeof(List<>);
         public static readonly Type Task = typeof(Task);

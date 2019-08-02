@@ -4,10 +4,14 @@
 // License (MIT): https://github.com/zzzprojects/Z.ExtensionMethods/blob/master/LICENSE
 // More projects: https://zzzprojects.com/
 // Copyright © ZZZ Projects Inc. All rights reserved.
+
 using System.Collections.Generic;
 
 namespace System.Data.SQLite
 {
+    /// <summary>
+    /// Extensions for Sqlite
+    /// </summary>
     // ReSharper disable once InconsistentNaming
     public static partial class SQLiteExtensions
     {

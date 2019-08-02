@@ -10,6 +10,14 @@ namespace AspectCore.Injector
     /// </summary>
     public static class RepositoryManagerExtensions
     {
+        /// <summary>
+        /// Add repository
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="repositoryName"></param>
+        /// <typeparam name="TService"></typeparam>
+        /// <typeparam name="TImplementation"></typeparam>
+        /// <returns></returns>
         public static IServiceContainer AddRepository<TService, TImplementation>(this IServiceContainer services, string repositoryName = "")
             where TService : class, IRepository
             where TImplementation : class, TService

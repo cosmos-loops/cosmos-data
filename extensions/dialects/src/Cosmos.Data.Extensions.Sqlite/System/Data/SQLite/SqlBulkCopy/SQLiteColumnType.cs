@@ -14,36 +14,39 @@ namespace System.Data.SQLite.SqlBulkCopy
     // ReSharper disable once InconsistentNaming
     public enum SQLiteColumnType
     {
-        //
-        // Summary:
-        //     A signed integer.
+        /// <summary>
+        /// A signed integer.
+        /// </summary>
         Integer = 1,
 
-        //
-        // Summary:
-        //     A floating point value.
+        /// <summary>
+        /// A floating point value.
+        /// </summary>
         Real = 2,
 
-        //
-        // Summary:
-        //     A text string.
+        /// <summary>
+        /// A text string.
+        /// </summary>
         Text = 3,
 
-        //
-        // Summary:
-        //     A blob of data.
+        /// <summary>
+        /// A blob of data.
+        /// </summary>
         Blob = 4,
 
-        // Summary:
-        //     A date column
+        /// <summary>
+        /// A date column
+        /// </summary>
         Date = 5,
 
-        // Summary:
-        //     A numeric column
+        /// <summary>
+        /// A numeric column
+        /// </summary>
         Numeric = 6,
 
-        // Summary
-        //     A boolean column
+        /// <summary>
+        /// A boolean column
+        /// </summary>
         Boolean = 7
     }
 }

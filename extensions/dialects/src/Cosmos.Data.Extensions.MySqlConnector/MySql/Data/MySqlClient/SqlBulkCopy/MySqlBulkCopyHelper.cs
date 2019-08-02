@@ -27,6 +27,8 @@ namespace MySql.Data.MySqlClient.SqlBulkCopy
         private const char EscapeCharacter = '"';
         private const char FieldQuotationCharacter = '"';
         private const string FieldTerminator = ",";
+
+        // ReSharper disable once FieldCanBeMadeReadOnly.Local
         private static string _lineTerminator = Environment.NewLine;
 
         private static string DataTableToCsv(DataTable table, string secureFilePriv)

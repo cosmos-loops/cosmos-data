@@ -7,8 +7,8 @@ Cosmos.Data is a inline project of [COSMOS LOOPS PROGRAMME](https://github.com/c
 - [Dapper](https://github.com/cosmos-loops/Data.Dapper/)
 - [Microsoft.EntityFrameworkCore](https://github.com/cosmos-loops/Data.EntityFrameworkCore/)
 - [FreeSql](https://github.com/cosmos-loops/Data.FreeSql/)
-- Redis(based on CSRedisCore)
-- Redis(based on StackExchange.Redis)
+- [MongoDB](https://github.com/cosmos-loops/Data.MongoDB/)
+- [Redis(based on CSRedisCore/StackExchange.Redis)](https://github.com/cosmos-loops/Data.Redis/)
 - _more_
 
 ---
