@@ -29,7 +29,7 @@ dotnet pack extensions/dialects/src/Cosmos.Data.Extensions.SqlServer -c Release 
 dotnet pack extensions/dialects/src/Cosmos.Data.Extensions.Sqlite -c Release -o ../../../../nuget_pub
 
 ::Extensions for SqlKata
-dotnet pack extensions/sqlkata/sql/Cosmos.Data.Extensions.SqlKata Release -o ../../../../nuget_pub
+dotnet pack extensions/sqlkata/src/Cosmos.Data.Extensions.SqlKata -c Release -o ../../../../nuget_pub
 
 for /R "nuget_pub" %%s in (*symbols.nupkg) do (
     del %%s
