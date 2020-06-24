@@ -3,35 +3,23 @@
     <Import Project="..\..\build\common.props" />
 
     <PropertyGroup>
-      <TargetFramework>netstandard2.0</TargetFramework>
-        <LangVersion>7.2</LangVersion>
-        <RootNamespace />
+        <TargetFrameworks>netstandard2.1;netstandard2.0;net461;net451</TargetFrameworks>
     </PropertyGroup>
 
     <PropertyGroup>
         <AssemblyName>Cosmos.Data</AssemblyName>
         <PackageId>Cosmos.Data</PackageId>
         <Description>Cosmos data core library.</Description>
-        <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-        <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-        <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-        <DocumentationFile>Cosmos.Data.xml</DocumentationFile>
-    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Cosmos.Extensions.Dependency.Core" Version="0.1.4.4-alpha2-201012" />
+        <PackageReference Include="Cosmos.Extensions.ObjectPools" Version="0.1.4.4-alpha2-201012" />
+        <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    </ItemGroup>
 
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-        <DocumentationFile>Cosmos.Data.xml</DocumentationFile>
-    </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Cosmos.Standard" Version="0.1.1-alpha3-123037" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Cosmos.Data.Abstractions\Cosmos.Data.Abstractions.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Cosmos.Data.Abstractions\Cosmos.Data.Abstractions.csproj" />
+    </ItemGroup>
 
 </Project>

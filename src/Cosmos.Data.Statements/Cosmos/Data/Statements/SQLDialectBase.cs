@@ -57,16 +57,22 @@ namespace Cosmos.Data.Statements
         public virtual string GetTableName(string schemaName, string tableName, string alias)
         {
             if (string.IsNullOrWhiteSpace(tableName))
+            {
                 throw new ArgumentNullException(nameof(tableName), "TableName cannot be null or empty.");
+            }
 
             var sb = new StringBuilder();
             if (!string.IsNullOrWhiteSpace(schemaName))
+            {
                 sb.Append($"{QuoteString(schemaName)}.");
+            }
 
             sb.Append(QuoteString(tableName));
 
             if (!string.IsNullOrWhiteSpace(alias))
+            {
                 sb.Append($" AS {QuoteString(alias)}");
+            }
 
             return sb.ToString();
         }
@@ -81,20 +87,25 @@ namespace Cosmos.Data.Statements
         public virtual string GetColumnName(string prefix, string columnName, string alias)
         {
             if (string.IsNullOrWhiteSpace(columnName))
+            {
                 throw new ArgumentNullException(nameof(columnName), "ColumnName cannot be null or empty.");
+            }
 
             var sb = new StringBuilder();
 
             if (!string.IsNullOrWhiteSpace(prefix))
+            {
                 sb.Append($"{QuoteString(prefix)}.");
+            }
 
             sb.Append(QuoteString(columnName));
 
             if (!string.IsNullOrWhiteSpace(alias))
+            {
                 sb.Append($" AS {QuoteString(alias)}");
+            }
 
             return sb.ToString();
-
         }
 
         /// <summary>
@@ -132,7 +143,10 @@ namespace Cosmos.Data.Statements
         public virtual bool IsQuoted(string value)
         {
             if (value.Trim()[0] == OpenQuote)
+            {
                 return value.Trim().Last() == CloseQuote;
+            }
+
             return false;
         }
 
@@ -144,7 +158,9 @@ namespace Cosmos.Data.Statements
         public virtual string QuoteString(string value)
         {
             if (IsQuoted(value) || value == "*")
+            {
                 return value;
+            }
 
             return $"{OpenQuote}{value.Trim()}{CloseQuote}";
         }
@@ -155,6 +171,8 @@ namespace Cosmos.Data.Statements
         /// <param name="value">Quoted value.</param>
         /// <returns>Unquoted value.</returns>
         public virtual string UnQuoteString(string value)
-            => IsQuoted(value) ? value.Substring(1, value.Length - 1) : value;
+        {
+            return IsQuoted(value) ? value.Substring(1, value.Length - 1) : value;
+        }
     }
 }

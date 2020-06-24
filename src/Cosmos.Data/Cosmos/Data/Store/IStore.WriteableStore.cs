@@ -12,9 +12,10 @@ namespace Cosmos.Data.Store
     /// Interface of writeable store
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
-    /// <typeparam name="TKey"></typeparam>
-    public interface IWriteableStore<TEntity, in TKey> where TEntity : class, IEntity<TKey>, new()
+    public interface IWriteableStore<TEntity> where TEntity : class, IEntity, new()
     {
+        #region Add
+
         /// <summary>
         /// Add
         /// </summary>
@@ -43,6 +44,10 @@ namespace Cosmos.Data.Store
         /// <returns></returns>
         Task AddAsync([NotNull] IEnumerable<TEntity> entities, CancellationToken cancellationToken = default);
 
+        #endregion
+
+        #region Update
+
         /// <summary>
         /// Update
         /// </summary>
@@ -69,35 +74,69 @@ namespace Cosmos.Data.Store
         /// <returns></returns>
         Task UpdateAsync([NotNull] IEnumerable<TEntity> entities);
 
-        /// <summary>
-        /// Remove by id
-        /// </summary>
-        /// <param name="id"></param>
-        void Remove(TKey id);
+        #endregion
+
+        #region Remove
 
         /// <summary>
         /// Remove by entity
         /// </summary>
         /// <param name="entity"></param>
-        void Remove(TEntity entity);
-
-        /// <summary>
-        /// Remove by a set of id
-        /// </summary>
-        /// <param name="ids"></param>
-        void Remove(IEnumerable<TKey> ids);
+        void Remove([NotNull] TEntity entity);
 
         /// <summary>
         /// Remove by a set of entity
         /// </summary>
         /// <param name="entities"></param>
-        void Remove(IEnumerable<TEntity> entities);
+        void Remove([NotNull] IEnumerable<TEntity> entities);
 
         /// <summary>
         /// Remove by given condition
         /// </summary>
         /// <param name="predicate"></param>
         void Remove(Expression<Func<TEntity, bool>> predicate);
+
+        /// <summary>
+        /// Remove by entity async
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task RemoveAsync([NotNull] TEntity entity, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Remove by a set of entity async
+        /// </summary>
+        /// <param name="entities"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task RemoveAsync([NotNull] IEnumerable<TEntity> entities, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Remove by given condition async
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task RemoveAsync([NotNull] Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
+
+        #endregion
+    }
+
+    /// <summary>
+    /// Interface of writeable store
+    /// </summary>
+    /// <typeparam name="TEntity"></typeparam>
+    /// <typeparam name="TKey"></typeparam>
+    public interface IWriteableStore<TEntity, in TKey> : IWriteableStore<TEntity> where TEntity : class, IEntity<TKey>, new()
+    {
+        #region Remove
+
+        /// <summary>
+        /// Remove by id
+        /// </summary>
+        /// <param name="id"></param>
+        void Remove(TKey id);
 
         /// <summary>
         /// Remove by id async
@@ -107,36 +146,6 @@ namespace Cosmos.Data.Store
         /// <returns></returns>
         Task RemoveAsync(TKey id, CancellationToken cancellationToken = default);
 
-        /// <summary>
-        /// Remove by entity async
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        Task RemoveAsync(TEntity entity, CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Remove by a set of id async
-        /// </summary>
-        /// <param name="ids"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        Task RemoveAsync(IEnumerable<TKey> ids, CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Remove by a set of entity async
-        /// </summary>
-        /// <param name="entities"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        Task RemoveAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Remove by given condition async
-        /// </summary>
-        /// <param name="predicate"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        Task RemoveAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
+        #endregion
     }
 }

@@ -1,0 +1,2069 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Data.Extensions.Oracle</name>
+    </assembly>
+    <members>
+        <member name="T:Cosmos.Data.Sx.Oracle.OracleClientExtensions">
+            <summary>
+            Extensions for OracleClient
+            </summary>
+            <summary>
+            Extensions for OracleClient
+            </summary>
+            <summary>
+            Extensions for OracleClient
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataSet(Oracle.ManagedDataAccess.Client.OracleCommand)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataSetAsync(Oracle.ManagedDataAccess.Client.OracleCommand)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataTable(Oracle.ManagedDataAccess.Client.OracleCommand)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataTableAsync(Oracle.ManagedDataAccess.Client.OracleCommand)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteFirstDataTable(Oracle.ManagedDataAccess.Client.OracleCommand)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteFirstDataTableAsync(Oracle.ManagedDataAccess.Client.OracleCommand)">
+            <summary>
+            Execute DataTable async
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteReaderAsync(Oracle.ManagedDataAccess.Client.OracleCommand)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.CreateCommand(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Create command
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.CreateCommand(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Create command
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataSet(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataSet(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataSet(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataSet(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataSet(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataSet(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataSet(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataSet(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataSet(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataSetAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataSetAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataSetAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataSetAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataSetAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataSetAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataSetAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataSetAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataSetAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataTable(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataTable(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataTable(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataTable(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataTable(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataTable(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataTable(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataTable(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataTable(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataTableAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataTableAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataTableAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataTableAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataTableAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataTableAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataTableAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataTableAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteDataTableAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntities``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntities``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntities``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntities``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntities``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntities``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntities``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntities``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntities``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntitiesAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntitiesAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntitiesAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntitiesAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntitiesAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntitiesAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntitiesAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntitiesAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntitiesAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntity``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntity``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntity``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntity``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntity``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntity``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntity``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntity``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntity``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntityAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntityAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntityAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntityAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntityAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntityAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntityAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntityAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteEntityAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObject(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObject(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObject(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObject(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObject(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObject(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObject(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObject(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObject(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjectAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjectAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjectAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjectAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjectAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjectAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjectAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjectAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjectAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjects(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjects(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjects(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjects(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjects(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjects(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjects(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjects(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjects(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjectsAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjectsAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjectsAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjectsAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjectsAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjectsAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjectsAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjectsAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteExpandoObjectsAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteNonQuery(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteNonQuery(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteNonQuery(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteNonQuery(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteNonQuery(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteNonQuery(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteNonQuery(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteNonQuery(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteNonQuery(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteNonQueryAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteNonQueryAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteNonQueryAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteNonQueryAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteNonQueryAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteNonQueryAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteNonQueryAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteNonQueryAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteNonQueryAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteReader(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteReader(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteReader(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteReader(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteReader(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteReader(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteReader(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteReader(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteReader(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteReaderAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteReaderAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteReaderAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteReaderAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteReaderAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteReaderAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteReaderAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteReaderAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteReaderAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalar(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalar(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalar(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalar(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalar(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalar(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalar(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalar(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalar(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAsync(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAs``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAs``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAs``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAs``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAs``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAs``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAs``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAs``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAs``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAsAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAsAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAsAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAsAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAsAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAsAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAsAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAsAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarAsAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarTo``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarTo``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarTo``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarTo``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarTo``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarTo``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarTo``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarTo``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarTo``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarToAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarToAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.Action{Oracle.ManagedDataAccess.Client.OracleCommand})">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarToAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarToAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarToAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarToAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,System.Data.CommandType,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarToAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[])">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarToAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.ExecuteScalarToAsync``1(Oracle.ManagedDataAccess.Client.OracleConnection,System.String,Oracle.ManagedDataAccess.Client.OracleParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.AddWithValue(Oracle.ManagedDataAccess.Client.OracleParameterCollection,System.String,System.Object)">
+            <summary>
+            Add with value
+            </summary>
+            <param name="coll"></param>
+            <param name="parameterName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.OracleClientExtensions.AddRangeWithValue(Oracle.ManagedDataAccess.Client.OracleParameterCollection,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Add range with value
+            </summary>
+            <param name="coll"></param>
+            <param name="values"></param>
+        </member>
+        <member name="T:Cosmos.Data.Sx.Oracle.SqlBulkCopy.OracleBulkCopy">
+            <summary>
+            Oracle BulkCopy
+            </summary>
+        </member>
+        <member name="F:Cosmos.Data.Sx.Oracle.SqlBulkCopy.OracleBulkCopy._ownsTheConnection">
+            <summary>
+            Set to TRUE if the BulkCopy object was not instantiated with an external OracleConnection
+            and thus it is up to the BulkCopy object to open and close connections
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.SqlBulkCopy.OracleBulkCopy.#ctor(System.String)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.Sx.Oracle.SqlBulkCopy.OracleBulkCopy"/>
+            </summary>
+            <param name="connectionString"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.SqlBulkCopy.OracleBulkCopy.#ctor(Oracle.ManagedDataAccess.Client.OracleConnection)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.Sx.Oracle.SqlBulkCopy.OracleBulkCopy"/>
+            </summary>
+            <param name="connection"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.SqlBulkCopy.OracleBulkCopy.#ctor(Oracle.ManagedDataAccess.Client.OracleConnection,Oracle.ManagedDataAccess.Client.OracleTransaction)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Data.Sx.Oracle.SqlBulkCopy.OracleBulkCopy"/>
+            </summary>
+            <param name="connection"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="P:Cosmos.Data.Sx.Oracle.SqlBulkCopy.OracleBulkCopy.DestinationTableName">
+            <summary>
+            Destination TableName
+            </summary>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="P:Cosmos.Data.Sx.Oracle.SqlBulkCopy.OracleBulkCopy.BatchSize">
+            <summary>
+            Batck size
+            </summary>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="P:Cosmos.Data.Sx.Oracle.SqlBulkCopy.OracleBulkCopy.BulkCopyTimeout">
+            <summary>
+            BulkCopy timeout
+            </summary>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.SqlBulkCopy.OracleBulkCopy.WriteToServer(System.Data.DataTable)">
+            <summary>
+            Write to server
+            </summary>
+            <param name="table"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.SqlBulkCopy.OracleBulkCopy.Dispose">
+            <summary>
+            Dispose
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Oracle.SqlBulkCopy.OracleBulkCopy.Close">
+            <summary>
+            Close
+            </summary>
+        </member>
+    </members>
+</doc>

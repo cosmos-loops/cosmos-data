@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 
-
 // ReSharper disable InconsistentNaming
 namespace Cosmos.Data.Statements
 {
@@ -13,7 +12,7 @@ namespace Cosmos.Data.Statements
         /// Gets dialect's name.
         /// </summary>
         string DialectName { get; }
-        
+
         /// <summary>
         /// Gets open quote.
         /// </summary>

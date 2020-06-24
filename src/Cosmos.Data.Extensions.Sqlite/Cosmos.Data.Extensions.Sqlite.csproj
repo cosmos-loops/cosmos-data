@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\..\build\common.props" />
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.1;netstandard2.0;net461;net451</TargetFrameworks>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Data.Extensions.Sqlite</AssemblyName>
+        <PackageId>Cosmos.Data.Extensions.Sqlite</PackageId>
+        <Description>Sqlite package for Cosmos.Data.</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="System.Data.SQLite" Version="1.0.113.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Cosmos.Data\Cosmos.Data.csproj" />
+    </ItemGroup>
+
+</Project>
