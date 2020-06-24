@@ -9,7 +9,7 @@
             To register Cosmos.Data
             </summary>
         </member>
-        <member name="M:AspectCore.Injector.AspectCoreInjectorExtensions.AddCosmosDataSupport(AspectCore.Injector.IServiceContainer,System.Action{Cosmos.Data.DbContextConfig})">
+        <member name="M:AspectCore.Injector.AspectCoreInjectorExtensions.AddCosmosDataSupport(AspectCore.DependencyInjection.IServiceContext,System.Action{Cosmos.Data.DbContextConfig})">
             <summary>
             Add Cosmos Data Support
             </summary>
@@ -23,14 +23,21 @@
             To register repository of Cosmos.Data
             </summary>
         </member>
-        <member name="M:AspectCore.Injector.RepositoryManagerExtensions.AddRepository``2(AspectCore.Injector.IServiceContainer,System.String)">
+        <member name="M:AspectCore.Injector.RepositoryManagerExtensions.AddRepository``2(AspectCore.DependencyInjection.IServiceContext)">
             <summary>
             Add repository
             </summary>
             <param name="services"></param>
-            <param name="repositoryName"></param>
             <typeparam name="TService"></typeparam>
-            <typeparam name="TImplementation"></typeparam>
+            <typeparam name="TImplement"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:AspectCore.Injector.RepositoryManagerExtensions.AddRepository``1(AspectCore.DependencyInjection.IServiceContext)">
+            <summary>
+            Add repository
+            </summary>
+            <param name="services"></param>
+            <typeparam name="TService"></typeparam>
             <returns></returns>
         </member>
         <member name="T:Cosmos.Data.DbContextConfig">
@@ -38,16 +45,14 @@
             DbContext config
             </summary>
         </member>
-        <member name="P:Cosmos.Data.DbContextConfig.Services">
-            <summary>
-            Gets services
-            </summary>
-        </member>
-        <member name="M:Cosmos.Data.DbContextConfig.RegisterDbContext(System.Action{AspectCore.Injector.IServiceContainer})">
+        <member name="M:Cosmos.Data.DbContextConfig.RegisterDbContext(System.Action{AspectCore.DependencyInjection.IServiceContext})">
             <summary>
             Register DbContext
             </summary>
             <param name="action"></param>
+        </member>
+        <member name="M:Cosmos.Data.DbContextConfig.Configure(System.Action{Cosmos.Dependency.DependencyProxyRegister})">
+            <inheritdoc />
         </member>
     </members>
 </doc>

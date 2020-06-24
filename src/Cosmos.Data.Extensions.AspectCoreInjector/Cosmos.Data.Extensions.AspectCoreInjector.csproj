@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\..\build\common.props" />
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.1;netstandard2.0;net461;net451</TargetFrameworks>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Data.Extensions.AspectCoreInjector</AssemblyName>
+        <PackageId>Cosmos.Data.Extensions.AspectCoreInjector</PackageId>
+        <Description>Extensions of IOC component AspectCore-Framework inner Injector Container for Cosmos data library</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Cosmos.Extensions.AspectCoreInjector" Version="0.1.4.4-alpha2-201030" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Cosmos.Data\Cosmos.Data.csproj" />
+    </ItemGroup>
+
+</Project>

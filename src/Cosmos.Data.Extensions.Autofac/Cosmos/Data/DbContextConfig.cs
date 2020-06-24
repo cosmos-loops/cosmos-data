@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
 using Autofac;
-using Cosmos.Data.Context;
+using Cosmos.Data.Core.Registrars;
+using Cosmos.Dependency;
 
 namespace Cosmos.Data
 {
@@ -11,14 +12,15 @@ namespace Cosmos.Data
     public class DbContextConfig : DbContextConfigBase<DbContextConfig>, IDbContextConfigureRegister<ContainerBuilder>
     {
         private bool DbContextRegistered { get; set; }
+        private DependencyProxyRegister _services;
 
         private List<Action<ContainerBuilder>> DbContextInitializeActions { get; set; } = new List<Action<ContainerBuilder>>();
 
         internal DbContextConfig(ContainerBuilder services)
         {
-            Services = services ?? throw new ArgumentNullException(nameof(services));
+            _services = new AutofacProxyRegister(services ?? throw new ArgumentNullException(nameof(services)));
 
-            AddDisposableAction("_dbContextInitializeActionsClear", () =>
+            AddDisposableAction(Core.Constants.DbxClearTaskName, () =>
             {
                 DbContextInitializeActions.Clear();
                 DbContextInitializeActions = null;
@@ -26,17 +28,12 @@ namespace Cosmos.Data
         }
 
         /// <summary>
-        /// Gets services
-        /// </summary>
-        public ContainerBuilder Services { get; }
-
-        /// <summary>
         /// Register DbContext
         /// </summary>
         /// <param name="action"></param>
         public void RegisterDbContext(Action<ContainerBuilder> action)
         {
-            if (action == null)
+            if (action is null)
                 return;
 
             DbContextInitializeActions.Add(action);
@@ -44,7 +41,7 @@ namespace Cosmos.Data
 
         internal void ActiveRegister(ContainerBuilder services)
         {
-            if (services == null)
+            if (services is null)
                 return;
 
             if (DbContextRegistered)
@@ -55,9 +52,16 @@ namespace Cosmos.Data
                 action?.Invoke(services);
             }
 
-            services.RegisterProxy(AdditionalDependencyRegisterBag);
+            services.RegisterProxyFrom(_services);
 
             DbContextRegistered = true;
+        }
+
+        /// <inheritdoc />
+        public override IDbContextConfig Configure(Action<DependencyProxyRegister> configureAction)
+        {
+            configureAction?.Invoke(_services);
+            return this;
         }
     }
 }

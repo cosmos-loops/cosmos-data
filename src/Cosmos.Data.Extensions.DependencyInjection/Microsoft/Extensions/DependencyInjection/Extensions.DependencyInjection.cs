@@ -1,10 +1,12 @@
 using System;
 using Cosmos.Data;
-using Cosmos.Data.Core;
-using Cosmos.Data.Internals;
-using Cosmos.Data.Store;
-using Cosmos.Data.Transaction;
-using Cosmos.Data.UnitOfWork;
+using Cosmos.Data.Common;
+using Cosmos.Data.Common.Transaction;
+using Cosmos.Data.Common.UnitOfWork;
+using Cosmos.Data.Core.Internals;
+using Cosmos.Data.Core.Pools;
+using Cosmos.Data.Core.Registrars;
+using Cosmos.Disposables.ObjectPools;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -22,47 +24,45 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <exception cref="ArgumentNullException"></exception>
         public static IServiceCollection AddCosmosDataSupport(this IServiceCollection services, Action<DbContextConfig> context = null)
         {
-            if (services == null)
+            if (services is null)
                 throw new ArgumentNullException(nameof(services));
 
             if (!DataSupportFlag.Value)
             {
-                services.AddSingleton(RepositoryManagerFactory.CreateInstance());
+                services.AddSingleton(RepositoryManager.Instance);
                 services.AddScoped<ScopedRepositoryManager>();
-                services.AddScoped<IStoreContextManager, ScopedStoreContextManager>();
-                services.AddScoped<ITransactionCallingWrapper, ScopedTransactionCallingWrapper>();
-                services.AddScoped<UnitOfWorkManager>();
+                services.AddScoped<ITransactionManager, ScopedTransactionManager>();
+                services.AddScoped<IUnitOfWorkManager, UnitOfWorkManager>();
 
+                //Register ConnectionPoolManagedModel into ObjectPoolManager
+                ObjectPoolManager.Managed<ConnectionPoolManagedModel>.Register();
+                
                 DataSupportFlag.Value = true;
             }
-            
+
             SystemLevelRegister(services);
 
             if (context != null)
             {
-                using (var ctxCfg = new DbContextConfig(services))
-                {
-                    context(ctxCfg);
-                    ctxCfg.ActiveRegister(services);
-                }
+                using var ctxCfg = new DbContextConfig(services);
+                context(ctxCfg);
+                ctxCfg.ActiveRegister(services);
             }
 
             return services;
         }
-        
+
         private static void SystemLevelRegister(IServiceCollection services)
         {
             var systemLevelActions = SystemSupportRegistrar.GetActionsOnce();
 
             if (systemLevelActions != null)
             {
-                using (var ctxCfg = new DbContextConfig(services))
+                using var ctxCfg = new DbContextConfig(services);
+                foreach (var action in systemLevelActions)
                 {
-                    foreach (var action in systemLevelActions)
-                    {
-                        action?.Invoke(ctxCfg);
-                        ctxCfg.ActiveRegister(services);
-                    }
+                    action?.Invoke(ctxCfg);
+                    ctxCfg.ActiveRegister(services);
                 }
             }
         }

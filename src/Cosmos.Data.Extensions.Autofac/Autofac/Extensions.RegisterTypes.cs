@@ -1,10 +1,12 @@
 using System;
 using Cosmos.Data;
-using Cosmos.Data.Core;
-using Cosmos.Data.Internals;
-using Cosmos.Data.Store;
-using Cosmos.Data.Transaction;
-using Cosmos.Data.UnitOfWork;
+using Cosmos.Data.Common;
+using Cosmos.Data.Common.Transaction;
+using Cosmos.Data.Common.UnitOfWork;
+using Cosmos.Data.Core.Internals;
+using Cosmos.Data.Core.Pools;
+using Cosmos.Data.Core.Registrars;
+using Cosmos.Disposables.ObjectPools;
 
 namespace Autofac
 {
@@ -22,29 +24,29 @@ namespace Autofac
         /// <exception cref="ArgumentNullException"></exception>
         public static ContainerBuilder AddCosmosDataSupport(this ContainerBuilder services, Action<DbContextConfig> context = null)
         {
-            if (services == null)
+            if (services is null)
                 throw new ArgumentNullException(nameof(services));
 
             if (!DataSupportFlag.Value)
             {
-                services.RegisterInstance(RepositoryManagerFactory.CreateInstance()).SingleInstance();
+                services.RegisterInstance(RepositoryManager.Instance).SingleInstance();
                 services.RegisterType<ScopedRepositoryManager>().InstancePerLifetimeScope();
-                services.RegisterType<ScopedStoreContextManager>().As<IStoreContextManager>().InstancePerLifetimeScope();
-                services.RegisterType<ScopedTransactionCallingWrapper>().As<ITransactionCallingWrapper>().InstancePerLifetimeScope();
-                services.RegisterType<UnitOfWorkManager>().InstancePerLifetimeScope();
+                services.RegisterType<ScopedTransactionManager>().As<ITransactionManager>().InstancePerLifetimeScope();
+                services.RegisterType<UnitOfWorkManager>().As<IUnitOfWorkManager>().InstancePerLifetimeScope();
 
+                //Register ConnectionPoolManagedModel into ObjectPoolManager
+                ObjectPoolManager.Managed<ConnectionPoolManagedModel>.Register();
+                
                 DataSupportFlag.Value = true;
             }
-            
+
             SystemLevelRegister(services);
 
             if (context != null)
             {
-                using (var ctxCfg = new DbContextConfig(services))
-                {
-                    context(ctxCfg);
-                    ctxCfg.ActiveRegister(services);
-                }
+                using var ctxCfg = new DbContextConfig(services);
+                context(ctxCfg);
+                ctxCfg.ActiveRegister(services);
             }
 
             return services;
@@ -56,13 +58,11 @@ namespace Autofac
 
             if (systemLevelActions != null)
             {
-                using (var ctxCfg = new DbContextConfig(services))
+                using var ctxCfg = new DbContextConfig(services);
+                foreach (var action in systemLevelActions)
                 {
-                    foreach (var action in systemLevelActions)
-                    {
-                        action?.Invoke(ctxCfg);
-                        ctxCfg.ActiveRegister(services);
-                    }
+                    action?.Invoke(ctxCfg);
+                    ctxCfg.ActiveRegister(services);
                 }
             }
         }
