@@ -23,7 +23,7 @@ namespace Cosmos.Data.Sx.Npgsql
             params NpgsqlParameter[] parameters)
         {
             conn.CheckNull(nameof(conn));
-          
+
             var command = conn.CreateCommand();
             command.CommandText = cmdText;
             command.CommandType = commandType;
@@ -49,6 +49,35 @@ namespace Cosmos.Data.Sx.Npgsql
             var command = conn.CreateCommand();
             commandFactory?.Invoke(command);
             return command;
+        }
+
+        /// <summary>
+        /// Ping
+        /// </summary>
+        /// <param name="that"></param>
+        /// <returns></returns>
+        public static bool Ping(this NpgsqlConnection that)
+        {
+            try
+            {
+                var cmd = that.CreateCommand();
+                cmd.CommandText = "select 1";
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                try
+                {
+                    that.Close();
+                }
+                catch
+                {
+                    // ignored
+                }
+
+                return false;
+            }
         }
     }
 }

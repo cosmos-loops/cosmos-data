@@ -1,0 +1,2106 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Data.Extensions.PostgreSql</name>
+    </assembly>
+    <members>
+        <member name="T:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions">
+            <summary>
+            Extensions for Npgsql
+            </summary>
+            <summary>
+            Extensions for Npgsql
+            </summary>
+            <summary>
+            Extensions for Npgsql
+            </summary>
+            <summary>
+            Extensions for Npgsql
+            </summary>
+            <summary>
+            Extensions for Npgsql
+            </summary>
+            <summary>
+            Extensions for Npgsql
+            </summary>
+            <summary>
+            Extensions for Npgsql
+            </summary>
+            <summary>
+            Extensions for Npgsql
+            </summary>
+            <summary>
+            Extensions for Npgsql
+            </summary>
+            <summary>
+            Extensions for Npgsql
+            </summary>
+            <summary>
+            Extensions for Npgsql
+            </summary>
+            <summary>
+            Extensions for Npgsql
+            </summary>
+            <summary>
+            Extensions for Npgsql
+            </summary>
+            <summary>
+            Extensions for Npgsql
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataSet(Npgsql.NpgsqlCommand)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataSetAsync(Npgsql.NpgsqlCommand)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataTable(Npgsql.NpgsqlCommand)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataTableAsync(Npgsql.NpgsqlCommand)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteFirstDataTable(Npgsql.NpgsqlCommand)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteFirstDataTableAsync(Npgsql.NpgsqlCommand)">
+            <summary>
+            Execute DataTable async
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.CreateCommand(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Create command
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.CreateCommand(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Create command
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.Ping(Npgsql.NpgsqlConnection)">
+            <summary>
+            Ping
+            </summary>
+            <param name="that"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataSet(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataSet(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataSet(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataSet(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataSet(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataSet(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataSet(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataSet(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataSet(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataSetAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataSetAsync(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataSetAsync(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataSetAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataSetAsync(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataSetAsync(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataSetAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataSetAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataSetAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataTable(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataTable(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataTable(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataTable(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataTable(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataTable(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataTable(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataTable(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataTable(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataTableAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataTableAsync(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataTableAsync(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataTableAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataTableAsync(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataTableAsync(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataTableAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataTableAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteDataTableAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntities``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntities``1(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntities``1(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntities``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntities``1(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntities``1(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntities``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntities``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntities``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntitiesAsync``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntitiesAsync``1(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntitiesAsync``1(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntitiesAsync``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntitiesAsync``1(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntitiesAsync``1(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntitiesAsync``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntitiesAsync``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntitiesAsync``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntity``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntity``1(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntity``1(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntity``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntity``1(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntity``1(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntity``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntity``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntity``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntityAsync``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntityAsync``1(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntityAsync``1(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntityAsync``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntityAsync``1(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntityAsync``1(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntityAsync``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntityAsync``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteEntityAsync``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObject(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObject(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObject(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObject(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObject(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObject(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObject(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObject(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObject(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjectAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjectAsync(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjectAsync(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjectAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjectAsync(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjectAsync(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjectAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjectAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjectAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjects(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjects(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjects(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjects(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjects(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjects(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjects(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjects(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjects(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjectsAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjectsAsync(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjectsAsync(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjectsAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjectsAsync(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjectsAsync(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjectsAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjectsAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteExpandoObjectsAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteNonQuery(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteNonQuery(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteNonQuery(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteNonQuery(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteNonQuery(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteNonQuery(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteNonQuery(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteNonQuery(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteNonQuery(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteNonQueryAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteNonQueryAsync(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteNonQueryAsync(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteNonQueryAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteNonQueryAsync(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteNonQueryAsync(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteNonQueryAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteNonQueryAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteNonQueryAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteReader(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteReader(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteReader(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteReader(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteReader(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteReader(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteReader(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteReader(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteReader(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteReaderAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteReaderAsync(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteReaderAsync(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteReaderAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteReaderAsync(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteReaderAsync(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteReaderAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteReaderAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteReaderAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute Reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalar(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalar(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalar(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalar(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalar(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalar(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalar(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalar(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalar(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAsync(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAsync(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAsync(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAsync(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAsync(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAs``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAs``1(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAs``1(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAs``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAs``1(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAs``1(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAs``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAs``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAs``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAsAsync``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAsAsync``1(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAsAsync``1(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAsAsync``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAsAsync``1(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAsAsync``1(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAsAsync``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAsAsync``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarAsAsync``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarTo``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarTo``1(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarTo``1(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarTo``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarTo``1(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarTo``1(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarTo``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarTo``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarTo``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarToAsync``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarToAsync``1(Npgsql.NpgsqlConnection,System.Action{Npgsql.NpgsqlCommand})">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarToAsync``1(Npgsql.NpgsqlConnection,System.String)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarToAsync``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarToAsync``1(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarToAsync``1(Npgsql.NpgsqlConnection,System.String,System.Data.CommandType,Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarToAsync``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[])">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarToAsync``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],Npgsql.NpgsqlTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.ExecuteScalarToAsync``1(Npgsql.NpgsqlConnection,System.String,Npgsql.NpgsqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlClientExtensions.AddRangeWithValue(Npgsql.NpgsqlParameterCollection,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Add range with value
+            </summary>
+            <param name="conn"></param>
+            <param name="values"></param>
+        </member>
+        <member name="T:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPool">
+            <summary>
+            Npgsql connection pool
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPool.#ctor(System.String,System.String,System.Action,System.Action)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPool.Return(Cosmos.Disposables.ObjectPools.ObjectOut{Npgsql.NpgsqlConnection},System.Exception,System.Boolean)">
+            <summary>
+            Return
+            </summary>
+            <param name="obj"></param>
+            <param name="exception"></param>
+            <param name="isRecreate"></param>
+        </member>
+        <member name="T:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPoolPolicy">
+            <summary>
+            Npgsql connection pool policy
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPoolPolicy.Name">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPoolPolicy.PoolSize">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPoolPolicy.SyncGetTimeout">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPoolPolicy.IdleTimeout">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPoolPolicy.AsyncGetCapacity">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPoolPolicy.IsThrowGetTimeoutException">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPoolPolicy.IsAutoDisposeWithSystem">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPoolPolicy.CheckAvailableInterval">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPoolPolicy.ConnectionString">
+            <summary>
+            Gets or sets connection string
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPoolPolicy.OnCheckAvailable(Cosmos.Disposables.ObjectPools.ObjectOut{Npgsql.NpgsqlConnection})">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPoolPolicy.OnCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPoolPolicy.OnDestroy(Npgsql.NpgsqlConnection)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPoolPolicy.OnGet(Cosmos.Disposables.ObjectPools.ObjectOut{Npgsql.NpgsqlConnection})">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPoolPolicy.OnGetAsync(Cosmos.Disposables.ObjectPools.ObjectOut{Npgsql.NpgsqlConnection})">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPoolPolicy.OnGetTimeout">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPoolPolicy.OnReturn(Cosmos.Disposables.ObjectPools.ObjectOut{Npgsql.NpgsqlConnection})">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPoolPolicy.OnAvailable">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Data.Sx.Npgsql.NpgsqlConnectionPoolPolicy.OnUnavailable">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

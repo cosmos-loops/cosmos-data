@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\..\build\common.props" />
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.1;netstandard2.0;net461;net451</TargetFrameworks>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Data.Extensions.SqlServer</AssemblyName>
+        <PackageId>Cosmos.Data.Extensions.SqlServer</PackageId>
+        <Description>Microsoft SQL Server package for Cosmos.Data.</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Cosmos.Data\Cosmos.Data.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,2256 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Data.Extensions.SqlServer</name>
+    </assembly>
+    <members>
+        <member name="T:Cosmos.Data.Sx.SqlClient.SqlClientExtensions">
+            <summary>
+            Extensions for <see cref="N:Cosmos.Data.Sx.SqlClient"/>
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.GetConnection(System.Data.SqlClient.SqlBulkCopy)">
+            <summary>
+            Gets connection
+            </summary>
+            <param name="bulk"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.GetTransaction(System.Data.SqlClient.SqlBulkCopy)">
+            <summary>
+            Get transaction
+            </summary>
+            <param name="bulk"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSet(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTable(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteFirstDataTable(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteFirstDataTableAsync(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Execute DataTable async
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReaderAsync(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.CreateCommand(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Create command
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.CreateCommand(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Create command
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.Ping(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            Ping
+            </summary>
+            <param name="conn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSet(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSet(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSet(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSet(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSet(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSet(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSet(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSet(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSet(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntities``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntities``1(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntities``1(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntities``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntities``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntities``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntities``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntities``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntities``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntity``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntity``1(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntity``1(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntity``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntity``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntity``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntity``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntity``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntity``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObject(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObject(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObject(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObject(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObject(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObject(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObject(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObject(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObject(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReaderAsync(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReaderAsync(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsync(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsync(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReader(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReader(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(System.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.AddRangeWithValue(System.Data.SqlClient.SqlParameterCollection,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Add range with value
+            </summary>
+            <param name="conn"></param>
+            <param name="values"></param>
+        </member>
+        <member name="T:Cosmos.Data.Sx.SqlClient.SqlConnectionPool">
+            <summary>
+            SqlConnection Pool 
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPool.#ctor(System.String,System.String,System.Action,System.Action)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPool.Return(Cosmos.Disposables.ObjectPools.ObjectOut{System.Data.SqlClient.SqlConnection},System.Exception,System.Boolean)">
+            <summary>
+            Return
+            </summary>
+            <param name="obj"></param>
+            <param name="exception"></param>
+            <param name="isRecreate"></param>
+        </member>
+        <member name="T:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy">
+            <summary>
+            SqlConnection pool policy
+            </summary>
+        </member>
+        <member name="P:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.Name">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.PoolSize">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.SyncGetTimeout">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.IdleTimeout">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.AsyncGetCapacity">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.IsThrowGetTimeoutException">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.IsAutoDisposeWithSystem">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.CheckAvailableInterval">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.ConnectionString">
+            <summary>
+            Gets or sets connection string
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.OnCheckAvailable(Cosmos.Disposables.ObjectPools.ObjectOut{System.Data.SqlClient.SqlConnection})">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.OnCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.OnDestroy(System.Data.SqlClient.SqlConnection)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.OnGet(Cosmos.Disposables.ObjectPools.ObjectOut{System.Data.SqlClient.SqlConnection})">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.OnGetAsync(Cosmos.Disposables.ObjectPools.ObjectOut{System.Data.SqlClient.SqlConnection})">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.OnGetTimeout">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.OnReturn(Cosmos.Disposables.ObjectPools.ObjectOut{System.Data.SqlClient.SqlConnection})">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.OnAvailable">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.OnUnavailable">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

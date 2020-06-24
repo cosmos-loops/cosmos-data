@@ -48,5 +48,35 @@ namespace Cosmos.Data.Sx.SqlClient
             commandFactory?.Invoke(command);
             return command;
         }
+
+        /// <summary>
+        /// Ping
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <returns></returns>
+        public static bool Ping(this SqlConnection conn)
+        {
+            try
+            {
+                var cmd = conn.CreateCommand();
+                cmd.CommandText = "select 1";
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                if (conn.State != ConnectionState.Closed)
+                    try
+                    {
+                        conn.Close();
+                    }
+                    catch
+                    {
+                        // ignored
+                    }
+
+                return false;
+            }
+        }
     }
 }
