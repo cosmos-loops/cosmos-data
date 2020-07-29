@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 using Cosmos.Reflection;
 
 namespace Cosmos.Data.Common
@@ -86,19 +87,19 @@ namespace Cosmos.Data.Common
 
             if (typeOfService.IsInterface)
             {
-                var attribute = typeOfService.GetAttribute<RepositoryAttribute>();
+                var attribute = typeOfService.GetAttributeOrNull<RepositoryAttribute>();
                 return CreateCore(typeOfService, typeOfImplement, MappingType.InterfaceToClass, GetName(typeOfImplement, attribute));
             }
 
             if (typeOfService.IsClass && typeOfService.IsAbstract)
             {
-                var attribute = typeOfService.GetAttribute<RepositoryAttribute>();
+                var attribute = typeOfService.GetAttributeOrNull<RepositoryAttribute>();
                 return CreateCore(typeOfService, typeOfImplement, MappingType.AbstractToClass, GetName(typeOfImplement, attribute));
             }
 
             if (typeOfService.IsClass)
             {
-                var attribute = typeOfService.GetAttribute<RepositoryAttribute>();
+                var attribute = typeOfService.GetAttributeOrNull<RepositoryAttribute>();
                 return CreateCore(typeOfService, typeOfImplement, MappingType.ClassToClass, GetName(typeOfImplement, attribute));
             }
 
@@ -115,10 +116,9 @@ namespace Cosmos.Data.Common
         public static RepositoryReflector Create<TService>()
         {
             var typeOfService = typeof(TService);
-
             if (typeOfService.IsInterface)
             {
-                var attribute = typeOfService.GetAttribute<RepositoryAttribute>();
+                var attribute = typeOfService.GetAttributeOrNull<RepositoryAttribute>();
 
                 if (attribute is null)
                     throw new InvalidOperationException("Cannot find the target type for this interface.");
@@ -141,7 +141,7 @@ namespace Cosmos.Data.Common
 
             if (typeOfService.IsClass)
             {
-                var attribute = typeOfService.GetAttribute<RepositoryAttribute>();
+                var attribute = typeOfService.GetAttributeOrNull<RepositoryAttribute>();
                 return CreateCore(typeOfService, typeOfService, MappingType.ClassSelf, GetName(typeOfService, attribute));
             }
 
