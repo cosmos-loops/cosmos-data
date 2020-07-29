@@ -1,21 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <Import Project="..\..\build\common.props" />
+    <Import Project="Cosmos.Data._shared.props" />
 
-    <PropertyGroup>
-        <TargetFrameworks>netstandard2.1;netstandard2.0;net461;net451</TargetFrameworks>
-    </PropertyGroup>
-
-    <PropertyGroup>
-        <AssemblyName>Cosmos.Data</AssemblyName>
-        <PackageId>Cosmos.Data</PackageId>
-        <Description>Cosmos data core library.</Description>
-    </PropertyGroup>
+    <Import Project="..\..\common.props" />
 
     <ItemGroup>
-        <PackageReference Include="Cosmos.Extensions.Dependency.Core" Version="0.1.4.4-alpha2-201012" />
-        <PackageReference Include="Cosmos.Extensions.ObjectPools" Version="0.1.4.4-alpha2-201012" />
-        <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+        <PackageReference Include="Cosmos.Extensions.Domain" Version="$(TargetPkgVersion)" />
+        <PackageReference Include="Cosmos.Extensions.Dependency" Version="$(TargetPkgVersion)" />
+        <PackageReference Include="Cosmos.Extensions.ObjectPools" Version="$(TargetPkgVersion)" />
     </ItemGroup>
 
     <ItemGroup>

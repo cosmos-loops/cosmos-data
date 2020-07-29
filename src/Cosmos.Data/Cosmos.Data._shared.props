@@ -1,0 +1,13 @@
+﻿<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Data</AssemblyName>
+        <PackageId>Cosmos.Data</PackageId>
+        <Description>Cosmos data core library.</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    </ItemGroup>
+
+</Project>

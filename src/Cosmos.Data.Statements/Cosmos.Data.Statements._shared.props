@@ -1,0 +1,9 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Data.Statements</AssemblyName>
+        <PackageId>Cosmos.Data.Statements</PackageId>
+        <Description>Cosmos data statements library.</Description>
+    </PropertyGroup>
+
+</Project>

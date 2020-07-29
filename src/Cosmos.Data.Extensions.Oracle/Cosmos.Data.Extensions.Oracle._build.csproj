@@ -5,7 +5,7 @@
     <Import Project="..\..\common.props" />
 
     <ItemGroup>
-        <ProjectReference Include="..\Cosmos.Data\Cosmos.Data.csproj" />
+        <ProjectReference Include="..\Cosmos.Data\Cosmos.Data._build.csproj" />
     </ItemGroup>
 
 </Project>
