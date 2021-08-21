@@ -1,9 +1,9 @@
-﻿<Project>
+<Project>
 
     <PropertyGroup>
         <AssemblyName>Cosmos.Data.Extensions.Autofac</AssemblyName>
         <PackageId>Cosmos.Data.Extensions.Autofac</PackageId>
-        <Description>Extensions of IOC component Autofac for Cosmos data library</Description>
+        <Description>Extra package for Autofac and Cosmos Data service.</Description>
     </PropertyGroup>
 
 </Project>

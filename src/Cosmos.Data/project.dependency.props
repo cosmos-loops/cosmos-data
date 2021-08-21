@@ -1,0 +1,18 @@
+<Project>
+
+    <ItemGroup>
+        <PackageReference Include="Cosmos.Models.ModeledDomain" Version="$(Models-PkgVersion)" />
+        <PackageReference Include="Cosmos.Extensions.Reflection.Enhanced" Version="$(Prowess-PkgVersion)" />
+        <PackageReference Include="Cosmos.Extensions.ObjectPools" Version="$(ObjectPools-PkgVersion)" />
+        <PackageReference Include="Cosmos.Validation.Annotations" Version="$(Validation-PkgVersion)" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Cosmos.Data.Abstractions\Cosmos.Data.Abstractions.csproj" />
+    </ItemGroup>
+
+</Project>

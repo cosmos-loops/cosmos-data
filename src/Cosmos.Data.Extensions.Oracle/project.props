@@ -1,0 +1,9 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Data.Extensions.Oracle</AssemblyName>
+        <PackageId>Cosmos.Data.Extensions.Oracle</PackageId>
+        <Description>Oracle package for Cosmos.Data.</Description>
+    </PropertyGroup>
+
+</Project>

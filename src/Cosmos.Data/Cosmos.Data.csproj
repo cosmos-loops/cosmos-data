@@ -1,17 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <Import Project="Cosmos.Data._shared.props" />
+    <PropertyGroup>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+
+    <Import Project="project.props" />
 
     <Import Project="..\..\common.props" />
 
-    <ItemGroup>
-        <PackageReference Include="Cosmos.Extensions.Domain" Version="$(TargetPkgVersion)" />
-        <PackageReference Include="Cosmos.Extensions.Dependency" Version="$(TargetPkgVersion)" />
-        <PackageReference Include="Cosmos.Extensions.ObjectPools" Version="$(TargetPkgVersion)" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <ProjectReference Include="..\Cosmos.Data.Abstractions\Cosmos.Data.Abstractions.csproj" />
-    </ItemGroup>
+    <Import Project="project.dependency.props" />
 
 </Project>

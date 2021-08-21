@@ -1,11 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <Import Project="Cosmos.Data.Extensions.Sqlite._shared.props" />
+    <PropertyGroup>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Cosmos\Data\Sx" />
+    </ItemGroup>
+
+    <Import Project="project.props" />
 
     <Import Project="..\..\common.props" />
 
-    <ItemGroup>
-        <ProjectReference Include="..\Cosmos.Data\Cosmos.Data.csproj" />
-    </ItemGroup>
+    <Import Project="project.dependency.props" />
 
 </Project>

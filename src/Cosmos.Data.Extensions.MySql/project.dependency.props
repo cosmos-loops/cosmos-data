@@ -1,0 +1,11 @@
+<Project>
+
+    <ItemGroup>
+        <PackageReference Include="MySql.Data" Version="8.0.25" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Cosmos.Data\Cosmos.Data.csproj" />
+    </ItemGroup>
+
+</Project>

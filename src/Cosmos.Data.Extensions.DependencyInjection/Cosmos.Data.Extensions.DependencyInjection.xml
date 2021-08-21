@@ -4,40 +4,15 @@
         <name>Cosmos.Data.Extensions.DependencyInjection</name>
     </assembly>
     <members>
-        <member name="T:Cosmos.Data.DbContextConfig">
+        <member name="M:Microsoft.Extensions.DependencyInjection.DataRegisterExtensions.AddCosmosDataService(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Cosmos.Dependency.DbContextConfig{Cosmos.Dependency.MicrosoftProxyRegister}})">
             <summary>
-            DbContext config
-            </summary>
-        </member>
-        <member name="M:Cosmos.Data.DbContextConfig.RegisterDbContext(System.Action{Microsoft.Extensions.DependencyInjection.IServiceCollection})">
-            <summary>
-            Register DbContext
-            </summary>
-            <param name="action"></param>
-        </member>
-        <member name="M:Cosmos.Data.DbContextConfig.Configure(System.Action{Cosmos.Dependency.DependencyProxyRegister})">
-            <inheritdoc />
-        </member>
-        <member name="T:Microsoft.Extensions.DependencyInjection.DependencyInjectionExtensions">
-            <summary>
-            To register Cosmos.Data
-            </summary>
-        </member>
-        <member name="M:Microsoft.Extensions.DependencyInjection.DependencyInjectionExtensions.AddCosmosDataSupport(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Cosmos.Data.DbContextConfig})">
-            <summary>
-            Add Cosmos Data Support
+            Add Cosmos Data Service
             </summary>
             <param name="services"></param>
-            <param name="context"></param>
+            <param name="configure"></param>
             <returns></returns>
-            <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="T:Microsoft.Extensions.DependencyInjection.RepositoryManagerExtensions">
-            <summary>
-            To register repository of Cosmos.Data
-            </summary>
-        </member>
-        <member name="M:Microsoft.Extensions.DependencyInjection.RepositoryManagerExtensions.AddRepository``2(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+        <member name="M:Microsoft.Extensions.DependencyInjection.DataRegisterExtensions.AddCosmosRepository``2(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
             Add repository
             </summary>
@@ -46,7 +21,7 @@
             <typeparam name="TImplement"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Microsoft.Extensions.DependencyInjection.RepositoryManagerExtensions.AddRepository``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+        <member name="M:Microsoft.Extensions.DependencyInjection.DataRegisterExtensions.AddCosmosRepository``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
             Add repository
             </summary>

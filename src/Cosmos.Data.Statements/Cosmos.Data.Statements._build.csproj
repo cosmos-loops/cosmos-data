@@ -1,7 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-    <Import Project="Cosmos.Data.Statements._shared.props" />
-
-    <Import Project="..\..\common.props" />
-
-</Project>

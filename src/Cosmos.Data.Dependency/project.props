@@ -1,0 +1,9 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Data.Dependency</AssemblyName>
+        <PackageId>Cosmos.Data.Dependency</PackageId>
+        <Description>Cosmos data dependency library.</Description>
+    </PropertyGroup>
+
+</Project>

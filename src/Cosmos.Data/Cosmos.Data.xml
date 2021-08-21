@@ -977,7 +977,7 @@
             <typeparam name="TConn"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Core.Pools.ConnectionPool.Return``1(Cosmos.Disposables.ObjectPools.ObjectOut{``0},System.String)">
+        <member name="M:Cosmos.Data.Core.Pools.ConnectionPool.Return``1(Cosmos.Disposables.ObjectPools.ObjectPayload{``0},System.String)">
             <summary>
             Return connection
             </summary>
@@ -1024,12 +1024,12 @@
             Interface of connection pool
             </summary>
         </member>
-        <member name="P:Cosmos.Data.Core.Pools.IConnectionPool.Statistics">
+        <member name="M:Cosmos.Data.Core.Pools.IConnectionPool.GetStatisticsInfo">
             <summary>
             Statistics
             </summary>
         </member>
-        <member name="P:Cosmos.Data.Core.Pools.IConnectionPool.StatisticsFully">
+        <member name="M:Cosmos.Data.Core.Pools.IConnectionPool.GetStatisticsInfoFully">
             <summary>
             StatisticsFully
             </summary>
@@ -1040,27 +1040,27 @@
             </summary>
             <typeparam name="TConn"></typeparam>
         </member>
-        <member name="M:Cosmos.Data.Core.Pools.IConnectionPool`1.Get(System.Nullable{System.TimeSpan})">
+        <member name="M:Cosmos.Data.Core.Pools.IConnectionPool`1.Acquire(System.Nullable{System.TimeSpan})">
             <summary>
             Get
             </summary>
             <param name="timeout"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Core.Pools.IConnectionPool`1.GetAsync">
+        <member name="M:Cosmos.Data.Core.Pools.IConnectionPool`1.AcquireAsync">
             <summary>
             Get async
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Core.Pools.IConnectionPool`1.Return(Cosmos.Disposables.ObjectPools.ObjectOut{`0},System.Boolean)">
+        <member name="M:Cosmos.Data.Core.Pools.IConnectionPool`1.Recycle(Cosmos.Disposables.ObjectPools.ObjectPayload{`0},System.Boolean)">
             <summary>
             Return
             </summary>
             <param name="obj"></param>
             <param name="isReset"></param>
         </member>
-        <member name="M:Cosmos.Data.Core.Pools.IConnectionPool`1.Return(Cosmos.Disposables.ObjectPools.ObjectOut{`0},System.Exception,System.Boolean)">
+        <member name="M:Cosmos.Data.Core.Pools.IConnectionPool`1.Recycle(Cosmos.Disposables.ObjectPools.ObjectPayload{`0},System.Exception,System.Boolean)">
             <summary>
             Return
             </summary>
@@ -1072,68 +1072,6 @@
             <summary>
             Dispose
             </summary>
-        </member>
-        <member name="T:Cosmos.Data.Core.Registrars.DbContextConfigBase`1">
-            <summary>
-            DbContext config base
-            </summary>
-            <typeparam name="TConfiguration"></typeparam>
-        </member>
-        <member name="M:Cosmos.Data.Core.Registrars.DbContextConfigBase`1.Configure(System.Action{`0})">
-            <summary>
-            Configure
-            </summary>
-            <param name="configureAction"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Core.Registrars.DbContextConfigBase`1.Configure(System.Action{Cosmos.Dependency.DependencyProxyRegister})">
-            <summary>
-            Configure
-            </summary>
-            <param name="configureAction"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Cosmos.Data.Core.Registrars.IDbContextConfig">
-            <summary>
-            Interface of DbContext config
-            </summary>
-        </member>
-        <member name="M:Cosmos.Data.Core.Registrars.IDbContextConfig.Configure(System.Action{Cosmos.Dependency.DependencyProxyRegister})">
-            <summary>
-            Configure
-            </summary>
-            <param name="configureAction"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Cosmos.Data.Core.Registrars.IDbContextConfigureRegister`1">
-            <summary>
-            Interface of DbContext configure register
-            </summary>
-            <typeparam name="TContainerRegister"></typeparam>
-        </member>
-        <member name="M:Cosmos.Data.Core.Registrars.IDbContextConfigureRegister`1.RegisterDbContext(System.Action{`0})">
-            <summary>
-            Register DbContext
-            </summary>
-            <param name="action"></param>
-        </member>
-        <member name="T:Cosmos.Data.Core.Registrars.SystemSupportRegistrar">
-            <summary>
-            System level support register
-            </summary>
-        </member>
-        <member name="M:Cosmos.Data.Core.Registrars.SystemSupportRegistrar.AddDescriptorOnce(System.String,System.Action{Cosmos.Data.Core.Registrars.IDbContextConfig})">
-            <summary>
-            Add description once
-            </summary>
-            <param name="key"></param>
-            <param name="config"></param>
-        </member>
-        <member name="M:Cosmos.Data.Core.Registrars.SystemSupportRegistrar.GetActionsOnce">
-            <summary>
-            Gets actions once
-            </summary>
-            <returns></returns>
         </member>
         <member name="T:Cosmos.Data.Core.Transaction.NullTransactionWrapper">
             <summary>

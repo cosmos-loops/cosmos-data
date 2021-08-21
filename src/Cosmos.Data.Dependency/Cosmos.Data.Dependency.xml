@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Data.Dependency</name>
+    </assembly>
+    <members>
+        <member name="T:Cosmos.Data.Core.Registrars.DbContextConfigBase`1">
+            <summary>
+            DbContext config base
+            </summary>
+            <typeparam name="TConfiguration"></typeparam>
+        </member>
+        <member name="M:Cosmos.Data.Core.Registrars.DbContextConfigBase`1.Configure(System.Action{`0})">
+            <summary>
+            Configure
+            </summary>
+            <param name="configureAction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Data.Core.Registrars.DbContextConfigBase`1.Configure(System.Action{Cosmos.Dependency.DependencyProxyRegister})">
+            <summary>
+            Configure
+            </summary>
+            <param name="configureAction"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.Core.Registrars.IDbContextConfig">
+            <summary>
+            Interface of DbContext config
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Core.Registrars.IDbContextConfig.Configure(System.Action{Cosmos.Dependency.DependencyProxyRegister})">
+            <summary>
+            Configure
+            </summary>
+            <param name="configureAction"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Data.Core.Registrars.IDbContextConfigureRegister`1">
+            <summary>
+            Interface of DbContext configure register
+            </summary>
+            <typeparam name="TContainerRegister"></typeparam>
+        </member>
+        <member name="M:Cosmos.Data.Core.Registrars.IDbContextConfigureRegister`1.RegisterDbContext(System.Action{`0})">
+            <summary>
+            Register DbContext
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="T:Cosmos.Data.Core.Registrars.SystemSupportRegistrar">
+            <summary>
+            System level support register
+            </summary>
+        </member>
+        <member name="M:Cosmos.Data.Core.Registrars.SystemSupportRegistrar.AddDescriptorOnce(System.String,System.Action{Cosmos.Data.Core.Registrars.IDbContextConfig})">
+            <summary>
+            Add description once
+            </summary>
+            <param name="key"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:Cosmos.Data.Core.Registrars.SystemSupportRegistrar.GetActionsOnce">
+            <summary>
+            Gets actions once
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DbContextConfig`1.RegisterDbContext(System.Action{`0})">
+            <summary>
+            Register DbContext
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="M:Cosmos.Dependency.DbContextConfig`1.Configure(System.Action{Cosmos.Dependency.DependencyProxyRegister})">
+            <inheritdoc />
+        </member>
+        <member name="T:Cosmos.Dependency.DependencyExtensions">
+            <summary>
+            Dependency extensions
+            </summary>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyExtensions.RegisterDataService``1(``0,System.Action{Cosmos.Dependency.DbContextConfig{``0}})">
+            <summary>
+            Add Cosmos Data Service
+            </summary>
+            <param name="register"></param>
+            <param name="configure"></param>
+            <typeparam name="TRegister"></typeparam>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Cosmos.Dependency.DependencyForRepositoryExtensions">
+            <summary>
+            To register repository for Cosmos.Data.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyForRepositoryExtensions.RegisterRepository``2(Cosmos.Dependency.DependencyProxyRegister)">
+            <summary>
+            Add repository
+            </summary>
+            <param name="register"></param>
+            <typeparam name="TService"></typeparam>
+            <typeparam name="TImplement"></typeparam>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyForRepositoryExtensions.RegisterRepository``1(Cosmos.Dependency.DependencyProxyRegister)">
+            <summary>
+            Add repository
+            </summary>
+            <param name="register"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyForRepositoryExtensions.RegisterRepository``3(``0)">
+            <summary>
+            Add repository
+            </summary>
+            <param name="register"></param>
+            <typeparam name="TRegister"></typeparam>
+            <typeparam name="TService"></typeparam>
+            <typeparam name="TImplement"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyForRepositoryExtensions.RegisterRepository``2(``0)">
+            <summary>
+            Add repository
+            </summary>
+            <param name="register"></param>
+            <typeparam name="TService"></typeparam>
+            <typeparam name="TRegister"></typeparam>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

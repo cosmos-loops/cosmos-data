@@ -1,9 +1,9 @@
-﻿<Project>
+<Project>
 
     <PropertyGroup>
         <AssemblyName>Cosmos.Data.Extensions.AspectCoreInjector</AssemblyName>
         <PackageId>Cosmos.Data.Extensions.AspectCoreInjector</PackageId>
-        <Description>Extensions of IOC component AspectCore-Framework inner Injector Container for Cosmos data library</Description>
+        <Description>Extra package for NCC AspectCore DependencyInjection extensions and Cosmos Data service.</Description>
     </PropertyGroup>
-
+    
 </Project>

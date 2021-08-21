@@ -1,0 +1,11 @@
+<Project>
+
+    <ItemGroup>
+        <PackageReference Include="Cosmos.Extensions.Autofac" Version="$(Dependency-PkgVersion)" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Cosmos.Data.Dependency\Cosmos.Data.Dependency.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -6,7 +6,7 @@
     <members>
         <member name="T:Cosmos.Data.SqlKata.BaseQueryBuilder">
             <summary>
-            Base sqlkata query builder
+            Base sql-kata query builder
             </summary>
         </member>
         <member name="F:Cosmos.Data.SqlKata.BaseQueryBuilder._connection">

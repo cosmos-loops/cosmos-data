@@ -1,11 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <Import Project="Cosmos.Data.Extensions.SqlServer._shared.props" />
+    <PropertyGroup>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
 
-    <Import Project="..\..\common.props" />
+    <Import Project="project.props"/>
 
-    <ItemGroup>
-        <ProjectReference Include="..\Cosmos.Data\Cosmos.Data.csproj" />
-    </ItemGroup>
+    <Import Project="..\..\common.props"/>
+
+    <Import Project="project.dependency.props"/>
 
 </Project>

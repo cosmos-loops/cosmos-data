@@ -4,75 +4,75 @@
         <name>Cosmos.Data.Extensions.SqlServer</name>
     </assembly>
     <members>
-        <member name="T:Cosmos.Data.Sx.SqlClient.SqlClientExtensions">
+        <member name="T:Microsoft.Data.SqlClient.SqlClientExtensions">
             <summary>
-            Extensions for <see cref="N:Cosmos.Data.Sx.SqlClient"/>
+            Extensions for <see cref="N:Microsoft.Data.SqlClient"/>
             </summary>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.GetConnection(System.Data.SqlClient.SqlBulkCopy)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.GetConnection(Microsoft.Data.SqlClient.SqlBulkCopy)">
             <summary>
             Gets connection
             </summary>
             <param name="bulk"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.GetTransaction(System.Data.SqlClient.SqlBulkCopy)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.GetTransaction(Microsoft.Data.SqlClient.SqlBulkCopy)">
             <summary>
             Get transaction
             </summary>
             <param name="bulk"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSet(System.Data.SqlClient.SqlCommand)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataSet(Microsoft.Data.SqlClient.SqlCommand)">
             <summary>
             Execute DataSet
             </summary>
             <param name="command"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(System.Data.SqlClient.SqlCommand)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(Microsoft.Data.SqlClient.SqlCommand)">
             <summary>
             Execute DataSet
             </summary>
             <param name="command"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTable(System.Data.SqlClient.SqlCommand)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataTable(Microsoft.Data.SqlClient.SqlCommand)">
             <summary>
             Execute DataTable
             </summary>
             <param name="command"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(System.Data.SqlClient.SqlCommand)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(Microsoft.Data.SqlClient.SqlCommand)">
             <summary>
             Execute DataTable
             </summary>
             <param name="command"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteFirstDataTable(System.Data.SqlClient.SqlCommand)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteFirstDataTable(Microsoft.Data.SqlClient.SqlCommand)">
             <summary>
             Execute DataTable
             </summary>
             <param name="command"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteFirstDataTableAsync(System.Data.SqlClient.SqlCommand)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteFirstDataTableAsync(Microsoft.Data.SqlClient.SqlCommand)">
             <summary>
             Execute DataTable async
             </summary>
             <param name="command"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReaderAsync(System.Data.SqlClient.SqlCommand)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteReaderAsync(Microsoft.Data.SqlClient.SqlCommand)">
             <summary>
             Execute DataTable
             </summary>
             <param name="command"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.CreateCommand(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction,System.Data.SqlClient.SqlParameter[])">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.CreateCommand(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction,Microsoft.Data.SqlClient.SqlParameter[])">
             <summary>
             Create command
             </summary>
@@ -83,7 +83,7 @@
             <param name="parameters"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.CreateCommand(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.CreateCommand(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
             <summary>
             Create command
             </summary>
@@ -91,14 +91,14 @@
             <param name="commandFactory"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.Ping(System.Data.SqlClient.SqlConnection)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.Ping(Microsoft.Data.SqlClient.SqlConnection)">
             <summary>
             Ping
             </summary>
             <param name="conn"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSet(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataSet(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute DataSet
             </summary>
@@ -109,7 +109,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSet(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataSet(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
             <summary>
             Execute DataSet
             </summary>
@@ -117,7 +117,7 @@
             <param name="commandFactory"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSet(System.Data.SqlClient.SqlConnection,System.String)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataSet(Microsoft.Data.SqlClient.SqlConnection,System.String)">
             <summary>
             Execute DataSet
             </summary>
@@ -125,7 +125,7 @@
             <param name="cmdText"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSet(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataSet(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute DataSet
             </summary>
@@ -134,7 +134,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSet(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataSet(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
             <summary>
             Execute DataSet
             </summary>
@@ -143,57 +143,57 @@
             <param name="commandType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSet(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataSet(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute DataSet
             </summary>
             <param name="conn"></param>
             <param name="cmdText"></param>
-            <param name="commandType"></param>
-            <param name="transaction"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSet(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
-            <summary>
-            Execute DataSet
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSet(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute DataSet
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="transaction"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSet(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
-            <summary>
-            Execute DataSet
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="commandType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute DataSet
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
             <param name="commandType"></param>
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataSet(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataSet(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataSet(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute DataSet
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
             <summary>
             Execute DataSet
             </summary>
@@ -201,7 +201,7 @@
             <param name="commandFactory"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(System.Data.SqlClient.SqlConnection,System.String)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(Microsoft.Data.SqlClient.SqlConnection,System.String)">
             <summary>
             Execute DataSet
             </summary>
@@ -209,7 +209,7 @@
             <param name="cmdText"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute DataSet
             </summary>
@@ -218,7 +218,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
             <summary>
             Execute DataSet
             </summary>
@@ -227,7 +227,7 @@
             <param name="commandType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute DataSet
             </summary>
@@ -237,7 +237,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
             <summary>
             Execute DataSet
             </summary>
@@ -246,7 +246,7 @@
             <param name="parameters"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute DataSet
             </summary>
@@ -256,7 +256,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataSetAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
             <summary>
             Execute DataSet
             </summary>
@@ -266,7 +266,7 @@
             <param name="commandType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataTable(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute DataTable
             </summary>
@@ -277,7 +277,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataTable(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
             <summary>
             Execute DataTable
             </summary>
@@ -285,7 +285,7 @@
             <param name="commandFactory"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.String)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataTable(Microsoft.Data.SqlClient.SqlConnection,System.String)">
             <summary>
             Execute DataTable
             </summary>
@@ -293,7 +293,7 @@
             <param name="cmdText"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataTable(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute DataTable
             </summary>
@@ -302,7 +302,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataTable(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
             <summary>
             Execute DataTable
             </summary>
@@ -311,57 +311,57 @@
             <param name="commandType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataTable(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute DataTable
             </summary>
             <param name="conn"></param>
             <param name="cmdText"></param>
-            <param name="commandType"></param>
-            <param name="transaction"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
-            <summary>
-            Execute DataTable
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute DataTable
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="transaction"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
-            <summary>
-            Execute DataTable
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="commandType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute DataTable
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
             <param name="commandType"></param>
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataTable(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataTable(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataTable(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute DataTable
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
             <summary>
             Execute DataTable
             </summary>
@@ -369,7 +369,7 @@
             <param name="commandFactory"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(System.Data.SqlClient.SqlConnection,System.String)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(Microsoft.Data.SqlClient.SqlConnection,System.String)">
             <summary>
             Execute DataTable
             </summary>
@@ -377,7 +377,7 @@
             <param name="cmdText"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute DataTable
             </summary>
@@ -386,7 +386,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
             <summary>
             Execute DataTable
             </summary>
@@ -395,7 +395,7 @@
             <param name="commandType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute DataTable
             </summary>
@@ -405,7 +405,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
             <summary>
             Execute DataTable
             </summary>
@@ -414,7 +414,7 @@
             <param name="parameters"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute DataTable
             </summary>
@@ -424,7 +424,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteDataTableAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
             <summary>
             Execute DataTable
             </summary>
@@ -434,7 +434,7 @@
             <param name="commandType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntities``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntities``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute a set of entity
             </summary>
@@ -446,7 +446,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntities``1(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntities``1(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
             <summary>
             Execute a set of entity
             </summary>
@@ -455,7 +455,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntities``1(System.Data.SqlClient.SqlConnection,System.String)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntities``1(Microsoft.Data.SqlClient.SqlConnection,System.String)">
             <summary>
             Execute a set of entity
             </summary>
@@ -464,100 +464,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntities``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute a set of entity
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="transaction"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntities``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
-            <summary>
-            Execute a set of entity
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="commandType"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntities``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute a set of entity
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="commandType"></param>
-            <param name="transaction"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntities``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
-            <summary>
-            Execute a set of entity
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntities``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute a set of entity
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="transaction"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntities``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
-            <summary>
-            Execute a set of entity
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="commandType"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute a set of entity
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="commandType"></param>
-            <param name="transaction"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
-            <summary>
-            Execute a set of entity
-            </summary>
-            <param name="conn"></param>
-            <param name="commandFactory"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(System.Data.SqlClient.SqlConnection,System.String)">
-            <summary>
-            Execute a set of entity
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntities``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute a set of entity
             </summary>
@@ -567,7 +474,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntities``1(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
             <summary>
             Execute a set of entity
             </summary>
@@ -577,7 +484,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntities``1(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute a set of entity
             </summary>
@@ -588,7 +495,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntities``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
             <summary>
             Execute a set of entity
             </summary>
@@ -598,7 +505,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntities``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute a set of entity
             </summary>
@@ -609,7 +516,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntities``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
             <summary>
             Execute a set of entity
             </summary>
@@ -620,7 +527,100 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntity``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntitiesAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute a set of entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntity``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute entity
             </summary>
@@ -632,7 +632,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntity``1(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntity``1(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
             <summary>
             Execute entity
             </summary>
@@ -641,7 +641,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntity``1(System.Data.SqlClient.SqlConnection,System.String)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntity``1(Microsoft.Data.SqlClient.SqlConnection,System.String)">
             <summary>
             Execute entity
             </summary>
@@ -650,100 +650,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntity``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute entity
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="transaction"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntity``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
-            <summary>
-            Execute entity
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="commandType"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntity``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute entity
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="commandType"></param>
-            <param name="transaction"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntity``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
-            <summary>
-            Execute entity
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntity``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute entity
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="transaction"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntity``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
-            <summary>
-            Execute entity
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="commandType"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute entity
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="commandType"></param>
-            <param name="transaction"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
-            <summary>
-            Execute entity
-            </summary>
-            <param name="conn"></param>
-            <param name="commandFactory"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(System.Data.SqlClient.SqlConnection,System.String)">
-            <summary>
-            Execute entity
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntity``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute entity
             </summary>
@@ -753,7 +660,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntity``1(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
             <summary>
             Execute entity
             </summary>
@@ -763,7 +670,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntity``1(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute entity
             </summary>
@@ -774,7 +681,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntity``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
             <summary>
             Execute entity
             </summary>
@@ -784,7 +691,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntity``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute entity
             </summary>
@@ -795,7 +702,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntity``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
             <summary>
             Execute entity
             </summary>
@@ -806,7 +713,100 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObject(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteEntityAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute entity
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObject(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute expando object
             </summary>
@@ -817,7 +817,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObject(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObject(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
             <summary>
             Execute expando object
             </summary>
@@ -825,7 +825,7 @@
             <param name="commandFactory"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObject(System.Data.SqlClient.SqlConnection,System.String)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObject(Microsoft.Data.SqlClient.SqlConnection,System.String)">
             <summary>
             Execute expando object
             </summary>
@@ -833,7 +833,7 @@
             <param name="cmdText"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObject(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObject(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute expando object
             </summary>
@@ -842,7 +842,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObject(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObject(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
             <summary>
             Execute expando object
             </summary>
@@ -851,57 +851,57 @@
             <param name="commandType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObject(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObject(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute expando object
             </summary>
             <param name="conn"></param>
             <param name="cmdText"></param>
-            <param name="commandType"></param>
-            <param name="transaction"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObject(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
-            <summary>
-            Execute expando object
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObject(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute expando object
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="transaction"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObject(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
-            <summary>
-            Execute expando object
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="commandType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute expando object
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
             <param name="commandType"></param>
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObject(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObject(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObject(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
             <summary>
             Execute expando object
             </summary>
@@ -909,7 +909,7 @@
             <param name="commandFactory"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(System.Data.SqlClient.SqlConnection,System.String)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(Microsoft.Data.SqlClient.SqlConnection,System.String)">
             <summary>
             Execute expando object
             </summary>
@@ -917,7 +917,7 @@
             <param name="cmdText"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute expando object
             </summary>
@@ -926,7 +926,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
             <summary>
             Execute expando object
             </summary>
@@ -935,7 +935,7 @@
             <param name="commandType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute expando object
             </summary>
@@ -945,7 +945,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
             <summary>
             Execute expando object
             </summary>
@@ -954,7 +954,7 @@
             <param name="parameters"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute expando object
             </summary>
@@ -964,7 +964,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjectAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
             <summary>
             Execute expando object
             </summary>
@@ -974,7 +974,7 @@
             <param name="commandType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute a set of expando object
             </summary>
@@ -985,91 +985,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
-            <summary>
-            Execute a set of expando object
-            </summary>
-            <param name="conn"></param>
-            <param name="commandFactory"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(System.Data.SqlClient.SqlConnection,System.String)">
-            <summary>
-            Execute a set of expando object
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute a set of expando object
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="transaction"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
-            <summary>
-            Execute a set of expando object
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="commandType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute a set of expando object
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="commandType"></param>
-            <param name="transaction"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
-            <summary>
-            Execute a set of expando object
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute a set of expando object
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="transaction"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
-            <summary>
-            Execute a set of expando object
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="commandType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute a set of expando object
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="commandType"></param>
-            <param name="transaction"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
             <summary>
             Execute a set of expando object
             </summary>
@@ -1077,7 +993,7 @@
             <param name="commandFactory"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(System.Data.SqlClient.SqlConnection,System.String)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(Microsoft.Data.SqlClient.SqlConnection,System.String)">
             <summary>
             Execute a set of expando object
             </summary>
@@ -1085,7 +1001,7 @@
             <param name="cmdText"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute a set of expando object
             </summary>
@@ -1094,7 +1010,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
             <summary>
             Execute a set of expando object
             </summary>
@@ -1103,7 +1019,7 @@
             <param name="commandType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute a set of expando object
             </summary>
@@ -1113,7 +1029,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
             <summary>
             Execute a set of expando object
             </summary>
@@ -1122,7 +1038,7 @@
             <param name="parameters"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute a set of expando object
             </summary>
@@ -1132,7 +1048,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjects(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
             <summary>
             Execute a set of expando object
             </summary>
@@ -1142,7 +1058,91 @@
             <param name="commandType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(Microsoft.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteExpandoObjectsAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute a set of expando object
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteNonQuery(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute NonQuery
             </summary>
@@ -1152,21 +1152,21 @@
             <param name="commandType"></param>
             <param name="transaction"></param>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteNonQuery(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
             <summary>
             Execute NonQuery
             </summary>
             <param name="conn"></param>
             <param name="commandFactory"></param>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.String)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteNonQuery(Microsoft.Data.SqlClient.SqlConnection,System.String)">
             <summary>
             Execute NonQuery
             </summary>
             <param name="conn"></param>
             <param name="cmdText"></param>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteNonQuery(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute NonQuery
             </summary>
@@ -1174,7 +1174,7 @@
             <param name="cmdText"></param>
             <param name="transaction"></param>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteNonQuery(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
             <summary>
             Execute NonQuery
             </summary>
@@ -1182,66 +1182,66 @@
             <param name="cmdText"></param>
             <param name="commandType"></param>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteNonQuery(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute NonQuery
             </summary>
             <param name="conn"></param>
             <param name="cmdText"></param>
-            <param name="commandType"></param>
-            <param name="transaction"></param>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
-            <summary>
-            Execute NonQuery
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute NonQuery
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="transaction"></param>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
-            <summary>
-            Execute NonQuery
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="commandType"></param>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute NonQuery
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
             <param name="commandType"></param>
             <param name="transaction"></param>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteNonQuery(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteNonQuery(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteNonQuery(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute NonQuery
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
             <summary>
             Execute NonQuery
             </summary>
             <param name="conn"></param>
             <param name="commandFactory"></param>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(System.Data.SqlClient.SqlConnection,System.String)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(Microsoft.Data.SqlClient.SqlConnection,System.String)">
             <summary>
             Execute NonQuery
             </summary>
             <param name="conn"></param>
             <param name="cmdText"></param>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute NonQuery
             </summary>
@@ -1249,7 +1249,7 @@
             <param name="cmdText"></param>
             <param name="transaction"></param>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
             <summary>
             Execute NonQuery
             </summary>
@@ -1257,7 +1257,7 @@
             <param name="cmdText"></param>
             <param name="commandType"></param>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute NonQuery
             </summary>
@@ -1266,7 +1266,7 @@
             <param name="commandType"></param>
             <param name="transaction"></param>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
             <summary>
             Execute NonQuery
             </summary>
@@ -1274,7 +1274,7 @@
             <param name="cmdText"></param>
             <param name="parameters"></param>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute NonQuery
             </summary>
@@ -1283,7 +1283,7 @@
             <param name="parameters"></param>
             <param name="transaction"></param>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteNonQueryAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
             <summary>
             Execute NonQuery
             </summary>
@@ -1292,7 +1292,7 @@
             <param name="parameters"></param>
             <param name="commandType"></param>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteReader(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute reader
             </summary>
@@ -1303,91 +1303,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
-            <summary>
-            Execute reader
-            </summary>
-            <param name="conn"></param>
-            <param name="commandFactory"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.String)">
-            <summary>
-            Execute reader
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute reader
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="transaction"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
-            <summary>
-            Execute reader
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="commandType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute reader
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="commandType"></param>
-            <param name="transaction"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
-            <summary>
-            Execute reader
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute reader
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="transaction"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
-            <summary>
-            Execute reader
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="commandType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute reader
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="commandType"></param>
-            <param name="transaction"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReaderAsync(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteReader(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
             <summary>
             Execute reader
             </summary>
@@ -1395,7 +1311,7 @@
             <param name="commandFactory"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReaderAsync(System.Data.SqlClient.SqlConnection,System.String)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteReader(Microsoft.Data.SqlClient.SqlConnection,System.String)">
             <summary>
             Execute reader
             </summary>
@@ -1403,7 +1319,7 @@
             <param name="cmdText"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteReader(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute reader
             </summary>
@@ -1412,7 +1328,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteReader(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
             <summary>
             Execute reader
             </summary>
@@ -1421,7 +1337,7 @@
             <param name="commandType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteReader(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute reader
             </summary>
@@ -1431,7 +1347,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteReader(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
             <summary>
             Execute reader
             </summary>
@@ -1440,7 +1356,7 @@
             <param name="parameters"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteReader(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute reader
             </summary>
@@ -1450,7 +1366,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteReader(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
             <summary>
             Execute reader
             </summary>
@@ -1460,7 +1376,91 @@
             <param name="commandType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteReaderAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteReaderAsync(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteReaderAsync(Microsoft.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteReaderAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteReaderAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteReaderAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteReaderAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteReaderAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteReaderAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalar(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute scalar
             </summary>
@@ -1471,7 +1471,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalar(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
             <summary>
             Execute scalar
             </summary>
@@ -1479,7 +1479,7 @@
             <param name="commandFactory"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.String)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalar(Microsoft.Data.SqlClient.SqlConnection,System.String)">
             <summary>
             Execute scalar
             </summary>
@@ -1487,7 +1487,7 @@
             <param name="cmdText"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalar(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute scalar
             </summary>
@@ -1496,7 +1496,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalar(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
             <summary>
             Execute scalar
             </summary>
@@ -1505,57 +1505,57 @@
             <param name="commandType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalar(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute scalar
             </summary>
             <param name="conn"></param>
             <param name="cmdText"></param>
-            <param name="commandType"></param>
-            <param name="transaction"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
-            <summary>
-            Execute scalar
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute scalar
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="transaction"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
-            <summary>
-            Execute scalar
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="commandType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute scalar
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
             <param name="commandType"></param>
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsync(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalar(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalar(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalar(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAsync(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
             <summary>
             Execute scalar
             </summary>
@@ -1563,7 +1563,7 @@
             <param name="commandFactory"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsync(System.Data.SqlClient.SqlConnection,System.String)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAsync(Microsoft.Data.SqlClient.SqlConnection,System.String)">
             <summary>
             Execute scalar
             </summary>
@@ -1571,7 +1571,7 @@
             <param name="cmdText"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute scalar
             </summary>
@@ -1580,7 +1580,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
             <summary>
             Execute scalar
             </summary>
@@ -1589,7 +1589,7 @@
             <param name="commandType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute scalar
             </summary>
@@ -1599,7 +1599,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
             <summary>
             Execute scalar
             </summary>
@@ -1608,7 +1608,7 @@
             <param name="parameters"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute scalar
             </summary>
@@ -1618,7 +1618,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
             <summary>
             Execute scalar
             </summary>
@@ -1628,7 +1628,7 @@
             <param name="commandType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute scalar as...
             </summary>
@@ -1640,100 +1640,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
-            <summary>
-            Execute scalar as...
-            </summary>
-            <param name="conn"></param>
-            <param name="commandFactory"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(System.Data.SqlClient.SqlConnection,System.String)">
-            <summary>
-            Execute scalar as...
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute scalar as...
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="transaction"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
-            <summary>
-            Execute scalar as...
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="commandType"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute scalar as...
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="commandType"></param>
-            <param name="transaction"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
-            <summary>
-            Execute scalar as...
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute scalar as...
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="transaction"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
-            <summary>
-            Execute scalar as...
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="commandType"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute scalar as...
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="commandType"></param>
-            <param name="transaction"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
             <summary>
             Execute scalar as...
             </summary>
@@ -1742,7 +1649,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(System.Data.SqlClient.SqlConnection,System.String)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(Microsoft.Data.SqlClient.SqlConnection,System.String)">
             <summary>
             Execute scalar as...
             </summary>
@@ -1751,7 +1658,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute scalar as...
             </summary>
@@ -1761,7 +1668,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
             <summary>
             Execute scalar as...
             </summary>
@@ -1771,7 +1678,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute scalar as...
             </summary>
@@ -1782,7 +1689,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
             <summary>
             Execute scalar as...
             </summary>
@@ -1792,7 +1699,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute scalar as...
             </summary>
@@ -1803,7 +1710,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAs``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
             <summary>
             Execute scalar as...
             </summary>
@@ -1814,7 +1721,100 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="commandFactory"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarAsAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar as...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute scalar to...
             </summary>
@@ -1826,7 +1826,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
             <summary>
             Execute scalar to...
             </summary>
@@ -1835,7 +1835,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(System.Data.SqlClient.SqlConnection,System.String)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(Microsoft.Data.SqlClient.SqlConnection,System.String)">
             <summary>
             Execute scalar to...
             </summary>
@@ -1844,7 +1844,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute scalar to...
             </summary>
@@ -1854,7 +1854,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
             <summary>
             Execute scalar to...
             </summary>
@@ -1864,62 +1864,62 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute scalar to...
             </summary>
             <param name="conn"></param>
             <param name="cmdText"></param>
-            <param name="commandType"></param>
-            <param name="transaction"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
-            <summary>
-            Execute scalar to...
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute scalar to...
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="transaction"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
-            <summary>
-            Execute scalar to...
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="commandType"></param>
-            <typeparam name="T"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute scalar to...
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
             <param name="commandType"></param>
             <param name="transaction"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarTo``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute scalar to...
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
             <summary>
             Execute scalar to...
             </summary>
@@ -1928,7 +1928,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(System.Data.SqlClient.SqlConnection,System.String)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String)">
             <summary>
             Execute scalar to...
             </summary>
@@ -1937,7 +1937,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute scalar to...
             </summary>
@@ -1947,7 +1947,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
             <summary>
             Execute scalar to...
             </summary>
@@ -1957,7 +1957,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute scalar to...
             </summary>
@@ -1968,7 +1968,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
             <summary>
             Execute scalar to...
             </summary>
@@ -1978,7 +1978,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute scalar to...
             </summary>
@@ -1989,7 +1989,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteScalarToAsync``1(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
             <summary>
             Execute scalar to...
             </summary>
@@ -2000,7 +2000,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteXmlReader(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute xml reader
             </summary>
@@ -2011,7 +2011,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReader(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteXmlReader(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
             <summary>
             Execute xml reader
             </summary>
@@ -2019,7 +2019,7 @@
             <param name="commandFactory"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReader(System.Data.SqlClient.SqlConnection,System.String)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteXmlReader(Microsoft.Data.SqlClient.SqlConnection,System.String)">
             <summary>
             Execute xml reader
             </summary>
@@ -2027,7 +2027,7 @@
             <param name="cmdText"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteXmlReader(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute xml reader
             </summary>
@@ -2036,7 +2036,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteXmlReader(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
             <summary>
             Execute xml reader
             </summary>
@@ -2045,57 +2045,57 @@
             <param name="commandType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteXmlReader(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute xml reader
             </summary>
             <param name="conn"></param>
             <param name="cmdText"></param>
-            <param name="commandType"></param>
-            <param name="transaction"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
-            <summary>
-            Execute xml reader
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute xml reader
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="transaction"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReader(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
-            <summary>
-            Execute xml reader
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
-            <param name="commandType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
-            <summary>
-            Execute xml reader
-            </summary>
-            <param name="conn"></param>
-            <param name="cmdText"></param>
-            <param name="parameters"></param>
             <param name="commandType"></param>
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(System.Data.SqlClient.SqlConnection,System.Action{System.Data.SqlClient.SqlCommand})">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteXmlReader(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteXmlReader(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteXmlReader(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Execute xml reader
+            </summary>
+            <param name="conn"></param>
+            <param name="cmdText"></param>
+            <param name="parameters"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(Microsoft.Data.SqlClient.SqlConnection,System.Action{Microsoft.Data.SqlClient.SqlCommand})">
             <summary>
             Execute xml reader
             </summary>
@@ -2103,7 +2103,7 @@
             <param name="commandFactory"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(System.Data.SqlClient.SqlConnection,System.String)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(Microsoft.Data.SqlClient.SqlConnection,System.String)">
             <summary>
             Execute xml reader
             </summary>
@@ -2111,7 +2111,7 @@
             <param name="cmdText"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute xml reader
             </summary>
@@ -2120,7 +2120,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType)">
             <summary>
             Execute xml reader
             </summary>
@@ -2129,7 +2129,7 @@
             <param name="commandType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,System.Data.CommandType,Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute xml reader
             </summary>
@@ -2139,7 +2139,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[])">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[])">
             <summary>
             Execute xml reader
             </summary>
@@ -2148,7 +2148,7 @@
             <param name="parameters"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.SqlClient.SqlTransaction)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],Microsoft.Data.SqlClient.SqlTransaction)">
             <summary>
             Execute xml reader
             </summary>
@@ -2158,7 +2158,7 @@
             <param name="transaction"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(System.Data.SqlClient.SqlConnection,System.String,System.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.ExecuteXmlReaderAsync(Microsoft.Data.SqlClient.SqlConnection,System.String,Microsoft.Data.SqlClient.SqlParameter[],System.Data.CommandType)">
             <summary>
             Execute xml reader
             </summary>
@@ -2168,22 +2168,22 @@
             <param name="commandType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlClientExtensions.AddRangeWithValue(System.Data.SqlClient.SqlParameterCollection,System.Collections.Generic.Dictionary{System.String,System.Object})">
+        <member name="M:Microsoft.Data.SqlClient.SqlClientExtensions.AddRangeWithValue(Microsoft.Data.SqlClient.SqlParameterCollection,System.Collections.Generic.Dictionary{System.String,System.Object})">
             <summary>
             Add range with value
             </summary>
             <param name="conn"></param>
             <param name="values"></param>
         </member>
-        <member name="T:Cosmos.Data.Sx.SqlClient.SqlConnectionPool">
+        <member name="T:Microsoft.Data.SqlClient.SqlConnectionPool">
             <summary>
             SqlConnection Pool 
             </summary>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPool.#ctor(System.String,System.String,System.Action,System.Action)">
+        <member name="M:Microsoft.Data.SqlClient.SqlConnectionPool.#ctor(System.String,System.String,System.Action,System.Action)">
             <inheritdoc />
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPool.Return(Cosmos.Disposables.ObjectPools.ObjectOut{System.Data.SqlClient.SqlConnection},System.Exception,System.Boolean)">
+        <member name="M:Microsoft.Data.SqlClient.SqlConnectionPool.Recycle(Cosmos.Disposables.ObjectPools.ObjectPayload{Microsoft.Data.SqlClient.SqlConnection},System.Exception,System.Boolean)">
             <summary>
             Return
             </summary>
@@ -2191,65 +2191,65 @@
             <param name="exception"></param>
             <param name="isRecreate"></param>
         </member>
-        <member name="T:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy">
+        <member name="T:Microsoft.Data.SqlClient.SqlConnectionPoolPolicy">
             <summary>
             SqlConnection pool policy
             </summary>
         </member>
-        <member name="P:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.Name">
+        <member name="P:Microsoft.Data.SqlClient.SqlConnectionPoolPolicy.Name">
             <inheritdoc />
         </member>
-        <member name="P:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.PoolSize">
+        <member name="P:Microsoft.Data.SqlClient.SqlConnectionPoolPolicy.PoolSize">
             <inheritdoc />
         </member>
-        <member name="P:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.SyncGetTimeout">
+        <member name="P:Microsoft.Data.SqlClient.SqlConnectionPoolPolicy.SyncGetTimeout">
             <inheritdoc />
         </member>
-        <member name="P:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.IdleTimeout">
+        <member name="P:Microsoft.Data.SqlClient.SqlConnectionPoolPolicy.IdleTimeout">
             <inheritdoc />
         </member>
-        <member name="P:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.AsyncGetCapacity">
+        <member name="P:Microsoft.Data.SqlClient.SqlConnectionPoolPolicy.AsyncGetCapacity">
             <inheritdoc />
         </member>
-        <member name="P:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.IsThrowGetTimeoutException">
+        <member name="P:Microsoft.Data.SqlClient.SqlConnectionPoolPolicy.IsThrowGetTimeoutException">
             <inheritdoc />
         </member>
-        <member name="P:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.IsAutoDisposeWithSystem">
+        <member name="P:Microsoft.Data.SqlClient.SqlConnectionPoolPolicy.IsAutoDisposeWithSystem">
             <inheritdoc />
         </member>
-        <member name="P:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.CheckAvailableInterval">
+        <member name="P:Microsoft.Data.SqlClient.SqlConnectionPoolPolicy.CheckAvailableInterval">
             <inheritdoc />
         </member>
-        <member name="P:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.ConnectionString">
+        <member name="P:Microsoft.Data.SqlClient.SqlConnectionPoolPolicy.ConnectionString">
             <summary>
             Gets or sets connection string
             </summary>
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.OnCheckAvailable(Cosmos.Disposables.ObjectPools.ObjectOut{System.Data.SqlClient.SqlConnection})">
+        <member name="M:Microsoft.Data.SqlClient.SqlConnectionPoolPolicy.OnCreate">
             <inheritdoc />
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.OnCreate">
+        <member name="M:Microsoft.Data.SqlClient.SqlConnectionPoolPolicy.OnAvailable">
             <inheritdoc />
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.OnDestroy(System.Data.SqlClient.SqlConnection)">
+        <member name="M:Microsoft.Data.SqlClient.SqlConnectionPoolPolicy.OnUnavailable">
             <inheritdoc />
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.OnGet(Cosmos.Disposables.ObjectPools.ObjectOut{System.Data.SqlClient.SqlConnection})">
+        <member name="M:Microsoft.Data.SqlClient.SqlConnectionPoolPolicy.OnCheckAvailable(Cosmos.Disposables.ObjectPools.ObjectPayload{Microsoft.Data.SqlClient.SqlConnection})">
             <inheritdoc />
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.OnGetAsync(Cosmos.Disposables.ObjectPools.ObjectOut{System.Data.SqlClient.SqlConnection})">
+        <member name="M:Microsoft.Data.SqlClient.SqlConnectionPoolPolicy.OnAcquire(Cosmos.Disposables.ObjectPools.ObjectPayload{Microsoft.Data.SqlClient.SqlConnection})">
             <inheritdoc />
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.OnGetTimeout">
+        <member name="M:Microsoft.Data.SqlClient.SqlConnectionPoolPolicy.OnAcquireAsync(Cosmos.Disposables.ObjectPools.ObjectPayload{Microsoft.Data.SqlClient.SqlConnection})">
             <inheritdoc />
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.OnReturn(Cosmos.Disposables.ObjectPools.ObjectOut{System.Data.SqlClient.SqlConnection})">
+        <member name="M:Microsoft.Data.SqlClient.SqlConnectionPoolPolicy.OnAcquireTimeout">
             <inheritdoc />
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.OnAvailable">
+        <member name="M:Microsoft.Data.SqlClient.SqlConnectionPoolPolicy.OnRecycle(Cosmos.Disposables.ObjectPools.ObjectPayload{Microsoft.Data.SqlClient.SqlConnection})">
             <inheritdoc />
         </member>
-        <member name="M:Cosmos.Data.Sx.SqlClient.SqlConnectionPoolPolicy.OnUnavailable">
+        <member name="M:Microsoft.Data.SqlClient.SqlConnectionPoolPolicy.OnDestroy(Microsoft.Data.SqlClient.SqlConnection)">
             <inheritdoc />
         </member>
     </members>
