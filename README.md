@@ -1,14 +1,14 @@
-# COSMOSLOOPS/Cosmos.Data
+# Cosmos Data Overview
 
 Cosmos.Data is a inline project of [COSMOS LOOPS PROGRAMME](https://github.com/cosmos-loops). This repository provides several SQL-Query, RMDB/ORM and No-SQL components' extensions to improve development efficiency.
 
 **Extensions for:**
 
-- [Dapper](https://github.com/cosmos-loops/Data.Dapper/)
-- [Microsoft.EntityFrameworkCore](https://github.com/cosmos-loops/Data.EntityFrameworkCore/)
-- [FreeSql](https://github.com/cosmos-loops/Data.FreeSql/)
-- [MongoDB](https://github.com/cosmos-loops/Data.MongoDB/)
-- [Redis(based on CSRedisCore/StackExchange.Redis)](https://github.com/cosmos-loops/Data.Redis/)
+- [Dapper](https://github.com/cosmos-loops/cosmos-dapper/)
+- [EfCore](https://github.com/cosmos-loops/cosmos-efcore/)
+- [FreeSql](https://github.com/cosmos-loops/cosmos-freesql/)
+- [MongoDB](https://github.com/cosmos-loops/cosmos-mongodb/)
+- [Redis(based on CSRedisCore/StackExchange.Redis)](https://github.com/cosmos-loops/cosmos-redis/)
 - _more_
 
 ---

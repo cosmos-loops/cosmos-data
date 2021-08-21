@@ -1,0 +1,11 @@
+<Project>
+
+    <PropertyGroup>
+        <Dependency-PkgVersion>0.1.9.9</Dependency-PkgVersion>
+        <Models-PkgVersion>0.1.9.9</Models-PkgVersion>
+        <ObjectPools-PkgVersion>0.1.9.9</ObjectPools-PkgVersion>
+        <Prowess-PkgVersion>0.1.9.9</Prowess-PkgVersion>
+        <Validation-PkgVersion>0.1.9.9</Validation-PkgVersion>
+    </PropertyGroup>
+
+</Project>
