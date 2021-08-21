@@ -1,9 +1,8 @@
-using System;
-using System.Data;
-using System.Data.SQLite;
 using System.Threading.Tasks;
+using Cosmos;
+using Cosmos.Data.Sx;
 
-namespace Cosmos.Data.Sx.SQLite
+namespace System.Data.SQLite
 {
     /// <summary>
     /// Extensions for Sqlite
@@ -12,257 +11,284 @@ namespace Cosmos.Data.Sx.SQLite
     public static partial class SQLiteExtensions
     {
         /// <summary>
-        /// Execute ExpandoObject
+        /// Execute Entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static dynamic ExecuteExpandoObject(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, CommandType commandType,
-            SQLiteTransaction transaction)
+        public static T ExecuteEntity<T>(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, CommandType commandType, SQLiteTransaction transaction)
+            where T : new()
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
             using IDataReader reader = command.ExecuteReader();
             reader.Read();
-            return reader.ToExpandoObject();
+            return reader.ToEntity<T>();
         }
 
         /// <summary>
-        /// Execute ExpandoObject
+        /// Execute Entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="commandFactory"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static dynamic ExecuteExpandoObject(this SQLiteConnection conn, Action<SQLiteCommand> commandFactory)
+        public static T ExecuteEntity<T>(this SQLiteConnection conn, Action<SQLiteCommand> commandFactory) where T : new()
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(commandFactory);
             using IDataReader reader = command.ExecuteReader();
             reader.Read();
-            return reader.ToExpandoObject();
+            return reader.ToEntity<T>();
         }
 
         /// <summary>
-        /// Execute ExpandoObject
+        /// Execute Entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static dynamic ExecuteExpandoObject(this SQLiteConnection conn, string cmdText)
+        public static T ExecuteEntity<T>(this SQLiteConnection conn, string cmdText) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObject(cmdText, null, CommandType.Text, null);
+            return conn.ExecuteEntity<T>(cmdText, null, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute ExpandoObject
+        /// Execute Entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static dynamic ExecuteExpandoObject(this SQLiteConnection conn, string cmdText, SQLiteTransaction transaction)
+        public static T ExecuteEntity<T>(this SQLiteConnection conn, string cmdText, SQLiteTransaction transaction) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObject(cmdText, null, CommandType.Text, transaction);
+            return conn.ExecuteEntity<T>(cmdText, null, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute ExpandoObject
+        /// Execute Entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static dynamic ExecuteExpandoObject(this SQLiteConnection conn, string cmdText, CommandType commandType)
+        public static T ExecuteEntity<T>(this SQLiteConnection conn, string cmdText, CommandType commandType) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObject(cmdText, null, commandType, null);
+            return conn.ExecuteEntity<T>(cmdText, null, commandType, null);
         }
 
         /// <summary>
-        /// Execute ExpandoObject
+        /// Execute Entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static dynamic ExecuteExpandoObject(this SQLiteConnection conn, string cmdText, CommandType commandType, SQLiteTransaction transaction)
+        public static T ExecuteEntity<T>(this SQLiteConnection conn, string cmdText, CommandType commandType, SQLiteTransaction transaction) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObject(cmdText, null, commandType, transaction);
+            return conn.ExecuteEntity<T>(cmdText, null, commandType, transaction);
         }
 
         /// <summary>
-        /// Execute ExpandoObject
+        /// Execute Entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static dynamic ExecuteExpandoObject(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters)
+        public static T ExecuteEntity<T>(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObject(cmdText, parameters, CommandType.Text, null);
+            return conn.ExecuteEntity<T>(cmdText, parameters, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute ExpandoObject
+        /// Execute Entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static dynamic ExecuteExpandoObject(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, SQLiteTransaction transaction)
+        public static T ExecuteEntity<T>(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, SQLiteTransaction transaction) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObject(cmdText, parameters, CommandType.Text, transaction);
+            return conn.ExecuteEntity<T>(cmdText, parameters, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute ExpandoObject
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
-        /// <param name="commandType"></param>
-        /// <returns></returns>
-        public static dynamic ExecuteExpandoObject(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, CommandType commandType)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObject(cmdText, parameters, commandType, null);
-        }
-
-        /// <summary>
-        /// Execute ExpandoObject
+        /// Execute Entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="commandType"></param>
-        /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<dynamic> ExecuteExpandoObjectAsync(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, CommandType commandType,
+        public static T ExecuteEntity<T>(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, CommandType commandType) where T : new()
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteEntity<T>(cmdText, parameters, commandType, null);
+        }
+
+        /// <summary>
+        /// Execute Entity
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static async Task<T> ExecuteEntityAsync<T>(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, CommandType commandType,
             SQLiteTransaction transaction)
+            where T : new()
         {
             conn.CheckNull(nameof(conn));
+#if NETFRAMEWORK || NETSTANDARD2_0
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
-            using IDataReader reader = await command.ExecuteReaderAsync();
+#else
+            await using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
+#endif
+            using IDataReader reader = await ExecuteReaderAsync(command);
             reader.Read();
-            return reader.ToExpandoObject();
+            return reader.ToEntity<T>();
         }
 
         /// <summary>
-        /// Execute ExpandoObject
+        /// Execute Entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="commandFactory"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<dynamic> ExecuteExpandoObjectAsync(this SQLiteConnection conn, Action<SQLiteCommand> commandFactory)
+        public static async Task<T> ExecuteEntityAsync<T>(this SQLiteConnection conn, Action<SQLiteCommand> commandFactory) where T : new()
         {
             conn.CheckNull(nameof(conn));
+#if NETFRAMEWORK || NETSTANDARD2_0
             using var command = conn.CreateCommand(commandFactory);
-            using IDataReader reader = await command.ExecuteReaderAsync();
+#else
+            await using var command = conn.CreateCommand(commandFactory);
+#endif
+            using IDataReader reader = await ExecuteReaderAsync(command);
             reader.Read();
-            return reader.ToExpandoObject();
+            return reader.ToEntity<T>();
         }
 
         /// <summary>
-        /// Execute ExpandoObject
+        /// Execute Entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<dynamic> ExecuteExpandoObjectAsync(this SQLiteConnection conn, string cmdText)
+        public static Task<T> ExecuteEntityAsync<T>(this SQLiteConnection conn, string cmdText) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObjectAsync(cmdText, null, CommandType.Text, null);
+            return conn.ExecuteEntityAsync<T>(cmdText, null, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute ExpandoObject
+        /// Execute Entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<dynamic> ExecuteExpandoObjectAsync(this SQLiteConnection conn, string cmdText, SQLiteTransaction transaction)
+        public static Task<T> ExecuteEntityAsync<T>(this SQLiteConnection conn, string cmdText, SQLiteTransaction transaction) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObjectAsync(cmdText, null, CommandType.Text, transaction);
+            return conn.ExecuteEntityAsync<T>(cmdText, null, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute ExpandoObject
+        /// Execute Entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<dynamic> ExecuteExpandoObjectAsync(this SQLiteConnection conn, string cmdText, CommandType commandType)
+        public static Task<T> ExecuteEntityAsync<T>(this SQLiteConnection conn, string cmdText, CommandType commandType) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObjectAsync(cmdText, null, commandType, null);
+            return conn.ExecuteEntityAsync<T>(cmdText, null, commandType, null);
         }
 
         /// <summary>
-        /// Execute ExpandoObject
+        /// Execute Entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<dynamic> ExecuteExpandoObjectAsync(this SQLiteConnection conn, string cmdText, CommandType commandType, SQLiteTransaction transaction)
+        public static Task<T> ExecuteEntityAsync<T>(this SQLiteConnection conn, string cmdText, CommandType commandType, SQLiteTransaction transaction) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObjectAsync(cmdText, null, commandType, transaction);
+            return conn.ExecuteEntityAsync<T>(cmdText, null, commandType, transaction);
         }
 
         /// <summary>
-        /// Execute ExpandoObject
+        /// Execute Entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<dynamic> ExecuteExpandoObjectAsync(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters)
+        public static Task<T> ExecuteEntityAsync<T>(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObjectAsync(cmdText, parameters, CommandType.Text, null);
+            return conn.ExecuteEntityAsync<T>(cmdText, parameters, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute ExpandoObject
+        /// Execute Entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<dynamic> ExecuteExpandoObjectAsync(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, SQLiteTransaction transaction)
+        public static Task<T> ExecuteEntityAsync<T>(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, SQLiteTransaction transaction) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObjectAsync(cmdText, parameters, CommandType.Text, transaction);
+            return conn.ExecuteEntityAsync<T>(cmdText, parameters, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute ExpandoObject
+        /// Execute Entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="commandType"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<dynamic> ExecuteExpandoObjectAsync(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, CommandType commandType)
+        public static Task<T> ExecuteEntityAsync<T>(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, CommandType commandType) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObjectAsync(cmdText, parameters, commandType, null);
+            return conn.ExecuteEntityAsync<T>(cmdText, parameters, commandType, null);
         }
     }
 }

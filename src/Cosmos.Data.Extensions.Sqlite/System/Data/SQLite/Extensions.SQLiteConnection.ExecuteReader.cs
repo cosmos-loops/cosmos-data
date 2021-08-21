@@ -1,9 +1,7 @@
-using System;
-using System.Data;
-using System.Data.SQLite;
 using System.Threading.Tasks;
+using Cosmos;
 
-namespace Cosmos.Data.Sx.SQLite
+namespace System.Data.SQLite
 {
     /// <summary>
     /// Extensions for Sqlite
@@ -148,7 +146,7 @@ namespace Cosmos.Data.Sx.SQLite
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
-            return Cosmos.Data.Sx.SQLite.SQLiteExtensions.ExecuteReaderAsync(command);
+            return ExecuteReaderAsync(command);
         }
 
         /// <summary>
@@ -161,7 +159,7 @@ namespace Cosmos.Data.Sx.SQLite
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(commandFactory);
-            return Cosmos.Data.Sx.SQLite.SQLiteExtensions.ExecuteReaderAsync(command);
+            return ExecuteReaderAsync(command);
         }
 
         /// <summary>

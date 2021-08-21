@@ -1,8 +1,6 @@
-using System;
-using System.Data;
-using System.Data.SQLite;
+using Cosmos;
 
-namespace Cosmos.Data.Sx.SQLite
+namespace System.Data.SQLite
 {
     /// <summary>
     /// Extensions for Sqlite
@@ -30,7 +28,7 @@ namespace Cosmos.Data.Sx.SQLite
             command.CommandType = commandType;
             command.Transaction = transaction;
 
-            if (parameters != null)
+            if (parameters is not null)
             {
                 command.Parameters.AddRange(parameters);
             }

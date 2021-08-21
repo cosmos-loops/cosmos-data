@@ -1,9 +1,7 @@
-using System;
-using System.Data;
-using System.Data.SQLite;
 using System.Threading.Tasks;
+using Cosmos;
 
-namespace Cosmos.Data.Sx.SQLite
+namespace System.Data.SQLite
 {
     /// <summary>
     /// Extensions for Sqlite
@@ -12,248 +10,274 @@ namespace Cosmos.Data.Sx.SQLite
     public static partial class SQLiteExtensions
     {
         /// <summary>
-        /// Execute scalar
+        /// Execute scalar as
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static object ExecuteScalar(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, CommandType commandType, SQLiteTransaction transaction)
+        public static T ExecuteScalarAs<T>(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, CommandType commandType, SQLiteTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
-            return command.ExecuteScalar();
+            return (T) command.ExecuteScalar();
         }
 
         /// <summary>
-        /// Execute scalar
+        /// Execute scalar as
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="commandFactory"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static object ExecuteScalar(this SQLiteConnection conn, Action<SQLiteCommand> commandFactory)
+        public static T ExecuteScalarAs<T>(this SQLiteConnection conn, Action<SQLiteCommand> commandFactory)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(commandFactory);
-            return command.ExecuteScalar();
+            return (T) command.ExecuteScalar();
         }
 
         /// <summary>
-        /// Execute scalar
+        /// Execute scalar as
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static object ExecuteScalar(this SQLiteConnection conn, string cmdText)
+        public static T ExecuteScalarAs<T>(this SQLiteConnection conn, string cmdText)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalar(cmdText, null, CommandType.Text, null);
+            return conn.ExecuteScalarAs<T>(cmdText, null, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute scalar
+        /// Execute scalar as
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static object ExecuteScalar(this SQLiteConnection conn, string cmdText, SQLiteTransaction transaction)
+        public static T ExecuteScalarAs<T>(this SQLiteConnection conn, string cmdText, SQLiteTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalar(cmdText, null, CommandType.Text, transaction);
+            return conn.ExecuteScalarAs<T>(cmdText, null, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute scalar
+        /// Execute scalar as
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static object ExecuteScalar(this SQLiteConnection conn, string cmdText, CommandType commandType)
+        public static T ExecuteScalarAs<T>(this SQLiteConnection conn, string cmdText, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalar(cmdText, null, commandType, null);
+            return conn.ExecuteScalarAs<T>(cmdText, null, commandType, null);
         }
 
         /// <summary>
-        /// Execute scalar
+        /// Execute scalar as
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static object ExecuteScalar(this SQLiteConnection conn, string cmdText, CommandType commandType, SQLiteTransaction transaction)
+        public static T ExecuteScalarAs<T>(this SQLiteConnection conn, string cmdText, CommandType commandType, SQLiteTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalar(cmdText, null, commandType, transaction);
+            return conn.ExecuteScalarAs<T>(cmdText, null, commandType, transaction);
         }
 
         /// <summary>
-        /// Execute scalar
+        /// Execute scalar as
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static object ExecuteScalar(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters)
+        public static T ExecuteScalarAs<T>(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalar(cmdText, parameters, CommandType.Text, null);
+            return conn.ExecuteScalarAs<T>(cmdText, parameters, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute scalar
+        /// Execute scalar as
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static object ExecuteScalar(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, SQLiteTransaction transaction)
+        public static T ExecuteScalarAs<T>(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, SQLiteTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalar(cmdText, parameters, CommandType.Text, transaction);
+            return conn.ExecuteScalarAs<T>(cmdText, parameters, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute scalar
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
-        /// <param name="commandType"></param>
-        /// <returns></returns>
-        public static object ExecuteScalar(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, CommandType commandType)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalar(cmdText, parameters, commandType, null);
-        }
-
-        /// <summary>
-        /// Execute scalar
+        /// Execute scalar as
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="commandType"></param>
-        /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<object> ExecuteScalarAsync(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, CommandType commandType,
+        public static T ExecuteScalarAs<T>(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, CommandType commandType)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteScalarAs<T>(cmdText, parameters, commandType, null);
+        }
+
+        /// <summary>
+        /// Execute scalar as
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static async Task<T> ExecuteScalarAsAsync<T>(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, CommandType commandType,
             SQLiteTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
+#if NETFRAMEWORK || NETSTANDARD2_0
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
-            return command.ExecuteScalarAsync();
+#else
+            await using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
+#endif
+            return (T) await command.ExecuteScalarAsync();
         }
 
         /// <summary>
-        /// Execute scalar
+        /// Execute scalar as
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="commandFactory"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<object> ExecuteScalarAsync(this SQLiteConnection conn, Action<SQLiteCommand> commandFactory)
+        public static async Task<T> ExecuteScalarAsAsync<T>(this SQLiteConnection conn, Action<SQLiteCommand> commandFactory)
         {
             conn.CheckNull(nameof(conn));
+#if NETFRAMEWORK || NETSTANDARD2_0
             using var command = conn.CreateCommand(commandFactory);
-            return command.ExecuteScalarAsync();
+#else
+            await using var command = conn.CreateCommand(commandFactory);
+#endif
+            return (T) await command.ExecuteScalarAsync();
         }
 
         /// <summary>
-        /// Execute scalar
+        /// Execute scalar as
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<object> ExecuteScalarAsync(this SQLiteConnection conn, string cmdText)
+        public static Task<T> ExecuteScalarAsAsync<T>(this SQLiteConnection conn, string cmdText)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalarAsync(cmdText, null, CommandType.Text, null);
+            return conn.ExecuteScalarAsAsync<T>(cmdText, null, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute scalar
+        /// Execute scalar as
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<object> ExecuteScalarAsync(this SQLiteConnection conn, string cmdText, SQLiteTransaction transaction)
+        public static Task<T> ExecuteScalarAsAsync<T>(this SQLiteConnection conn, string cmdText, SQLiteTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalarAsync(cmdText, null, CommandType.Text, transaction);
+            return conn.ExecuteScalarAsAsync<T>(cmdText, null, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute scalar
+        /// Execute scalar as
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<object> ExecuteScalarAsync(this SQLiteConnection conn, string cmdText, CommandType commandType)
+        public static Task<T> ExecuteScalarAsAsync<T>(this SQLiteConnection conn, string cmdText, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalarAsync(cmdText, null, commandType, null);
+            return conn.ExecuteScalarAsAsync<T>(cmdText, null, commandType, null);
         }
 
         /// <summary>
-        /// Execute scalar
+        /// Execute scalar as
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<object> ExecuteScalarAsync(this SQLiteConnection conn, string cmdText, CommandType commandType, SQLiteTransaction transaction)
+        public static Task<T> ExecuteScalarAsAsync<T>(this SQLiteConnection conn, string cmdText, CommandType commandType, SQLiteTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalarAsync(cmdText, null, commandType, transaction);
+            return conn.ExecuteScalarAsAsync<T>(cmdText, null, commandType, transaction);
         }
 
         /// <summary>
-        /// Execute scalar
+        /// Execute scalar as
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<object> ExecuteScalarAsync(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters)
+        public static Task<T> ExecuteScalarAsAsync<T>(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalarAsync(cmdText, parameters, CommandType.Text, null);
+            return conn.ExecuteScalarAsAsync<T>(cmdText, parameters, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute scalar
+        /// Execute scalar as
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<object> ExecuteScalarAsync(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, SQLiteTransaction transaction)
+        public static Task<T> ExecuteScalarAsAsync<T>(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, SQLiteTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalarAsync(cmdText, parameters, CommandType.Text, transaction);
+            return conn.ExecuteScalarAsAsync<T>(cmdText, parameters, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute scalar
+        /// Execute scalar as
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="commandType"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<object> ExecuteScalarAsync(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, CommandType commandType)
+        public static Task<T> ExecuteScalarAsAsync<T>(this SQLiteConnection conn, string cmdText, SQLiteParameter[] parameters, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalarAsync(cmdText, parameters, commandType, null);
+            return conn.ExecuteScalarAsAsync<T>(cmdText, parameters, commandType, null);
         }
     }
 }

@@ -1,9 +1,7 @@
-using System;
-using System.Data;
-using System.Data.SQLite;
 using System.Threading.Tasks;
+using Cosmos;
 
-namespace Cosmos.Data.Sx.SQLite
+namespace System.Data.SQLite
 {
     /// <summary>
     /// Extensions for Sqlite
