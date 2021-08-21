@@ -7,9 +7,8 @@
 using System;
 using Cosmos.Data.Core.Pools;
 using Cosmos.Disposables.ObjectPools;
-using MySql.Data.MySqlClient;
 
-namespace Cosmos.Data.Sx.MySql
+namespace MySql.Data.MySqlClient
 {
     /// <summary>
     /// MySql connection pool
@@ -41,7 +40,7 @@ namespace Cosmos.Data.Sx.MySql
         /// <param name="obj"></param>
         /// <param name="exception"></param>
         /// <param name="isRecreate"></param>
-        public void Return(ObjectOut<MySqlConnection> obj, Exception exception, bool isRecreate = false)
+        public void Recycle(ObjectPayload<MySqlConnection> obj, Exception exception, bool isRecreate = false)
         {
             if (exception is MySqlException)
             {
@@ -56,7 +55,7 @@ namespace Cosmos.Data.Sx.MySql
                 }
             }
 
-            base.Return(obj, isRecreate);
+            base.Recycle(obj, isRecreate);
         }
     }
 }

@@ -1,256 +1,282 @@
 ﻿using System;
 using System.Data;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+using Cosmos;
+using Cosmos.Conversions;
 
-namespace Cosmos.Data.Sx.MySql
+namespace MySql.Data.MySqlClient
 {
     public static partial class MySqlClientExtensions
     {
         /// <summary>
-        /// Execute Reader
+        /// Execute Scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static MySqlDataReader ExecuteReader(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType,
-            MySqlTransaction transaction)
+        public static T ExecuteScalarTo<T>(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType, MySqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
-            return command.ExecuteReader();
+            return command.ExecuteScalar().CastTo<T>();
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute Scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="commandFactory"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static MySqlDataReader ExecuteReader(this MySqlConnection conn, Action<MySqlCommand> commandFactory)
+        public static T ExecuteScalarTo<T>(this MySqlConnection conn, Action<MySqlCommand> commandFactory)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(commandFactory);
-            return command.ExecuteReader();
+            return command.ExecuteScalar().CastTo<T>();
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute Scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static MySqlDataReader ExecuteReader(this MySqlConnection conn, string cmdText)
+        public static T ExecuteScalarTo<T>(this MySqlConnection conn, string cmdText)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReader(cmdText, null, CommandType.Text, null);
+            return conn.ExecuteScalarTo<T>(cmdText, null, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute Scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static MySqlDataReader ExecuteReader(this MySqlConnection conn, string cmdText, MySqlTransaction transaction)
+        public static T ExecuteScalarTo<T>(this MySqlConnection conn, string cmdText, MySqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReader(cmdText, null, CommandType.Text, transaction);
+            return conn.ExecuteScalarTo<T>(cmdText, null, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute Scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static MySqlDataReader ExecuteReader(this MySqlConnection conn, string cmdText, CommandType commandType)
+        public static T ExecuteScalarTo<T>(this MySqlConnection conn, string cmdText, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReader(cmdText, null, commandType, null);
+            return conn.ExecuteScalarTo<T>(cmdText, null, commandType, null);
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute Scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static MySqlDataReader ExecuteReader(this MySqlConnection conn, string cmdText, CommandType commandType, MySqlTransaction transaction)
+        public static T ExecuteScalarTo<T>(this MySqlConnection conn, string cmdText, CommandType commandType, MySqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReader(cmdText, null, commandType, transaction);
+            return conn.ExecuteScalarTo<T>(cmdText, null, commandType, transaction);
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute Scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static MySqlDataReader ExecuteReader(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters)
+        public static T ExecuteScalarTo<T>(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReader(cmdText, parameters, CommandType.Text, null);
+            return conn.ExecuteScalarTo<T>(cmdText, parameters, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute Scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static MySqlDataReader ExecuteReader(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, MySqlTransaction transaction)
+        public static T ExecuteScalarTo<T>(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, MySqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReader(cmdText, parameters, CommandType.Text, transaction);
+            return conn.ExecuteScalarTo<T>(cmdText, parameters, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute Reader
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
-        /// <param name="commandType"></param>
-        /// <returns></returns>
-        public static MySqlDataReader ExecuteReader(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteReader(cmdText, parameters, commandType, null);
-        }
-
-        /// <summary>
-        /// Execute Reader
+        /// Execute Scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="commandType"></param>
-        /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<MySqlDataReader> ExecuteReaderAsync(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType,
+        public static T ExecuteScalarTo<T>(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteScalarTo<T>(cmdText, parameters, commandType, null);
+        }
+
+        /// <summary>
+        /// Execute Scalar to...
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static async Task<T> ExecuteScalarToAsync<T>(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType,
             MySqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
+#if NETFRAMEWORK || NETSTANDARD2_0
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
-            return await Task.Run(() => command.ExecuteReader());
+#else
+            await using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
+#endif
+            return (await command.ExecuteScalarAsync()).CastTo<T>();
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute Scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="commandFactory"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<MySqlDataReader> ExecuteReaderAsync(this MySqlConnection conn, Action<MySqlCommand> commandFactory)
+        public static async Task<T> ExecuteScalarToAsync<T>(this MySqlConnection conn, Action<MySqlCommand> commandFactory)
         {
             conn.CheckNull(nameof(conn));
+#if NETFRAMEWORK || NETSTANDARD2_0
             using var command = conn.CreateCommand(commandFactory);
-            return await Task.Run(() => command.ExecuteReader());
+#else
+            await using var command = conn.CreateCommand(commandFactory);
+#endif
+            return (await command.ExecuteScalarAsync()).CastTo<T>();
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute Scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<MySqlDataReader> ExecuteReaderAsync(this MySqlConnection conn, string cmdText)
+        public static Task<T> ExecuteScalarToAsync<T>(this MySqlConnection conn, string cmdText)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReaderAsync(cmdText, null, CommandType.Text, null);
+            return conn.ExecuteScalarToAsync<T>(cmdText, null, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute Scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<MySqlDataReader> ExecuteReaderAsync(this MySqlConnection conn, string cmdText, MySqlTransaction transaction)
+        public static Task<T> ExecuteScalarToAsync<T>(this MySqlConnection conn, string cmdText, MySqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReaderAsync(cmdText, null, CommandType.Text, transaction);
+            return conn.ExecuteScalarToAsync<T>(cmdText, null, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute Scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<MySqlDataReader> ExecuteReaderAsync(this MySqlConnection conn, string cmdText, CommandType commandType)
+        public static Task<T> ExecuteScalarToAsync<T>(this MySqlConnection conn, string cmdText, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReaderAsync(cmdText, null, commandType, null);
+            return conn.ExecuteScalarToAsync<T>(cmdText, null, commandType, null);
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute Scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<MySqlDataReader> ExecuteReaderAsync(this MySqlConnection conn, string cmdText, CommandType commandType, MySqlTransaction transaction)
+        public static Task<T> ExecuteScalarToAsync<T>(this MySqlConnection conn, string cmdText, CommandType commandType, MySqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReaderAsync(cmdText, null, commandType, transaction);
+            return conn.ExecuteScalarToAsync<T>(cmdText, null, commandType, transaction);
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute Scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<MySqlDataReader> ExecuteReaderAsync(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters)
+        public static Task<T> ExecuteScalarToAsync<T>(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReaderAsync(cmdText, parameters, CommandType.Text, null);
+            return conn.ExecuteScalarToAsync<T>(cmdText, parameters, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute Scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<MySqlDataReader> ExecuteReaderAsync(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, MySqlTransaction transaction)
+        public static Task<T> ExecuteScalarToAsync<T>(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, MySqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReaderAsync(cmdText, parameters, CommandType.Text, transaction);
+            return conn.ExecuteScalarToAsync<T>(cmdText, parameters, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute Scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="commandType"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<MySqlDataReader> ExecuteReaderAsync(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType)
+        public static Task<T> ExecuteScalarToAsync<T>(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReaderAsync(cmdText, parameters, commandType, null);
+            return conn.ExecuteScalarToAsync<T>(cmdText, parameters, commandType, null);
         }
     }
 }

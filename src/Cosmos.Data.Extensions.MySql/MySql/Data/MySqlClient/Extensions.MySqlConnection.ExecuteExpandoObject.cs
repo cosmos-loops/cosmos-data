@@ -1,16 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+using Cosmos;
+using Cosmos.Data.Sx;
 
-namespace Cosmos.Data.Sx.MySql
+namespace MySql.Data.MySqlClient
 {
     public static partial class MySqlClientExtensions
     {
         /// <summary>
-        /// Execute a set of expando object
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
@@ -18,245 +18,256 @@ namespace Cosmos.Data.Sx.MySql
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static IEnumerable<dynamic> ExecuteExpandoObjects(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType,
-            MySqlTransaction transaction)
+        public static dynamic ExecuteExpandoObject(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType, MySqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
             using IDataReader reader = command.ExecuteReader();
-            return reader.ToExpandoObjects();
+            reader.Read();
+            return reader.ToExpandoObject();
         }
 
         /// <summary>
-        /// Execute a set of expando object
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="commandFactory"></param>
         /// <returns></returns>
-        public static IEnumerable<dynamic> ExecuteExpandoObjects(this MySqlConnection conn, Action<MySqlCommand> commandFactory)
+        public static dynamic ExecuteExpandoObject(this MySqlConnection conn, Action<MySqlCommand> commandFactory)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(commandFactory);
             using IDataReader reader = ((DbCommand) command).ExecuteReader();
-            return reader.ToExpandoObjects();
+            reader.Read();
+            return reader.ToExpandoObject();
         }
 
         /// <summary>
-        /// Execute a set of expando object
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <returns></returns>
-        public static IEnumerable<dynamic> ExecuteExpandoObjects(this MySqlConnection conn, string cmdText)
+        public static dynamic ExecuteExpandoObject(this MySqlConnection conn, string cmdText)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObjects(cmdText, null, CommandType.Text, null);
+            return conn.ExecuteExpandoObject(cmdText, null, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute a set of expando object
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static IEnumerable<dynamic> ExecuteExpandoObjects(this MySqlConnection conn, string cmdText, MySqlTransaction transaction)
+        public static dynamic ExecuteExpandoObject(this MySqlConnection conn, string cmdText, MySqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObjects(cmdText, null, CommandType.Text, transaction);
+            return conn.ExecuteExpandoObject(cmdText, null, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute a set of expando object
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <returns></returns>
-        public static IEnumerable<dynamic> ExecuteExpandoObjects(this MySqlConnection conn, string cmdText, CommandType commandType)
+        public static dynamic ExecuteExpandoObject(this MySqlConnection conn, string cmdText, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObjects(cmdText, null, commandType, null);
+            return conn.ExecuteExpandoObject(cmdText, null, commandType, null);
         }
 
         /// <summary>
-        /// Execute a set of expando object
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
-        /// <param name="commandType"></param>
-        /// <param name="transaction"></param>
-        /// <returns></returns>
-        public static IEnumerable<dynamic> ExecuteExpandoObjects(this MySqlConnection conn, string cmdText, CommandType commandType, MySqlTransaction transaction)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObjects(cmdText, null, commandType, transaction);
-        }
-
-        /// <summary>
-        /// Execute a set of expando object
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
-        /// <returns></returns>
-        public static IEnumerable<dynamic> ExecuteExpandoObjects(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObjects(cmdText, parameters, CommandType.Text, null);
-        }
-
-        /// <summary>
-        /// Execute a set of expando object
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
-        /// <param name="transaction"></param>
-        /// <returns></returns>
-        public static IEnumerable<dynamic> ExecuteExpandoObjects(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, MySqlTransaction transaction)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObjects(cmdText, parameters, CommandType.Text, transaction);
-        }
-
-        /// <summary>
-        /// Execute a set of expando object
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
-        /// <param name="commandType"></param>
-        /// <returns></returns>
-        public static IEnumerable<dynamic> ExecuteExpandoObjects(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObjects(cmdText, parameters, commandType, null);
-        }
-
-        /// <summary>
-        /// Execute a set of expando object
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static async Task<IEnumerable<dynamic>> ExecuteExpandoObjectsAsync(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType,
+        public static dynamic ExecuteExpandoObject(this MySqlConnection conn, string cmdText, CommandType commandType, MySqlTransaction transaction)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteExpandoObject(cmdText, null, commandType, transaction);
+        }
+
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        public static dynamic ExecuteExpandoObject(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteExpandoObject(cmdText, parameters, CommandType.Text, null);
+        }
+
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
+        public static dynamic ExecuteExpandoObject(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, MySqlTransaction transaction)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteExpandoObject(cmdText, parameters, CommandType.Text, transaction);
+        }
+
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <returns></returns>
+        public static dynamic ExecuteExpandoObject(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteExpandoObject(cmdText, parameters, commandType, null);
+        }
+
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
+        public static async Task<dynamic> ExecuteExpandoObjectAsync(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType,
             MySqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
+#if NETFRAMEWORK || NETSTANDARD2_0
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
+#else
+            await using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
+#endif
             using IDataReader reader = await command.ExecuteReaderAsync();
-            return reader.ToExpandoObjects();
+            reader.Read();
+            return reader.ToExpandoObject();
         }
 
         /// <summary>
-        /// Execute a set of expando object
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="commandFactory"></param>
         /// <returns></returns>
-        public static async Task<IEnumerable<dynamic>> ExecuteExpandoObjectsAsync(this MySqlConnection conn, Action<MySqlCommand> commandFactory)
+        public static async Task<dynamic> ExecuteExpandoObjectAsync(this MySqlConnection conn, Action<MySqlCommand> commandFactory)
         {
             conn.CheckNull(nameof(conn));
+#if NETFRAMEWORK || NETSTANDARD2_0
             using var command = conn.CreateCommand(commandFactory);
+#else
+            await using var command = conn.CreateCommand(commandFactory);
+#endif
             using IDataReader reader = await command.ExecuteReaderAsync();
-            return reader.ToExpandoObjects();
+            reader.Read();
+            return reader.ToExpandoObject();
         }
 
         /// <summary>
-        /// Execute a set of expando object
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <returns></returns>
-        public static Task<IEnumerable<dynamic>> ExecuteExpandoObjectsAsync(this MySqlConnection conn, string cmdText)
+        public static Task<dynamic> ExecuteExpandoObjectAsync(this MySqlConnection conn, string cmdText)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObjectsAsync(cmdText, null, CommandType.Text, null);
+            return conn.ExecuteExpandoObjectAsync(cmdText, null, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute a set of expando object
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static Task<IEnumerable<dynamic>> ExecuteExpandoObjectsAsync(this MySqlConnection conn, string cmdText, MySqlTransaction transaction)
+        public static Task<dynamic> ExecuteExpandoObjectAsync(this MySqlConnection conn, string cmdText, MySqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObjectsAsync(cmdText, null, CommandType.Text, transaction);
+            return conn.ExecuteExpandoObjectAsync(cmdText, null, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute a set of expando object
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <returns></returns>
-        public static Task<IEnumerable<dynamic>> ExecuteExpandoObjectsAsync(this MySqlConnection conn, string cmdText, CommandType commandType)
+        public static Task<dynamic> ExecuteExpandoObjectAsync(this MySqlConnection conn, string cmdText, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObjectsAsync(cmdText, null, commandType, null);
+            return conn.ExecuteExpandoObjectAsync(cmdText, null, commandType, null);
         }
 
         /// <summary>
-        /// Execute a set of expando object
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static Task<IEnumerable<dynamic>> ExecuteExpandoObjectsAsync(this MySqlConnection conn, string cmdText, CommandType commandType, MySqlTransaction transaction)
+        public static Task<dynamic> ExecuteExpandoObjectAsync(this MySqlConnection conn, string cmdText, CommandType commandType, MySqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObjectsAsync(cmdText, null, commandType, transaction);
+            return conn.ExecuteExpandoObjectAsync(cmdText, null, commandType, transaction);
         }
 
         /// <summary>
-        /// Execute a set of expando object
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public static Task<IEnumerable<dynamic>> ExecuteExpandoObjectsAsync(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters)
+        public static Task<dynamic> ExecuteExpandoObjectAsync(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObjectsAsync(cmdText, parameters, CommandType.Text, null);
+            return conn.ExecuteExpandoObjectAsync(cmdText, parameters, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute a set of expando object
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static Task<IEnumerable<dynamic>> ExecuteExpandoObjectsAsync(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, MySqlTransaction transaction)
+        public static Task<dynamic> ExecuteExpandoObjectAsync(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, MySqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObjectsAsync(cmdText, parameters, CommandType.Text, transaction);
+            return conn.ExecuteExpandoObjectAsync(cmdText, parameters, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute a set of expando object
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="commandType"></param>
         /// <returns></returns>
-        public static Task<IEnumerable<dynamic>> ExecuteExpandoObjectsAsync(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType)
+        public static Task<dynamic> ExecuteExpandoObjectAsync(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteExpandoObjectsAsync(cmdText, parameters, commandType, null);
+            return conn.ExecuteExpandoObjectAsync(cmdText, parameters, commandType, null);
         }
     }
 }

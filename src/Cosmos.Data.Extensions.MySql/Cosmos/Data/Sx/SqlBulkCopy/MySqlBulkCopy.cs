@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-namespace Cosmos.Data.Sx.MySql.SqlBulkCopy
+namespace Cosmos.Data.Sx.SqlBulkCopy
 {
     /// <summary>
     /// MySql BulkCopy

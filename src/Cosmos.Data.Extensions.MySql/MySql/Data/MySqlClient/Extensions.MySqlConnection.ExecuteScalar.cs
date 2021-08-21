@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Data;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+using Cosmos;
 
-namespace Cosmos.Data.Sx.MySql
+namespace MySql.Data.MySqlClient
 {
     public static partial class MySqlClientExtensions
     {
         /// <summary>
-        /// Execute DataSet
+        /// Execute Scalar
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
@@ -16,240 +16,240 @@ namespace Cosmos.Data.Sx.MySql
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static DataSet ExecuteDataSet(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType, MySqlTransaction transaction)
+        public static object ExecuteScalar(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType, MySqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
-            return command.ExecuteDataSet();
+            return command.ExecuteScalar();
         }
 
         /// <summary>
-        /// Execute DataSet
+        /// Execute Scalar
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="commandFactory"></param>
         /// <returns></returns>
-        public static DataSet ExecuteDataSet(this MySqlConnection conn, Action<MySqlCommand> commandFactory)
+        public static object ExecuteScalar(this MySqlConnection conn, Action<MySqlCommand> commandFactory)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(commandFactory);
-            return command.ExecuteDataSet();
+            return command.ExecuteScalar();
         }
 
         /// <summary>
-        /// Execute DataSet
+        /// Execute Scalar
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <returns></returns>
-        public static DataSet ExecuteDataSet(this MySqlConnection conn, string cmdText)
+        public static object ExecuteScalar(this MySqlConnection conn, string cmdText)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSet(cmdText, null, CommandType.Text, null);
+            return conn.ExecuteScalar(cmdText, null, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute DataSet
+        /// Execute Scalar
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static DataSet ExecuteDataSet(this MySqlConnection conn, string cmdText, MySqlTransaction transaction)
+        public static object ExecuteScalar(this MySqlConnection conn, string cmdText, MySqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSet(cmdText, null, CommandType.Text, transaction);
+            return conn.ExecuteScalar(cmdText, null, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute DataSet
+        /// Execute Scalar
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <returns></returns>
-        public static DataSet ExecuteDataSet(this MySqlConnection conn, string cmdText, CommandType commandType)
+        public static object ExecuteScalar(this MySqlConnection conn, string cmdText, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSet(cmdText, null, commandType, null);
+            return conn.ExecuteScalar(cmdText, null, commandType, null);
         }
 
         /// <summary>
-        /// Execute DataSet
+        /// Execute Scalar
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
-        /// <param name="commandType"></param>
-        /// <param name="transaction"></param>
-        /// <returns></returns>
-        public static DataSet ExecuteDataSet(this MySqlConnection conn, string cmdText, CommandType commandType, MySqlTransaction transaction)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSet(cmdText, null, commandType, transaction);
-        }
-
-        /// <summary>
-        /// Execute DataSet
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
-        /// <returns></returns>
-        public static DataSet ExecuteDataSet(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSet(cmdText, parameters, CommandType.Text, null);
-        }
-
-        /// <summary>
-        /// Execute DataSet
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
-        /// <param name="transaction"></param>
-        /// <returns></returns>
-        public static DataSet ExecuteDataSet(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, MySqlTransaction transaction)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSet(cmdText, parameters, CommandType.Text, transaction);
-        }
-
-        /// <summary>
-        /// Execute DataSet
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
-        /// <param name="commandType"></param>
-        /// <returns></returns>
-        public static DataSet ExecuteDataSet(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSet(cmdText, parameters, commandType, null);
-        }
-
-        /// <summary>
-        /// Execute DataSet async
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static Task<DataSet> ExecuteDataSetAsync(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType,
+        public static object ExecuteScalar(this MySqlConnection conn, string cmdText, CommandType commandType, MySqlTransaction transaction)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteScalar(cmdText, null, commandType, transaction);
+        }
+
+        /// <summary>
+        /// Execute Scalar
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        public static object ExecuteScalar(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteScalar(cmdText, parameters, CommandType.Text, null);
+        }
+
+        /// <summary>
+        /// Execute Scalar
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
+        public static object ExecuteScalar(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, MySqlTransaction transaction)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteScalar(cmdText, parameters, CommandType.Text, transaction);
+        }
+
+        /// <summary>
+        /// Execute Scalar
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <returns></returns>
+        public static object ExecuteScalar(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteScalar(cmdText, parameters, commandType, null);
+        }
+
+        /// <summary>
+        /// Execute Scalar
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
+        public static Task<object> ExecuteScalarAsync(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType,
             MySqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
-            return command.ExecuteDataSetAsync();
+            return command.ExecuteScalarAsync();
         }
 
         /// <summary>
-        /// Execute DataSet async
+        /// Execute Scalar
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="commandFactory"></param>
         /// <returns></returns>
-        public static Task<DataSet> ExecuteDataSetAsync(this MySqlConnection conn, Action<MySqlCommand> commandFactory)
+        public static Task<object> ExecuteScalarAsync(this MySqlConnection conn, Action<MySqlCommand> commandFactory)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(commandFactory);
-            return command.ExecuteDataSetAsync();
+            return command.ExecuteScalarAsync();
         }
 
         /// <summary>
-        /// Execute DataSet async
+        /// Execute Scalar
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <returns></returns>
-        public static Task<DataSet> ExecuteDataSetAsync(this MySqlConnection conn, string cmdText)
+        public static Task<object> ExecuteScalarAsync(this MySqlConnection conn, string cmdText)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSetAsync(cmdText, null, CommandType.Text, null);
+            return conn.ExecuteScalarAsync(cmdText, null, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute DataSet async
+        /// Execute Scalar
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static Task<DataSet> ExecuteDataSetAsync(this MySqlConnection conn, string cmdText, MySqlTransaction transaction)
+        public static Task<object> ExecuteScalarAsync(this MySqlConnection conn, string cmdText, MySqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSetAsync(cmdText, null, CommandType.Text, transaction);
+            return conn.ExecuteScalarAsync(cmdText, null, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute DataSet async
+        /// Execute Scalar
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <returns></returns>
-        public static Task<DataSet> ExecuteDataSetAsync(this MySqlConnection conn, string cmdText, CommandType commandType)
+        public static Task<object> ExecuteScalarAsync(this MySqlConnection conn, string cmdText, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSetAsync(cmdText, null, commandType, null);
+            return conn.ExecuteScalarAsync(cmdText, null, commandType, null);
         }
 
         /// <summary>
-        /// Execute DataSet async
+        /// Execute Scalar
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static Task<DataSet> ExecuteDataSetAsync(this MySqlConnection conn, string cmdText, CommandType commandType, MySqlTransaction transaction)
+        public static Task<object> ExecuteScalarAsync(this MySqlConnection conn, string cmdText, CommandType commandType, MySqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSetAsync(cmdText, null, commandType, transaction);
+            return conn.ExecuteScalarAsync(cmdText, null, commandType, transaction);
         }
 
         /// <summary>
-        /// Execute DataSet async
+        /// Execute Scalar
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public static Task<DataSet> ExecuteDataSetAsync(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters)
+        public static Task<object> ExecuteScalarAsync(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSetAsync(cmdText, parameters, CommandType.Text, null);
+            return conn.ExecuteScalarAsync(cmdText, parameters, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute DataSet async
+        /// Execute Scalar
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static Task<DataSet> ExecuteDataSetAsync(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, MySqlTransaction transaction)
+        public static Task<object> ExecuteScalarAsync(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, MySqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSetAsync(cmdText, parameters, CommandType.Text, transaction);
+            return conn.ExecuteScalarAsync(cmdText, parameters, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute DataSet async
+        /// Execute Scalar
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="commandType"></param>
         /// <returns></returns>
-        public static Task<DataSet> ExecuteDataSetAsync(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType)
+        public static Task<object> ExecuteScalarAsync(this MySqlConnection conn, string cmdText, MySqlParameter[] parameters, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSetAsync(cmdText, parameters, commandType, null);
+            return conn.ExecuteScalarAsync(cmdText, parameters, commandType, null);
         }
     }
 }

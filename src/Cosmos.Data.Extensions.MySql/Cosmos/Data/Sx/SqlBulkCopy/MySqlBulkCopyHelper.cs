@@ -4,7 +4,7 @@ using System.IO;
 using System.Text;
 using MySql.Data.MySqlClient;
 
-namespace Cosmos.Data.Sx.MySql.SqlBulkCopy
+namespace Cosmos.Data.Sx.SqlBulkCopy
 {
     internal class MySqlBulkCopyHelper
     {
