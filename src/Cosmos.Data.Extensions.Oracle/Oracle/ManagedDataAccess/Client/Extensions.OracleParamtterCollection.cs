@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using Oracle.ManagedDataAccess.Client;
+using Cosmos;
 
-namespace Cosmos.Data.Sx.Oracle
+namespace Oracle.ManagedDataAccess.Client
 {
     /// <summary>
     /// Extensions for OracleClient
@@ -28,10 +28,16 @@ namespace Cosmos.Data.Sx.Oracle
         public static void AddRangeWithValue(this OracleParameterCollection coll, Dictionary<string, object> values)
         {
             coll.CheckNull(nameof(coll));
-           
-            foreach (var keyValuePair in values)
+#if NETFRAMEWORK || NETSTANDARD2_0
+            foreach (var pair in values)
             {
-                coll.AddWithValue(keyValuePair.Key, keyValuePair.Value);
+                var key = pair.Key;
+                var value = pair.Value;
+#else
+            foreach (var (key, value) in values)
+            {
+#endif
+                coll.AddWithValue(key, value);
             }
         }
     }

@@ -1,15 +1,16 @@
 using System;
 using System.Data;
+using System.Data.Common;
 using System.Threading.Tasks;
-using Cosmos.Conversions;
-using Oracle.ManagedDataAccess.Client;
+using Cosmos;
+using Cosmos.Data.Sx;
 
-namespace Cosmos.Data.Sx.Oracle
+namespace Oracle.ManagedDataAccess.Client
 {
     public static partial class OracleClientExtensions
     {
         /// <summary>
-        /// Execute scalar to...
+        /// Execute entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
@@ -18,202 +19,220 @@ namespace Cosmos.Data.Sx.Oracle
         /// <param name="transaction"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T ExecuteScalarTo<T>(this OracleConnection conn, string cmdText, OracleParameter[] parameters, CommandType commandType, OracleTransaction transaction)
+        public static T ExecuteEntity<T>(this OracleConnection conn, string cmdText, OracleParameter[] parameters, CommandType commandType, OracleTransaction transaction)
+            where T : new()
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
-            return command.ExecuteScalar().CastTo<T>();
+            using IDataReader reader = command.ExecuteReader();
+            reader.Read();
+            return reader.ToEntity<T>();
         }
 
         /// <summary>
-        /// Execute scalar to...
+        /// Execute entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="commandFactory"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T ExecuteScalarTo<T>(this OracleConnection conn, Action<OracleCommand> commandFactory)
+        public static T ExecuteEntity<T>(this OracleConnection conn, Action<OracleCommand> commandFactory) where T : new()
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(commandFactory);
-            return command.ExecuteScalar().CastTo<T>();
+            using IDataReader reader = ((DbCommand) command).ExecuteReader();
+            reader.Read();
+            return reader.ToEntity<T>();
         }
 
         /// <summary>
-        /// Execute scalar to...
+        /// Execute entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T ExecuteScalarTo<T>(this OracleConnection conn, string cmdText)
+        public static T ExecuteEntity<T>(this OracleConnection conn, string cmdText) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalarTo<T>(cmdText, null, CommandType.Text, null);
+            return conn.ExecuteEntity<T>(cmdText, null, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute scalar to...
+        /// Execute entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="transaction"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T ExecuteScalarTo<T>(this OracleConnection conn, string cmdText, OracleTransaction transaction)
+        public static T ExecuteEntity<T>(this OracleConnection conn, string cmdText, OracleTransaction transaction) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalarTo<T>(cmdText, null, CommandType.Text, transaction);
+            return conn.ExecuteEntity<T>(cmdText, null, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute scalar to...
+        /// Execute entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T ExecuteScalarTo<T>(this OracleConnection conn, string cmdText, CommandType commandType)
+        public static T ExecuteEntity<T>(this OracleConnection conn, string cmdText, CommandType commandType) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalarTo<T>(cmdText, null, commandType, null);
+            return conn.ExecuteEntity<T>(cmdText, null, commandType, null);
         }
 
         /// <summary>
-        /// Execute scalar to...
+        /// Execute entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
-        /// <param name="commandType"></param>
-        /// <param name="transaction"></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public static T ExecuteScalarTo<T>(this OracleConnection conn, string cmdText, CommandType commandType, OracleTransaction transaction)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalarTo<T>(cmdText, null, commandType, transaction);
-        }
-
-        /// <summary>
-        /// Execute scalar to...
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public static T ExecuteScalarTo<T>(this OracleConnection conn, string cmdText, OracleParameter[] parameters)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalarTo<T>(cmdText, parameters, CommandType.Text, null);
-        }
-
-        /// <summary>
-        /// Execute scalar to...
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
-        /// <param name="transaction"></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public static T ExecuteScalarTo<T>(this OracleConnection conn, string cmdText, OracleParameter[] parameters, OracleTransaction transaction)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalarTo<T>(cmdText, parameters, CommandType.Text, transaction);
-        }
-
-        /// <summary>
-        /// Execute scalar to...
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
-        /// <param name="commandType"></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public static T ExecuteScalarTo<T>(this OracleConnection conn, string cmdText, OracleParameter[] parameters, CommandType commandType)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalarTo<T>(cmdText, parameters, commandType, null);
-        }
-
-        /// <summary>
-        /// Execute scalar to...
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<T> ExecuteScalarToAsync<T>(this OracleConnection conn, string cmdText, OracleParameter[] parameters, CommandType commandType,
+        public static T ExecuteEntity<T>(this OracleConnection conn, string cmdText, CommandType commandType, OracleTransaction transaction) where T : new()
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteEntity<T>(cmdText, null, commandType, transaction);
+        }
+
+        /// <summary>
+        /// Execute entity
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static T ExecuteEntity<T>(this OracleConnection conn, string cmdText, OracleParameter[] parameters) where T : new()
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteEntity<T>(cmdText, parameters, CommandType.Text, null);
+        }
+
+        /// <summary>
+        /// Execute entity
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static T ExecuteEntity<T>(this OracleConnection conn, string cmdText, OracleParameter[] parameters, OracleTransaction transaction) where T : new()
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteEntity<T>(cmdText, parameters, CommandType.Text, transaction);
+        }
+
+        /// <summary>
+        /// Execute entity
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static T ExecuteEntity<T>(this OracleConnection conn, string cmdText, OracleParameter[] parameters, CommandType commandType) where T : new()
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteEntity<T>(cmdText, parameters, commandType, null);
+        }
+
+        /// <summary>
+        /// Execute entity
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static async Task<T> ExecuteEntityAsync<T>(this OracleConnection conn, string cmdText, OracleParameter[] parameters, CommandType commandType,
             OracleTransaction transaction)
+            where T : new()
         {
             conn.CheckNull(nameof(conn));
+#if NETFRAMEWORK || NETSTANDARD2_0
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
-            return (await command.ExecuteScalarAsync()).CastTo<T>();
+#else
+            await using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
+#endif
+            using IDataReader reader = await command.ExecuteReaderAsync();
+            reader.Read();
+            return reader.ToEntity<T>();
         }
 
         /// <summary>
-        /// Execute scalar to...
+        /// Execute entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="commandFactory"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<T> ExecuteScalarToAsync<T>(this OracleConnection conn, Action<OracleCommand> commandFactory)
+        public static async Task<T> ExecuteEntityAsync<T>(this OracleConnection conn, Action<OracleCommand> commandFactory) where T : new()
         {
             conn.CheckNull(nameof(conn));
+#if NETFRAMEWORK || NETSTANDARD2_0
             using var command = conn.CreateCommand(commandFactory);
-            return (await command.ExecuteScalarAsync()).CastTo<T>();
+#else
+            await using var command = conn.CreateCommand(commandFactory);
+#endif
+            using IDataReader reader = await command.ExecuteReaderAsync();
+            reader.Read();
+            return reader.ToEntity<T>();
         }
 
         /// <summary>
-        /// Execute scalar to...
+        /// Execute entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<T> ExecuteScalarToAsync<T>(this OracleConnection conn, string cmdText)
+        public static Task<T> ExecuteEntityAsync<T>(this OracleConnection conn, string cmdText) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalarToAsync<T>(cmdText, null, CommandType.Text, null);
+            return conn.ExecuteEntityAsync<T>(cmdText, null, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute scalar to...
+        /// Execute entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="transaction"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<T> ExecuteScalarToAsync<T>(this OracleConnection conn, string cmdText, OracleTransaction transaction)
+        public static Task<T> ExecuteEntityAsync<T>(this OracleConnection conn, string cmdText, OracleTransaction transaction) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalarToAsync<T>(cmdText, null, CommandType.Text, transaction);
+            return conn.ExecuteEntityAsync<T>(cmdText, null, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute scalar to...
+        /// Execute entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<T> ExecuteScalarToAsync<T>(this OracleConnection conn, string cmdText, CommandType commandType)
+        public static Task<T> ExecuteEntityAsync<T>(this OracleConnection conn, string cmdText, CommandType commandType) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalarToAsync<T>(cmdText, null, commandType, null);
+            return conn.ExecuteEntityAsync<T>(cmdText, null, commandType, null);
         }
 
         /// <summary>
-        /// Execute scalar to...
+        /// Execute entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
@@ -221,28 +240,28 @@ namespace Cosmos.Data.Sx.Oracle
         /// <param name="transaction"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<T> ExecuteScalarToAsync<T>(this OracleConnection conn, string cmdText, CommandType commandType, OracleTransaction transaction)
+        public static Task<T> ExecuteEntityAsync<T>(this OracleConnection conn, string cmdText, CommandType commandType, OracleTransaction transaction) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalarToAsync<T>(cmdText, null, commandType, transaction);
+            return conn.ExecuteEntityAsync<T>(cmdText, null, commandType, transaction);
         }
 
         /// <summary>
-        /// Execute scalar to...
+        /// Execute entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<T> ExecuteScalarToAsync<T>(this OracleConnection conn, string cmdText, OracleParameter[] parameters)
+        public static Task<T> ExecuteEntityAsync<T>(this OracleConnection conn, string cmdText, OracleParameter[] parameters) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalarToAsync<T>(cmdText, parameters, CommandType.Text, null);
+            return conn.ExecuteEntityAsync<T>(cmdText, parameters, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute scalar to...
+        /// Execute entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
@@ -250,14 +269,14 @@ namespace Cosmos.Data.Sx.Oracle
         /// <param name="transaction"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<T> ExecuteScalarToAsync<T>(this OracleConnection conn, string cmdText, OracleParameter[] parameters, OracleTransaction transaction)
+        public static Task<T> ExecuteEntityAsync<T>(this OracleConnection conn, string cmdText, OracleParameter[] parameters, OracleTransaction transaction) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalarToAsync<T>(cmdText, parameters, CommandType.Text, transaction);
+            return conn.ExecuteEntityAsync<T>(cmdText, parameters, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute scalar to...
+        /// Execute entity
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
@@ -265,10 +284,10 @@ namespace Cosmos.Data.Sx.Oracle
         /// <param name="commandType"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<T> ExecuteScalarToAsync<T>(this OracleConnection conn, string cmdText, OracleParameter[] parameters, CommandType commandType)
+        public static Task<T> ExecuteEntityAsync<T>(this OracleConnection conn, string cmdText, OracleParameter[] parameters, CommandType commandType) where T : new()
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteScalarToAsync<T>(cmdText, parameters, commandType, null);
+            return conn.ExecuteEntityAsync<T>(cmdText, parameters, commandType, null);
         }
     }
 }

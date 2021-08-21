@@ -1,8 +1,8 @@
 using System;
 using System.Data;
-using Oracle.ManagedDataAccess.Client;
+using Cosmos;
 
-namespace Cosmos.Data.Sx.Oracle
+namespace Oracle.ManagedDataAccess.Client
 {
     /// <summary>
     /// Extensions for OracleClient
@@ -29,7 +29,7 @@ namespace Cosmos.Data.Sx.Oracle
             command.CommandType = commandType;
             command.Transaction = transaction;
 
-            if (parameters != null)
+            if (parameters is not null)
             {
                 command.Parameters.AddRange(parameters);
             }

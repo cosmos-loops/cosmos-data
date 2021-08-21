@@ -13,7 +13,7 @@ using Oracle.ManagedDataAccess.Client;
  *     MIT
  */
 
-namespace Cosmos.Data.Sx.Oracle.SqlBulkCopy
+namespace Cosmos.Data.Sx.SqlBulkCopy
 {
     /// <summary>
     /// Oracle BulkCopy
@@ -107,9 +107,9 @@ namespace Cosmos.Data.Sx.Oracle.SqlBulkCopy
             get => _timeout;
             set
             {
-                if (value.HasValue && value.Value < 0)
+                if (value is < 0)
                     throw new ArgumentException("Timeout value must be a postive integer");
-                _timeout = value.HasValue ? value.Value : 30;
+                _timeout = value ?? 30;
             }
         }
 
@@ -117,10 +117,10 @@ namespace Cosmos.Data.Sx.Oracle.SqlBulkCopy
 
         private void ValidateConnection()
         {
-            if (_connection == null)
+            if (_connection is null)
                 throw new Exception("Oracle Database Connection is required");
 
-            if (_externalTransaction != null && _externalTransaction.Connection != _connection)
+            if (_externalTransaction is not null && _externalTransaction.Connection != _connection)
                 throw new Exception("Oracle Transaction mismatch with Oracle Database Connection");
         }
 
@@ -142,8 +142,8 @@ namespace Cosmos.Data.Sx.Oracle.SqlBulkCopy
             // https://stackoverflow.com/questions/47942691/how-to-make-a-bulk-insert-using-oracle-managed-data-acess-c-sharp
             // https://github.com/Microsoft/referencesource/blob/master/System.Data/System/Data/SqlClient/SqlBulkCopy.cs
 
-            if (table == null)
-                throw new ArgumentNullException("table");
+            if (table is null)
+                throw new ArgumentNullException(nameof(table));
 
             // TODO: Validate TableName to prevent SQL Injection
             // https://oracle-base.com/articles/10g/dbms_assert_10gR2
@@ -166,7 +166,7 @@ namespace Cosmos.Data.Sx.Oracle.SqlBulkCopy
         private void WriteToServerInMultipleBatches(DataTable table)
         {
             // Calculate number of batches
-            var numBatchesRequired = (int) Math.Ceiling(table.Rows.Count / (double) BatchSize);
+            var numBatchesRequired = (int)Math.Ceiling(table.Rows.Count / (double)BatchSize);
 
             // Build the command string
             var commandText = BuildCommandText(table);
@@ -234,7 +234,7 @@ namespace Cosmos.Data.Sx.Oracle.SqlBulkCopy
                     ? columnData.ToArray()
                     : columnData.Skip(skipOffset).Take(batchSize).ToArray();
 
-                var param = new OracleParameter {OracleDbType = dbType, Value = paramDataArray};
+                var param = new OracleParameter { OracleDbType = dbType, Value = paramDataArray };
 
                 parameters.Add(param);
             }
@@ -245,7 +245,7 @@ namespace Cosmos.Data.Sx.Oracle.SqlBulkCopy
         private string GetColumnList(DataTable data)
         {
             var columnNames = data.Columns.Cast<DataColumn>().Select(x => x.ColumnName).ToArray();
-            var columnList = string.Join(",", columnNames);
+            var columnList = Joiners.Joiner.On(',').Join(columnNames);
             return columnList;
         }
 
@@ -271,7 +271,7 @@ namespace Cosmos.Data.Sx.Oracle.SqlBulkCopy
         /// </summary>
         public void Dispose()
         {
-            if (_connection != null)
+            if (_connection is not null)
             {
                 // Only close the connection if the BulkCopy instance owns the connection
                 if (_ownsTheConnection)
@@ -290,6 +290,7 @@ namespace Cosmos.Data.Sx.Oracle.SqlBulkCopy
             Dispose();
         }
 
+        // ReSharper disable once UnusedMember.Local
         private static OracleDbType GetOracleDbType(object o)
         {
             // https://stackoverflow.com/questions/1583150/c-oracle-data-type-equivalence-with-oracledbtype#1583197
@@ -300,10 +301,10 @@ namespace Cosmos.Data.Sx.Oracle.SqlBulkCopy
             if (o is string) return OracleDbType.Varchar2;
             if (o is DateTime) return OracleDbType.Date;
             if (o is decimal) return OracleDbType.Decimal;
-            if (o is Int32) return OracleDbType.Int32;
+            if (o is int) return OracleDbType.Int32;
 
-            if (o is Int64) return OracleDbType.Int64;
-            if (o is Int16) return OracleDbType.Int16;
+            if (o is long) return OracleDbType.Int64;
+            if (o is short) return OracleDbType.Int16;
             if (o is sbyte) return OracleDbType.Byte;
             if (o is byte) return OracleDbType.Int16; // <== unverified
             if (o is float) return OracleDbType.Single;
@@ -322,10 +323,10 @@ namespace Cosmos.Data.Sx.Oracle.SqlBulkCopy
             if (t == typeof(string)) return OracleDbType.Varchar2;
             if (t == typeof(DateTime)) return OracleDbType.Date;
             if (t == typeof(decimal)) return OracleDbType.Decimal;
-            if (t == typeof(Int32)) return OracleDbType.Int32;
+            if (t == typeof(int)) return OracleDbType.Int32;
 
-            if (t == typeof(Int64)) return OracleDbType.Int64;
-            if (t == typeof(Int16)) return OracleDbType.Int16;
+            if (t == typeof(long)) return OracleDbType.Int64;
+            if (t == typeof(short)) return OracleDbType.Int16;
             if (t == typeof(sbyte)) return OracleDbType.Byte;
             if (t == typeof(byte)) return OracleDbType.Int16; // <== unverified
             if (t == typeof(float)) return OracleDbType.Single;

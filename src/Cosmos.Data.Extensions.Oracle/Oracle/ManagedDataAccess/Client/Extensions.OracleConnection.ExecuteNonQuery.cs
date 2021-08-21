@@ -1,9 +1,9 @@
 using System;
 using System.Data;
 using System.Threading.Tasks;
-using Oracle.ManagedDataAccess.Client;
+using Cosmos;
 
-namespace Cosmos.Data.Sx.Oracle
+namespace Oracle.ManagedDataAccess.Client
 {
     public static partial class OracleClientExtensions
     {
@@ -18,7 +18,7 @@ namespace Cosmos.Data.Sx.Oracle
         public static void ExecuteNonQuery(this OracleConnection conn, string cmdText, OracleParameter[] parameters, CommandType commandType, OracleTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
+            using var command = CreateCommand(conn, cmdText, commandType, transaction, parameters);
             command.ExecuteNonQuery();
         }
 
@@ -131,7 +131,7 @@ namespace Cosmos.Data.Sx.Oracle
         public static Task ExecuteNonQueryAsync(this OracleConnection conn, string cmdText, OracleParameter[] parameters, CommandType commandType, OracleTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
+            using var command = CreateCommand(conn, cmdText, commandType, transaction, parameters);
             return command.ExecuteNonQueryAsync();
         }
 

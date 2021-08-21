@@ -1,14 +1,16 @@
 using System;
 using System.Data;
+using System.Data.Common;
 using System.Threading.Tasks;
-using Oracle.ManagedDataAccess.Client;
+using Cosmos;
+using Cosmos.Data.Sx;
 
-namespace Cosmos.Data.Sx.Oracle
+namespace Oracle.ManagedDataAccess.Client
 {
     public static partial class OracleClientExtensions
     {
         /// <summary>
-        /// Execute DataSet
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
@@ -16,240 +18,257 @@ namespace Cosmos.Data.Sx.Oracle
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static DataSet ExecuteDataSet(this OracleConnection conn, string cmdText, OracleParameter[] parameters, CommandType commandType, OracleTransaction transaction)
-        {
-            conn.CheckNull(nameof(conn));
-            using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
-            return command.ExecuteDataSet();
-        }
-
-        /// <summary>
-        /// Execute DataSet
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="commandFactory"></param>
-        /// <returns></returns>
-        public static DataSet ExecuteDataSet(this OracleConnection conn, Action<OracleCommand> commandFactory)
-        {
-            conn.CheckNull(nameof(conn));
-            using var command = conn.CreateCommand(commandFactory);
-            return command.ExecuteDataSet();
-        }
-
-        /// <summary>
-        /// Execute DataSet
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <returns></returns>
-        public static DataSet ExecuteDataSet(this OracleConnection conn, string cmdText)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSet(cmdText, null, CommandType.Text, null);
-        }
-
-        /// <summary>
-        /// Execute DataSet
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="transaction"></param>
-        /// <returns></returns>
-        public static DataSet ExecuteDataSet(this OracleConnection conn, string cmdText, OracleTransaction transaction)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSet(cmdText, null, CommandType.Text, transaction);
-        }
-
-        /// <summary>
-        /// Execute DataSet
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="commandType"></param>
-        /// <returns></returns>
-        public static DataSet ExecuteDataSet(this OracleConnection conn, string cmdText, CommandType commandType)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSet(cmdText, null, commandType, null);
-        }
-
-        /// <summary>
-        /// Execute DataSet
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="commandType"></param>
-        /// <param name="transaction"></param>
-        /// <returns></returns>
-        public static DataSet ExecuteDataSet(this OracleConnection conn, string cmdText, CommandType commandType, OracleTransaction transaction)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSet(cmdText, null, commandType, transaction);
-        }
-
-        /// <summary>
-        /// Execute DataSet
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
-        /// <returns></returns>
-        public static DataSet ExecuteDataSet(this OracleConnection conn, string cmdText, OracleParameter[] parameters)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSet(cmdText, parameters, CommandType.Text, null);
-        }
-
-        /// <summary>
-        /// Execute DataSet
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
-        /// <param name="transaction"></param>
-        /// <returns></returns>
-        public static DataSet ExecuteDataSet(this OracleConnection conn, string cmdText, OracleParameter[] parameters, OracleTransaction transaction)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSet(cmdText, parameters, CommandType.Text, transaction);
-        }
-
-        /// <summary>
-        /// Execute DataSet
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
-        /// <param name="commandType"></param>
-        /// <returns></returns>
-        public static DataSet ExecuteDataSet(this OracleConnection conn, string cmdText, OracleParameter[] parameters, CommandType commandType)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSet(cmdText, parameters, commandType, null);
-        }
-
-        /// <summary>
-        /// Execute DataSet
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
-        /// <param name="commandType"></param>
-        /// <param name="transaction"></param>
-        /// <returns></returns>
-        public static Task<DataSet> ExecuteDataSetAsync(this OracleConnection conn, string cmdText, OracleParameter[] parameters, CommandType commandType,
+        public static dynamic ExecuteExpandoObject(this OracleConnection conn, string cmdText, OracleParameter[] parameters, CommandType commandType,
             OracleTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
-            return command.ExecuteDataSetAsync();
+            using IDataReader reader = command.ExecuteReader();
+            reader.Read();
+            return reader.ToExpandoObject();
         }
 
         /// <summary>
-        /// Execute DataSet
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="commandFactory"></param>
         /// <returns></returns>
-        public static Task<DataSet> ExecuteDataSetAsync(this OracleConnection conn, Action<OracleCommand> commandFactory)
+        public static dynamic ExecuteExpandoObject(this OracleConnection conn, Action<OracleCommand> commandFactory)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(commandFactory);
-            return command.ExecuteDataSetAsync();
+            using IDataReader reader = ((DbCommand) command).ExecuteReader();
+            reader.Read();
+            return reader.ToExpandoObject();
         }
 
         /// <summary>
-        /// Execute DataSet
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <returns></returns>
-        public static Task<DataSet> ExecuteDataSetAsync(this OracleConnection conn, string cmdText)
+        public static dynamic ExecuteExpandoObject(this OracleConnection conn, string cmdText)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSetAsync(cmdText, null, CommandType.Text, null);
+            return conn.ExecuteExpandoObject(cmdText, null, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute DataSet
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static Task<DataSet> ExecuteDataSetAsync(this OracleConnection conn, string cmdText, OracleTransaction transaction)
+        public static dynamic ExecuteExpandoObject(this OracleConnection conn, string cmdText, OracleTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSetAsync(cmdText, null, CommandType.Text, transaction);
+            return conn.ExecuteExpandoObject(cmdText, null, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute DataSet
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <returns></returns>
-        public static Task<DataSet> ExecuteDataSetAsync(this OracleConnection conn, string cmdText, CommandType commandType)
+        public static dynamic ExecuteExpandoObject(this OracleConnection conn, string cmdText, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSetAsync(cmdText, null, commandType, null);
+            return conn.ExecuteExpandoObject(cmdText, null, commandType, null);
         }
 
         /// <summary>
-        /// Execute DataSet
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static Task<DataSet> ExecuteDataSetAsync(this OracleConnection conn, string cmdText, CommandType commandType, OracleTransaction transaction)
+        public static dynamic ExecuteExpandoObject(this OracleConnection conn, string cmdText, CommandType commandType, OracleTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSetAsync(cmdText, null, commandType, transaction);
+            return conn.ExecuteExpandoObject(cmdText, null, commandType, transaction);
         }
 
         /// <summary>
-        /// Execute DataSet
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public static Task<DataSet> ExecuteDataSetAsync(this OracleConnection conn, string cmdText, OracleParameter[] parameters)
+        public static dynamic ExecuteExpandoObject(this OracleConnection conn, string cmdText, OracleParameter[] parameters)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSetAsync(cmdText, parameters, CommandType.Text, null);
+            return conn.ExecuteExpandoObject(cmdText, parameters, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute DataSet
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static Task<DataSet> ExecuteDataSetAsync(this OracleConnection conn, string cmdText, OracleParameter[] parameters, OracleTransaction transaction)
+        public static dynamic ExecuteExpandoObject(this OracleConnection conn, string cmdText, OracleParameter[] parameters, OracleTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSetAsync(cmdText, parameters, CommandType.Text, transaction);
+            return conn.ExecuteExpandoObject(cmdText, parameters, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute DataSet
+        /// Execute expando object
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="commandType"></param>
         /// <returns></returns>
-        public static Task<DataSet> ExecuteDataSetAsync(this OracleConnection conn, string cmdText, OracleParameter[] parameters, CommandType commandType)
+        public static dynamic ExecuteExpandoObject(this OracleConnection conn, string cmdText, OracleParameter[] parameters, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataSetAsync(cmdText, parameters, commandType, null);
+            return conn.ExecuteExpandoObject(cmdText, parameters, commandType, null);
+        }
+
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
+        public static async Task<dynamic> ExecuteExpandoObjectAsync(this OracleConnection conn, string cmdText, OracleParameter[] parameters, CommandType commandType,
+            OracleTransaction transaction)
+        {
+            conn.CheckNull(nameof(conn));
+#if NETFRAMEWORK || NETSTANDARD2_0
+            using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
+#else
+            await using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
+#endif
+            using IDataReader reader = await command.ExecuteReaderAsync();
+            reader.Read();
+            return reader.ToExpandoObject();
+        }
+
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="commandFactory"></param>
+        /// <returns></returns>
+        public static async Task<dynamic> ExecuteExpandoObjectAsync(this OracleConnection conn, Action<OracleCommand> commandFactory)
+        {
+            conn.CheckNull(nameof(conn));
+#if NETFRAMEWORK || NETSTANDARD2_0
+            using var command = conn.CreateCommand(commandFactory);
+#else
+            await using var command = conn.CreateCommand(commandFactory);
+#endif
+            using IDataReader reader = await command.ExecuteReaderAsync();
+            reader.Read();
+            return reader.ToExpandoObject();
+        }
+
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <returns></returns>
+        public static Task<dynamic> ExecuteExpandoObjectAsync(this OracleConnection conn, string cmdText)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteExpandoObjectAsync(cmdText, null, CommandType.Text, null);
+        }
+
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
+        public static Task<dynamic> ExecuteExpandoObjectAsync(this OracleConnection conn, string cmdText, OracleTransaction transaction)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteExpandoObjectAsync(cmdText, null, CommandType.Text, transaction);
+        }
+
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="commandType"></param>
+        /// <returns></returns>
+        public static Task<dynamic> ExecuteExpandoObjectAsync(this OracleConnection conn, string cmdText, CommandType commandType)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteExpandoObjectAsync(cmdText, null, commandType, null);
+        }
+
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
+        public static Task<dynamic> ExecuteExpandoObjectAsync(this OracleConnection conn, string cmdText, CommandType commandType, OracleTransaction transaction)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteExpandoObjectAsync(cmdText, null, commandType, transaction);
+        }
+
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        public static Task<dynamic> ExecuteExpandoObjectAsync(this OracleConnection conn, string cmdText, OracleParameter[] parameters)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteExpandoObjectAsync(cmdText, parameters, CommandType.Text, null);
+        }
+
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
+        public static Task<dynamic> ExecuteExpandoObjectAsync(this OracleConnection conn, string cmdText, OracleParameter[] parameters, OracleTransaction transaction)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteExpandoObjectAsync(cmdText, parameters, CommandType.Text, transaction);
+        }
+
+        /// <summary>
+        /// Execute expando object
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <returns></returns>
+        public static Task<dynamic> ExecuteExpandoObjectAsync(this OracleConnection conn, string cmdText, OracleParameter[] parameters, CommandType commandType)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteExpandoObjectAsync(cmdText, parameters, commandType, null);
         }
     }
 }

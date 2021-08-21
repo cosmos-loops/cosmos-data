@@ -1,8 +1,8 @@
 using System.Data;
 using System.Threading.Tasks;
-using Oracle.ManagedDataAccess.Client;
+using Cosmos;
 
-namespace Cosmos.Data.Sx.Oracle
+namespace Oracle.ManagedDataAccess.Client
 {
     /// <summary>
     /// Extensions for OracleClient
