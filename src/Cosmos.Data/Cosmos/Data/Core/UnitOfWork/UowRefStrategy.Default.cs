@@ -18,20 +18,20 @@ namespace Cosmos.Data.Core.UnitOfWork
         /// <summary>
         /// Protected property - All Uow-Ref list
         /// </summary>
-        protected readonly List<UowRef> _allUowRefList = new List<UowRef>();
+        protected readonly List<UowRef> _allUowRefList = new();
         
         /// <summary>
         /// Protected property - Registered Uow-Ref list
         /// </summary>
-        protected readonly List<UowRef> _registeredUowRefs = new List<UowRef>();
+        protected readonly List<UowRef> _registeredUowRefs = new();
         
         /// <summary>
         /// Protected property - Bundled Repo-Ref list
         /// </summary>
-        protected readonly List<RepoRef> _bundledRepoRefs = new List<RepoRef>();
+        protected readonly List<RepoRef> _bundledRepoRefs = new();
 
         /// <inheritdoc />
-        public virtual string Name { get; } = UowRefStrategyFunctions.DefaultName;
+        public virtual string Name => UowRefStrategyFunctions.DefaultName;
 
         #region Xxx-Ref Export
 

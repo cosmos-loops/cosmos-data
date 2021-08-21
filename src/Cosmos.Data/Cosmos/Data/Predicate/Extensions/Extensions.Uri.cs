@@ -23,7 +23,7 @@ namespace Cosmos.Data.Predicate
             if (uri is null)
                 throw new ArgumentNullException(nameof(uri));
 
-            encoding = encoding.SafeValue();
+            encoding = encoding.SafeEncodingValue();
 
             if (string.IsNullOrEmpty(uri.Query))
                 yield break;

@@ -12,7 +12,7 @@ namespace Cosmos.Data.Core.Transaction
     public sealed class NullTransactionWrapper : DisposableObjects, ITransactionWrapper, IUnitOfWorkOperator
     {
         /// <inheritdoc />
-        public string Id { get; } = string.Empty;
+        public string Id => string.Empty;
 
         /// <inheritdoc />
         public DbTransaction GetOrBegin(bool isCreate = true) => NullDbTransaction.Instance;

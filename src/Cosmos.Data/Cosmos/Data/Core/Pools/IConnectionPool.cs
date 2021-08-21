@@ -2,6 +2,8 @@ using System;
 using System.Data;
 using System.Threading.Tasks;
 using Cosmos.Disposables.ObjectPools;
+using Cosmos.Disposables.ObjectPools.Core;
+using Cosmos.Disposables.ObjectPools.Statistics;
 
 namespace Cosmos.Data.Core.Pools
 {
@@ -13,12 +15,12 @@ namespace Cosmos.Data.Core.Pools
         /// <summary>
         /// Statistics
         /// </summary>
-        string Statistics { get; }
+        StatisticsInfo GetStatisticsInfo();
 
         /// <summary>
         /// StatisticsFully
         /// </summary>
-        string StatisticsFully { get; }
+        FullStatisticsInfo GetStatisticsInfoFully();
     }
 
     /// <summary>
@@ -33,20 +35,20 @@ namespace Cosmos.Data.Core.Pools
         /// </summary>
         /// <param name="timeout"></param>
         /// <returns></returns>
-        ObjectOut<TConn> Get(TimeSpan? timeout = null);
+        ObjectPayload<TConn> Acquire(TimeSpan? timeout = null);
 
         /// <summary>
         /// Get async
         /// </summary>
         /// <returns></returns>
-        Task<ObjectOut<TConn>> GetAsync();
+        Task<ObjectPayload<TConn>> AcquireAsync();
 
         /// <summary>
         /// Return
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="isReset"></param>
-        void Return(ObjectOut<TConn> obj, bool isReset = false);
+        void Recycle(ObjectPayload<TConn> obj, bool isReset = false);
 
         /// <summary>
         /// Return
@@ -54,7 +56,7 @@ namespace Cosmos.Data.Core.Pools
         /// <param name="obj"></param>
         /// <param name="exception"></param>
         /// <param name="isRecreate"></param>
-        void Return(ObjectOut<TConn> obj, Exception exception, bool isRecreate = false);
+        void Recycle(ObjectPayload<TConn> obj, Exception exception, bool isRecreate = false);
 
         /// <summary>
         /// Dispose

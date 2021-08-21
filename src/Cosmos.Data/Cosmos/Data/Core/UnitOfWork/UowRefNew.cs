@@ -49,7 +49,7 @@ namespace Cosmos.Data.Core.UnitOfWork
         {
             var entry = new OriginalUowProxy(baseUowEntry);
             var uowRef = new UowRef(entry, UowRefType.Original, false);
-            if (isolationLevel != null) entry.IsolationLevel = isolationLevel.Value;
+            if (isolationLevel is not null) entry.IsolationLevel = isolationLevel.Value;
 
             try
             {

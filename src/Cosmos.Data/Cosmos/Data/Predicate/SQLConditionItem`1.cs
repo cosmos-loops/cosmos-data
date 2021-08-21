@@ -1,6 +1,7 @@
 using System;
 using System.Linq.Expressions;
 using System.Reflection;
+using Cosmos.Reflection;
 
 namespace Cosmos.Data.Predicate
 {
@@ -13,7 +14,7 @@ namespace Cosmos.Data.Predicate
         /// <summary>
         /// 获取T类型的所有属性
         /// </summary>
-        public readonly static PropertyInfo[] TypeProperties = typeof(T).GetProperties();
+        public static readonly PropertyInfo[] TypeProperties = typeof(T).GetProperties();
 
         /// <summary>
         /// 获取属性
@@ -49,7 +50,7 @@ namespace Cosmos.Data.Predicate
             }
             else
             {
-                Operator = member.PropertyType == TypeClass.StringClass ? SQLOperator.Contains : SQLOperator.Equal;
+                Operator = member.PropertyType == TypeClass.StringClazz ? SQLOperator.Contains : SQLOperator.Equal;
             }
         }
 
@@ -78,10 +79,10 @@ namespace Cosmos.Data.Predicate
             if (value is IConvertible convertible && targetType.IsInheritFrom<IConvertible>())
                 return convertible.ToType(targetType, null);
 
-            if (TypeClass.GuidClass == targetType)
+            if (TypeClass.GuidClazz == targetType)
                 return Guid.Parse(value.ToString());
 
-            if (TypeClass.DateTimeOffsetClass == targetType)
+            if (TypeClass.DateTimeOffsetClazz == targetType)
                 return DateTimeOffset.Parse(value.ToString());
 
             throw new NotSupportedException($"不支持将对象{value}转换为{targetType}");

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Data.SqlClient;
 using Cosmos.Data.Core.Pools;
-using Cosmos.Data.Sx.SqlClient;
 using Cosmos.Disposables.ObjectPools;
+using Microsoft.Data.SqlClient;
 
 namespace ConnPoolTests
 {
@@ -19,7 +19,7 @@ namespace ConnPoolTests
 
             var pool = ObjectPoolManager.Managed<ConnectionPoolManagedModel>.Get<SqlConnection>(connectionString);
 
-            var connOut = pool.Get();
+            var connOut = pool.Acquire();
 
             var conn = connOut.Value;
 
@@ -28,7 +28,7 @@ namespace ConnPoolTests
                 Console.WriteLine("CONN is null!");
             }
 
-            pool.Return(connOut);
+            pool.Recycle(connOut);
 
             Console.WriteLine("Hello World!");
         }

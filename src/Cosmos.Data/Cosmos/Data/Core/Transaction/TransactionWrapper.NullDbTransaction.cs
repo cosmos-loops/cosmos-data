@@ -11,7 +11,7 @@ namespace Cosmos.Data.Core.Transaction
         /// <summary>
         /// Gets instance of <see cref="NullDbTransaction"/>
         /// </summary>
-        public static NullDbTransaction Instance => new NullDbTransaction();
+        public static NullDbTransaction Instance => new();
 
         private NullDbTransaction() { }
 

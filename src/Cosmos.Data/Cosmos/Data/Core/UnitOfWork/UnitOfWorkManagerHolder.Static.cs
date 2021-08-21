@@ -6,7 +6,7 @@ namespace Cosmos.Data.Core.UnitOfWork
 {
     internal partial class UnitOfWorkManagerHolder
     {
-        private static AsyncLocal<IUnitOfWorkManager> UnitOfWorkHolder = new AsyncLocal<IUnitOfWorkManager>();
+        private static AsyncLocal<IUnitOfWorkManager> UnitOfWorkHolder = new();
 
         public static IUnitOfWorkManager Instance
         {

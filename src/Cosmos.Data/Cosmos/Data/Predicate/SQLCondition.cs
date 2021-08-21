@@ -50,7 +50,7 @@ namespace Cosmos.Data.Predicate
 
             foreach (var item in conditionItems)
             {
-                if (item != null)
+                if (item is not null)
                 {
                     Items.Add(item);
                 }

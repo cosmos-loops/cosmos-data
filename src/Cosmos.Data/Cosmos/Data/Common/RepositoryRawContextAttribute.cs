@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using AspectCore.DynamicProxy;
+using Cosmos.Reflection;
 
 namespace Cosmos.Data.Common
 {
@@ -48,14 +49,14 @@ namespace Cosmos.Data.Common
             if (instance is null)
                 throw new ArgumentException($"Unable to load database context of '{contextClazz.Name}' from IoC container.");
 
-            context.Implementation.SetPropertyValue(BindingPropertyName, instance);
+            context.Implementation.GetValueAccessor().SetValue(BindingPropertyName, instance);
 
             return next(context);
         }
 
         private Type GetRawContextClazz(object implementation)
         {
-            if (RawContextType != null)
+            if (RawContextType is not null)
                 return RawContextType;
 
             if (implementation is null)

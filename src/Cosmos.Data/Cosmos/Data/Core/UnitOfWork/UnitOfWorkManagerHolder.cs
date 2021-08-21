@@ -11,7 +11,7 @@ namespace Cosmos.Data.Core.UnitOfWork
 
         private UnitOfWorkManagerHolder()
         {
-            HoldingManager = new UnitOfWorkManager(null, null, false);
+            HoldingManager = new(null, null, false);
         }
 
         public void Dispose()

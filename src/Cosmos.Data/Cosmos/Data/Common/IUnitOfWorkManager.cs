@@ -1,6 +1,6 @@
 using System;
 using System.Data;
-using Cosmos.Validations.Parameters;
+using Cosmos.Validation.Annotations;
 
 namespace Cosmos.Data.Common
 {
@@ -105,7 +105,7 @@ namespace Cosmos.Data.Common
         /// <param name="data"></param>
         /// <typeparam name="TData"></typeparam>
         void SetAdditionalData<TData>(TData data);
-        
+
         /// <summary>
         /// Set additional data
         /// </summary>

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
-using Cosmos.Domain.Core;
-using Cosmos.Validations.Parameters;
-using DotNetCore.Collections.Paginable;
+using Cosmos.Collections.Pagination;
+using Cosmos.Models;
+using Cosmos.Validation.Annotations;
 
 namespace Cosmos.Data.Store
 {

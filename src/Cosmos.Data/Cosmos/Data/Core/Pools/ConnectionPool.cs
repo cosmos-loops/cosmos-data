@@ -16,10 +16,10 @@ namespace Cosmos.Data.Core.Pools
         /// <param name="timeout"></param>
         /// <typeparam name="TConn"></typeparam>
         /// <returns></returns>
-        public static ObjectOut<TConn> Get<TConn>(string connectionString, TimeSpan? timeout = null)
+        public static ObjectPayload<TConn> Get<TConn>(string connectionString, TimeSpan? timeout = null)
             where TConn : IDbConnection
         {
-            return Pools.Get<TConn>(connectionString).Get(timeout);
+            return Pools.Get<TConn>(connectionString).Acquire(timeout);
         }
 
         /// <summary>
@@ -28,10 +28,10 @@ namespace Cosmos.Data.Core.Pools
         /// <param name="obj"></param>
         /// <param name="connectionString"></param>
         /// <typeparam name="TConn"></typeparam>
-        public static void Return<TConn>(ObjectOut<TConn> obj, string connectionString)
+        public static void Return<TConn>(ObjectPayload<TConn> obj, string connectionString)
             where TConn : IDbConnection
         {
-            Pools.Get<TConn>(connectionString).Return(obj);
+            Pools.Get<TConn>(connectionString).Recycle(obj);
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace Cosmos.Data.Core.Pools
             /// <param name="connectionString"></param>
             /// <typeparam name="TConn"></typeparam>
             /// <returns></returns>
-            public static IObjectPool<TConn> Get<TConn>(string connectionString) where TConn : IDbConnection
+            public static IObjectPayloadPool<TConn> Get<TConn>(string connectionString) where TConn : IDbConnection
             {
                 return ObjectPoolManager.Managed<ConnectionPoolManagedModel>.Get<TConn>(connectionString);
             }
@@ -60,7 +60,7 @@ namespace Cosmos.Data.Core.Pools
             /// <typeparam name="TPool"></typeparam>
             public static void Register<TConn, TPool>(Func<TPool> poolFunc, string connectionString)
                 where TConn : IDbConnection
-                where TPool : class, IObjectPool<TConn>
+                where TPool : class, IObjectPayloadPool<TConn>
             {
                 if (!ObjectPoolManager.Managed<ConnectionPoolManagedModel>.Contains(typeof(TConn), connectionString))
                 {

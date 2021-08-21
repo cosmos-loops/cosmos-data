@@ -20,7 +20,7 @@ namespace Cosmos.Data.Predicate
         /// <summary>
         /// 获取谓词筛选表达式的参数名
         /// </summary>
-        public static string ParameterName { get; } = "item";
+        public static string ParameterName => "item";
 
         /// <summary>
         /// 静态构造器

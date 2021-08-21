@@ -28,7 +28,7 @@ namespace Cosmos.Data.Sx
         /// <returns></returns>
         public static DataRow LastRow(this DataTable dt)
         {
-#if NET451 || NET461 || NETSTANDARD2_0
+#if NETFRAMEWORK || NETSTANDARD2_0
             return dt.Rows[dt.Rows.Count - 1];
 #else
             return dt.Rows[^1];

@@ -114,10 +114,10 @@ namespace Cosmos.Data.Common
         /// <inheritdoc />
         public DbTransaction GetOrBegin(bool isCreate = true)
         {
-            if (CurrentTransaction != null)
+            if (CurrentTransaction is not null)
                 return CurrentTransaction;
 
-            if (isCreate == false)
+            if (isCreate is false)
                 return NullDbTransaction.Instance;
 
             try

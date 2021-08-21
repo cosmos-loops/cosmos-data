@@ -70,7 +70,7 @@ namespace Cosmos.Data.Common
         {
             _beforeTransNotifyArgs = args;
             FinTime = DateTimeFactory.Now();
-            Duration = _beforeTransNotifyArgs == null
+            Duration = _beforeTransNotifyArgs is null
                 ? Duration.Zero
                 : (FinTime - _beforeTransNotifyArgs.StartTime).AsDuration();
             Exception = exception;

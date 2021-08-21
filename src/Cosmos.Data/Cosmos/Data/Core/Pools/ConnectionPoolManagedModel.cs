@@ -1,4 +1,4 @@
-using Cosmos.Disposables.ObjectPools.Managed;
+using Cosmos.Disposables.ObjectPools.Pools;
 
 namespace Cosmos.Data.Core.Pools
 {

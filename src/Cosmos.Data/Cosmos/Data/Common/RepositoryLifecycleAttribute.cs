@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AspectCore.DependencyInjection;
 using AspectCore.DynamicProxy;
 using Cosmos.IdUtils;
+using Cosmos.Reflection;
 
 namespace Cosmos.Data.Common
 {
@@ -34,7 +35,7 @@ namespace Cosmos.Data.Common
             var runtimeScopedMetadata = metadata.RuntimeScoped(repository, accessor);
 
             scope.Register(implementType, runtimeScopedMetadata);
-            context.Implementation.SetPropertyValue("CurrentTraceId", runtimeScopedMetadata.TranceId);
+            context.Implementation.GetValueAccessor().SetValue("CurrentTraceId", runtimeScopedMetadata.TranceId);
 
             return next(context);
         }

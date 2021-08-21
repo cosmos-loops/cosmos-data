@@ -87,19 +87,19 @@ namespace Cosmos.Data.Common
 
             if (typeOfService.IsInterface)
             {
-                var attribute = typeOfService.GetAttributeOrNull<RepositoryAttribute>();
+                var attribute = TypeReflections.GetAttribute<RepositoryAttribute>(typeOfService);
                 return CreateCore(typeOfService, typeOfImplement, MappingType.InterfaceToClass, GetName(typeOfImplement, attribute));
             }
 
             if (typeOfService.IsClass && typeOfService.IsAbstract)
             {
-                var attribute = typeOfService.GetAttributeOrNull<RepositoryAttribute>();
+                var attribute = TypeReflections.GetAttribute<RepositoryAttribute>(typeOfService);
                 return CreateCore(typeOfService, typeOfImplement, MappingType.AbstractToClass, GetName(typeOfImplement, attribute));
             }
 
             if (typeOfService.IsClass)
             {
-                var attribute = typeOfService.GetAttributeOrNull<RepositoryAttribute>();
+                var attribute = TypeReflections.GetAttribute<RepositoryAttribute>(typeOfService);
                 return CreateCore(typeOfService, typeOfImplement, MappingType.ClassToClass, GetName(typeOfImplement, attribute));
             }
 
@@ -118,7 +118,7 @@ namespace Cosmos.Data.Common
             var typeOfService = typeof(TService);
             if (typeOfService.IsInterface)
             {
-                var attribute = typeOfService.GetAttributeOrNull<RepositoryAttribute>();
+                var attribute = TypeReflections.GetAttribute<RepositoryAttribute>(typeOfService);
 
                 if (attribute is null)
                     throw new InvalidOperationException("Cannot find the target type for this interface.");
@@ -141,7 +141,7 @@ namespace Cosmos.Data.Common
 
             if (typeOfService.IsClass)
             {
-                var attribute = typeOfService.GetAttributeOrNull<RepositoryAttribute>();
+                var attribute = TypeReflections.GetAttribute<RepositoryAttribute>(typeOfService);
                 return CreateCore(typeOfService, typeOfService, MappingType.ClassSelf, GetName(typeOfService, attribute));
             }
 
