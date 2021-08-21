@@ -1,8 +1,8 @@
 ﻿using System.Data;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+using Cosmos;
 
-namespace Cosmos.Data.Sx.MySql
+namespace MySqlConnector
 {
     public static partial class MySqlClientExtensions
     {

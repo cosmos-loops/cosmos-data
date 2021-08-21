@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+using Cosmos;
+using Cosmos.Data.Sx;
 
-namespace Cosmos.Data.Sx.MySql
+namespace MySqlConnector
 {
     public static partial class MySqlClientExtensions
     {
@@ -39,7 +40,7 @@ namespace Cosmos.Data.Sx.MySql
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(commandFactory);
-            using IDataReader reader = ((DbCommand) command).ExecuteReader();
+            using IDataReader reader = ((DbCommand)command).ExecuteReader();
             return reader.ToEntities<T>();
         }
 
@@ -157,6 +158,7 @@ namespace Cosmos.Data.Sx.MySql
             MySqlTransaction transaction) where T : new()
         {
             conn.CheckNull(nameof(conn));
+
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
             using IDataReader reader = await command.ExecuteReaderAsync();
             return reader.ToEntities<T>();

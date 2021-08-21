@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using MySql.Data.MySqlClient;
+using Cosmos;
 
-namespace Cosmos.Data.Sx.MySql
+namespace MySqlConnector
 {
     /// <summary>
     /// Extensions for MySql
@@ -17,9 +17,16 @@ namespace Cosmos.Data.Sx.MySql
         {
             conn.CheckNull(nameof(conn));
 
-            foreach (var keyValuePair in values)
+#if NETFRAMEWORK || NETSTANDARD2_0
+            foreach (var pair in values)
             {
-                conn.AddWithValue(keyValuePair.Key, keyValuePair.Value);
+                var key = pair.Key;
+                var value = pair.Value;
+#else
+            foreach (var (key, value) in values)
+            {
+#endif
+                conn.AddWithValue(key, value);
             }
         }
     }

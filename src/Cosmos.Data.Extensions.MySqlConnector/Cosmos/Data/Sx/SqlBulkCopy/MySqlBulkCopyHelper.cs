@@ -2,9 +2,9 @@ using System;
 using System.Data;
 using System.IO;
 using System.Text;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 
-namespace Cosmos.Data.Sx.MySql.SqlBulkCopy
+namespace Cosmos.Data.Sx.SqlBulkCopy
 {
     internal class MySqlBulkCopyHelper
     {
@@ -79,6 +79,7 @@ namespace Cosmos.Data.Sx.MySql.SqlBulkCopy
             File.WriteAllText(filePath, datBuilder.ToString());
         }
 
+        // ReSharper disable once UnusedMember.Local
         private static void ToDeleteFile(string filePath)
         {
             File.Delete(filePath);

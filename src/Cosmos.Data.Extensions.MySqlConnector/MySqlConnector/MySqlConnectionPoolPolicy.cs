@@ -10,9 +10,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Cosmos.Data.Core.Pools;
 using Cosmos.Disposables.ObjectPools;
-using MySql.Data.MySqlClient;
 
-namespace Cosmos.Data.Sx.MySql
+namespace MySqlConnector
 {
     /// <summary>
     /// MySql connection pool policy
@@ -23,7 +22,7 @@ namespace Cosmos.Data.Sx.MySql
         internal MySqlConnectionPool _pool;
 
         /// <inheritdoc />
-        public string Name { get; set; } = "MySQL MySqlConnection Object Pool";
+        public string Name { get; set; } = "MySqlConnector MySqlConnection Object Pool";
 
         /// <inheritdoc />
         public int PoolSize { get; set; } = 100;
@@ -65,13 +64,13 @@ namespace Cosmos.Data.Sx.MySql
                  || poolSize <= 0) poolSize = 100;
                 PoolSize = poolSize;
 
-                var initConnArray = new ObjectOut<MySqlConnection>[poolSize];
+                var initConnArray = new ObjectPayload<MySqlConnection>[poolSize];
 
                 for (var a = 0; a < poolSize; a++)
                 {
                     try
                     {
-                        initConnArray[a] = _pool.Get();
+                        initConnArray[a] = _pool.Acquire();
                     }
                     catch
                     {
@@ -80,12 +79,21 @@ namespace Cosmos.Data.Sx.MySql
                 }
 
                 foreach (var conn in initConnArray)
-                    _pool.Return(conn);
+                    _pool.Recycle(conn);
             }
         }
 
         /// <inheritdoc />
-        public bool OnCheckAvailable(ObjectOut<MySqlConnection> obj)
+        public MySqlConnection OnCreate() => new (_connectionString);
+
+        /// <inheritdoc />
+        public void OnAvailable() => _pool.AvailableHandler?.Invoke();
+
+        /// <inheritdoc />
+        public void OnUnavailable() => _pool.UnavailableHandler?.Invoke();
+
+        /// <inheritdoc />
+        public bool OnCheckAvailable(ObjectPayload<MySqlConnection> obj)
         {
             if (obj.Value.Ping() == false)
                 obj.Value.Open();
@@ -93,23 +101,12 @@ namespace Cosmos.Data.Sx.MySql
         }
 
         /// <inheritdoc />
-        public MySqlConnection OnCreate() => new MySqlConnection(_connectionString);
-
-        /// <inheritdoc />
-        public void OnDestroy(MySqlConnection obj)
-        {
-            if (obj.State != ConnectionState.Closed)
-                obj.Close();
-            obj.Dispose();
-        }
-
-        /// <inheritdoc />
-        public void OnGet(ObjectOut<MySqlConnection> obj)
+        public void OnAcquire(ObjectPayload<MySqlConnection> obj)
         {
             if (_pool.IsAvailable)
             {
                 if (obj.Value.State != ConnectionState.Open
-                 || DateTime.Now.Subtract(obj.LastReturnTime).TotalSeconds > 60 && obj.Value.Ping() == false)
+                 || DateTime.Now.Subtract(obj.LastRecycledTime).TotalSeconds > 60 && obj.Value.Ping() == false)
                 {
                     try
                     {
@@ -125,12 +122,12 @@ namespace Cosmos.Data.Sx.MySql
         }
 
         /// <inheritdoc />
-        public async Task OnGetAsync(ObjectOut<MySqlConnection> obj)
+        public async Task OnAcquireAsync(ObjectPayload<MySqlConnection> obj)
         {
             if (_pool.IsAvailable)
             {
                 if (obj.Value.State != ConnectionState.Open
-                 || DateTime.Now.Subtract(obj.LastReturnTime).TotalSeconds > 60 && obj.Value.Ping() == false)
+                 || DateTime.Now.Subtract(obj.LastRecycledTime).TotalSeconds > 60 && obj.Value.Ping() == false)
                 {
                     try
                     {
@@ -146,15 +143,17 @@ namespace Cosmos.Data.Sx.MySql
         }
 
         /// <inheritdoc />
-        public void OnGetTimeout() { }
+        public void OnAcquireTimeout() { }
 
         /// <inheritdoc />
-        public void OnReturn(ObjectOut<MySqlConnection> obj) { }
+        public void OnRecycle(ObjectPayload<MySqlConnection> obj) { }
 
         /// <inheritdoc />
-        public void OnAvailable() => _pool.AvailableHandler?.Invoke();
-
-        /// <inheritdoc />
-        public void OnUnavailable() => _pool.UnavailableHandler?.Invoke();
+        public void OnDestroy(MySqlConnection obj)
+        {
+            if (obj.State != ConnectionState.Closed)
+                obj.Close();
+            obj.Dispose();
+        }
     }
 }

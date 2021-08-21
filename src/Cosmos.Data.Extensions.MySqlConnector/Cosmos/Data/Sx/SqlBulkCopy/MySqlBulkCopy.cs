@@ -4,9 +4,9 @@ using System.Data;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 
-namespace Cosmos.Data.Sx.MySql.SqlBulkCopy
+namespace Cosmos.Data.Sx.SqlBulkCopy
 {
     /// <summary>
     /// MySql BulkCopy

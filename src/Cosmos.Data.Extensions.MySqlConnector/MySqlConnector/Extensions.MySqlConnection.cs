@@ -1,8 +1,8 @@
 using System;
 using System.Data;
-using MySql.Data.MySqlClient;
+using Cosmos;
 
-namespace Cosmos.Data.Sx.MySql
+namespace MySqlConnector
 {
    public static partial class MySqlClientExtensions
     {
@@ -25,7 +25,7 @@ namespace Cosmos.Data.Sx.MySql
             command.CommandType = commandType;
             command.Transaction = transaction;
 
-            if (parameters != null)
+            if (parameters is not null)
             {
                 command.Parameters.AddRange(parameters);
             }

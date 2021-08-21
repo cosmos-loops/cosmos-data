@@ -1,10 +1,10 @@
 using System;
 using Cosmos.Text;
-using MySql.Data.MySqlClient;
-using CosmosWayCopy = Cosmos.Data.Sx.MySql.SqlBulkCopy.MySqlBulkCopy;
-using OriginalWayCopy = MySql.Data.MySqlClient.MySqlBulkCopy;
+using MySqlConnector;
+using CosmosWayCopy = Cosmos.Data.Sx.SqlBulkCopy.MySqlBulkCopy;
+using OriginalWayCopy = MySqlConnector.MySqlBulkCopy;
 
-namespace Cosmos.Data.Sx.MySql.SqlBulkCopy
+namespace Cosmos.Data.Sx.SqlBulkCopy
 {
     /// <summary>
     /// The factory for MySqlBulkCopy
@@ -22,7 +22,7 @@ namespace Cosmos.Data.Sx.MySql.SqlBulkCopy
             var options = new MySqlBulkCopyOptions();
             optionsAct?.Invoke(options);
 
-            var copy = new MySqlBulkCopy(connection);
+            var copy = new CosmosWayCopy(connection);
             if (options.BulkCopyTimeout.HasValue)
                 copy.BulkCopyTimeout = options.BulkCopyTimeout.Value;
             if (options.DestinationTableName.IsNullOrWhiteSpace())

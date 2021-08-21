@@ -1,4 +1,4 @@
-namespace Cosmos.Data.Sx.MySql.SqlBulkCopy
+namespace Cosmos.Data.Sx.SqlBulkCopy
 {
     /// <summary>
     /// Options for MySql bulk copy
