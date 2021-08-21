@@ -7,7 +7,7 @@ using SqlKata.Compilers;
 namespace Cosmos.Data.SqlKata
 {
     /// <summary>
-    /// Base sqlkata query builder
+    /// Base sql-kata query builder
     /// </summary>
     public abstract class BaseQueryBuilder : Query
     {
