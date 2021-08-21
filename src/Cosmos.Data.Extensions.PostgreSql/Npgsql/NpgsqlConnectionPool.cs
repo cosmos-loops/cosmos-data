@@ -7,9 +7,8 @@
 using System;
 using Cosmos.Data.Core.Pools;
 using Cosmos.Disposables.ObjectPools;
-using Npgsql;
 
-namespace Cosmos.Data.Sx.Npgsql
+namespace Npgsql
 {
     /// <summary>
     /// Npgsql connection pool
@@ -41,7 +40,7 @@ namespace Cosmos.Data.Sx.Npgsql
         /// <param name="obj"></param>
         /// <param name="exception"></param>
         /// <param name="isRecreate"></param>
-        public void Return(ObjectOut<NpgsqlConnection> obj, Exception exception, bool isRecreate = false)
+        public void Recycle(ObjectPayload<NpgsqlConnection> obj, Exception exception, bool isRecreate = false)
         {
             if (exception is NpgsqlException)
             {
@@ -51,7 +50,7 @@ namespace Cosmos.Data.Sx.Npgsql
                 }
             }
 
-            base.Return(obj, isRecreate);
+            base.Recycle(obj, isRecreate);
         }
     }
 }

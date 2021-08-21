@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Npgsql;
+using Cosmos;
 
-namespace Cosmos.Data.Sx.Npgsql
+namespace Npgsql
 {
     /// <summary>
     /// Extensions for Npgsql
@@ -16,10 +16,16 @@ namespace Cosmos.Data.Sx.Npgsql
         public static void AddRangeWithValue(this NpgsqlParameterCollection conn, Dictionary<string, object> values)
         {
             conn.CheckNull(nameof(conn));
-            
-            foreach (var keyValuePair in values)
+#if NETFRAMEWORK || NETSTANDARD2_0
+            foreach (var pair in values)
             {
-                conn.AddWithValue(keyValuePair.Key, keyValuePair.Value);
+                var key = pair.Key;
+                var value = pair.Value;
+#else
+            foreach (var (key, value) in values)
+            {
+#endif
+                conn.AddWithValue(key, value);
             }
         }
     }

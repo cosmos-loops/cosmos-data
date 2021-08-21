@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Data;
 using System.Threading.Tasks;
-using Npgsql;
+using Cosmos;
 
-namespace Cosmos.Data.Sx.Npgsql
+namespace Npgsql
 {
     /// <summary>
     /// Extensions for Npgsql
@@ -11,229 +11,248 @@ namespace Cosmos.Data.Sx.Npgsql
     public static partial class NpgsqlClientExtensions
     {
         /// <summary>
-        /// Execute NonQuery
+        /// Execute DataSet
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
-        public static void ExecuteNonQuery(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType, NpgsqlTransaction transaction)
+        /// <returns></returns>
+        public static DataSet ExecuteDataSet(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
-            command.ExecuteNonQuery();
+            return command.ExecuteDataSet();
         }
 
         /// <summary>
-        /// Execute NonQuery
+        /// Execute DataSet
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="commandFactory"></param>
-        public static void ExecuteNonQuery(this NpgsqlConnection conn, Action<NpgsqlCommand> commandFactory)
+        /// <returns></returns>
+        public static DataSet ExecuteDataSet(this NpgsqlConnection conn, Action<NpgsqlCommand> commandFactory)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(commandFactory);
-            command.ExecuteNonQuery();
+            return command.ExecuteDataSet();
         }
 
         /// <summary>
-        /// Execute NonQuery
+        /// Execute DataSet
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
-        public static void ExecuteNonQuery(this NpgsqlConnection conn, string cmdText)
+        /// <returns></returns>
+        public static DataSet ExecuteDataSet(this NpgsqlConnection conn, string cmdText)
         {
             conn.CheckNull(nameof(conn));
-            conn.ExecuteNonQuery(cmdText, null, CommandType.Text, null);
+            return conn.ExecuteDataSet(cmdText, null, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute NonQuery
+        /// Execute DataSet
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="transaction"></param>
-        public static void ExecuteNonQuery(this NpgsqlConnection conn, string cmdText, NpgsqlTransaction transaction)
+        /// <returns></returns>
+        public static DataSet ExecuteDataSet(this NpgsqlConnection conn, string cmdText, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            conn.ExecuteNonQuery(cmdText, null, CommandType.Text, transaction);
+            return conn.ExecuteDataSet(cmdText, null, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute NonQuery
+        /// Execute DataSet
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
-        public static void ExecuteNonQuery(this NpgsqlConnection conn, string cmdText, CommandType commandType)
+        /// <returns></returns>
+        public static DataSet ExecuteDataSet(this NpgsqlConnection conn, string cmdText, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            conn.ExecuteNonQuery(cmdText, null, commandType, null);
+            return conn.ExecuteDataSet(cmdText, null, commandType, null);
         }
 
         /// <summary>
-        /// Execute NonQuery
+        /// Execute DataSet
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
-        public static void ExecuteNonQuery(this NpgsqlConnection conn, string cmdText, CommandType commandType, NpgsqlTransaction transaction)
+        /// <returns></returns>
+        public static DataSet ExecuteDataSet(this NpgsqlConnection conn, string cmdText, CommandType commandType, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            conn.ExecuteNonQuery(cmdText, null, commandType, transaction);
+            return conn.ExecuteDataSet(cmdText, null, commandType, transaction);
         }
 
         /// <summary>
-        /// Execute NonQuery
+        /// Execute DataSet
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
-        public static void ExecuteNonQuery(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters)
+        /// <returns></returns>
+        public static DataSet ExecuteDataSet(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters)
         {
             conn.CheckNull(nameof(conn));
-            conn.ExecuteNonQuery(cmdText, parameters, CommandType.Text, null);
+            return conn.ExecuteDataSet(cmdText, parameters, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute NonQuery
+        /// Execute DataSet
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="transaction"></param>
-        public static void ExecuteNonQuery(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, NpgsqlTransaction transaction)
+        /// <returns></returns>
+        public static DataSet ExecuteDataSet(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            conn.ExecuteNonQuery(cmdText, parameters, CommandType.Text, transaction);
+            return conn.ExecuteDataSet(cmdText, parameters, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute NonQuery
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
-        /// <param name="commandType"></param>
-        public static void ExecuteNonQuery(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType)
-        {
-            conn.CheckNull(nameof(conn));
-            conn.ExecuteNonQuery(cmdText, parameters, commandType, null);
-        }
-
-        /// <summary>
-        /// Execute NonQuery
+        /// Execute DataSet
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="commandType"></param>
+        /// <returns></returns>
+        public static DataSet ExecuteDataSet(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteDataSet(cmdText, parameters, commandType, null);
+        }
+
+        /// <summary>
+        /// Execute DataSet
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
         /// <param name="transaction"></param>
-        public static Task ExecuteNonQueryAsync(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType, NpgsqlTransaction transaction)
+        /// <returns></returns>
+        public static Task<DataSet> ExecuteDataSetAsync(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType,
+            NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
-            return command.ExecuteNonQueryAsync();
+            return command.ExecuteDataSetAsync();
         }
 
         /// <summary>
-        /// Execute NonQuery
+        /// Execute DataSet
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="commandFactory"></param>
-        public static Task ExecuteNonQueryAsync(this NpgsqlConnection conn, Action<NpgsqlCommand> commandFactory)
+        /// <returns></returns>
+        public static Task<DataSet> ExecuteDataSetAsync(this NpgsqlConnection conn, Action<NpgsqlCommand> commandFactory)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(commandFactory);
-            return command.ExecuteNonQueryAsync();
+            return command.ExecuteDataSetAsync();
         }
 
         /// <summary>
-        /// Execute NonQuery
+        /// Execute DataSet
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
-        public static Task ExecuteNonQueryAsync(this NpgsqlConnection conn, string cmdText)
+        /// <returns></returns>
+        public static Task<DataSet> ExecuteDataSetAsync(this NpgsqlConnection conn, string cmdText)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteNonQueryAsync(cmdText, null, CommandType.Text, null);
+            return conn.ExecuteDataSetAsync(cmdText, null, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute NonQuery
+        /// Execute DataSet
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="transaction"></param>
-        public static Task ExecuteNonQueryAsync(this NpgsqlConnection conn, string cmdText, NpgsqlTransaction transaction)
+        /// <returns></returns>
+        public static Task<DataSet> ExecuteDataSetAsync(this NpgsqlConnection conn, string cmdText, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteNonQueryAsync(cmdText, null, CommandType.Text, transaction);
+            return conn.ExecuteDataSetAsync(cmdText, null, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute NonQuery
+        /// Execute DataSet
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
-        public static Task ExecuteNonQueryAsync(this NpgsqlConnection conn, string cmdText, CommandType commandType)
+        /// <returns></returns>
+        public static Task<DataSet> ExecuteDataSetAsync(this NpgsqlConnection conn, string cmdText, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteNonQueryAsync(cmdText, null, commandType, null);
+            return conn.ExecuteDataSetAsync(cmdText, null, commandType, null);
         }
 
         /// <summary>
-        /// Execute NonQuery
+        /// Execute DataSet
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
-        public static Task ExecuteNonQueryAsync(this NpgsqlConnection conn, string cmdText, CommandType commandType, NpgsqlTransaction transaction)
+        /// <returns></returns>
+        public static Task<DataSet> ExecuteDataSetAsync(this NpgsqlConnection conn, string cmdText, CommandType commandType, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteNonQueryAsync(cmdText, null, commandType, transaction);
+            return conn.ExecuteDataSetAsync(cmdText, null, commandType, transaction);
         }
 
         /// <summary>
-        /// Execute NonQuery
+        /// Execute DataSet
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
-        public static Task ExecuteNonQueryAsync(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters)
+        /// <returns></returns>
+        public static Task<DataSet> ExecuteDataSetAsync(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteNonQueryAsync(cmdText, parameters, CommandType.Text, null);
+            return conn.ExecuteDataSetAsync(cmdText, parameters, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute NonQuery
+        /// Execute DataSet
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="transaction"></param>
-        public static Task ExecuteNonQueryAsync(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, NpgsqlTransaction transaction)
+        /// <returns></returns>
+        public static Task<DataSet> ExecuteDataSetAsync(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteNonQueryAsync(cmdText, parameters, CommandType.Text, transaction);
+            return conn.ExecuteDataSetAsync(cmdText, parameters, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute NonQuery
+        /// Execute DataSet
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="commandType"></param>
-        public static Task ExecuteNonQueryAsync(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType)
+        /// <returns></returns>
+        public static Task<DataSet> ExecuteDataSetAsync(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteNonQueryAsync(cmdText, parameters, commandType, null);
+            return conn.ExecuteDataSetAsync(cmdText, parameters, commandType, null);
         }
     }
 }

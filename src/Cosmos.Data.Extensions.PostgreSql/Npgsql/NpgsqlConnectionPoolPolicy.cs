@@ -10,9 +10,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Cosmos.Data.Core.Pools;
 using Cosmos.Disposables.ObjectPools;
-using Npgsql;
 
-namespace Cosmos.Data.Sx.Npgsql
+namespace Npgsql
 {
     /// <summary>
     /// Npgsql connection pool policy
@@ -65,13 +64,13 @@ namespace Cosmos.Data.Sx.Npgsql
                  || poolSize <= 0) poolSize = 100;
                 PoolSize = poolSize;
 
-                var initConnArray = new ObjectOut<NpgsqlConnection>[poolSize];
+                var initConnArray = new ObjectPayload<NpgsqlConnection>[poolSize];
 
                 for (var i = 0; i < poolSize; i++)
                 {
                     try
                     {
-                        initConnArray[i] = _pool.Get();
+                        initConnArray[i] = _pool.Acquire();
                     }
                     catch
                     {
@@ -80,12 +79,21 @@ namespace Cosmos.Data.Sx.Npgsql
                 }
 
                 foreach (var conn in initConnArray)
-                    _pool.Return(conn);
+                    _pool.Recycle(conn);
             }
         }
 
         /// <inheritdoc />
-        public bool OnCheckAvailable(ObjectOut<NpgsqlConnection> obj)
+        public NpgsqlConnection OnCreate() => new (_connectionString);
+
+        /// <inheritdoc />
+        public void OnAvailable() => _pool.AvailableHandler?.Invoke();
+
+        /// <inheritdoc />
+        public void OnUnavailable() => _pool.UnavailableHandler?.Invoke();
+
+        /// <inheritdoc />
+        public bool OnCheckAvailable(ObjectPayload<NpgsqlConnection> obj)
         {
             if (obj.Value.State == ConnectionState.Closed)
                 obj.Value.Open();
@@ -96,23 +104,12 @@ namespace Cosmos.Data.Sx.Npgsql
         }
 
         /// <inheritdoc />
-        public NpgsqlConnection OnCreate() => new NpgsqlConnection(_connectionString);
-
-        /// <inheritdoc />
-        public void OnDestroy(NpgsqlConnection obj)
-        {
-            if (obj.State != ConnectionState.Closed)
-                obj.Close();
-            obj.Dispose();
-        }
-
-        /// <inheritdoc />
-        public void OnGet(ObjectOut<NpgsqlConnection> obj)
+        public void OnAcquire(ObjectPayload<NpgsqlConnection> obj)
         {
             if (_pool.IsAvailable)
             {
                 if (obj.Value.State != ConnectionState.Open
-                 || DateTime.Now.Subtract(obj.LastReturnTime).TotalSeconds > 60 && obj.Value.Ping() == false)
+                 || DateTime.Now.Subtract(obj.LastRecycledTime).TotalSeconds > 60 && obj.Value.Ping() == false)
                 {
                     try
                     {
@@ -128,12 +125,12 @@ namespace Cosmos.Data.Sx.Npgsql
         }
 
         /// <inheritdoc />
-        public async Task OnGetAsync(ObjectOut<NpgsqlConnection> obj)
+        public async Task OnAcquireAsync(ObjectPayload<NpgsqlConnection> obj)
         {
             if (_pool.IsAvailable)
             {
                 if (obj.Value.State != ConnectionState.Open
-                 || DateTime.Now.Subtract(obj.LastReturnTime).TotalSeconds > 60 && obj.Value.Ping() == false)
+                 || DateTime.Now.Subtract(obj.LastRecycledTime).TotalSeconds > 60 && obj.Value.Ping() == false)
                 {
                     try
                     {
@@ -149,15 +146,17 @@ namespace Cosmos.Data.Sx.Npgsql
         }
 
         /// <inheritdoc />
-        public void OnGetTimeout() { }
+        public void OnAcquireTimeout() { }
 
         /// <inheritdoc />
-        public void OnReturn(ObjectOut<NpgsqlConnection> obj) { }
+        public void OnRecycle(ObjectPayload<NpgsqlConnection> obj) { }
 
         /// <inheritdoc />
-        public void OnAvailable() => _pool.AvailableHandler?.Invoke();
-
-        /// <inheritdoc />
-        public void OnUnavailable() => _pool.UnavailableHandler?.Invoke();
+        public void OnDestroy(NpgsqlConnection obj)
+        {
+            if (obj.State != ConnectionState.Closed)
+                obj.Close();
+            obj.Dispose();
+        }
     }
 }

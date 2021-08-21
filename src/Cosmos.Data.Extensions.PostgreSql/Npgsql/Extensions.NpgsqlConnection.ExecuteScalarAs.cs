@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Data;
 using System.Threading.Tasks;
-using Npgsql;
+using Cosmos;
 
-namespace Cosmos.Data.Sx.Npgsql
+namespace Npgsql
 {
     /// <summary>
     /// Extensions for Npgsql
@@ -11,7 +11,7 @@ namespace Cosmos.Data.Sx.Npgsql
     public static partial class NpgsqlClientExtensions
     {
         /// <summary>
-        /// Execute entity
+        /// Execute scalar as...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
@@ -20,75 +20,70 @@ namespace Cosmos.Data.Sx.Npgsql
         /// <param name="transaction"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T ExecuteEntity<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType, NpgsqlTransaction transaction)
-            where T : new()
+        public static T ExecuteScalarAs<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
-            using IDataReader reader = command.ExecuteReader();
-            reader.Read();
-            return reader.ToEntity<T>();
+            return (T) command.ExecuteScalar();
         }
 
         /// <summary>
-        /// Execute entity
+        /// Execute scalar as...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="commandFactory"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T ExecuteEntity<T>(this NpgsqlConnection conn, Action<NpgsqlCommand> commandFactory) where T : new()
+        public static T ExecuteScalarAs<T>(this NpgsqlConnection conn, Action<NpgsqlCommand> commandFactory)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(commandFactory);
-            using IDataReader reader = command.ExecuteReader();
-            reader.Read();
-            return reader.ToEntity<T>();
+            return (T) command.ExecuteScalar();
         }
 
         /// <summary>
-        /// Execute entity
+        /// Execute scalar as...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T ExecuteEntity<T>(this NpgsqlConnection conn, string cmdText) where T : new()
+        public static T ExecuteScalarAs<T>(this NpgsqlConnection conn, string cmdText)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteEntity<T>(cmdText, null, CommandType.Text, null);
+            return conn.ExecuteScalarAs<T>(cmdText, null, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute entity
+        /// Execute scalar as...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="transaction"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T ExecuteEntity<T>(this NpgsqlConnection conn, string cmdText, NpgsqlTransaction transaction) where T : new()
+        public static T ExecuteScalarAs<T>(this NpgsqlConnection conn, string cmdText, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteEntity<T>(cmdText, null, CommandType.Text, transaction);
+            return conn.ExecuteScalarAs<T>(cmdText, null, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute entity
+        /// Execute scalar as...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T ExecuteEntity<T>(this NpgsqlConnection conn, string cmdText, CommandType commandType) where T : new()
+        public static T ExecuteScalarAs<T>(this NpgsqlConnection conn, string cmdText, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteEntity<T>(cmdText, null, commandType, null);
+            return conn.ExecuteScalarAs<T>(cmdText, null, commandType, null);
         }
 
         /// <summary>
-        /// Execute entity
+        /// Execute scalar as...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
@@ -96,28 +91,28 @@ namespace Cosmos.Data.Sx.Npgsql
         /// <param name="transaction"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T ExecuteEntity<T>(this NpgsqlConnection conn, string cmdText, CommandType commandType, NpgsqlTransaction transaction) where T : new()
+        public static T ExecuteScalarAs<T>(this NpgsqlConnection conn, string cmdText, CommandType commandType, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteEntity<T>(cmdText, null, commandType, transaction);
+            return conn.ExecuteScalarAs<T>(cmdText, null, commandType, transaction);
         }
 
         /// <summary>
-        /// Execute entity
+        /// Execute scalar as...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T ExecuteEntity<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters) where T : new()
+        public static T ExecuteScalarAs<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteEntity<T>(cmdText, parameters, CommandType.Text, null);
+            return conn.ExecuteScalarAs<T>(cmdText, parameters, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute entity
+        /// Execute scalar as...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
@@ -125,14 +120,14 @@ namespace Cosmos.Data.Sx.Npgsql
         /// <param name="transaction"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T ExecuteEntity<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, NpgsqlTransaction transaction) where T : new()
+        public static T ExecuteScalarAs<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteEntity<T>(cmdText, parameters, CommandType.Text, transaction);
+            return conn.ExecuteScalarAs<T>(cmdText, parameters, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute entity
+        /// Execute scalar as...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
@@ -140,14 +135,14 @@ namespace Cosmos.Data.Sx.Npgsql
         /// <param name="commandType"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T ExecuteEntity<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType) where T : new()
+        public static T ExecuteScalarAs<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteEntity<T>(cmdText, parameters, commandType, null);
+            return conn.ExecuteScalarAs<T>(cmdText, parameters, commandType, null);
         }
 
         /// <summary>
-        /// Execute entity
+        /// Execute scalar as...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
@@ -156,76 +151,79 @@ namespace Cosmos.Data.Sx.Npgsql
         /// <param name="transaction"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<T> ExecuteEntityAsync<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType,
+        public static async Task<T> ExecuteScalarAsAsync<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType,
             NpgsqlTransaction transaction)
-            where T : new()
         {
             conn.CheckNull(nameof(conn));
+#if NETFRAMEWORK || NETSTANDARD2_0
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
-            using IDataReader reader = await command.ExecuteReaderAsync();
-            reader.Read();
-            return reader.ToEntity<T>();
+#else
+            await using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
+#endif
+            return (T) await command.ExecuteScalarAsync();
         }
 
         /// <summary>
-        /// Execute entity
+        /// Execute scalar as...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="commandFactory"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<T> ExecuteEntityAsync<T>(this NpgsqlConnection conn, Action<NpgsqlCommand> commandFactory) where T : new()
+        public static async Task<T> ExecuteScalarAsAsync<T>(this NpgsqlConnection conn, Action<NpgsqlCommand> commandFactory)
         {
             conn.CheckNull(nameof(conn));
+#if NETFRAMEWORK || NETSTANDARD2_0
             using var command = conn.CreateCommand(commandFactory);
-            using IDataReader reader = await command.ExecuteReaderAsync();
-            reader.Read();
-            return reader.ToEntity<T>();
+#else
+            await using var command = conn.CreateCommand(commandFactory);
+#endif
+            return (T) await command.ExecuteScalarAsync();
         }
 
         /// <summary>
-        /// Execute entity
+        /// Execute scalar as...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<T> ExecuteEntityAsync<T>(this NpgsqlConnection conn, string cmdText) where T : new()
+        public static Task<T> ExecuteScalarAsAsync<T>(this NpgsqlConnection conn, string cmdText)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteEntityAsync<T>(cmdText, null, CommandType.Text, null);
+            return conn.ExecuteScalarAsAsync<T>(cmdText, null, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute entity
+        /// Execute scalar as...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="transaction"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<T> ExecuteEntityAsync<T>(this NpgsqlConnection conn, string cmdText, NpgsqlTransaction transaction) where T : new()
+        public static Task<T> ExecuteScalarAsAsync<T>(this NpgsqlConnection conn, string cmdText, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteEntityAsync<T>(cmdText, null, CommandType.Text, transaction);
+            return conn.ExecuteScalarAsAsync<T>(cmdText, null, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute entity
+        /// Execute scalar as...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<T> ExecuteEntityAsync<T>(this NpgsqlConnection conn, string cmdText, CommandType commandType) where T : new()
+        public static Task<T> ExecuteScalarAsAsync<T>(this NpgsqlConnection conn, string cmdText, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteEntityAsync<T>(cmdText, null, commandType, null);
+            return conn.ExecuteScalarAsAsync<T>(cmdText, null, commandType, null);
         }
 
         /// <summary>
-        /// Execute entity
+        /// Execute scalar as...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
@@ -233,28 +231,28 @@ namespace Cosmos.Data.Sx.Npgsql
         /// <param name="transaction"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<T> ExecuteEntityAsync<T>(this NpgsqlConnection conn, string cmdText, CommandType commandType, NpgsqlTransaction transaction) where T : new()
+        public static Task<T> ExecuteScalarAsAsync<T>(this NpgsqlConnection conn, string cmdText, CommandType commandType, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteEntityAsync<T>(cmdText, null, commandType, transaction);
+            return conn.ExecuteScalarAsAsync<T>(cmdText, null, commandType, transaction);
         }
 
         /// <summary>
-        /// Execute entity
+        /// Execute scalar as...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<T> ExecuteEntityAsync<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters) where T : new()
+        public static Task<T> ExecuteScalarAsAsync<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteEntityAsync<T>(cmdText, parameters, CommandType.Text, null);
+            return conn.ExecuteScalarAsAsync<T>(cmdText, parameters, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute entity
+        /// Execute scalar as...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
@@ -262,14 +260,14 @@ namespace Cosmos.Data.Sx.Npgsql
         /// <param name="transaction"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<T> ExecuteEntityAsync<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, NpgsqlTransaction transaction) where T : new()
+        public static Task<T> ExecuteScalarAsAsync<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteEntityAsync<T>(cmdText, parameters, CommandType.Text, transaction);
+            return conn.ExecuteScalarAsAsync<T>(cmdText, parameters, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute entity
+        /// Execute scalar as...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
@@ -277,10 +275,10 @@ namespace Cosmos.Data.Sx.Npgsql
         /// <param name="commandType"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<T> ExecuteEntityAsync<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType) where T : new()
+        public static Task<T> ExecuteScalarAsAsync<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteEntityAsync<T>(cmdText, parameters, commandType, null);
+            return conn.ExecuteScalarAsAsync<T>(cmdText, parameters, commandType, null);
         }
     }
 }

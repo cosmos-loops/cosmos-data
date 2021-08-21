@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Data;
 using System.Threading.Tasks;
-using Npgsql;
+using Cosmos;
+using Cosmos.Conversions;
 
-namespace Cosmos.Data.Sx.Npgsql
+namespace Npgsql
 {
     /// <summary>
     /// Extensions for Npgsql
@@ -11,249 +12,274 @@ namespace Cosmos.Data.Sx.Npgsql
     public static partial class NpgsqlClientExtensions
     {
         /// <summary>
-        /// Execute DataTable
+        /// Execute scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static DataTable ExecuteDataTable(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType,
-            NpgsqlTransaction transaction)
+        public static T ExecuteScalarTo<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
-            return command.ExecuteFirstDataTable();
+            return command.ExecuteScalar().CastTo<T>();
         }
 
         /// <summary>
-        /// Execute DataTable
+        /// Execute scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="commandFactory"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static DataTable ExecuteDataTable(this NpgsqlConnection conn, Action<NpgsqlCommand> commandFactory)
+        public static T ExecuteScalarTo<T>(this NpgsqlConnection conn, Action<NpgsqlCommand> commandFactory)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(commandFactory);
-            return command.ExecuteFirstDataTable();
+            return command.ExecuteScalar().CastTo<T>();
         }
 
         /// <summary>
-        /// Execute DataTable
+        /// Execute scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static DataTable ExecuteDataTable(this NpgsqlConnection conn, string cmdText)
+        public static T ExecuteScalarTo<T>(this NpgsqlConnection conn, string cmdText)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataTable(cmdText, null, CommandType.Text, null);
+            return conn.ExecuteScalarTo<T>(cmdText, null, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute DataTable
+        /// Execute scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static DataTable ExecuteDataTable(this NpgsqlConnection conn, string cmdText, NpgsqlTransaction transaction)
+        public static T ExecuteScalarTo<T>(this NpgsqlConnection conn, string cmdText, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataTable(cmdText, null, CommandType.Text, transaction);
+            return conn.ExecuteScalarTo<T>(cmdText, null, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute DataTable
+        /// Execute scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static DataTable ExecuteDataTable(this NpgsqlConnection conn, string cmdText, CommandType commandType)
+        public static T ExecuteScalarTo<T>(this NpgsqlConnection conn, string cmdText, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataTable(cmdText, null, commandType, null);
+            return conn.ExecuteScalarTo<T>(cmdText, null, commandType, null);
         }
 
         /// <summary>
-        /// Execute DataTable
+        /// Execute scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static DataTable ExecuteDataTable(this NpgsqlConnection conn, string cmdText, CommandType commandType, NpgsqlTransaction transaction)
+        public static T ExecuteScalarTo<T>(this NpgsqlConnection conn, string cmdText, CommandType commandType, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataTable(cmdText, null, commandType, transaction);
+            return conn.ExecuteScalarTo<T>(cmdText, null, commandType, transaction);
         }
 
         /// <summary>
-        /// Execute DataTable
+        /// Execute scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static DataTable ExecuteDataTable(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters)
+        public static T ExecuteScalarTo<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataTable(cmdText, parameters, CommandType.Text, null);
+            return conn.ExecuteScalarTo<T>(cmdText, parameters, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute DataTable
+        /// Execute scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static DataTable ExecuteDataTable(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, NpgsqlTransaction transaction)
+        public static T ExecuteScalarTo<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataTable(cmdText, parameters, CommandType.Text, transaction);
+            return conn.ExecuteScalarTo<T>(cmdText, parameters, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute DataTable
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
-        /// <param name="commandType"></param>
-        /// <returns></returns>
-        public static DataTable ExecuteDataTable(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataTable(cmdText, parameters, commandType, null);
-        }
-
-        /// <summary>
-        /// Execute DataTable
+        /// Execute scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="commandType"></param>
-        /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<DataTable> ExecuteDataTableAsync(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType,
+        public static T ExecuteScalarTo<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteScalarTo<T>(cmdText, parameters, commandType, null);
+        }
+
+        /// <summary>
+        /// Execute scalar to...
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static async Task<T> ExecuteScalarToAsync<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType,
             NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
+#if NETFRAMEWORK || NETSTANDARD2_0
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
-            return command.ExecuteFirstDataTableAsync();
+#else
+            await using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
+#endif
+            return (await command.ExecuteScalarAsync()).CastTo<T>();
         }
 
         /// <summary>
-        /// Execute DataTable
+        /// Execute scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="commandFactory"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<DataTable> ExecuteDataTableAsync(this NpgsqlConnection conn, Action<NpgsqlCommand> commandFactory)
+        public static async Task<T> ExecuteScalarToAsync<T>(this NpgsqlConnection conn, Action<NpgsqlCommand> commandFactory)
         {
             conn.CheckNull(nameof(conn));
+#if NETFRAMEWORK || NETSTANDARD2_0
             using var command = conn.CreateCommand(commandFactory);
-            return command.ExecuteFirstDataTableAsync();
+#else
+            await using var command = conn.CreateCommand(commandFactory);
+#endif
+            return (await command.ExecuteScalarAsync()).CastTo<T>();
         }
 
         /// <summary>
-        /// Execute DataTable
+        /// Execute scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<DataTable> ExecuteDataTableAsync(this NpgsqlConnection conn, string cmdText)
+        public static Task<T> ExecuteScalarToAsync<T>(this NpgsqlConnection conn, string cmdText)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataTableAsync(cmdText, null, CommandType.Text, null);
+            return conn.ExecuteScalarToAsync<T>(cmdText, null, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute DataTable
+        /// Execute scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<DataTable> ExecuteDataTableAsync(this NpgsqlConnection conn, string cmdText, NpgsqlTransaction transaction)
+        public static Task<T> ExecuteScalarToAsync<T>(this NpgsqlConnection conn, string cmdText, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataTableAsync(cmdText, null, CommandType.Text, transaction);
+            return conn.ExecuteScalarToAsync<T>(cmdText, null, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute DataTable
+        /// Execute scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<DataTable> ExecuteDataTableAsync(this NpgsqlConnection conn, string cmdText, CommandType commandType)
+        public static Task<T> ExecuteScalarToAsync<T>(this NpgsqlConnection conn, string cmdText, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataTableAsync(cmdText, null, commandType, null);
+            return conn.ExecuteScalarToAsync<T>(cmdText, null, commandType, null);
         }
 
         /// <summary>
-        /// Execute DataTable
+        /// Execute scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<DataTable> ExecuteDataTableAsync(this NpgsqlConnection conn, string cmdText, CommandType commandType, NpgsqlTransaction transaction)
+        public static Task<T> ExecuteScalarToAsync<T>(this NpgsqlConnection conn, string cmdText, CommandType commandType, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataTableAsync(cmdText, null, commandType, transaction);
+            return conn.ExecuteScalarToAsync<T>(cmdText, null, commandType, transaction);
         }
 
         /// <summary>
-        /// Execute DataTable
+        /// Execute scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<DataTable> ExecuteDataTableAsync(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters)
+        public static Task<T> ExecuteScalarToAsync<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataTableAsync(cmdText, parameters, CommandType.Text, null);
+            return conn.ExecuteScalarToAsync<T>(cmdText, parameters, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute DataTable
+        /// Execute scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="transaction"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<DataTable> ExecuteDataTableAsync(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, NpgsqlTransaction transaction)
+        public static Task<T> ExecuteScalarToAsync<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataTableAsync(cmdText, parameters, CommandType.Text, transaction);
+            return conn.ExecuteScalarToAsync<T>(cmdText, parameters, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute DataTable
+        /// Execute scalar to...
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="commandType"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<DataTable> ExecuteDataTableAsync(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType)
+        public static Task<T> ExecuteScalarToAsync<T>(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteDataTableAsync(cmdText, parameters, commandType, null);
+            return conn.ExecuteScalarToAsync<T>(cmdText, parameters, commandType, null);
         }
     }
 }

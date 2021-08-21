@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
-using Npgsql;
+using Cosmos;
+using Cosmos.Data.Sx;
 
-namespace Cosmos.Data.Sx.Npgsql
+namespace Npgsql
 {
     /// <summary>
     /// Extensions for Npgsql
@@ -159,7 +160,11 @@ namespace Cosmos.Data.Sx.Npgsql
             NpgsqlTransaction transaction) where T : new()
         {
             conn.CheckNull(nameof(conn));
+#if NETFRAMEWORK || NETSTANDARD2_0
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
+#else
+            await using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
+#endif
             using IDataReader reader = await command.ExecuteReaderAsync();
             return reader.ToEntities<T>();
         }
@@ -174,7 +179,11 @@ namespace Cosmos.Data.Sx.Npgsql
         public static async Task<IEnumerable<T>> ExecuteEntitiesAsync<T>(this NpgsqlConnection conn, Action<NpgsqlCommand> commandFactory) where T : new()
         {
             conn.CheckNull(nameof(conn));
+#if NETFRAMEWORK || NETSTANDARD2_0
             using var command = conn.CreateCommand(commandFactory);
+#else
+            await using var command = conn.CreateCommand(commandFactory);
+#endif
             using IDataReader reader = await command.ExecuteReaderAsync();
             return reader.ToEntities<T>();
         }

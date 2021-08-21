@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Data;
 using System.Threading.Tasks;
-using Npgsql;
+using Cosmos;
 
-namespace Cosmos.Data.Sx.Npgsql
+namespace Npgsql
 {
     /// <summary>
     /// Extensions for Npgsql
@@ -11,7 +11,7 @@ namespace Cosmos.Data.Sx.Npgsql
     public static partial class NpgsqlClientExtensions
     {
         /// <summary>
-        /// Execute Reader
+        /// Execute DataTable
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
@@ -19,249 +19,241 @@ namespace Cosmos.Data.Sx.Npgsql
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static NpgsqlDataReader ExecuteReader(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType,
+        public static DataTable ExecuteDataTable(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType,
             NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
-            return command.ExecuteReader();
+            return command.ExecuteFirstDataTable();
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute DataTable
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="commandFactory"></param>
         /// <returns></returns>
-        public static NpgsqlDataReader ExecuteReader(this NpgsqlConnection conn, Action<NpgsqlCommand> commandFactory)
+        public static DataTable ExecuteDataTable(this NpgsqlConnection conn, Action<NpgsqlCommand> commandFactory)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(commandFactory);
-            return command.ExecuteReader();
+            return command.ExecuteFirstDataTable();
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute DataTable
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <returns></returns>
-        public static NpgsqlDataReader ExecuteReader(this NpgsqlConnection conn, string cmdText)
+        public static DataTable ExecuteDataTable(this NpgsqlConnection conn, string cmdText)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReader(cmdText, null, CommandType.Text, null);
+            return conn.ExecuteDataTable(cmdText, null, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute DataTable
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static NpgsqlDataReader ExecuteReader(this NpgsqlConnection conn, string cmdText, NpgsqlTransaction transaction)
+        public static DataTable ExecuteDataTable(this NpgsqlConnection conn, string cmdText, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReader(cmdText, null, CommandType.Text, transaction);
+            return conn.ExecuteDataTable(cmdText, null, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute DataTable
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <returns></returns>
-        public static NpgsqlDataReader ExecuteReader(this NpgsqlConnection conn, string cmdText, CommandType commandType)
+        public static DataTable ExecuteDataTable(this NpgsqlConnection conn, string cmdText, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReader(cmdText, null, commandType, null);
+            return conn.ExecuteDataTable(cmdText, null, commandType, null);
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute DataTable
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
-        /// <param name="commandType"></param>
-        /// <param name="transaction"></param>
-        /// <returns></returns>
-        public static NpgsqlDataReader ExecuteReader(this NpgsqlConnection conn, string cmdText, CommandType commandType, NpgsqlTransaction transaction)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteReader(cmdText, null, commandType, transaction);
-        }
-
-        /// <summary>
-        /// Execute Reader
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
-        /// <returns></returns>
-        public static NpgsqlDataReader ExecuteReader(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteReader(cmdText, parameters, CommandType.Text, null);
-        }
-
-        /// <summary>
-        /// Execute Reader
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
-        /// <param name="transaction"></param>
-        /// <returns></returns>
-        public static NpgsqlDataReader ExecuteReader(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, NpgsqlTransaction transaction)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteReader(cmdText, parameters, CommandType.Text, transaction);
-        }
-
-        /// <summary>
-        /// Execute Reader
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
-        /// <param name="commandType"></param>
-        /// <returns></returns>
-        public static NpgsqlDataReader ExecuteReader(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType)
-        {
-            conn.CheckNull(nameof(conn));
-            return conn.ExecuteReader(cmdText, parameters, commandType, null);
-        }
-
-        /// <summary>
-        /// Execute Reader
-        /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="cmdText"></param>
-        /// <param name="parameters"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static async Task<NpgsqlDataReader> ExecuteReaderAsync(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType,
+        public static DataTable ExecuteDataTable(this NpgsqlConnection conn, string cmdText, CommandType commandType, NpgsqlTransaction transaction)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteDataTable(cmdText, null, commandType, transaction);
+        }
+
+        /// <summary>
+        /// Execute DataTable
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        public static DataTable ExecuteDataTable(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteDataTable(cmdText, parameters, CommandType.Text, null);
+        }
+
+        /// <summary>
+        /// Execute DataTable
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
+        public static DataTable ExecuteDataTable(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, NpgsqlTransaction transaction)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteDataTable(cmdText, parameters, CommandType.Text, transaction);
+        }
+
+        /// <summary>
+        /// Execute DataTable
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <returns></returns>
+        public static DataTable ExecuteDataTable(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType)
+        {
+            conn.CheckNull(nameof(conn));
+            return conn.ExecuteDataTable(cmdText, parameters, commandType, null);
+        }
+
+        /// <summary>
+        /// Execute DataTable
+        /// </summary>
+        /// <param name="conn"></param>
+        /// <param name="cmdText"></param>
+        /// <param name="parameters"></param>
+        /// <param name="commandType"></param>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
+        public static Task<DataTable> ExecuteDataTableAsync(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType,
             NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
-#if NET451
-            return await Task.Run(() => command.ExecuteReader());
-#else
-            return await command.ExecuteReaderAsync();
-#endif
+            return command.ExecuteFirstDataTableAsync();
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute DataTable
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="commandFactory"></param>
         /// <returns></returns>
-        public static async Task<NpgsqlDataReader> ExecuteReaderAsync(this NpgsqlConnection conn, Action<NpgsqlCommand> commandFactory)
+        public static Task<DataTable> ExecuteDataTableAsync(this NpgsqlConnection conn, Action<NpgsqlCommand> commandFactory)
         {
             conn.CheckNull(nameof(conn));
             using var command = conn.CreateCommand(commandFactory);
-#if NET451
-            return await Task.Run(() => command.ExecuteReader());
-#else
-            return await command.ExecuteReaderAsync();
-#endif
+            return command.ExecuteFirstDataTableAsync();
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute DataTable
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <returns></returns>
-        public static Task<NpgsqlDataReader> ExecuteReaderAsync(this NpgsqlConnection conn, string cmdText)
+        public static Task<DataTable> ExecuteDataTableAsync(this NpgsqlConnection conn, string cmdText)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReaderAsync(cmdText, null, CommandType.Text, null);
+            return conn.ExecuteDataTableAsync(cmdText, null, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute DataTable
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static Task<NpgsqlDataReader> ExecuteReaderAsync(this NpgsqlConnection conn, string cmdText, NpgsqlTransaction transaction)
+        public static Task<DataTable> ExecuteDataTableAsync(this NpgsqlConnection conn, string cmdText, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReaderAsync(cmdText, null, CommandType.Text, transaction);
+            return conn.ExecuteDataTableAsync(cmdText, null, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute DataTable
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <returns></returns>
-        public static Task<NpgsqlDataReader> ExecuteReaderAsync(this NpgsqlConnection conn, string cmdText, CommandType commandType)
+        public static Task<DataTable> ExecuteDataTableAsync(this NpgsqlConnection conn, string cmdText, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReaderAsync(cmdText, null, commandType, null);
+            return conn.ExecuteDataTableAsync(cmdText, null, commandType, null);
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute DataTable
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="commandType"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static Task<NpgsqlDataReader> ExecuteReaderAsync(this NpgsqlConnection conn, string cmdText, CommandType commandType, NpgsqlTransaction transaction)
+        public static Task<DataTable> ExecuteDataTableAsync(this NpgsqlConnection conn, string cmdText, CommandType commandType, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReaderAsync(cmdText, null, commandType, transaction);
+            return conn.ExecuteDataTableAsync(cmdText, null, commandType, transaction);
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute DataTable
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public static Task<NpgsqlDataReader> ExecuteReaderAsync(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters)
+        public static Task<DataTable> ExecuteDataTableAsync(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReaderAsync(cmdText, parameters, CommandType.Text, null);
+            return conn.ExecuteDataTableAsync(cmdText, parameters, CommandType.Text, null);
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute DataTable
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public static Task<NpgsqlDataReader> ExecuteReaderAsync(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, NpgsqlTransaction transaction)
+        public static Task<DataTable> ExecuteDataTableAsync(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, NpgsqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReaderAsync(cmdText, parameters, CommandType.Text, transaction);
+            return conn.ExecuteDataTableAsync(cmdText, parameters, CommandType.Text, transaction);
         }
 
         /// <summary>
-        /// Execute Reader
+        /// Execute DataTable
         /// </summary>
         /// <param name="conn"></param>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <param name="commandType"></param>
         /// <returns></returns>
-        public static Task<NpgsqlDataReader> ExecuteReaderAsync(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType)
+        public static Task<DataTable> ExecuteDataTableAsync(this NpgsqlConnection conn, string cmdText, NpgsqlParameter[] parameters, CommandType commandType)
         {
             conn.CheckNull(nameof(conn));
-            return conn.ExecuteReaderAsync(cmdText, parameters, commandType, null);
+            return conn.ExecuteDataTableAsync(cmdText, parameters, commandType, null);
         }
     }
 }

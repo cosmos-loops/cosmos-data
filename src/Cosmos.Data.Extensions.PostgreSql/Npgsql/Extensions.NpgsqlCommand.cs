@@ -1,8 +1,8 @@
 ﻿using System.Data;
 using System.Threading.Tasks;
-using Npgsql;
+using Cosmos;
 
-namespace Cosmos.Data.Sx.Npgsql
+namespace Npgsql
 {
     /// <summary>
     /// Extensions for Npgsql

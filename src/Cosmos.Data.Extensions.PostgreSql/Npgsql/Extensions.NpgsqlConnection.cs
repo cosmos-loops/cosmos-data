@@ -1,8 +1,8 @@
 using System;
 using System.Data;
-using Npgsql;
+using Cosmos;
 
-namespace Cosmos.Data.Sx.Npgsql
+namespace Npgsql
 {
     /// <summary>
     /// Extensions for Npgsql
@@ -29,7 +29,7 @@ namespace Cosmos.Data.Sx.Npgsql
             command.CommandType = commandType;
             command.Transaction = transaction;
 
-            if (parameters != null)
+            if (parameters is not null)
             {
                 command.Parameters.AddRange(parameters);
             }
