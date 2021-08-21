@@ -4,13 +4,22 @@
  * MIT
  */
 
-using System;
-using System.Data.SqlClient;
+#if NET452
 using Cosmos.Data.Core.Pools;
 using Cosmos.Disposables.ObjectPools;
 
-namespace Cosmos.Data.Sx.SqlClient
+// ReSharper disable once CheckNamespace
+namespace System.Data.SqlClient
 {
+#else
+using System;
+using Cosmos.Data.Core.Pools;
+using Cosmos.Disposables.ObjectPools;
+
+namespace Microsoft.Data.SqlClient
+{
+#endif
+
     /// <summary>
     /// SqlConnection Pool 
     /// </summary>
@@ -41,7 +50,7 @@ namespace Cosmos.Data.Sx.SqlClient
         /// <param name="obj"></param>
         /// <param name="exception"></param>
         /// <param name="isRecreate"></param>
-        public void Return(ObjectOut<SqlConnection> obj, Exception exception, bool isRecreate = false)
+        public void Recycle(ObjectPayload<SqlConnection> obj, Exception exception, bool isRecreate = false)
         {
             if (exception is SqlException)
             {
@@ -51,7 +60,7 @@ namespace Cosmos.Data.Sx.SqlClient
                 }
             }
 
-            base.Return(obj, isRecreate);
+            base.Recycle(obj, isRecreate);
         }
     }
 }

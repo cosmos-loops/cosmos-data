@@ -1,11 +1,19 @@
-﻿using System;
-using System.Data;
-using System.Data.SqlClient;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Cosmos;
 using Cosmos.Conversions;
 
-namespace Cosmos.Data.Sx.SqlClient
+#if NET451 || NET452
+// ReSharper disable once CheckNamespace
+namespace System.Data.SqlClient
 {
+#else
+using System;
+using System.Data;
+
+namespace Microsoft.Data.SqlClient
+{
+#endif
+
     public static partial class SqlClientExtensions
     {
         /// <summary>
@@ -152,7 +160,11 @@ namespace Cosmos.Data.Sx.SqlClient
         public static async Task<T> ExecuteScalarToAsync<T>(this SqlConnection conn, string cmdText, SqlParameter[] parameters, CommandType commandType, SqlTransaction transaction)
         {
             conn.CheckNull(nameof(conn));
+#if NETFRAMEWORK || NETSTANDARD2_0
             using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
+#else
+            await using var command = conn.CreateCommand(cmdText, commandType, transaction, parameters);
+#endif
             return (await command.ExecuteScalarAsync()).CastTo<T>();
         }
 
@@ -166,7 +178,11 @@ namespace Cosmos.Data.Sx.SqlClient
         public static async Task<T> ExecuteScalarToAsync<T>(this SqlConnection conn, Action<SqlCommand> commandFactory)
         {
             conn.CheckNull(nameof(conn));
+#if NETFRAMEWORK || NETSTANDARD2_0
             using var command = conn.CreateCommand(commandFactory);
+#else
+            await using var command = conn.CreateCommand(commandFactory);
+#endif
             return (await command.ExecuteScalarAsync()).CastTo<T>();
         }
 

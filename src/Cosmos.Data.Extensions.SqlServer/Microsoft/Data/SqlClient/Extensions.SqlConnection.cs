@@ -1,9 +1,17 @@
+using Cosmos;
+
+#if NET451 || NET452
+// ReSharper disable once CheckNamespace
+namespace System.Data.SqlClient
+{
+#else
 using System;
 using System.Data;
-using System.Data.SqlClient;
 
-namespace Cosmos.Data.Sx.SqlClient
+namespace Microsoft.Data.SqlClient
 {
+#endif
+
     public static partial class SqlClientExtensions
     {
         /// <summary>
@@ -26,7 +34,7 @@ namespace Cosmos.Data.Sx.SqlClient
             command.CommandType = commandType;
             command.Transaction = transaction;
 
-            if (parameters != null)
+            if (parameters is not null)
             {
                 command.Parameters.AddRange(parameters);
             }

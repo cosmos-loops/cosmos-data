@@ -1,8 +1,14 @@
 ﻿using System.Collections.Generic;
-using System.Data.SqlClient;
+using Cosmos;
 
-namespace Cosmos.Data.Sx.SqlClient
+#if NET451 || NET452
+// ReSharper disable once CheckNamespace
+namespace System.Data.SqlClient
 {
+#else
+namespace Microsoft.Data.SqlClient
+{
+#endif
     public static partial class SqlClientExtensions
     {
         /// <summary>
@@ -14,9 +20,16 @@ namespace Cosmos.Data.Sx.SqlClient
         {
             conn.CheckNull(nameof(conn));
             
-            foreach (var keyValuePair in values)
+#if NETFRAMEWORK || NETSTANDARD2_0
+            foreach (var pair in values)
             {
-                conn.AddWithValue(keyValuePair.Key, keyValuePair.Value);
+                var key = pair.Key;
+                var value = pair.Value;
+#else
+            foreach (var (key, value) in values)
+            {
+#endif
+                conn.AddWithValue(key, value);
             }
         }
     }

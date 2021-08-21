@@ -1,8 +1,15 @@
-using System.Data.SqlClient;
 using System.Reflection;
+using Cosmos;
 
-namespace Cosmos.Data.Sx.SqlClient
+#if NET451 || NET452
+// ReSharper disable once CheckNamespace
+namespace System.Data.SqlClient
 {
+#else
+namespace Microsoft.Data.SqlClient
+{
+#endif
+
     /// <summary>
     /// Extensions for <see cref="SqlClient"/>
     /// </summary>

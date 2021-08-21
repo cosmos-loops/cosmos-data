@@ -4,16 +4,23 @@
  * MIT
  */
 
-using System;
-using System.Data;
-using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Cosmos.Data.Core.Pools;
 using Cosmos.Disposables.ObjectPools;
 
-namespace Cosmos.Data.Sx.SqlClient
+#if NET452
+// ReSharper disable once CheckNamespace
+namespace System.Data.SqlClient
 {
+#else
+using System;
+using System.Data;
+
+namespace Microsoft.Data.SqlClient
+{
+#endif
+
     /// <summary>
     /// SqlConnection pool policy
     /// </summary>
@@ -67,13 +74,13 @@ namespace Cosmos.Data.Sx.SqlClient
 
                 PoolSize = poolSize;
 
-                var initConnArray = new ObjectOut<SqlConnection>[poolSize];
+                var initConnArray = new ObjectPayload<SqlConnection>[poolSize];
 
                 for (var a = 0; a < poolSize; a++)
                 {
                     try
                     {
-                        initConnArray[a] = _pool.Get();
+                        initConnArray[a] = _pool.Acquire();
                     }
                     catch
                     {
@@ -82,12 +89,21 @@ namespace Cosmos.Data.Sx.SqlClient
                 }
 
                 foreach (var conn in initConnArray)
-                    _pool.Return(conn);
+                    _pool.Recycle(conn);
             }
         }
 
         /// <inheritdoc />
-        public bool OnCheckAvailable(ObjectOut<SqlConnection> obj)
+        public SqlConnection OnCreate() => new(_connectionString);
+
+        /// <inheritdoc />
+        public void OnAvailable() => _pool.AvailableHandler?.Invoke();
+
+        /// <inheritdoc />
+        public void OnUnavailable() => _pool.UnavailableHandler?.Invoke();
+
+        /// <inheritdoc />
+        public bool OnCheckAvailable(ObjectPayload<SqlConnection> obj)
         {
             if (obj.Value.State == ConnectionState.Closed)
                 obj.Value.Open();
@@ -98,22 +114,11 @@ namespace Cosmos.Data.Sx.SqlClient
         }
 
         /// <inheritdoc />
-        public SqlConnection OnCreate() => new SqlConnection(_connectionString);
-
-        /// <inheritdoc />
-        public void OnDestroy(SqlConnection obj)
-        {
-            if (obj.State != ConnectionState.Closed)
-                obj.Close();
-            obj.Dispose();
-        }
-
-        /// <inheritdoc />
-        public void OnGet(ObjectOut<SqlConnection> obj)
+        public void OnAcquire(ObjectPayload<SqlConnection> obj)
         {
             if (_pool.IsAvailable)
             {
-                if (obj.Value.State != ConnectionState.Open || DateTime.Now.Subtract(obj.LastReturnTime).TotalSeconds > 60 && obj.Value.Ping() == false)
+                if (obj.Value.State != ConnectionState.Open || DateTime.Now.Subtract(obj.LastRecycledTime).TotalSeconds > 60 && obj.Value.Ping() == false)
                 {
                     try
                     {
@@ -129,11 +134,11 @@ namespace Cosmos.Data.Sx.SqlClient
         }
 
         /// <inheritdoc />
-        public async Task OnGetAsync(ObjectOut<SqlConnection> obj)
+        public async Task OnAcquireAsync(ObjectPayload<SqlConnection> obj)
         {
             if (_pool.IsAvailable)
             {
-                if (obj.Value.State != ConnectionState.Open || DateTime.Now.Subtract(obj.LastReturnTime).TotalSeconds > 60 && obj.Value.Ping() == false)
+                if (obj.Value.State != ConnectionState.Open || DateTime.Now.Subtract(obj.LastRecycledTime).TotalSeconds > 60 && obj.Value.Ping() == false)
                 {
                     try
                     {
@@ -149,10 +154,10 @@ namespace Cosmos.Data.Sx.SqlClient
         }
 
         /// <inheritdoc />
-        public void OnGetTimeout() { }
+        public void OnAcquireTimeout() { }
 
         /// <inheritdoc />
-        public void OnReturn(ObjectOut<SqlConnection> obj)
+        public void OnRecycle(ObjectPayload<SqlConnection> obj)
         {
             if (obj.Value.State != ConnectionState.Closed)
             {
@@ -168,9 +173,11 @@ namespace Cosmos.Data.Sx.SqlClient
         }
 
         /// <inheritdoc />
-        public void OnAvailable() => _pool.AvailableHandler?.Invoke();
-
-        /// <inheritdoc />
-        public void OnUnavailable() => _pool.UnavailableHandler?.Invoke();
+        public void OnDestroy(SqlConnection obj)
+        {
+            if (obj.State != ConnectionState.Closed)
+                obj.Close();
+            obj.Dispose();
+        }
     }
 }

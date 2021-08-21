@@ -1,10 +1,18 @@
-﻿using System;
-using System.Data;
-using System.Data.SqlClient;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Cosmos;
 
-namespace Cosmos.Data.Sx.SqlClient
+#if NET451 || NET452
+// ReSharper disable once CheckNamespace
+namespace System.Data.SqlClient
 {
+#else
+using System;
+using System.Data;
+
+namespace Microsoft.Data.SqlClient
+{
+#endif
+    
     public static partial class SqlClientExtensions
     {
         /// <summary>
