@@ -28,7 +28,7 @@ namespace Cosmos.Data.Core.UnitOfWork
         /// <summary>
         /// Protected property - Bundled Repo-Ref list
         /// </summary>
-        protected readonly List<RepoRef> _bundledRepoRefs = new();
+        protected readonly List<RepoLink> _bundledRepoRefs = new();
 
         /// <inheritdoc />
         public virtual string Name => UowRefStrategyFunctions.DefaultName;
@@ -42,7 +42,7 @@ namespace Cosmos.Data.Core.UnitOfWork
         public IEnumerable<UowRef> RegisteredUowRefs => _registeredUowRefs.AsReadOnly();
 
         /// <inheritdoc />
-        public IEnumerable<RepoRef> BundledRepoRefs => _bundledRepoRefs.AsReadOnly();
+        public IEnumerable<RepoLink> BundledRepoRefs => _bundledRepoRefs.AsReadOnly();
 
         #endregion
 
@@ -70,14 +70,14 @@ namespace Cosmos.Data.Core.UnitOfWork
         /// <inheritdoc />
         public virtual void Binding(IRepository repository)
         {
-            var repoRef = new RepoRef(repository);
+            var repoRef = new RepoLink(repository);
             repository.UnitOfWork = Current;
             _bundledRepoRefs.Add(repoRef);
         }
 
         private void SetUowIntoAllRepository()
         {
-            _bundledRepoRefs.ForEach(repoRef => repoRef.Entry.UnitOfWork = Current ?? repoRef.OriginalUnitOfWork);
+            _bundledRepoRefs.ForEach(repoRef => repoRef.Target.UnitOfWork = Current ?? repoRef.OriginalUnitOfWork);
         }
 
         #endregion

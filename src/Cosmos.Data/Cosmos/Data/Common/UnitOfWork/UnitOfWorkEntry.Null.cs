@@ -13,7 +13,7 @@ namespace Cosmos.Data.Common.UnitOfWork
         /// <summary>
         /// Gets an instance of <see cref="NullUnitOfWorkEntry"/>
         /// </summary>
-        public static NullUnitOfWorkEntry Instance { get; } = new NullUnitOfWorkEntry();
+        public static NullUnitOfWorkEntry Instance { get; } = new();
 
         private NullUnitOfWorkEntry() { }
 

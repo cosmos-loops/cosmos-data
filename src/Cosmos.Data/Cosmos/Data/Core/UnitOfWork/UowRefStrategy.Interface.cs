@@ -30,7 +30,7 @@ namespace Cosmos.Data.Core.UnitOfWork
         /// <summary>
         /// Export all bundled Repo-Ref info
         /// </summary>
-        IEnumerable<RepoRef> BundledRepoRefs { get; }
+        IEnumerable<RepoLink> BundledRepoRefs { get; }
 
         #endregion
 

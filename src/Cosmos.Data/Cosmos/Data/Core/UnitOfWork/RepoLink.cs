@@ -5,22 +5,22 @@ namespace Cosmos.Data.Core.UnitOfWork
     /// <summary>
     /// Repo-Ref
     /// </summary>
-    public class RepoRef
+    public class RepoLink
     {
         /// <summary>
         /// Repo-Ref
         /// </summary>
         /// <param name="repository"></param>
-        public RepoRef(IRepository repository)
+        public RepoLink(IRepository repository)
         {
-            Entry = repository;
+            Target = repository;
             OriginalUnitOfWork = repository.UnitOfWork;
         }
 
         /// <summary>
-        /// Entry
+        /// Target
         /// </summary>
-        public IRepository Entry { get; set; }
+        public IRepository Target { get; set; }
 
         /// <summary>
         /// Original uow

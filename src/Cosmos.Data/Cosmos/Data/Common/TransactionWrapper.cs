@@ -27,7 +27,7 @@ namespace Cosmos.Data.Common
         /// Watching window for Transaction wrapper <br />
         /// 用于调试的观察口
         /// </summary>
-        public static ConcurrentDictionary<string, ITransactionWrapper> WatchingWindow { get; } = new ConcurrentDictionary<string, ITransactionWrapper>();
+        public static ConcurrentDictionary<string, ITransactionWrapper> WatchingWindow { get; } = new();
 
         /// <summary>
         /// Create a new instance of <see cref="TransactionWrapper"/>

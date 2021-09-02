@@ -10,7 +10,7 @@ namespace Cosmos.Data.Common.Transaction
     /// </summary>
     public sealed class ScopedTransactionManager : ITransactionManager
     {
-        private readonly List<UowRef> _uowRefs = new List<UowRef>();
+        private readonly List<UowRef> _uowRefs = new();
         private readonly IUnitOfWorkManager _unitOfWorkManager;
 
         /// <summary>
