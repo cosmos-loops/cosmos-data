@@ -1126,23 +1126,23 @@
             Isolation level
             </summary>
         </member>
-        <member name="T:Cosmos.Data.Core.UnitOfWork.RepoRef">
+        <member name="T:Cosmos.Data.Core.UnitOfWork.RepoLink">
             <summary>
             Repo-Ref
             </summary>
         </member>
-        <member name="M:Cosmos.Data.Core.UnitOfWork.RepoRef.#ctor(Cosmos.Data.Common.IRepository)">
+        <member name="M:Cosmos.Data.Core.UnitOfWork.RepoLink.#ctor(Cosmos.Data.Common.IRepository)">
             <summary>
             Repo-Ref
             </summary>
             <param name="repository"></param>
         </member>
-        <member name="P:Cosmos.Data.Core.UnitOfWork.RepoRef.Entry">
+        <member name="P:Cosmos.Data.Core.UnitOfWork.RepoLink.Target">
             <summary>
-            Entry
+            Target
             </summary>
         </member>
-        <member name="P:Cosmos.Data.Core.UnitOfWork.RepoRef.OriginalUnitOfWork">
+        <member name="P:Cosmos.Data.Core.UnitOfWork.RepoLink.OriginalUnitOfWork">
             <summary>
             Original uow
             </summary>
